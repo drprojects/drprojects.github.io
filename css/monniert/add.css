@@ -1,0 +1,52 @@
+div.tom_table{
+    display:  table;
+    width:auto;
+    /*background-color:#eee;
+    border:1px solid  #666666;
+    border-spacing:5px;*/
+}
+
+div.tom_row{
+    display:table-row;
+    width:auto;
+}
+
+div.tom_cell{
+    float:left;/*fix for  buggy browsers*/
+    display:table-column;
+    /*background-color:#ccc;*/
+}
+
+div.tom_cell img{
+    max-width: 100%;
+}
+
+div.tom_cell_text{
+    float:right;/*fix for  buggy browsers*/
+    display:table-column;
+    /*background-color:#ccc;*/
+    width: 60%;
+}
+
+
+
+div.row_tom_image{
+    width:40%;
+    float: left;
+}
+
+div.row_tom_image img{
+    float: left;
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+div.row_tom_text{
+    width: 50%;
+    alig;
+    text-align:left;
+    margin-left:2em;
+    margin-bottom:0.5rem;
+    margin-top:0.5rem;
+}
