@@ -10,36 +10,6 @@
     <title>Damien Robert</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  
-<script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /* Loop through a collection of all HTML elements: */
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /* Make an HTTP request using the attribute value as the file name: */
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /* Remove the attribute, and call this function once more: */
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /* Exit the function: */
-      return;
-    }
-  }
-}
-</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
 <!-- MathJax configuration -->
@@ -64,8 +34,6 @@ MathJax.Hub.Config({
 
 
 
-
-
 <!-- Change colors here -->
 <div style="--color_left:#80cc28;--color_right:#00aec7">
 
@@ -83,29 +51,28 @@ MathJax.Hub.Config({
 
 
 <!-- Header -->
-<!--<section class="page-header">-->
-<!--    <h1 class="project-name">-->
-<!--        <img height="150" class=profilepicture src="images/icons/portrait.png">Damien Robert-->
-<!--    </h1>-->
-<!--    <h2 class="project-tagline">-->
-<!--        <sup>1</sup>CSAI, ENGIE Lab CRIGEN, Stains, France-->
-<!--        <br>-->
-<!--        <sup>2</sup>LASTIG, Univ. Gustave Eiffel, ENSG, IGN, F-94160 Saint-Mande, France-->
-<!--    </h2>-->
-<!--    <a href=https://github.com/drprojects class="btn">-->
-<!--        <img height="50" src="images/icons/github.png">GitHub-->
-<!--    </a>-->
-<!--    <a href=mailto:damien.robert@ign.fr class="btn">-->
-<!--        <img height="50" src="images/icons/mail.png">Mail-->
-<!--    </a>-->
-<!--    <a href=https://www.linkedin.com/in/damienrobert91 class="btn">-->
-<!--        <img height="50" src="images/icons/linkedin.png">LinkedIn-->
-<!--    </a>-->
-<!--    <a href=files/CV_EN_academic_LOISEAU.pdf class="btn">-->
-<!--        <img height="50" src="images/icons/pdf.png">Academic CV-->
-<!--    </a>-->
-<!--</section>-->
-<div w3-include-html="https://github.com/drprojects/drprojects.github.io/header.html"></div>
+<section class="page-header">
+    <h1 class="project-name">
+        <img height="150" class=profilepicture src="images/icons/portrait.png">Damien Robert
+    </h1>
+    <h2 class="project-tagline">
+        <sup>1</sup>CSAI, ENGIE Lab CRIGEN, Stains, France
+        <br>
+        <sup>2</sup>LASTIG, Univ. Gustave Eiffel, ENSG, IGN, F-94160 Saint-Mande, France
+    </h2>
+    <a href=https://github.com/drprojects class="btn">
+        <img height="50" src="images/icons/github.png">GitHub
+    </a>
+    <a href=mailto:damien.robert@ign.fr class="btn">
+        <img height="50" src="images/icons/mail.png">Mail
+    </a>
+    <a href=https://www.linkedin.com/in/damienrobert91 class="btn">
+        <img height="50" src="images/icons/linkedin.png">LinkedIn
+    </a>
+    <a href=files/CV_EN_academic_LOISEAU.pdf class="btn">
+        <img height="50" src="images/icons/pdf.png">Academic CV
+    </a>
+</section>
 
 
 
@@ -226,11 +193,4 @@ MathJax.Hub.Config({
 </section>
 
 </div>
-
-
-<script>
-includeHTML();
-</script>
-
- 
 
