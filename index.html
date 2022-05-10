@@ -1,36 +1,66 @@
 
 
-<link rel="shortcut icon" href="images/icons/loiseau.jpg">
+<link rel="shortcut icon" href="images/icons/portrait.png">
 <link rel="stylesheet" href="css/custom.css">
 
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
     <!-- Change name of the website here -->
-    <title>Romain Loiseau</title>
+    <title>Damien Robert</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
+}
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true }
+    }
+});
+</script>
+
 
 
 
@@ -39,21 +69,48 @@
 <!-- Change colors here -->
 <div style="--color_left:#80cc28;--color_right:#00aec7">
 
-<!-- Change menu here -->
+
+<!-- Navigation menu -->
 <ul id="menu-deroulant">
     <li><a href="index.html">Home</a></li>
     <li><a href="">Projects</a>
     <ul>
-        <li><a href="https://romainloiseau.github.io/deep-linear-shapes/">Deep Linear Shapes</a></li>
+        <li><a href="https://drprojects.github.io/DeepViewAgg">DeepViewAgg</a></li>
     </ul>
     </li>
     <li style="float:right"><a href="">Up</a></li>
 </ul>
 
 
+<!-- Header -->
+<!--<section class="page-header">-->
+<!--    <h1 class="project-name">-->
+<!--        <img height="150" class=profilepicture src="images/icons/portrait.png">Damien Robert-->
+<!--    </h1>-->
+<!--    <h2 class="project-tagline">-->
+<!--        <sup>1</sup>CSAI, ENGIE Lab CRIGEN, Stains, France-->
+<!--        <br>-->
+<!--        <sup>2</sup>LASTIG, Univ. Gustave Eiffel, ENSG, IGN, F-94160 Saint-Mande, France-->
+<!--    </h2>-->
+<!--    <a href=https://github.com/drprojects class="btn">-->
+<!--        <img height="50" src="images/icons/github.png">GitHub-->
+<!--    </a>-->
+<!--    <a href=mailto:damien.robert@ign.fr class="btn">-->
+<!--        <img height="50" src="images/icons/mail.png">Mail-->
+<!--    </a>-->
+<!--    <a href=https://www.linkedin.com/in/damienrobert91 class="btn">-->
+<!--        <img height="50" src="images/icons/linkedin.png">LinkedIn-->
+<!--    </a>-->
+<!--    <a href=files/CV_EN_academic_LOISEAU.pdf class="btn">-->
+<!--        <img height="50" src="images/icons/pdf.png">Academic CV-->
+<!--    </a>-->
+<!--</section>-->
+<div w3-include-html="https://github.com/drprojects/drprojects.github.io/header.html"></div>
 
-<section class="page-header"><h1 class="project-name"><img height="150" class=profilepicture src="images/icons/romain_v2_mini.JPG">Romain Loiseau</h1><h2 class="project-tagline"><sup>1</sup>LIGM, Ecole des Ponts, Univ Gustave Eiffel, CNRS, France<br><sup>2</sup>LASTIG, Univ. Gustave Eiffel, ENSG, IGN, F-94160 Saint-Mande, France</h2><a href=https://github.com/romainloiseau class="btn"><img height="50" src="images/icons/github.png">GitHub</a><a href=mailto:romain.loiseau.2015@polytechnique.org class="btn"><img height="50" src="images/icons/mail.png">Mail</a><a href=https://www.linkedin.com/in/loiseaur/ class="btn"><img height="50" src="images/icons/linkedin.png">LinkedIn</a><a href=files/CV_EN_academic_LOISEAU.pdf class="btn"><img height="50" src="images/icons/pdf.png">Academic CV</a></section>
-    <section class="main-content">
+
+
+<!-- Page content -->
+<section class="main-content">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -72,13 +129,13 @@
 <h1 id="Publications">Publications<a class="anchor-link" href="#Publications">&#182;</a></h1><div class="tom_table">
   <div class="tom_row">
     <div class="tom_cell" style="width:40%">
-        <a href="https://romainloiseau.github.io/deep-linear-shapes/"><img src="images/1_DLM/dti3d.jpg" alt="dti3d.jpg"></a>
+        <a href="https://drprojects.github.io/DeepViewAgg"><img src="images/1_DLM/dti3d.jpg" alt="dti3d.jpg"></a>
     </div>
     <div class="tom_cell_text">
-      <b><a href="https://romainloiseau.github.io/deep-linear-shapes/">Representing Shape Collections with Alignment-Aware Linear Models</a></b><br>
+      <b><a href="https://drprojects.github.io/DeepViewAgg">Representing Shape Collections with Alignment-Aware Linear Models</a></b><br>
 
-      <a href="">Romain Loiseau</a>, <a href="https://imagine.enpc.fr/~monniert">Tom Monnier</a>, <a href="https://imagine.enpc.fr/~aubrym">Mathieu Aubry</a>, <a href="https://loiclandrieu.com/">Loïc Landrieu</a><br>
-      <a href=https://arxiv.org/abs/2109.01605>Paper</a> | <a href="https://romainloiseau.github.io/deep-linear-shapes/">Webpage</a> | <a href="https://github.com/romainloiseau/deep-linear-shapes">Code</a> | <a href="https://romainloiseau.github.io/deep-linear-shapes/docs/SLIDES_3DV2021.pdf">Slides</a> | <a href=https://slideslive.com/38972354/representing-shape-collections-with-alignmentaware-linear-models?ref=account-folder-92953-folders>Long video</a> | <a href=https://slideslive.com/38972213/representing-shape-collections-with-alignmentaware-linear-models?ref=account-folder-92951-folders>Short video</a>
+      <a href="">Damien Robert</a>, <a href="https://imagine.enpc.fr/~monniert">Tom Monnier</a>, <a href="https://imagine.enpc.fr/~aubrym">Mathieu Aubry</a>, <a href="https://loiclandrieu.com/">Loïc Landrieu</a><br>
+      <a href=https://arxiv.org/abs/2109.01605>Paper</a> | <a href="https://drprojects.github.io/DeepViewAgg">Webpage</a> | <a href="https://github.com/drprojects/DeepViewAgg">Code</a> | <a href="https://drprojects.github.io/DeepViewAggdocs/SLIDES_3DV2021.pdf">Slides</a> | <a href=https://slideslive.com/38972354/representing-shape-collections-with-alignmentaware-linear-models?ref=account-folder-92953-folders>Long video</a> | <a href=https://slideslive.com/38972213/representing-shape-collections-with-alignmentaware-linear-models?ref=account-folder-92951-folders>Short video</a>
       <p>
       We characterize 3D shapes as affine transformations of linear families learned without supervision, and showcase its advantages on large shape collections.
       </p>
@@ -158,13 +215,22 @@
 
 <footer class="site-footer">
   <!-- Change footer here -->
-	<span class="site-footer-owner"><a href="index.html">Romain Loiseau - IMAGINE/ENPC & Lastig/IGN</a> is maintained by <a href="index.html">Romain Loiseau</a>.</span>
-  <span class="site-footer-credits">This page was generated by a template written by <a href="index.html">Romain Loiseau</a>.</span>
+    <div style="text-align: center;">
+	    <span class="site-footer-owner"><a href="index.html">Damien Robert - ENGIE Lab CRIGEN & Lastig/IGN</a> is maintained by <a href="index.html">Damien Robert</a>.</span>
+    </div>
+    <div style="text-align: center;">
+        <span class="site-footer-credits">This page was generated by a template written by <a href="index.html">Damien Robert</a>.</span>
+    </div>
 
 </footer>
 </section>
 
-</div>  
+</div>
+
+
+<script>
+includeHTML();
+</script>
 
  
 
