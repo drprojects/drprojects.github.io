@@ -2,20 +2,23 @@
 my_name: Damien Robert
 icon: "images/icons/portrait.png"
 
-link_ign: <a href="https://www.ign.fr">IGN</a>
-link_ensg: <a href="https://www.ensg.eu/">ENSG</a>
-link_lastig: <a href="https://www.umr-lastig.fr">LASTIG</a>
-link_strudel: <a href="https://www.umr-lastig.fr/strudel">STRUDEL</a>
-link_acte: <a href="https://www.umr-lastig.fr/acte">ACTE</a>
-link_uge:  <a href="https://www.univ-gustave-eiffel.fr">Univ. Gustave Eiffel</a>
-link_crigen: <a href="https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen">ENGIE Lab CRIGEN</a>
-link_loic: <a href="https://loiclandrieu.com/">Loïc Landrieu</a>
-link_bruno: <a href="https://www.umr-lastig.fr/bruno-vallet/">Bruno Vallet</a>
+to_ign: <a href="https://www.ign.fr">IGN</a>
+to_ensg: <a href="https://www.ensg.eu/">ENSG</a>
+to_lastig: <a href="https://www.umr-lastig.fr">LASTIG</a>
+to_strudel: <a href="https://www.umr-lastig.fr/strudel">STRUDEL</a>
+to_acte: <a href="https://www.umr-lastig.fr/acte">ACTE</a>
+to_uge:  <a href="https://www.univ-gustave-eiffel.fr">Univ. Gustave Eiffel</a>
+to_crigen: <a href="https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen">ENGIE Lab CRIGEN</a>
+to_loic: <a href="https://loiclandrieu.com/">Loïc Landrieu</a>
+to_bruno: <a href="https://www.umr-lastig.fr/bruno-vallet/">Bruno Vallet</a>
 
-link_paper: <a href="https://arxiv.org/abs/2204.07548">Paper</a>
-link_webpage: <a href="">Webpage</a>
-link_code: <a href="https://github.com/drprojects/DeepViewAgg">Code</a>
-link_video: <a href="">Video</a>
+to_paper: <a href="https://arxiv.org/abs/2204.07548">Paper</a>
+to_webpage: <a href="">Webpage</a>
+to_code: <a href="https://github.com/drprojects/DeepViewAgg">Code</a>
+to_video: <a href="">Video</a>
+
+to_sota_s3dis: <a href="https://paperswithcode.com/sota/semantic-segmentation-on-s3dis?p=learning-multi-view-aggregation-in-the-wild">S3DIS</a>
+to_sota_kitti360: <a href="https://paperswithcode.com/sota/3d-semantic-segmentation-on-kitti-360?p=learning-multi-view-aggregation-in-the-wild">KITTI-360</a>
 ---
 
 <!-- Imports -->
@@ -36,17 +39,15 @@ link_video: <a href="">Video</a>
     <!-- Page content -->
     <section class="main-content">
         <div class="cell border-box-sizing text_cell rendered">
-            <div class="prompt input_prompt">
-            </div>
             <div class="inner_cell">
                 <div class="text_cell_render border-box-sizing rendered_html">
 
                     <!-- Summary -->
                     <h1 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h1>
                     <p>
-                        As a PhD candidate at {{ page.link_ign }}—the French Mapping Agency—in the machine learning team
-                        STRUDEL ({{ page.link_lastig }}, {{ page.link_uge }}, {{ page.link_ign }}-{{ page.link_ensg }}),
-                        and in the CSAI team at {{ page.link_crigen }}, I design deep learning methods for multimodal,
+                        As a PhD candidate at {{ page.to_ign }}—the French Mapping Agency—in the machine learning team
+                        STRUDEL ({{ page.to_lastig }}, {{ page.to_uge }}, {{ page.to_ign }}-{{ page.to_ensg }}),
+                        and in the CSAI team at {{ page.to_crigen }}, I design deep learning methods for multimodal,
                         multi-task learning on large-scale point clouds. Specifically, my recent research involves
                         computer vision on 3D point clouds and 2D images in the wild.
                         <br><br>
@@ -56,9 +57,9 @@ link_video: <a href="">Video</a>
                     <!-- Supervision -->
                     <h1 id="Supervisors">Supervisors<a class="anchor-link" href="#Supervisors">&#182;</a></h1>
                     <ul>
-                        <li>{{ page.link_loic }} ({{ page.link_strudel }}-{{ page.link_lastig }}, {{ page.link_ign }}-{{ page.link_ensg }}, {{ page.link_uge }}, Saint-Mandé, France)
+                        <li>{{ page.to_loic }} ({{ page.to_strudel }}-{{ page.to_lastig }}, {{ page.to_ign }}-{{ page.to_ensg }}, {{ page.to_uge }}, Saint-Mandé, France)
                         </li>
-                        <li>{{ page.link_bruno }} ({{ page.link_acte }}-{{ page.link_lastig }}, {{ page.link_ign }}-{{ page.link_ensg }}, {{ page.link_uge }}, Saint-Mandé, France)
+                        <li>{{ page.to_bruno }} ({{ page.to_acte }}-{{ page.to_lastig }}, {{ page.to_ign }}-{{ page.to_ensg }}, {{ page.to_uge }}, Saint-Mandé, France)
                         </li>
                     </ul>
 
@@ -66,11 +67,7 @@ link_video: <a href="">Video</a>
             </div>
         </div>
 
-        {% include_relative s3dis_multimodal_sample__pos.html %}
-
         <div class="cell border-box-sizing text_cell rendered">
-            <div class="prompt input_prompt">
-            </div>
             <div class="inner_cell">
                 <div class="text_cell_render border-box-sizing rendered_html">
                     <h1 id="Publications">Publications<a class="anchor-link" href="#Publications">&#182;</a></h1>
@@ -81,14 +78,14 @@ link_video: <a href="">Video</a>
                             </div>
                             <div class="tom_cell_text">
                                 <b><a href="https://drprojects.github.io/DeepViewAgg">Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation</a></b><br>
-                                <a href="">{{ page.my_name }}</a>, {{ page.link_bruno }}, {{ page.link_loic }}
+                                <a href="">{{ page.my_name }}</a>, {{ page.to_bruno }}, {{ page.to_loic }}
                                 <br>
-                                {{ link_paper  }}} | {{ link_webpage  }}} | {{ link_code  }}} | {{ link_video  }}} |
+                                {{ to_paper }} | {{ to_webpage }} | {{ to_code }} | {{ to_video }}
                                 <p>
                                     We present an end-to-end deep view aggregation method for 3D semantic segmentation
-                                    from images and point clouds. We reach SOTA on S3DIS and KITTI360 without requiring
-                                    point cloud colorization, meshing, or depth sensors: just point clouds, images, and
-                                    their poses.
+                                    from images and point clouds. We reach SOTA on {{ page.to_sota_s3dis }} and
+                                    {{ page.to_sota_kitti360 }} without requiring point cloud colorization, meshing, or
+                                    depth sensors: just point clouds, images, and their poses.
                                 </p>
                             </div>
                         </div>
@@ -97,8 +94,6 @@ link_video: <a href="">Video</a>
             </div>
         </div>
         <div class="cell border-box-sizing text_cell rendered">
-            <div class="prompt input_prompt">
-            </div>
             <div class="inner_cell">
                 <div class="text_cell_render border-box-sizing rendered_html">
                     <h1 id="Short-CV">Short CV<a class="anchor-link" href="#Short-CV">&#182;</a></h1>
@@ -113,7 +108,7 @@ link_video: <a href="">Video</a>
                         <tr>
                             <td><strong>2020-now</strong></td>
                             <td>PhD student on "Multimodal, multi-task learning on large-scale 3D point clouds"
-                                supervised by {{ page.link_loic }} and {{ page.link_bruno }}.
+                                supervised by {{ page.to_loic }} and {{ page.to_bruno }}.
                             </td>
                         </tr>
                         <tr>
@@ -145,30 +140,26 @@ link_video: <a href="">Video</a>
             </div>
         </div>
         <div class="cell border-box-sizing text_cell rendered">
-            <div class="prompt input_prompt">
-            </div>
             <div class="inner_cell">
                 <div class="text_cell_render border-box-sizing rendered_html">
                     <h1 id="Affiliations">Affiliations<a class="anchor-link" href="#Affiliations">&#182;</a></h1>
                     <ul>
-                        <li>{{ page.link_crigen }}
-                        <li>{{ page.link_strudel }}-{{ page.link_lastig }}, {{ page.link_ign }}-{{ page.link_ensg }}, {{ page.link_uge }}</li>
+                        <li>{{ page.to_crigen }}
+                        <li>{{ page.to_strudel }}-{{ page.to_lastig }}, {{ page.to_ign }}-{{ page.to_ensg }}, {{ page.to_uge }}</li>
                     </ul>
 
                 </div>
             </div>
         </div>
         <div class="cell border-box-sizing text_cell rendered">
-            <div class="prompt input_prompt">
-            </div>
             <div class="inner_cell">
                 <div class="text_cell_render border-box-sizing rendered_html">
                     <ul class="hfig">
                         <li><img style="height:7vw;" src="images/icons/lastig.png"></li>
+                        <li><img style="height:7vw;" src="images/icons/ign.png"></li>
                         <li><img style="height:7vw;" src="images/icons/uge.png"></li>
                     </ul>
                     <ul class="hfig">
-                        <li><img style="height:7vw;" src="images/icons/ign.png"></li>
                         <li><img style="height:7vw;" src="images/icons/mte.png"></li>
                         <li><img style="height:7vw;" src="images/icons/engie.png"></li>
                     </ul>
