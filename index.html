@@ -1,5 +1,6 @@
 ---
 my_name: Damien Robert
+icon: "images/icons/portrait.png"
 ---
 
 <!-- Imports -->
@@ -10,15 +11,7 @@ my_name: Damien Robert
 
 
     <!-- Navigation menu -->
-    <ul id="menu-deroulant">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="">Projects</a>
-            <ul>
-                <li><a href="https://drprojects.github.io/DeepViewAgg">DeepViewAgg</a></li>
-            </ul>
-        </li>
-        <li style="float:right"><a href="">Up</a></li>
-    </ul>
+    {% include_relative navigation.html %}
 
 
     <!-- Header -->
@@ -32,18 +25,27 @@ my_name: Damien Robert
             </div>
             <div class="inner_cell">
                 <div class="text_cell_render border-box-sizing rendered_html">
+
+                    <!-- Summary -->
                     <h1 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h1>
-                    <p>Summary I am a PhD student at the École des Ponts in the computer vision team IMAGINE (LIGM,
-                        École des Ponts, Univ Gustave Eiffel, CNRS) and at the IGN—the French Mapping Agency—in the
-                        machine learning team STRUDEL (LASTIG, Univ Gustave Eiffel, IGN/ENSG), advised by Mathieu Aubry
-                        and Loïc Landrieu. I am interested in optimisation and machine learning for 3D data, with a
-                        focus on unsupervised learning, interpretability, and real-time applications.</p>
+                    <p>
+                        As a PhD candidate at <a href="https://www.ign.fr">IGN</a>—the French Mapping Agency—in the
+                        machine learning team STRUDEL (<a href="https://www.umr-lastig.fr">LASTIG</a>, <a
+                                href="https://www.univ-gustave-eiffel.fr">Univ. Gustave Eiffel</a>, <a href="https://www.ign.fr">IGN</a>-<a href="https://www.ensg.eu/">ENSG</a>), and <a href="https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen">ENGIE Lab CRIGEN</a>,
+                        I design deep learning methods for multimodal, multi-task learning on large-scale point clouds.
+                        Specifically, my recent research involves computer vision on 3D point clouds :cloud: and 2D
+                        images :camera: in the wild.
+                        <br>
+                        You like point clouds ? You like images ? You like me.
+                    </p>
+
+                    <!-- Supervision -->
                     <h1 id="Supervisors">Supervisors<a class="anchor-link" href="#Supervisors">&#182;</a></h1>
                     <ul>
-                        <li><a href="https://imagine.enpc.fr/~aubrym">Mathieu Aubry</a> (LIGM, Ecole des Ponts, Univ
-                            Gustave Eiffel, CNRS, France)
-                        </li>
                         <li><a href="https://loiclandrieu.com/">Loïc Landrieu</a> (Univ Paris-Est, IGN-ENSG, LaSTIG,
+                            STRUDEL, Saint-Mandé, France)
+                        </li>
+                        <li><a href="https://www.umr-lastig.fr/bruno-vallet/">Bruno Vallet</a> (Univ Paris-Est, IGN-ENSG, LaSTIG,
                             STRUDEL, Saint-Mandé, France)
                         </li>
                     </ul>
@@ -63,8 +65,7 @@ my_name: Damien Robert
                     <div class="tom_table">
                         <div class="tom_row">
                             <div class="tom_cell" style="width:40%">
-                                <a href="https://drprojects.github.io/DeepViewAgg"><img src="images/1_DLM/dti3d.jpg"
-                                                                                        alt="dti3d.jpg"></a>
+                                <a href="https://drprojects.github.io/DeepViewAgg"><img src="images/1_DLM/dti3d.jpg" alt="dti3d.jpg"></a>
                             </div>
                             <div class="tom_cell_text">
                                 <b><a href="https://drprojects.github.io/DeepViewAgg">Representing Shape Collections
