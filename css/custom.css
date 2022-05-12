@@ -754,6 +754,10 @@ div.output_stderr {
   /* very light red background for stderr */
 }
 
+p.blabla {
+    text-align: justify;
+    text-justify: inter-word;
+}
 
 .highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
