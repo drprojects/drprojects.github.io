@@ -37,7 +37,18 @@ to_sota_kitti360: <a
     {% include_relative navigation.html %}
 
     <!-- Header -->
-    {% include_relative header.html %}
+    <section class="page-header">
+        <h1 class="project-name">
+            <img height="150" class=profilepicture src={{ page.image }}>{{ page.title }}
+        </h1>
+        <h2 class="project-tagline">
+            CSAI, {{ page.to_crigen }}, Stains, France
+            <br>
+            {{ page.to_uge }}, {{ page.to_ign }}-{{ page.to_ensg }}, {{ page.to_lastig }}, F-94160
+            Saint-Mande, France
+        </h2>
+        {% include_relative networking.html %}
+    </section>
 
     <!-- Page content -->
     <section class="main-content">
