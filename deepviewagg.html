@@ -1,0 +1,150 @@
+---
+my_name: Damien Robert
+title: DeepViewAgg
+image: "images/deepviewagg/cvpr_2022.png"
+icon: "images/deepviewagg/teaser_mini.png"
+
+to_ign: <a href="https://www.ign.fr">IGN</a>
+to_ensg: <a href="https://www.ensg.eu/">ENSG</a>
+to_lastig: <a href="https://www.umr-lastig.fr">LASTIG</a>
+to_strudel: <a href="https://www.umr-lastig.fr/strudel">STRUDEL</a>
+to_acte: <a href="https://www.umr-lastig.fr/acte">ACTE</a>
+to_uge:  <a href="https://www.univ-gustave-eiffel.fr">Univ. Gustave Eiffel</a>
+to_crigen: <a href="https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen">ENGIE Lab
+    CRIGEN</a>
+to_loic: <a href="https://loiclandrieu.com/">Loïc Landrieu</a>
+to_bruno: <a href="https://www.umr-lastig.fr/bruno-vallet/">Bruno Vallet</a>
+
+to_paper: <a href="https://arxiv.org/abs/2204.07548">Paper</a>
+to_webpage: <a href="">Webpage</a>
+to_code: <a href="https://github.com/drprojects/DeepViewAgg">Code</a>
+to_video: <a href="">Video</a>
+
+to_sota_s3dis: <a
+        href="https://paperswithcode.com/sota/semantic-segmentation-on-s3dis?p=learning-multi-view-aggregation-in-the-wild">S3DIS</a>
+to_sota_kitti360: <a
+        href="https://paperswithcode.com/sota/3d-semantic-segmentation-on-kitti-360?p=learning-multi-view-aggregation-in-the-wild">KITTI-360</a>
+---
+
+<!-- Imports -->
+{% include_relative imports.html %}
+
+<!-- Change colors here -->
+<!--<div style="&#45;&#45;color_left:#80cc28;&#45;&#45;color_right:#00aec7">-->
+<div style="--color_left:#f2ce02;--color_right:#d46606">
+
+    <!-- Navigation menu -->
+    {% include_relative navigation.html %}
+
+    <!-- Header -->
+    {% include_relative header.html %}
+
+    <!-- Page content -->
+    <section class="main-content">
+        <div class="cell border-box-sizing text_cell rendered">
+            <div class="inner_cell">
+                <div class="text_cell_render border-box-sizing rendered_html">
+
+                    <!-- Publications -->
+                    <h1 id="Publications">Publications 📄<a class="anchor-link" href="#Publications">&#182;</a>
+                    </h1>
+                    🖼 Poster | 🎤 Oral
+                    <br>
+                    <div class="tom_table">
+                        <div class="tom_row">
+                            <div class="tom_cell" style="width:40%">
+                                <a href="https://drprojects.github.io/deepviewagg"><img
+                                        src="images/deepviewagg/teaser.png" alt="deepviewagg" style="height:30vh"></a>
+                            </div>
+                            <div class="tom_cell_text">
+                                <b><a href="https://drprojects.github.io/deepviewagg">Learning Multi-View Aggregation In
+                                    the Wild for Large-Scale 3D Semantic Segmentation</a></b><br>
+                                <a href="">{{ page.my_name }}</a>, {{ page.to_bruno }}, {{ page.to_loic }}
+                                <br>
+                                {{ page.to_paper }} | {{ page.to_webpage }} | {{ page.to_code }} | {{ page.to_video }}
+                                <br>
+                                <b>CVPR 2022 Oral 🖼🎤</b>
+                                <p>
+                                    We present an end-to-end deep view aggregation method for 3D semantic segmentation
+                                    from images and point clouds. We reach SOTA on {{ page.to_sota_s3dis }} and
+                                    {{ page.to_sota_kitti360 }} without requiring point cloud colorization, meshing,
+                                    or depth sensors: just point clouds ☁, images 📸, and their poses.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resume -->
+                    <h1 id="Short-CV">Short Resume<a class="anchor-link" href="#Short-CV">&#182;</a></h1>
+                    <ul style="list-style-type:none">
+                        <li> [2020 - Now] PhD student on <i>"Multimodal, multi-task learning on large-scale 3D point
+                            clouds"</i> supervised by {{ page.to_loic }} and {{ page.to_bruno }}.
+                        </li>
+                        <li> [Jul 2022] International Computer Vision Summer School, in Sicily.</li>
+                        <li> [Oct 2017] CNRS AI Fall School, Multi-disciplinary course for AI students and
+                            researchers.
+                        </li>
+                        <li> [2011 - 2015] Master of Science at Ecole Centrale de Lyon.
+                        </li>
+                    </ul>
+
+                    <!-- Presentations, talks, tutorials -->
+                    <h1 id="Talks">Talks<a class="anchor-link" href="#Talks">&#182;</a></h1>
+                    🖼 Poster | 🎤 Oral | 🎓 Tutorial
+                    <ul style="list-style-type:none">
+                        <li>🖼 [Jul 2022] <b>ICVSS</b> <i>DeepViewAgg</i></li>
+                        <li>🎤 [Jun 2022] <b>CVPR</b> <i>DeepViewAgg</i></li>
+                        <li>🎤 [Jun 2022] <b>Ecole des Ponts, IMAGINE lab</b> <i>DeepViewAgg</i></li>
+                        <li>🎓 [Jun 2022] <b>ISPRS</b> <i>3D Deep Learning for Remote Sensing</i></li>
+                        <li>🖼 [Jun 2022] <b>ISPRS</b> <i>DeepViewAgg</i></li>
+                        <li>🎓 [May 2022] <b>ENGIE CRIGEN lab</b> <i>3D Deep Learning, Torch-Points3D & DeepViewAgg</i>
+                        </li>
+                        <li>🎤 [May 2022] <b>Ecole Polytechnique, LIX lab</b> <i>DeepViewAgg</i></li>
+                        <li>🎤 [Apr 2022] <b>AI4GEO project seminar</b> <i>DeepViewAgg</i></li>
+                        <li>🖼 [Mar 2022] <b>IGN-ENSG Research Days</b> <i>DeepViewAgg</i></li>
+                        <li>🎤 [Jan 2022] <b>GDR ISIS seminar</b> <i>DeepViewAgg</i></li>
+                        <li>🖼 [May 2021] <b>IGN-ENSG Research Days</b> <i>DeepViewAgg</i></li>
+                    </ul>
+
+                    <!-- Teaching -->
+                    <h1 id="Teaching">Teaching<a class="anchor-link" href="#Teaching">&#182;</a></h1>
+                    <ul style="list-style-type:none">
+                        <li> [Jan 2022] <b>ENSG-IGN</b> <i>Course Instructor, M2, 9 hours</i> Deep learning for Remote
+                            Sensing
+                        </li>
+                        <li> [Nov 2020] <b>Ecole Polytechnique</b> <i>Teaching Assistant, M1, 12 hours</i> Computer
+                            vision
+                        </li>
+                    </ul>
+
+                    <!-- Affiliation -->
+                    <h1 id="Affiliations">Affiliations<a class="anchor-link" href="#Affiliations">&#182;</a></h1>
+                    <ul>
+                        <li>CSAI, {{ page.to_crigen }}
+                        <li>{{ page.to_uge }}, {{ page.to_ign }}-{{ page.to_ensg }}, {{ page.to_lastig }}, {{
+                            page.to_strudel }}
+                        </li>
+                    </ul>
+                    <br><br>
+                    <ul class="hfig">
+                        <li><a href="https://www.umr-lastig.fr"><img style="height:8vh;" src="images/icons/lastig.png"></a>
+                        </li>
+                        <li><a href="https://www.ign.fr"><img style="height:8vh;" src="images/icons/ign.png"></a></li>
+                        <li><a href="https://www.univ-gustave-eiffel.fr"><img style="height:8vh;"
+                                                                              src="images/icons/uge.png"></a></li>
+                        <li><a href="https://www.ecologie.gouv.fr/"><img style="height:8vh;" src="images/icons/mte.png"></a>
+                        </li>
+                        <li><a href="https://www.engie.com/en"><img style="height:8vh;"
+                                                                    src="images/icons/engie.png"></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        {% include_relative footer.html %}
+    </section>
+
+</div>
+
