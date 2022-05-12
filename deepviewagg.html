@@ -140,7 +140,31 @@ to_sota_kitti360: <a
                         Our idea is simply to let a model learn to aggregate the multi-view information based on the
                         observation conditions 👀.
                     </p>
+
                     {% include_relative images/deepviewagg/s3dis_multimodal_sample__pos.html %}
+
+                    <p class="blabla">
+                        After playing with this tool, you may have noticed several things:
+                    </p>
+                    <ul>
+                        <li>3D point clouds ☁ and 2D images 📸 carry complementary information. This justifies trying to
+                            extract features from both modalities.</li>
+                        <li>Views of a same object do not carry the same level of information, depending on their
+                            observation conditions 👀. By the way, this implies that the colorization scheme used to
+                            give RGB colors to the points is non-trivial, although often taken for granted by 3D
+                            semantic segmentation methods.</li>
+                        <li>Mapping 3D points with pixels of 2D images located in the wild requires recovering the
+                            occlusions. This requires computing what is called a visibility model, which can be easily
+                            solved if you have a mesh of the scene or if you have depth cameras. But mesh reconstruction
+                            is not a simple task and not all acquisition systems are equipped with depth cameras.</li>
+                        <li>Some images 📸 have only a small portion of their pixels actually linked to the 3D spherical
+                            sample at hand. This means extracting features maps from entire images with CNNs may require
+                            lots of unneeded computations.</li>
+                    </ul>
+                    <p class="blabla">
+                        Our paper addresses these four points to learn multi-modal aggregation without mesh nor depth
+                        cameras.
+                    </p>
 
                     <!-- Resources -->
                     <h1 id="BibTex">BibTex<a class="anchor-link" href="#BibTex">&#182;</a>
