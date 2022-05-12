@@ -757,6 +757,7 @@ div.output_stderr {
 p.blabla {
     text-align: justify;
     text-justify: inter-word;
+    margin: 20px;
 }
 
 .highlight .hll { background-color: #ffffcc }
