@@ -103,8 +103,43 @@ to_sota_kitti360: <a
                     </div>
 
                     <!-- Interactive visualization -->
-                    <h1 id="Visualization">Multimodal data sample<a class="anchor-link" href="#Visualization">&#182;</a>
+                    <h1 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a>
                     </h1>
+                    <p class="blabla">
+                        Modern 3D scene acquisition systems often produce images 📸 along with point clouds ☁. Previous
+                        works already have demonstrated that those modalities are complementary and extracting features
+                        from both benefits the scene understanding.
+                        <br><br>
+                        As an example, it is not possible to distinguish a frame 🖼 from the wall 🧱 on which it is hung
+                        solely based on the 3D geometric information in the point cloud ☁. However, the difference in
+                        texture between these two objects can easily be identified in images 📸 of the same scene.
+                        <br><br>
+                        On the contrary, when objects are poorly-lit, occluded or have uniform textures, it is much
+                        easier to identify them by their 3D geometry ☁ rather than their radiometry 📸.
+                        <br><br>
+                        You can play with the interactive visualization below to get the intuition of 3D and 2D
+                        modalities relate. This represents a 3D spherical sample of an indoor scene from the
+                        <a href="http://buildingparser.stanford.edu/dataset.html">S3DIS</a> dataset. The colored balls
+                        account for equirectangular picture positions. The corresponding images can be seen below the 3D
+                        plot. <code>RGB</code> shows the points colorized from the image using human expertise and a
+                        dedicated software. <code>Labels</code> shows the expected output for semantic segmentation.
+                        <code>Times seen</code> shows how many images see each point. <code>Position RGB</code> colors
+                        the points based on their 3D position. In the images below, the mapping between 3D points and
+                        the corresponding pixels is shown using the <code>Times seen</code> color scheme. Note that
+                        computing such a mapping is a non-trivial task as it requires recovering occlusions.
+                        <br><br>
+                        Although several works already exist on multimodal learning from point clouds and images, we
+                        found that these tend to overlook the multi-view problem for large-scene analysis. Indeed,
+                        when analysing large 3D scenes with images, each point may be seen in multiple images. You can
+                        see an illustration of this in the <code>Times seen</code> mode in the visualization below. To
+                        aggregate this multi-view information, one can use simple max-pool or average-pool schemes.
+                        However, this disregards the fact that not all views of a same object are equal. Views can be
+                        far, close, sideways, front-facing, occluded, distorted, etc. and carry different qualities of
+                        information depending on those observation conditions.
+                        <br><br>
+                        Our idea is simply to let a model learn to aggregate the multi-view information based on the
+                        observation conditions 👀.
+                    </p>
                     {% include_relative images/deepviewagg/s3dis_multimodal_sample__pos.html %}
 
                     <!-- Resources -->
