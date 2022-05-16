@@ -117,7 +117,7 @@ to_sota_kitti360: <a
                         On the contrary, when objects are poorly-lit, occluded or have uniform textures, it is much
                         easier to identify them by their 3D geometry ☁ rather than their radiometry 📸.
                         <br><br>
-                        You can play with the interactive visualization below to get the intuition of 3D and 2D
+                        You can play with the interactive visualization below to get the intuition of how the 3D and 2D
                         modalities relate. This represents a 3D spherical sample of an indoor scene from the
                         <a href="http://buildingparser.stanford.edu/dataset.html">S3DIS</a> dataset. The colored balls
                         account for equirectangular picture positions. The corresponding images can be seen below the 3D
@@ -137,7 +137,7 @@ to_sota_kitti360: <a
                         far, close, sideways, front-facing, occluded, distorted, etc. and carry different qualities of
                         information depending on those observation conditions.
                         <br><br>
-                        Our idea is simply to let a model learn to aggregate the multi-view information based on the
+                        Our core idea is simply to let a model learn to aggregate the multi-view information based on the
                         observation conditions 👀.
                     </p>
 
@@ -159,7 +159,7 @@ to_sota_kitti360: <a
                             is not a simple task and not all acquisition systems are equipped with depth cameras.</li>
                         <li>Some images 📸 have only a small portion of their pixels actually linked to the 3D spherical
                             sample at hand. This means extracting features maps from entire images with CNNs may require
-                            lots of unneeded computations.</li>
+                            a lot of unneeded computation.</li>
                     </ul>
                     <p class="blabla">
                         Our paper addresses these four points to learn multi-modal aggregation without mesh nor depth
@@ -172,15 +172,17 @@ to_sota_kitti360: <a
                     <p class="blabla">
                         In case you use all or part of this project, please cite the following paper:
                     </p>
-                    <code>
-                        @inproceedings{robert2022dva,
-                        title={Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation},
-                        author={Robert, Damien and Vallet, Bruno and Landrieu, Loic},
-                        booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-                        year={2022},
-                        url = {\url{https://github.com/drprojects/DeepViewAgg}}
-                        }
-                    </code>
+                    <pre>
+	                    <code>
+@inproceedings{robert2022dva,
+	title={Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation},
+	author={Robert, Damien and Vallet, Bruno and Landrieu, Loic},
+	booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+	year={2022},
+	url = {\url{https://github.com/drprojects/DeepViewAgg}}
+}
+	                    </code>
+                    </pre>
 
                     <!-- Acknowledgments -->
                     <h1 id="Acknowledgments">Acknowledgments 🙏<a class="anchor-link" href="#Acknowledgments">&#182;</a>
