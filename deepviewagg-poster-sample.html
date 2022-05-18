@@ -1,0 +1,46 @@
+---
+my_name: Damien Robert
+title: DeepViewAgg poster multimodal sample
+icon: "images/deepviewagg/teaser_mini.png"
+---
+<!-- Imports -->
+{% include_relative imports.html %}
+
+<!-- Change colors here -->
+<!--<div style="&#45;&#45;color_left:#80cc28;&#45;&#45;color_right:#00aec7">-->
+<div style="--color_left:#f2ce02;--color_right:#d46606">
+
+    <!-- Navigation menu -->
+    {% include_relative navigation.html %}
+
+    <!-- Header -->
+    <section class="page-header">
+        <h1 class="project-name">
+            {{ page.title }}
+        </h1>
+        <a href=https://drprojects.github.io/deepviewagg class="btn">
+            <img height="50" src="images/icons/webpage.svg">Webpage
+        </a>
+        <a href=https://github.com/drprojects/DeepViewAgg class="btn">
+            <img height="50" src="images/icons/github.svg">Code
+        </a>
+        <a href=https://arxiv.org/abs/2204.07548 class="btn">
+            <img height="50" src="images/icons/paper.svg">Paper
+        </a>
+    </section>
+
+    <!-- Page content -->
+    <section class="main-content">
+        <div class="cell border-box-sizing text_cell rendered">
+            <div class="inner_cell">
+                <div class="text_cell_render border-box-sizing rendered_html">
+                    {% include_relative images/deepviewagg/s3dis_multimodal_sample__area_5_idx_476.html %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        {% include_relative footer.html %}
+    </section>
+
+</div>
