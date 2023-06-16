@@ -114,25 +114,28 @@ to_spt_sota_dales: <a
                     <!-- Interactive visualization -->
                     <h1 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a>
                     </h1>
+                    {% include_relative images/superpoint_transformer/dales_val_power_line.html %}
                     <p class="blabla">
-                        This project aims at fusing the best of both worlds: transformers 🤖 (
-                        <a href="https://arxiv.org/abs/2012.09164">Point Transformer</a>,
-                        <a href="https://arxiv.org/abs/2203.14508">Stratified Transformer</a>,
-                        ...)
-                        and superpoint-based approaches 🧩 (
-                        <a href="https://arxiv.org/abs/1711.09869">SPG</a>,
-                        <a href="https://arxiv.org/abs/1904.02113">SSP+SPG</a>,
-                        ...).
-                        <br><br>
+                        This project aims at fusing the best of both worlds:
                         <dl>
-                            <dt>Transformer-based models 🤖</dt>
+                            <dt>
+                                Transformer-based models 🤖 (
+                                <a href="https://arxiv.org/abs/2012.09164">Point Transformer</a>,
+                                <a href="https://arxiv.org/abs/2203.14508">Stratified Transformer</a>,
+                                ...)
+                            </dt>
                             <dd>✅ Expressivity</dd>
                             <dd>✅ Capture long-range interactions</dd>
                             <dd>❌ Compute effort guided by arbitrary point or voxel samplings</dd>
                             <dd>❌ Loads of parameters</dd>
                             <dd>❌ Long training</dd>
 
-                            <dt>Superpoint-based models 🧩</dt>
+                            <dt>
+                                Superpoint-based models 🧩 (
+                                <a href="https://arxiv.org/abs/1711.09869">SPG</a>,
+                                <a href="https://arxiv.org/abs/1904.02113">SSP+SPG</a>,
+                                ...)
+                            </dt>
                             <dd>✅ Much smaller problem complexity</dd>
                             <dd>✅ Geometry-guided compute effort allocation</dd>
                             <dd>✅ Fast training</dd>
@@ -141,9 +144,8 @@ to_spt_sota_dales: <a
                             <dd>❌ GNN's expressivity and long-range interactions</dd>
                             <dd>❌ No hierarchical reasoning</dd>
                         </dl>
-                        <br><br>
+                        <br>
                         To this end, we introduce the following:
-                        <br><br>
                         <dl>
                             <dt>Superpoint Transformer 🧩🤖</dt>
                             <dd>✅ Much smaller problem complexity</dd>
@@ -154,6 +156,7 @@ to_spt_sota_dales: <a
                             <dd>❌ ➡ ✅ Transformer’s expressivity and long-range interactions</dd>
                             <dd>❌ ➡ ✅ Multi-scale reasoning on a hierarchical partition 🧩</dd>
                         </dl>
+                        <br>
                         These changes allow SPT to match -or surpass- the performance of SOTA models
                         with much fewer parameters and in a fraction of their training and inference
                         time. Here are some SPT-facts:
@@ -164,17 +167,13 @@ to_spt_sota_dales: <a
                             <li>🦋 <b>212k parameters</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 200, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 40)</li>
                             <li>⚡ S3DIS training in <b>3 GPU-hours</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 7, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 70)</li>
                             <li>⚡ <b>Preprocessing x7 faster than <a href="https://arxiv.org/abs/1711.09869">SPG</a></b></li>
-                            <li>Tea</li>
-                            <li>Milk</li>
                         </ul>
                     </p>
 
                     <p class="blabla">
-                        The following visualization will help you get a sense of what our
+                        The above interactive visualization will help you get a sense of what our
                         hierarchical data structure look like.
                     </p>
-
-                    {% include_relative images/superpoint_transformer/dales_val_power_line.html %}
 
                     <p class="blabla">
                         Our model architecture replaces
