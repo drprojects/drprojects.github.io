@@ -14,16 +14,27 @@ to_crigen: <a href="https://www.engie.com/en/innovation-transition-energetique/c
     CRIGEN</a>
 to_loic: <a href="https://loiclandrieu.com/">Loïc Landrieu</a>
 to_bruno: <a href="https://www.umr-lastig.fr/bruno-vallet/">Bruno Vallet</a>
+to_hugo: <a href="https://1a7r0ch3.github.io/">Hugo Raguet</a>
 
-to_paper: <a href="https://arxiv.org/abs/2204.07548">Paper</a>
-to_webpage: <a href="https://drprojects.github.io/deepviewagg">Webpage</a>
-to_code: <a href="https://github.com/drprojects/DeepViewAgg">Code</a>
-to_video: <a href="">Video</a>
-
-to_sota_s3dis: <a
+to_deepviewagg_paper: <a href="https://arxiv.org/abs/2204.07548">Paper</a>
+to_deepviewagg_webpage: <a href="https://drprojects.github.io/deepviewagg">Webpage</a>
+to_deepviewagg_code: <a href="https://github.com/drprojects/DeepViewAgg">Code</a>
+to_deepviewagg_video: <a href="https://www.youtube.com/watch?v=SoMKwI863tw">Video</a>
+to_deepviewagg_sota_s3dis: <a
         href="https://paperswithcode.com/sota/semantic-segmentation-on-s3dis?p=learning-multi-view-aggregation-in-the-wild">S3DIS</a>
-to_sota_kitti360: <a
+to_deepviewagg_sota_kitti360: <a
         href="https://paperswithcode.com/sota/3d-semantic-segmentation-on-kitti-360?p=learning-multi-view-aggregation-in-the-wild">KITTI-360</a>
+
+to_spt_paper: <a href="https://arxiv.org/abs/2306.08045">Paper</a>
+to_spt_webpage: <a href="https://drprojects.github.io/spt">Webpage</a>
+to_spt_code: <a href="https://github.com/drprojects/superpoint_transformer">Code</a>
+to_spt_video: <a href="">Video</a>
+to_spt_sota_s3dis: <a
+        href="https://paperswithcode.com/sota/semantic-segmentation-on-s3dis?p=efficient-3d-semantic-segmentation-with">S3DIS 6-Fold</a>
+to_spt_sota_kitti360: <a
+        href="https://paperswithcode.com/sota/3d-semantic-segmentation-on-kitti-360?p=efficient-3d-semantic-segmentation-with">KITTI-360 Val</a>
+to_spt_sota_dales: <a
+        href="https://paperswithcode.com/sota/3d-semantic-segmentation-on-dales?p=efficient-3d-semantic-segmentation-with">DALES</a>
 ---
 
 <!-- Imports -->
@@ -106,6 +117,7 @@ to_sota_kitti360: <a
                     🖼 Poster | 🎤 Oral
                     <br><br>
                     <div class="tom_table">
+
                         <div class="tom_row">
                             <div class="tom_cell" style="width:40%">
                                 <a href="https://drprojects.github.io/deepviewagg"><img
@@ -116,17 +128,44 @@ to_sota_kitti360: <a
                                     the Wild for Large-Scale 3D Semantic Segmentation</a></b><br>
                                 <a href="">{{ page.my_name }}</a>, {{ page.to_bruno }}, {{ page.to_loic }}
                                 <br>
-                                {{ page.to_paper }} | {{ page.to_webpage }} | {{ page.to_code }} | {{ page.to_video }}
+                                {{ page.to_deepviewagg_paper }} | {{ page.to_deepviewagg_webpage }} | {{ page.to_deepviewagg_code }} | {{ page.to_deepviewagg_video }}
                                 <br>
                                 <b>CVPR 2022 Oral 🎤 and Best Paper finalist 🎉</b>
                                 <p class="blabla">
-                                    We present an end-to-end deep view aggregation method for 3D semantic segmentation
-                                    from images and point clouds. We reach SOTA on {{ page.to_sota_s3dis }} and
-                                    {{ page.to_sota_kitti360 }} without requiring point cloud colorization, meshing,
-                                    or depth sensors: just point clouds ☁, images 📸, and their poses.
+                                    An end-to-end multi-view aggregation method for 3D semantic segmentation from images
+                                    and point clouds. We reach SOTA on {{ page.to_deepviewagg_sota_s3dis }} and
+                                    {{ page.to_deepviewagg_sota_kitti360 }} without requiring point cloud colorization,
+                                    meshing, or depth sensors: just point clouds ☁, images 📸, and their poses.
                                 </p>
                             </div>
                         </div>
+
+                        <div class="tom_row">
+                            <div class="tom_cell" style="width:40%">
+                                <a href="https://drprojects.github.io/spt"><img
+                                        src="images/spt/teaser.png" alt="superpoint transformer" style="height:30vh"></a>
+                            </div>
+                            <div class="tom_cell_text">
+                                <b><a href="https://drprojects.github.io/spt">Efficient 3D Semantic Segmentation with Superpoint Transformer</a></b><br>
+                                <a href="">{{ page.my_name }}</a>, {{ page.to_hugo }}, {{ page.to_loic }}
+                                <br>
+                                {{ page.to_spt_paper }} | {{ page.to_spt_webpage }} | {{ page.to_spt_code }}
+                                <br>
+                                <p class="blabla">
+                                    SPT is a superpoint-based transformer 🤖 architecture that efficiently ⚡
+                                    performs semantic segmentation on large-scale 3D scenes. This method includes a fast
+                                    algorithm that partitions 🧩 point clouds into a hierarchical superpoint structure,
+                                    as well as a self-attention mechanism to exploit the relationships between
+                                    superpoints at multiple scales.
+                                    We reach SOTA on {{ page.to_spt_sota_s3dis }} (76.0 mIoU),
+                                    {{ page.to_spt_sota_kitti360 }} (63.5 mIoU), and {{ page.to_spt_sota_dales }}
+                                    (79.6 mIoU).
+                                    <br>
+                                    🦋 <b>212k parameters</b> | ⚡ S3DIS training in <b>3 GPU-hours</b> | ⚡ Preprocessing x7 faster than <a href="https://github.com/loicland/superpoint_graph">SPG</a>
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
 
                     <!-- Resume -->
