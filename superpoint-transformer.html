@@ -115,67 +115,92 @@ to_spt_sota_dales: <a
                     <h1 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a>
                     </h1>
                     <p class="blabla">
-                        Modern 3D scene acquisition systems often produce images 📸 along with point clouds ☁. Previous
-                        works already have demonstrated that those modalities are complementary and extracting features
-                        from both benefits the scene understanding.
+                        This project aims at fusing the best of both worlds: transformers 🤖 (
+                        <a href="https://arxiv.org/abs/2012.09164">Point Transformer</a>,
+                        <a href="https://arxiv.org/abs/2203.14508">Stratified Transformer</a>,
+                        ...)
+                        and superpoint-based approaches 🧩 (
+                        <a href="https://arxiv.org/abs/1711.09869">SPG</a>,
+                        <a href="https://arxiv.org/abs/1904.02113">SSP+SPG</a>,
+                        ...).
                         <br><br>
-                        As an example, it is not possible to distinguish a frame 🖼 from the wall 🧱 on which it is hung
-                        solely based on the 3D geometric information in the point cloud ☁. However, the difference in
-                        texture between these two objects can easily be identified in images 📸 of the same scene.
+                        <dl>
+                            <dt>Transformer-based models 🤖</dt>
+                            <dd>✅ Expressivity</dd>
+                            <dd>✅ Capture long-range interactions</dd>
+                            <dd>❌ Compute effort guided by arbitrary point or voxel samplings</dd>
+                            <dd>❌ Loads of parameters</dd>
+                            <dd>❌ Long training</dd>
+
+                            <dt>Superpoint-based models 🧩</dt>
+                            <dd>✅ Much smaller problem complexity</dd>
+                            <dd>✅ Geometry-guided compute effort allocation</dd>
+                            <dd>✅ Fast training</dd>
+                            <dd>✅ Lightweight model</dd>
+                            <dd>❌ Long preprocessing time</dd>
+                            <dd>❌ GNN's expressivity and long-range interactions</dd>
+                            <dd>❌ No hierarchical reasoning</dd>
+                        </dl>
                         <br><br>
-                        On the contrary, when objects are poorly-lit, occluded or have uniform textures, it is much
-                        easier to identify them by their 3D geometry ☁ rather than their radiometry 📸.
+                        To this end, we introduce the following:
                         <br><br>
-                        You can play with the interactive visualization below to get the intuition of how the 3D and 2D
-                        modalities relate. This represents a 3D spherical sample of an indoor scene from the
-                        <a href="http://buildingparser.stanford.edu/dataset.html">S3DIS</a> dataset. The colored balls
-                        account for equirectangular picture positions. The corresponding images can be seen below the 3D
-                        plot. <code>RGB</code> shows the points colorized from the image using human expertise and a
-                        dedicated software. <code>Labels</code> shows the expected output for semantic segmentation.
-                        <code>Times seen</code> shows how many images see each point. <code>Position RGB</code> colors
-                        the points based on their 3D position. In the images below, the mapping between 3D points and
-                        the corresponding pixels is shown using the <code>Times seen</code> color scheme. Note that
-                        computing such a mapping is a non-trivial task as it requires recovering occlusions. If you want
-                        to see the interactive visualization used in our poster, check out this
-                        <a href="https://drprojects.github.io/deepviewagg-poster-sample">sample</a> 👈.
-                        <br><br>
-                        Although several works already exist on multimodal learning from point clouds and images, we
-                        found that these tend to overlook the multi-view problem for large-scene analysis. Indeed,
-                        when analysing large 3D scenes with images, each point may be seen in multiple images. You can
-                        see an illustration of this in the <code>Times seen</code> mode in the visualization below. To
-                        aggregate this multi-view information, one can use simple max-pool or average-pool schemes.
-                        However, this disregards the fact that not all views of a same object are equal. Views can be
-                        far, close, sideways, front-facing, occluded, distorted, etc. and carry different qualities of
-                        information depending on those observation conditions.
-                        <br><br>
-                        Our core idea is simply to let a model learn to aggregate the multi-view information based on the
-                        observation conditions 👀.
+                        <dl>
+                            <dt>Superpoint Transformer 🧩🤖</dt>
+                            <dd>✅ Much smaller problem complexity</dd>
+                            <dd>✅ Geometry-guided compute effort allocation</dd>
+                            <dd>✅ Fast training</dd>
+                            <dd>✅ Lightweight model</dd>
+                            <dd>❌ ➡ ✅ Fast parallelized preprocessing</dd>
+                            <dd>❌ ➡ ✅ Transformer’s expressivity and long-range interactions</dd>
+                            <dd>❌ ➡ ✅ Multi-scale reasoning on a hierarchical partition 🧩</dd>
+                        </dl>
+                        These changes allow SPT to match -or surpass- the performance of SOTA models
+                        with much fewer parameters and in a fraction of their training and inference
+                        time. Here are some SPT-facts:
+                        <ul>
+                            <li>📊 <b>SOTA on S3DIS 6-Fold</b> (76.0 mIoU)</li>
+                            <li>📊 <b>SOTA on KITTI-360 Val</b> (63.5 mIoU)</li>
+                            <li>📊 <b>Near SOTA on DALES</b> (79.6 mIoU)</li>
+                            <li>🦋 <b>212k parameters</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 200, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 40)</li>
+                            <li>⚡ S3DIS training in <b>3 GPU-hours</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 7, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 70)</li>
+                            <li>⚡ <b>Preprocessing x7 faster than <a href="https://arxiv.org/abs/1711.09869">SPG</a></b></li>
+                            <li>Tea</li>
+                            <li>Milk</li>
+                        </ul>
+                    </p>
+
+                    <p class="blabla">
+                        The following visualization will help you get a sense of what our
+                        hierarchical data structure look like.
                     </p>
 
                     {% include_relative images/superpoint_transformer/dales_val_power_line.html %}
 
                     <p class="blabla">
-                        After playing with this tool, you may have noticed several things:
+                        Our model architecture replaces
+                        <a href="https://arxiv.org/abs/1711.09869">SPG</a>'s
+                        Graph Neural Networks with Transformer self-attention blocks, reasoning on a
+                        graph connecting ajacent superpoints.
                     </p>
-                    <ul>
-                        <li>3D point clouds ☁ and 2D images 📸 carry complementary information. This justifies trying to
-                            extract features from both modalities.</li>
-                        <li>Views of a same object do not carry the same level of information, depending on their
-                            observation conditions 👀. By the way, this implies that the colorization scheme used to
-                            give RGB colors to the points is non-trivial, although often taken for granted by 3D
-                            semantic segmentation methods.</li>
-                        <li>Mapping 3D points with pixels of 2D images located in the wild requires recovering the
-                            occlusions. This requires computing what is called a visibility model, which can be easily
-                            solved if you have a mesh of the scene or if you have depth cameras. But mesh reconstruction
-                            is not a simple task and not all acquisition systems are equipped with depth cameras.</li>
-                        <li>Some images 📸 have only a small portion of their pixels actually linked to the 3D spherical
-                            sample at hand. This means extracting features maps from entire images with CNNs may require
-                            a lot of unneeded computation.</li>
-                    </ul>
+                    <br><br>
+                    <div style="text-align: center;">
+                        <img src="images/superpoint_transformer/architecture.png" alt="spt architecture" style="height:40vh;">
+                    </div>
+                    <br><br>
                     <p class="blabla">
-                        Our paper addresses these four points to learn multi-modal aggregation without mesh nor depth
-                        cameras.
+                        Visualizing the model size vs performance of 3D semantic segmentation
+                        methods on S3DIS 6-Fold, we observe that small, tailored models can offer a
+                        more flexible and sustainable alternative to large, generic models for 3D
+                        learning.
+                        <br><br>
+                        <b>With training times of a few hours on a single GPU, SPT
+                        allows practitioners to easily customize the models to their specific needs,
+                        enhancing the overall usability and accessibility of 3D learning.</b>
                     </p>
+
+                    <div style="text-align: center;">
+                        <img src="images/superpoint_transformer/size_vs_perf.png" alt="model size vs performance" style="height:40vh;">
+                    </div>
                     
                     <!-- Video -->
 <!--                    <h1 id="Video">Video<a class="anchor-link" href="#Video">&#182;</a>-->
