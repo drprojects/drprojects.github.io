@@ -1,0 +1,228 @@
+---
+my_name: Damien Robert
+title: Efficient 3D Semantic Segmentation with Superpoint Transformer
+image: "images/spt/teaser.png"
+icon: "images/spt/teaser_mini.png"
+
+to_ign: <a href="https://www.ign.fr">IGN</a>
+to_ensg: <a href="https://www.ensg.eu/">ENSG</a>
+to_lastig: <a href="https://www.umr-lastig.fr">LASTIG</a>
+to_strudel: <a href="https://www.umr-lastig.fr/strudel">STRUDEL</a>
+to_acte: <a href="https://www.umr-lastig.fr/acte">ACTE</a>
+to_uge:  <a href="https://www.univ-gustave-eiffel.fr">Univ. Gustave Eiffel</a>
+to_crigen: <a href="https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen">ENGIE Lab
+    CRIGEN</a>
+to_insa_cvl: <a href="">INSA Centre Val-de-Loire Univ de Tours</a>
+to_lifat: <a href="https://lifat.univ-tours.fr/">LIFAT</a>
+to_ligm: <a href="https://siteigm.univ-mlv.fr/home/">LIGM</a>
+to_enpc: <a href="https://ecoledesponts.fr/">Ecole des Ponts</a>
+
+to_loic: <a href="https://loiclandrieu.com/">Loïc Landrieu</a>
+to_hugo: <a href="https://1a7r0ch3.github.io/">Hugo Raguet</a>
+to_bruno: <a href="https://www.umr-lastig.fr/bruno-vallet/">Bruno Vallet</a>
+
+to_spt_paper: <a href="https://arxiv.org/abs/2306.08045">Paper</a>
+to_spt_webpage: <a href="https://drprojects.github.io/superpoint-transformer">Webpage</a>
+to_spt_code: <a href="https://github.com/drprojects/superpoint_transformer">Code</a>
+to_spt_video: <a href="">Video</a>
+to_spt_sota_s3dis: <a
+        href="https://paperswithcode.com/sota/semantic-segmentation-on-s3dis?p=efficient-3d-semantic-segmentation-with">S3DIS 6-Fold</a>
+to_spt_sota_kitti360: <a
+        href="https://paperswithcode.com/sota/3d-semantic-segmentation-on-kitti-360?p=efficient-3d-semantic-segmentation-with">KITTI-360 Val</a>
+to_spt_sota_dales: <a
+        href="https://paperswithcode.com/sota/3d-semantic-segmentation-on-dales?p=efficient-3d-semantic-segmentation-with">DALES</a>
+---
+<!-- Imports -->
+{% include_relative imports.html %}
+
+<!-- Change colors here -->
+<!--<div style="&#45;&#45;color_left:#80cc28;&#45;&#45;color_right:#00aec7">-->
+<div style="--color_left:#f2ce02;--color_right:#d46606">
+
+    <!-- Navigation menu -->
+    {% include_relative navigation.html %}
+
+    <!-- Header -->
+    <section class="page-header">
+        <h1 class="project-name">
+            {{ page.title }}
+        </h1>
+        <h2 class="project-tagline">
+            <img class=profilepicture src={{ page.image }} style="height:15vh; border-radius:0; border: 0;">
+        </h2>
+        <h2 class="project-tagline">
+            <a href="https://drprojects.github.io/">{{ page.my_name }}</a><sup>1,2</sup>,
+            {{ page.to_hugo }}<sup>3</sup>,
+            {{ page.to_loic }}<sup>2,4</sup>
+        </h2>
+        <h2 class="project-tagline">
+            <sup>1</sup>CSAI, {{ page.to_crigen }}, France
+            <br>
+            <sup>2</sup>{{ page.to_lastig }}, {{ page.to_ign }}, {{ page.to_ensg }}, {{ page.to_uge }}, France
+            <br>
+            <sup>3</sup>{{ page.to_insa_cvl }}, {{ page.to_lifat }}, France
+            <br>
+            <sup>4</sup>{{ page.to_ligm }}, {{ page.to_enpc }}, {{ page.to_uge }}, France
+        </h2>
+        <a href=https://github.com/drprojects/superpoint_transformer class="btn">
+            <img height="50" src="images/icons/github.svg">Code
+        </a>
+        <a href=https://arxiv.org/abs/2306.08045 class="btn">
+            <img height="50" src="images/icons/paper.svg">Paper
+        </a>
+        <a href="" class="btn">
+            <img height="50" src="images/icons/video.svg">Video
+        </a>
+    </section>
+
+    <!-- Page content -->
+    <section class="main-content">
+        <div class="cell border-box-sizing text_cell rendered">
+            <div class="inner_cell">
+                <div class="text_cell_render border-box-sizing rendered_html">
+
+                    <!-- Abstract -->
+                    <h1 id="Abstract">Abstract<a class="anchor-link" href="#Abstract">&#182;</a>
+                    </h1>
+                    <div class="tom_table">
+                        <div class="tom_row">
+                            <div class="tom_cell" style="width:40%">
+                                <img src="images/spt/teaser.png" alt="superpoint transformer" style="height:40vh;">
+                            </div>
+                            <div class="tom_cell_text">
+                                <p class="blabla">
+                                    We introduce a novel superpoint-based transformer architecture for efficient
+                                    semantic segmentation of large-scale 3D scenes. Our method incorporates a fast
+                                    algorithm to partition point clouds into a hierarchical superpoint structure, which
+                                    makes our preprocessing 7 times times faster than existing superpoint-based
+                                    approaches. Additionally, we leverage a self-attention mechanism to capture the
+                                    relationships between superpoints at multiple scales, leading to stateof-the-art
+                                    performance on three challenging benchmark datasets: S3DIS (76.0% mIoU 6-fold
+                                    validation), KITTI360 (63.5% on Val), and DALES (79.6%). With only 212k parameters 🦋,
+                                    our approach is up to 200 times more compact than other state-of-the-art models
+                                    while maintaining similar performance. Furthermore, our model can be trained on a
+                                    single GPU in 3 hours ⚡ for a fold of the S3DIS dataset, which is 7× to 70× fewer
+                                    GPU-hours than the best-performing methods. Our code and models are accessible at
+                                    <a href="https://github.com/drprojects/superpoint_transformer"></a>
+                                    github.com/drprojects/superpoint_transformer
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive visualization -->
+                    <h1 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a>
+                    </h1>
+                    <p class="blabla">
+                        Modern 3D scene acquisition systems often produce images 📸 along with point clouds ☁. Previous
+                        works already have demonstrated that those modalities are complementary and extracting features
+                        from both benefits the scene understanding.
+                        <br><br>
+                        As an example, it is not possible to distinguish a frame 🖼 from the wall 🧱 on which it is hung
+                        solely based on the 3D geometric information in the point cloud ☁. However, the difference in
+                        texture between these two objects can easily be identified in images 📸 of the same scene.
+                        <br><br>
+                        On the contrary, when objects are poorly-lit, occluded or have uniform textures, it is much
+                        easier to identify them by their 3D geometry ☁ rather than their radiometry 📸.
+                        <br><br>
+                        You can play with the interactive visualization below to get the intuition of how the 3D and 2D
+                        modalities relate. This represents a 3D spherical sample of an indoor scene from the
+                        <a href="http://buildingparser.stanford.edu/dataset.html">S3DIS</a> dataset. The colored balls
+                        account for equirectangular picture positions. The corresponding images can be seen below the 3D
+                        plot. <code>RGB</code> shows the points colorized from the image using human expertise and a
+                        dedicated software. <code>Labels</code> shows the expected output for semantic segmentation.
+                        <code>Times seen</code> shows how many images see each point. <code>Position RGB</code> colors
+                        the points based on their 3D position. In the images below, the mapping between 3D points and
+                        the corresponding pixels is shown using the <code>Times seen</code> color scheme. Note that
+                        computing such a mapping is a non-trivial task as it requires recovering occlusions. If you want
+                        to see the interactive visualization used in our poster, check out this
+                        <a href="https://drprojects.github.io/deepviewagg-poster-sample">sample</a> 👈.
+                        <br><br>
+                        Although several works already exist on multimodal learning from point clouds and images, we
+                        found that these tend to overlook the multi-view problem for large-scene analysis. Indeed,
+                        when analysing large 3D scenes with images, each point may be seen in multiple images. You can
+                        see an illustration of this in the <code>Times seen</code> mode in the visualization below. To
+                        aggregate this multi-view information, one can use simple max-pool or average-pool schemes.
+                        However, this disregards the fact that not all views of a same object are equal. Views can be
+                        far, close, sideways, front-facing, occluded, distorted, etc. and carry different qualities of
+                        information depending on those observation conditions.
+                        <br><br>
+                        Our core idea is simply to let a model learn to aggregate the multi-view information based on the
+                        observation conditions 👀.
+                    </p>
+
+                    {% include_relative images/deepviewagg/s3dis_multimodal_sample__pos.html %}
+
+                    <p class="blabla">
+                        After playing with this tool, you may have noticed several things:
+                    </p>
+                    <ul>
+                        <li>3D point clouds ☁ and 2D images 📸 carry complementary information. This justifies trying to
+                            extract features from both modalities.</li>
+                        <li>Views of a same object do not carry the same level of information, depending on their
+                            observation conditions 👀. By the way, this implies that the colorization scheme used to
+                            give RGB colors to the points is non-trivial, although often taken for granted by 3D
+                            semantic segmentation methods.</li>
+                        <li>Mapping 3D points with pixels of 2D images located in the wild requires recovering the
+                            occlusions. This requires computing what is called a visibility model, which can be easily
+                            solved if you have a mesh of the scene or if you have depth cameras. But mesh reconstruction
+                            is not a simple task and not all acquisition systems are equipped with depth cameras.</li>
+                        <li>Some images 📸 have only a small portion of their pixels actually linked to the 3D spherical
+                            sample at hand. This means extracting features maps from entire images with CNNs may require
+                            a lot of unneeded computation.</li>
+                    </ul>
+                    <p class="blabla">
+                        Our paper addresses these four points to learn multi-modal aggregation without mesh nor depth
+                        cameras.
+                    </p>
+                    
+                    <!-- Video -->
+<!--                    <h1 id="Video">Video<a class="anchor-link" href="#Video">&#182;</a>-->
+<!--                    </h1>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <iframe width="800" height="500" src="https://www.youtube.com/embed/SoMKwI863tw"></iframe>-->
+<!--                    </div>-->
+
+                    <!-- Resources -->
+                    <h1 id="BibTex">BibTex<a class="anchor-link" href="#BibTex">&#182;</a>
+                    </h1>
+                    <p class="blabla">
+                        In case you use all or part of this project, please cite the following paper:
+                    </p>
+                    <pre>
+	                    <code>
+@inproceedings{robert2023spt,
+  title={Efficient 3D Semantic Segmentation with Superpoint Transformer},
+  author={Robert, Damien and Raguet, Hugo and Landrieu, Loic},
+  journal={arXiv preprint arXiv:2306.08045},
+  year={2023},
+url = {\url{https://github.com/drprojects/superpoint_transformer}}
+
+}
+	                    </code>
+                    </pre>
+
+                    <!-- Acknowledgments -->
+                    <h1 id="Acknowledgments">Acknowledgments 🙏<a class="anchor-link" href="#Acknowledgments">&#182;</a>
+                    </h1>
+                    <p class="blabla">
+                        This work was funded by {{ page.to_crigen }} and carried out in the {{ page.to_lastig }} research
+                        unit of {{ page.to_uge }}. It was supported by ANR project READY3D ANR-19-CE23-0007, and was
+                        granted access to the HPC resources of IDRIS under the allocation AD011013388R1 made by GENCI.
+                    </p>
+                    <p class="blabla">
+                        We thank {{ page.to_bruno }},
+                        <a href="https://romainloiseau.github.io/">Romain Loiseau</a>,
+                        and <a href="https://www.umr-lastig.fr/ewelina-rupnik/">Ewelina Rupnik</a>
+                        for inspiring discussions and valuable feedback.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        {% include_relative footer.html %}
+    </section>
+
+</div>
