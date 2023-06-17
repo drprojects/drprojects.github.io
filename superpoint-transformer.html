@@ -114,83 +114,98 @@ to_spt_sota_dales: <a
                     <!-- Interactive visualization -->
                     <h1 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a>
                     </h1>
+
                     {% include_relative images/superpoint_transformer/dales_val_power_line.html %}
+
                     <p class="blabla">
                         This project aims at fusing the best of two worlds:
-                        <table>
-                            <tr>
-                                <th>
-                                    Transformer-based models 🤖 (
+                    </p>
+
+                    <div class="tom_table">
+                        <div class="tom_row">
+                            <div class="tom_cell" style="width:50%">
+                                <p class="blabla">
+                                    <b>
+                                    Transformer-based models 🤖<br>(
                                     <a href="https://arxiv.org/abs/2012.09164">Point Transformer</a>,
                                     <a href="https://arxiv.org/abs/2203.14508">Stratified Transformer</a>,
                                     ...)
-                                </th>
-                                <th>
-                                    Superpoint-based models 🧩 (
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="tom_cell" style="width:50%">
+                                <p class="blabla">
+                                    <b>
+                                    Superpoint-based models 🧩<br>(
                                     <a href="https://arxiv.org/abs/1711.09869">SPG</a>,
                                     <a href="https://arxiv.org/abs/1904.02113">SSP+SPG</a>,
                                     ...)
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <dl>
-                                        <dd>✅ Expressivity</dd>
-                                        <dd>✅ Capture long-range interactions</dd>
-                                        <dd>❌ Compute effort guided by arbitrary point or voxel samplings</dd>
-                                        <dd>❌ Loads of parameters</dd>
-                                        <dd>❌ Long training</dd>
-                                    </dl>
-                                </td>
-                                <td>
-                                    <dl>
-                                        <dd>✅ Much smaller problem complexity</dd>
-                                        <dd>✅ Geometry-guided compute effort allocation</dd>
-                                        <dd>✅ Fast training</dd>
-                                        <dd>✅ Lightweight model</dd>
-                                        <dd>❌ Long preprocessing time</dd>
-                                        <dd>❌ GNN's expressivity and long-range interactions</dd>
-                                        <dd>❌ No hierarchical reasoning</dd>
-                                    </dl>
-                                </td>
-                            </tr>
-                        </table>
-                        <br>
-                        To this end, we introduce the following:
-                        <dl>
-                            <dt>Superpoint Transformer 🧩🤖</dt>
-                            <dd>✅ Much smaller problem complexity</dd>
-                            <dd>✅ Geometry-guided compute effort allocation</dd>
-                            <dd>✅ Fast training</dd>
-                            <dd>✅ Lightweight model</dd>
-                            <dd>❌ ➡ ✅ Fast parallelized preprocessing</dd>
-                            <dd>❌ ➡ ✅ Transformer’s expressivity and long-range interactions</dd>
-                            <dd>❌ ➡ ✅ Multi-scale reasoning on a hierarchical partition 🧩</dd>
-                        </dl>
-                        <br>
+                                    </b>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tom_row">
+                            <div class="tom_cell" style="width:50%">
+                                <p class="blabla">
+                                    ✅ Expressivity<br>
+                                    ✅ Capture long-range interactions<br>
+                                    ❌ Compute effort guided by arbitrary point or voxel samplings<br>
+                                    ❌ Loads of parameters<br>
+                                    ❌ Long training<br>
+                                </p>
+                            </div>
+                            <div class="tom_cell" style="width:50%">
+                                <p class="blabla">
+                                    ✅ Much smaller problem complexity<br>
+                                    ✅ Geometry-guided compute effort allocation<br>
+                                    ✅ Fast training<br>
+                                    ✅ Lightweight model<br>
+                                    ❌ Long preprocessing time<br>
+                                    ❌ GNN's expressivity and long-range interactions<br>
+                                    ❌ No hierarchical reasoning<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="blabla">
+                        To this end, we introduce <b>Superpoint Transformer 🧩🤖</b> :
+                    </p>
+
+                    <div class="tom_table">
+                        <div class="tom_row">
+                            <div class="tom_cell" style="width:100%">
+                                <p class="blabla">
+                                    ✅ Much smaller problem complexity<br>
+                                    ✅ Geometry-guided compute effort allocation<br>
+                                    ✅ Fast training<br>
+                                    ✅ Lightweight model<br>
+                                    ❌ ➡ ✅ Fast parallelized preprocessing<br>
+                                    ❌ ➡ ✅ Transformer’s expressivity and long-range interactions<br>
+                                    ❌ ➡ ✅ Multi-scale reasoning on a hierarchical partition 🧩<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="blabla">
                         These changes allow SPT to match -or surpass- the performance of SOTA models
                         with much fewer parameters and in a fraction of their training and inference
                         time. Here are some SPT-facts:
-                        <table>
-                            <tr>
-                                <td>📊 <b>SOTA on S3DIS 6-Fold</b> (76.0 mIoU)</td>
-                            </tr>
-                            <tr>
-                                <td>📊 <b>SOTA on KITTI-360 Val</b> (63.5 mIoU)</td>
-                            </tr>
-                            <tr>
-                                <td>📊 <b>Near SOTA on DALES</b> (79.6 mIoU)</td>
-                            </tr>
-                            <tr>
-                                <td>🦋 <b>212k parameters</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 200, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 40)</td>
-                            </tr>
-                            <tr>
-                                <td>⚡ S3DIS training in <b>3 GPU-hours</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 7, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 70)</td>
-                            </tr>
-                            <tr>
-                                <td>⚡ <b>Preprocessing x7 faster than <a href="https://arxiv.org/abs/1711.09869">SPG</a></b></td>
-                            </tr>
-                        </table>
+                        <br>
+                        <div style="text-align: center;">
+                            📊 <b>SOTA on S3DIS 6-Fold</b> (76.0 mIoU)
+                            <br>
+                            📊 <b>SOTA on KITTI-360 Val</b> (63.5 mIoU)
+                            <br>
+                            📊 <b>Near SOTA on DALES</b> (79.6 mIoU)
+                            <br>
+                            🦋 <b>212k parameters</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 200, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 40)
+                            <br>
+                            ⚡ S3DIS training in <b>3 GPU-hours</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 7, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 70)
+                            <br>
+                            ⚡ <b>Preprocessing x7 faster than <a href="https://arxiv.org/abs/1711.09869">SPG</a></b>
+                        </div>
                     </p>
 
                     <p class="blabla">
