@@ -121,6 +121,36 @@ to_spt_sota_dales: <a
                         <div class="tom_row">
                             <div class="tom_cell" style="width:40%">
                                 <a href="https://drprojects.github.io/superpoint-transformer"><img
+                                        src="images/super_cluster/teaser.png" alt="SuperCluster" style="height:30vh"></a>
+                            </div>
+                            <div class="tom_cell_text">
+                                <b><a href="https://drprojects.github.io/superpoint-transformer">Scalable 3D Panoptic Segmentation with Superpoint Graph Clustering</a></b><br>
+                                <a href="">{{ page.my_name }}</a>, {{ page.to_hugo }}, {{ page.to_loic }}
+<!--                                <br>-->
+<!--                                {{ page.to_spt_paper }} | {{ page.to_spt_webpage }} | {{ page.to_spt_code }}-->
+                                <br>
+                                <b>In Review</b>
+                                <p class="blabla">
+                                    SuperCluster proposes a framework for efficient panoptic segmentation of large-scale
+                                    point clouds. We formulate the panoptic task as a graph clustering problem. We train
+                                    a model to predict desirable node and edge attributes to be used as input for a
+                                    downstream graph clustering algorithm. This allows for training a model with only
+                                    local supervision, without the need for non-maximum suppression, instance matching,
+                                    and without any prerequisite on the number of objects in the scene.
+
+                                    SuperCluster achieves new SOTA panoptic segmentation on indoor datasets S3DIS Area 5
+                                    (46.3 PQ (+4.0)) and ScanNetV2 (54.5 PQ (+21.0)), as well as outdoor datasets
+                                    KITTI-360 (48.1 PQ) and DALES (53.9 PQ).
+                                    <br>
+                                    🦋 <b>209k param.</b> | ⚡ <b>Train S3DIS F5 in 4h</b> | 💾 <b>20M-point inference on 1 GPU</b>
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="tom_row">
+                            <div class="tom_cell" style="width:40%">
+                                <a href="https://drprojects.github.io/superpoint-transformer"><img
                                         src="images/superpoint_transformer/teaser.png" alt="superpoint transformer" style="height:30vh"></a>
                             </div>
                             <div class="tom_cell_text">
