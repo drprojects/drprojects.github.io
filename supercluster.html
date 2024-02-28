@@ -1,0 +1,297 @@
+---
+my_name: Damien Robert
+title: Scalable 3D Panoptic Segmentation As Superpoint Graph Clustering
+image: "images/supercluster/3dv_2024.png"
+icon: "images/supercluster/teaser_mini.png"
+
+to_ign: <a href="https://www.ign.fr">IGN</a>
+to_ensg: <a href="https://www.ensg.eu/">ENSG</a>
+to_lastig: <a href="https://www.umr-lastig.fr">LASTIG</a>
+to_strudel: <a href="https://www.umr-lastig.fr/strudel">STRUDEL</a>
+to_acte: <a href="https://www.umr-lastig.fr/acte">ACTE</a>
+to_uge:  <a href="https://www.univ-gustave-eiffel.fr">Univ. Gustave Eiffel</a>
+to_crigen: <a href="https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen">ENGIE Lab
+    CRIGEN</a>
+to_insa_cvl: <a href="">INSA Centre Val-de-Loire Univ de Tours</a>
+to_lifat: <a href="https://lifat.univ-tours.fr/">LIFAT</a>
+to_ligm: <a href="https://siteigm.univ-mlv.fr/home/">LIGM</a>
+to_enpc: <a href="https://ecoledesponts.fr/">Ecole des Ponts</a>
+
+to_loic: <a href="https://loiclandrieu.com/">Loïc Landrieu</a>
+to_hugo: <a href="https://1a7r0ch3.github.io/">Hugo Raguet</a>
+to_bruno: <a href="https://www.umr-lastig.fr/bruno-vallet/">Bruno Vallet</a>
+
+to_supercluster_paper: <a href="https://arxiv.org/abs/2401.06704">Paper</a>
+to_supercluster_webpage: <a href="https://drprojects.github.io/supercluster">Webpage</a>
+to_supercluster_code: <a href="https://github.com/drprojects/superpoint_transformer">Code</a>
+to_supercluster_video: <a href="">Video</a>
+to_supercluster_sota_s3dis: <a
+        href="https://paperswithcode.com/sota/panoptic-segmentation-on-s3dis?p=scalable-3d-panoptic-segmentation-with">S3DIS 6-Fold</a>
+to_supercluster_sota_s3dis_area5: <a
+        href="https://paperswithcode.com/sota/panoptic-segmentation-on-s3dis-area5?p=scalable-3d-panoptic-segmentation-with">S3DIS Area 5</a>
+to_supercluster_sota_kitti360: <a
+        href="https://paperswithcode.com/sota/panoptic-segmentation-on-kitti-360?p=scalable-3d-panoptic-segmentation-with">KITTI-360 Val</a>
+to_supercluster_sota_dales: <a
+        href="https://paperswithcode.com/sota/panoptic-segmentation-on-dales?p=scalable-3d-panoptic-segmentation-with">DALES</a>
+to_supercluster_sota_scannet: <a
+        href="https://paperswithcode.com/sota/panoptic-segmentation-on-scannet?p=scalable-3d-panoptic-segmentation-with">ScanNet Val</a>
+---
+<!-- Imports -->
+{% include_relative imports.html %}
+
+<!-- Change colors here -->
+<!--<div style="&#45;&#45;color_left:#80cc28;&#45;&#45;color_right:#00aec7">-->
+<div style="--color_left:#f2ce02;--color_right:#d46606">
+
+    <!-- Navigation menu -->
+    {% include_relative navigation.html %}
+
+    <!-- Header -->
+    <section class="page-header">
+        <h1 class="project-name">
+            {{ page.title }}
+        </h1>
+        <h2 class="project-tagline">
+            <img class=profilepicture src={{ page.image }} style="height:15vh; border-radius:0; border: 0;">
+            <b>3DV 2024 Oral 🎤</b>
+        </h2>
+        <h2 class="project-tagline">
+            <a href="https://drprojects.github.io/">{{ page.my_name }}</a><sup>1,2</sup>,
+            {{ page.to_hugo }}<sup>3</sup>,
+            {{ page.to_loic }}<sup>2,4</sup>
+        </h2>
+        <h2 class="project-tagline">
+            <sup>1</sup>CSAI, {{ page.to_crigen }}, France
+            <br>
+            <sup>2</sup>{{ page.to_lastig }}, {{ page.to_ign }}, {{ page.to_ensg }}, {{ page.to_uge }}, France
+            <br>
+            <sup>3</sup>{{ page.to_insa_cvl }}, {{ page.to_lifat }}, France
+            <br>
+            <sup>4</sup>{{ page.to_ligm }}, {{ page.to_enpc }}, {{ page.to_uge }}, France
+        </h2>
+        <a href=https://github.com/drprojects/superpoint_transformer class="btn">
+            <img height="50" src="images/icons/github.svg">Code
+        </a>
+        <a href=https://arxiv.org/abs/2401.06704 class="btn">
+            <img height="50" src="images/icons/paper.svg">Paper
+        </a>
+<!--        <a href="" class="btn">-->
+<!--            <img height="50" src="images/icons/video.svg">Video-->
+<!--        </a>-->
+    </section>
+
+    <!-- Page content -->
+    <section class="main-content">
+        <div class="cell border-box-sizing text_cell rendered">
+            <div class="inner_cell">
+                <div class="text_cell_render border-box-sizing rendered_html">
+
+                    <!-- Abstract -->
+                    <h1 id="Abstract">Abstract<a class="anchor-link" href="#Abstract">&#182;</a>
+                    </h1>
+                    <div class="tom_table">
+                        <div class="tom_row">
+                            <div class="tom_cell" style="width:40%">
+                                <img src="images/superpoint_transformer/teaser.png" alt="superpoint transformer" style="height:30vh;">
+                            </div>
+                            <div class="tom_cell_text">
+                                <p class="blabla">
+                                    We introduce a highly efficient method for <b>panoptic segmentation</b> of large 3D
+                                    point clouds by redefining this task as a <b>scalable graph clustering problem</b>.
+                                    This approach can be trained using only local auxiliary tasks, thereby eliminating
+                                    the resource-intensive instance-matching step during training. Moreover, our
+                                    formulation can easily be adapted to the <b>superpoint paradigm 🧩</b>, further
+                                    increasing its efficiency. This allows our model to process scenes with <b>millions
+                                    of points</b> and <b>thousands of objects</b> in a <b>single inferenceon one GPU
+                                    ⚡</b>. Our method, called <b>SuperCluster</b>, achieves a new state-of-the-art
+                                    panoptic segmentation performance for two indoor scanning datasets:
+                                    <b>50.1 PQ (+7.8) for S3DIS Area 5</b>, and <b>58.7 PQ (+25.2) for ScanNetV2</b>.
+                                    We also set the first state-of-the-art for two large-scale mobile mapping
+                                    benchmarks: <b>KITTI-360</b> and <b>DALES</b>. With only <b>209k parameters 🦋</b>,
+                                    our model is over <b>30 times smaller</b> than the best-competing method and trains
+                                    up to <b>15 times faster ⚡</b>.
+                                    Our code and pretrained models are available at
+                                    <a href="https://github.com/drprojects/superpoint_transformer">github.com/drprojects/superpoint_transformer</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive visualization -->
+                    <h1 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a>
+                    </h1>
+
+                    {% include_relative images/supercluster/dales_panoptic.html %}
+
+                    {% include_relative images/supercluster/kitti360_panoptic.html %}
+
+                    {% include_relative images/supercluster/s3dis_panoptic.html %}
+
+                    {% include_relative images/supercluster/scannet_panoptic.html %}
+
+                    <p class="blabla">
+                        This project aims at fusing the best of two worlds:
+                    </p>
+
+<!--                    <div class="tom_table">-->
+<!--                        <div class="tom_row">-->
+<!--                            <div class="tom_cell" style="width:50%">-->
+<!--                                <p class="blabla">-->
+<!--                                    <b>-->
+<!--                                    Transformer-based models 🤖<br>(-->
+<!--                                    <a href="https://arxiv.org/abs/2012.09164">Point Transformer</a>,-->
+<!--                                    <a href="https://arxiv.org/abs/2203.14508">Stratified Transformer</a>,-->
+<!--                                    ...)-->
+<!--                                    </b>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                            <div class="tom_cell" style="width:50%">-->
+<!--                                <p class="blabla">-->
+<!--                                    <b>-->
+<!--                                    Superpoint-based models 🧩<br>(-->
+<!--                                    <a href="https://arxiv.org/abs/1711.09869">SPG</a>,-->
+<!--                                    <a href="https://arxiv.org/abs/1904.02113">SSP+SPG</a>,-->
+<!--                                    ...)-->
+<!--                                    </b>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="tom_row">-->
+<!--                            <div class="tom_cell" style="width:50%">-->
+<!--                                <p class="blabla">-->
+<!--                                    ✅ Expressivity<br>-->
+<!--                                    ✅ Capture long-range interactions<br>-->
+<!--                                    ❌ Compute effort guided by arbitrary point or voxel samplings<br>-->
+<!--                                    ❌ Loads of parameters<br>-->
+<!--                                    ❌ Long training<br>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                            <div class="tom_cell" style="width:50%">-->
+<!--                                <p class="blabla">-->
+<!--                                    ✅ Much smaller problem complexity<br>-->
+<!--                                    ✅ Geometry-guided compute effort allocation<br>-->
+<!--                                    ✅ Fast training<br>-->
+<!--                                    ✅ Lightweight model<br>-->
+<!--                                    ❌ Long preprocessing time<br>-->
+<!--                                    ❌ GNN's expressivity and long-range interactions<br>-->
+<!--                                    ❌ No hierarchical reasoning<br>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <p class="blabla">-->
+<!--                        To this end, we introduce <b>Superpoint Transformer 🧩🤖</b> :-->
+<!--                    </p>-->
+
+<!--                    <div class="tom_table">-->
+<!--                        <div class="tom_row">-->
+<!--                            <div class="tom_cell" style="width:100%">-->
+<!--                                <p class="blabla">-->
+<!--                                    ✅ Much smaller problem complexity<br>-->
+<!--                                    ✅ Geometry-guided compute effort allocation<br>-->
+<!--                                    ✅ Fast training<br>-->
+<!--                                    ✅ Lightweight model<br>-->
+<!--                                    ❌ ➡ ✅ Fast parallelized preprocessing<br>-->
+<!--                                    ❌ ➡ ✅ Transformer’s expressivity and long-range interactions<br>-->
+<!--                                    ❌ ➡ ✅ Multi-scale reasoning on a hierarchical partition 🧩<br>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <p class="blabla">-->
+<!--                        These changes allow SPT to match -or surpass- the <b>performance of SOTA models-->
+<!--                        with much fewer parameters and in a fraction of their training and inference-->
+<!--                        time</b>. Here are some SPT-facts:-->
+<!--                        <br>-->
+<!--                        <div style="text-align: center;">-->
+<!--                            📊 <b>SOTA on S3DIS 6-Fold</b> (76.0 mIoU)-->
+<!--                            <br>-->
+<!--                            📊 <b>SOTA on KITTI-360 Val</b> (63.5 mIoU)-->
+<!--                            <br>-->
+<!--                            📊 <b>Near SOTA on DALES</b> (79.6 mIoU)-->
+<!--                            <br>-->
+<!--                            🦋 <b>212k parameters</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 200, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 40)-->
+<!--                            <br>-->
+<!--                            ⚡ S3DIS training in <b>3 GPU-hours</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 7, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 70)-->
+<!--                            <br>-->
+<!--                            ⚡ <b>Preprocessing x7 faster than <a href="https://arxiv.org/abs/1711.09869">SPG</a></b>-->
+<!--                        </div>-->
+<!--                    </p>-->
+
+<!--                    <p class="blabla">-->
+<!--                        The above interactive visualization will help you get a sense of what our-->
+<!--                        hierarchical partition structure looks like.-->
+<!--                    </p>-->
+
+<!--                    <p class="blabla">-->
+<!--                        Our model architecture replaces-->
+<!--                        <a href="https://arxiv.org/abs/1711.09869">SPG</a>'s-->
+<!--                        Graph Neural Networks with Transformer self-attention blocks, reasoning on a-->
+<!--                        graph connecting ajacent superpoints.-->
+<!--                    </p>-->
+<!--                    <br><br>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="images/superpoint_transformer/architecture.png" alt="spt architecture" style="height:40vh;">-->
+<!--                    </div>-->
+<!--                    <br><br>-->
+<!--                    <p class="blabla">-->
+<!--                        Visualizing the model size vs performance of 3D semantic segmentation-->
+<!--                        methods on S3DIS 6-Fold, we observe that small, tailored models can offer a-->
+<!--                        more flexible and sustainable alternative to large, generic models for 3D-->
+<!--                        learning.-->
+<!--                    </p>-->
+
+<!--                    <div style="text-align: center;">-->
+<!--                        <img src="images/superpoint_transformer/size_vs_perf.png" alt="model size vs performance" style="height:40vh;">-->
+<!--                    </div>-->
+
+<!--                    <p class="blabla">-->
+<!--                        <b>With training times of a few hours on a single GPU, SPT-->
+<!--                        allows practitioners to easily customize the models to their specific needs,-->
+<!--                        enhancing the overall usability and accessibility of 3D learning.</b>-->
+<!--                    </p>-->
+                    
+                    <!-- Video -->
+<!--                    <h1 id="Video">Video<a class="anchor-link" href="#Video">&#182;</a>-->
+<!--                    </h1>-->
+<!--                    <div style="text-align: center;">-->
+<!--                        <iframe width="800" height="500" src="https://www.youtube.com/embed/SoMKwI863tw"></iframe>-->
+<!--                    </div>-->
+
+                    <!-- Resources -->
+                    <h1 id="BibTex">BibTex<a class="anchor-link" href="#BibTex">&#182;</a>
+                    </h1>
+                    <p class="blabla">
+                        In case you use all or part of this project, please cite the following paper:
+                    </p>
+                    <pre>
+	                    <code>
+@article{robert2024scalable,
+  title={Scalable 3D Panoptic Segmentation as Superpoint Graph Clustering},
+  author={Robert, Damien and Raguet, Hugo and Landrieu, Loic},
+  journal={Proceedings of the IEEE International Conference on 3D Vision},
+  year={2024}
+  url = {\url{https://github.com/drprojects/superpoint_transformer}}
+}
+	                    </code>
+                    </pre>
+
+                    <!-- Acknowledgments -->
+                    <h1 id="Acknowledgments">Acknowledgments 🙏<a class="anchor-link" href="#Acknowledgments">&#182;</a>
+                    </h1>
+                    <p class="blabla">
+                        This work was funded by {{ page.to_crigen }} and carried out in the {{ page.to_lastig }} research
+                        unit of {{ page.to_uge }}. It was supported by ANR project READY3D ANR-19-CE23-0007, and was
+                        granted access to the HPC resources of IDRIS under the allocation AD011013388R1 made by GENCI.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        {% include_relative footer.html %}
+    </section>
+
+</div>
