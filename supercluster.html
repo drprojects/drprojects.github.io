@@ -159,12 +159,12 @@ to_supercluster_sota_scannet: <a
                             </div>
                         </div>
                         <div class="tom_row">
-                            <div class="tom_cell" style="width:45%; margin-left: 10px; margin-right: 10px;">
+                            <div class="tom_cell" style="width:45%; margin-left: 10px; margin-right: 10px; margin-top: 30px;">
                                 <p class="blabla" style="text-align: center;">
                                     <b>Panoptic segmentation</b>
                                 </p>
                             </div>
-                            <div class="tom_cell" style="width:45%; margin-left: 10px; margin-right: 10px;">
+                            <div class="tom_cell" style="width:45%; margin-left: 10px; margin-right: 10px; margin-top: 30px;">
                                 <p class="blabla" style="text-align: center;">
                                     <b><a href="https://drprojects.github.io/superpoint-transformer">Superpoint partition</a></b>
                                 </p>
@@ -186,11 +186,48 @@ to_supercluster_sota_scannet: <a
                     </p>
                     <br>
                     <div style="text-align: center;">
-                        <img src="images/supercluster/pipeline.png" alt="supercluster pipeline" style="height:40vh;">
+                        <img src="images/supercluster/equation.png" alt="supercluster pipeline and equation" style="height:40vh;">
                     </div>
                     <br>
                     <p class="blabla">
-                        To this end ...
+                        We translate these goals into the above (superpoint) graph optimization
+                        problem. Our idea is to train a model to predict the input parameters for
+                        this optimization problem, without explicitly asking the model to solve
+                        the panoptic segmentation task. If the model does its job, we should only
+                        need to solve the graph clustering problem at inference time, circumventing
+                        several limitations of existing panoptic segmentation methods.
+                    </p>
+                    <p class="blabla">
+                        Building on our previous work
+                        <a href="https://drprojects.github.io/superpoint-transformer">Superpoint Transformer</a>,
+                        we already have the building blocks for building a
+                        <span style="color: rgb(30, 150, 252)">graph of adjacent superpoints</span>
+                        and train a model to
+                        <span style="color: rgb(144, 190, 109)">classify</span> them.
+                    </p>
+                    <p class="blabla">
+                        In this work, we introduce a new head to
+                        <a href="https://drprojects.github.io/superpoint-transformer">Superpoint Transformer</a>
+                        that learns to predict an <span style="color: rgb(249, 65, 68)">affinity</span>,
+                        for each edge between two adjacent superpoints, indicating whether they belong
+                        to the same instance.
+                    </p>
+                    <p class="blabla">
+                        Interestingly, this <b>SuperCluster</b> model is only trained with <b>local per-node
+                        and per-edge objectives</b>. As previously mentioned, we do not need to explicitly
+                        compute the panoptic segmentation at training time.
+                        This bypasses the need for a matching step between predicted and target instance for
+                        computing losses and metrics.
+                        At inference time, we use a fast algorithm that finds an approximate solution to
+                        the (small) graph optimization problem.
+                    </p>
+                    <p class="blabla">
+                        SuperCluster achieves state-of-the-art results for 3D panoptic segmentation on
+                        large-scale indoor datasets such as S3DIS and ScanNet, and sets a first state-of-the-art
+                        on large-scale outdoor datasets such as DALES and KITTI-360.
+                    </p>
+                    <p class="blabla">
+                        foo
                     </p>
 
 
