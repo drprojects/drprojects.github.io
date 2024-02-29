@@ -93,7 +93,7 @@ to_supercluster_sota_scannet: <a
                     <div class="tom_table">
                         <div class="tom_row">
                             <div class="tom_cell" style="width:40%">
-                                <img src="images/supercluster/teaser.png" alt="SuperCluster" style="height:30vh;">
+                                <img src="images/supercluster/teaser.png" alt="SuperCluster" style="height:40vh;">
                             </div>
                             <div class="tom_cell_text">
                                 <p class="blabla">
@@ -148,18 +148,6 @@ to_supercluster_sota_scannet: <a
                     <div class="tom_table">
                         <div class="tom_row">
                             <div class="tom_cell" style="width:45%; margin-left: 10px; margin-right: 10px;">
-                                <p class="blabla" style="text-align: center;">
-                                    <b>Panoptic segmentation</b>
-                                </p>
-                            </div>
-                            <div class="tom_cell" style="width:45%; margin-left: 10px; margin-right: 10px;">
-                                <p class="blabla" style="text-align: center;">
-                                    <b><a href="https://drprojects.github.io/superpoint-transformer">Superpoint partition</a></b>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="tom_row">
-                            <div class="tom_cell" style="width:45%; margin-left: 10px; margin-right: 10px;">
                                 <div style="text-align: center;">
                                     <img src="images/supercluster/motivation_panoptic.png" alt="panoptic segmentation" style="height:35vh;">
                                 </div>
@@ -170,8 +158,40 @@ to_supercluster_sota_scannet: <a
                                 </div>
                             </div>
                         </div>
+                        <div class="tom_row">
+                            <div class="tom_cell" style="width:45%; margin-left: 10px; margin-right: 10px;">
+                                <p class="blabla" style="text-align: center;">
+                                    <b>Panoptic segmentation</b>
+                                </p>
+                            </div>
+                            <div class="tom_cell" style="width:45%; margin-left: 10px; margin-right: 10px;">
+                                <p class="blabla" style="text-align: center;">
+                                    <b><a href="https://drprojects.github.io/superpoint-transformer">Superpoint partition</a></b>
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
+                    <p class="blabla">
+                        Take the above superpoint partition and the desired panoptic segmentation.
+                        Instead of learning to classify and assign an instance to each individual
+                        point, we propose to learn to group superpoints together.
+                    </p>
+
+                    <p class="blabla">
+                        Intuitively, we want to group adjacent superpoints together if they are
+                        <span style="color: rgb(30, 150, 252)">spatially close</span>, have the
+                        <span style="color: rgb(144, 190, 109)">same class</span>, and are
+                        <span style="color: rgb(249, 65, 68)">not separated by a <em>border</em></span>.
+                    </p>
+                    <br>
+                    <div style="text-align: center;">
+                        <img src="images/supercluster/pipeline.png" alt="supercluster pipeline" style="height:40vh;">
+                    </div>
+                    <br>
+                    <p class="blabla">
+                        To this end ...
+                    </p>
 
 
 <!--                    {% include_relative images/supercluster/dales_panoptic.html %}-->
