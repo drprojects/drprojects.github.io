@@ -182,8 +182,8 @@ to_supercluster_sota_scannet: <a
                         Intuitively, we want to group adjacent superpoints together if they are
                         <span style="color: rgb(30, 150, 252)">spatially close</span>, have the
                         <span style="color: rgb(144, 190, 109)">same class</span>, and are
-                        <span style="color: rgb(249, 65, 68)">not separated by a <em>border</em></span>.
-                        We translate these goals into the below (superpoint) graph optimization
+                        <span style="color: rgb(249, 65, 68)">not separated by a border</span>.
+                        We translate these goals into the following (superpoint) graph optimization
                         problem.
                     </p>
                     <br>
@@ -229,181 +229,92 @@ to_supercluster_sota_scannet: <a
                         large-scale indoor datasets such as <b>S3DIS</b> and <b>ScanNetV2</b>, and sets a first
                         state-of-the-art on large-scale outdoor datasets such as <b>DALES</b> and <b>KITTI-360</b>.
                     </p>
+
+                    <div style="text-align: center;">
+                        📊 <b>SOTA on S3DIS 6-Fold</b> (55.9 PQ)
+                        <br>
+                        📊 <b>SOTA on S3DIS Area 5</b> (50.1 PQ)
+                        <br>
+                        📊 <b>SOTA on ScanNet Val</b> (58.7 PQ)
+                        <br>
+                        📊 <b>FIRST on KITTI-360 Val</b> (48.3 PQ)
+                        <br>
+                        📊 <b>FIRST on DALES</b> (61.2 PQ)
+                        <br>
+                        🦋 <b>212k parameters</b> (<a href="https://github.com/dvlab-research/PointGroup">PointGroup</a> ÷ 37)
+                        <br>
+                        ⚡ S3DIS training in <b>4 GPU-hours</b>
+                        <br>
+                        ⚡ <b>7.8km²</b> tile of <b>18M</b> points in <b>10.1s</b> on <b>1 GPU</b>
+                    </div>
+
                     <p class="blabla">
                         SuperCluster is capable of processing 3D scenes of unprecedented scale at once on a single
                         GPU.
                     </p>
 
                     <div style="text-align: center;">
-                        <img src="images/supercluster/viz_maxi_s3dis.png" alt="S3DIS inference on one GPU" style="height:30vh;">
+                        <img src="images/supercluster/viz_maxi_s3dis.png" alt="S3DIS inference on one GPU" style="width: 100%;">
                     </div>
-
+                    <h3 id="s3dis_max" style="text-align: center;">S3DIS</h3>
                     <p class="blabla" style="text-align: center;">
-                        S3DIS
+                        4.6 floors | 21.3M points | 4565/5298 predicted objects | 7.4 s inference | single 48G GPU
                     </p>
+                    <br>
+                    <br>
 
                     <div style="text-align: center;">
-                        <img src="images/supercluster/viz_maxi_scannet.png.png" alt="ScanNetV2 inference on one GPU" style="height:30vh;">
+                        <img src="images/supercluster/viz_maxi_scannet.png" alt="ScanNetV2 inference on one GPU" style="width: 100%;">
                     </div>
-
+                    <h3 id="scannet_max" style="text-align: center;">ScanNetV2</h3>
                     <p class="blabla" style="text-align: center;">
-                        ScanNetV2
+                        105 scans | 10.9M points | 2148/1683 predicted objects | 6.8 s inference | single 48G GPU
                     </p>
+                    <br>
+                    <br>
 
                     <div style="text-align: center;">
-                        <img src="images/supercluster/viz_maxi_dales_2.png" alt="DALES inference on one GPU" style="height:30vh;">
+                        <img src="images/supercluster/viz_maxi_kitti360_2.png" alt="KITTI-360 inference on one GPU" style="width: 100%;">
                     </div>
-
+                    <h3 id="kitti360_max" style="text-align: center;">KITTI-360</h3>
                     <p class="blabla" style="text-align: center;">
-                        DALES
+                        7.5 tiles | 11.0M points | 1947/602 predicted objects | 6.6 s inference | single 48G GPU
                     </p>
+                    <br>
+                    <br>
 
                     <div style="text-align: center;">
-                        <img src="images/supercluster/viz_maxi_kitti360_2.png" alt="KITTI-360 inference on one GPU" style="height:30vh;">
+                        <img src="images/supercluster/viz_maxi_dales_2.png" alt="DALES inference on one GPU" style="width: 90%;">
                     </div>
-
+                    <h3 id="dales_max" style="text-align: center;">DALES</h3>
                     <p class="blabla" style="text-align: center;">
-                        KITTI-360
+                        7.8 km2 | 18.0M points | 1559/1727 predicted objects | 10.1 s inference | single 48G GPU
                     </p>
+                    <br>
+                    <br>
 
+                    <h1 id="viz">Interactive visualizations<a class="anchor-link" href="#viz">&#182;</a>
+                    </h1>
 
+                    {% include_relative images/supercluster/s3dis_panoptic.html %}
+                    <h3 id="s3dis_viz" style="text-align: center;">S3DIS</h3>
+                    <br>
+                    <br>
 
-<!--                    {% include_relative images/supercluster/dales_panoptic.html %}-->
+                    {% include_relative images/supercluster/scannet_panoptic.html %}
+                    <h3 id="scannet_viz" style="text-align: center;">ScanNetV2</h3>
+                    <br>
+                    <br>
 
-<!--                    {% include_relative images/supercluster/kitti360_panoptic.html %}-->
+                    {% include_relative images/supercluster/dales_panoptic.html %}
+                    <h3 id="dales_viz" style="text-align: center;">DALES</h3>
+                    <br>
+                    <br>
 
-<!--                    {% include_relative images/supercluster/s3dis_panoptic.html %}-->
-
-<!--                    {% include_relative images/supercluster/scannet_panoptic.html %}-->
-
-
-
-<!--                    <div class="tom_table">-->
-<!--                        <div class="tom_row">-->
-<!--                            <div class="tom_cell" style="width:50%">-->
-<!--                                <p class="blabla">-->
-<!--                                    <b>-->
-<!--                                    Transformer-based models 🤖<br>(-->
-<!--                                    <a href="https://arxiv.org/abs/2012.09164">Point Transformer</a>,-->
-<!--                                    <a href="https://arxiv.org/abs/2203.14508">Stratified Transformer</a>,-->
-<!--                                    ...)-->
-<!--                                    </b>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div class="tom_cell" style="width:50%">-->
-<!--                                <p class="blabla">-->
-<!--                                    <b>-->
-<!--                                    Superpoint-based models 🧩<br>(-->
-<!--                                    <a href="https://arxiv.org/abs/1711.09869">SPG</a>,-->
-<!--                                    <a href="https://arxiv.org/abs/1904.02113">SSP+SPG</a>,-->
-<!--                                    ...)-->
-<!--                                    </b>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="tom_row">-->
-<!--                            <div class="tom_cell" style="width:50%">-->
-<!--                                <p class="blabla">-->
-<!--                                    ✅ Expressivity<br>-->
-<!--                                    ✅ Capture long-range interactions<br>-->
-<!--                                    ❌ Compute effort guided by arbitrary point or voxel samplings<br>-->
-<!--                                    ❌ Loads of parameters<br>-->
-<!--                                    ❌ Long training<br>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div class="tom_cell" style="width:50%">-->
-<!--                                <p class="blabla">-->
-<!--                                    ✅ Much smaller problem complexity<br>-->
-<!--                                    ✅ Geometry-guided compute effort allocation<br>-->
-<!--                                    ✅ Fast training<br>-->
-<!--                                    ✅ Lightweight model<br>-->
-<!--                                    ❌ Long preprocessing time<br>-->
-<!--                                    ❌ GNN's expressivity and long-range interactions<br>-->
-<!--                                    ❌ No hierarchical reasoning<br>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <p class="blabla">-->
-<!--                        To this end, we introduce <b>Superpoint Transformer 🧩🤖</b> :-->
-<!--                    </p>-->
-
-<!--                    <div class="tom_table">-->
-<!--                        <div class="tom_row">-->
-<!--                            <div class="tom_cell" style="width:100%">-->
-<!--                                <p class="blabla">-->
-<!--                                    ✅ Much smaller problem complexity<br>-->
-<!--                                    ✅ Geometry-guided compute effort allocation<br>-->
-<!--                                    ✅ Fast training<br>-->
-<!--                                    ✅ Lightweight model<br>-->
-<!--                                    ❌ ➡ ✅ Fast parallelized preprocessing<br>-->
-<!--                                    ❌ ➡ ✅ Transformer’s expressivity and long-range interactions<br>-->
-<!--                                    ❌ ➡ ✅ Multi-scale reasoning on a hierarchical partition 🧩<br>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <p class="blabla">-->
-<!--                        These changes allow SPT to match -or surpass- the <b>performance of SOTA models-->
-<!--                        with much fewer parameters and in a fraction of their training and inference-->
-<!--                        time</b>. Here are some SPT-facts:-->
-<!--                        <br>-->
-<!--                        <div style="text-align: center;">-->
-<!--                            📊 <b>SOTA on S3DIS 6-Fold</b> (76.0 mIoU)-->
-<!--                            <br>-->
-<!--                            📊 <b>SOTA on KITTI-360 Val</b> (63.5 mIoU)-->
-<!--                            <br>-->
-<!--                            📊 <b>Near SOTA on DALES</b> (79.6 mIoU)-->
-<!--                            <br>-->
-<!--                            🦋 <b>212k parameters</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 200, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 40)-->
-<!--                            <br>-->
-<!--                            ⚡ S3DIS training in <b>3 GPU-hours</b> (<a href="https://github.com/guochengqian/PointNeXt">PointNeXt</a> ÷ 7, <a href="https://github.com/dvlab-research/Stratified-Transformer">Stratified Transformer</a> ÷ 70)-->
-<!--                            <br>-->
-<!--                            ⚡ <b>Preprocessing x7 faster than <a href="https://arxiv.org/abs/1711.09869">SPG</a></b>-->
-<!--                        </div>-->
-<!--                    </p>-->
-
-<!--                    <p class="blabla">-->
-<!--                        The above interactive visualization will help you get a sense of what our-->
-<!--                        hierarchical partition structure looks like.-->
-<!--                    </p>-->
-
-<!--                    <p class="blabla">-->
-<!--                        Our model architecture replaces-->
-<!--                        <a href="https://arxiv.org/abs/1711.09869">SPG</a>'s-->
-<!--                        Graph Neural Networks with Transformer self-attention blocks, reasoning on a-->
-<!--                        graph connecting ajacent superpoints.-->
-<!--                    </p>-->
-<!--                    <br><br>-->
-<!--                    <div style="text-align: center;">-->
-<!--                        <img src="images/superpoint_transformer/architecture.png" alt="spt architecture" style="height:40vh;">-->
-<!--                    </div>-->
-<!--                    <br><br>-->
-<!--                    <p class="blabla">-->
-<!--                        Visualizing the model size vs performance of 3D semantic segmentation-->
-<!--                        methods on S3DIS 6-Fold, we observe that small, tailored models can offer a-->
-<!--                        more flexible and sustainable alternative to large, generic models for 3D-->
-<!--                        learning.-->
-<!--                    </p>-->
-
-<!--                    <div style="text-align: center;">-->
-<!--                        <img src="images/superpoint_transformer/size_vs_perf.png" alt="model size vs performance" style="height:40vh;">-->
-<!--                    </div>-->
-
-<!--                    <p class="blabla">-->
-<!--                        <b>With training times of a few hours on a single GPU, SPT-->
-<!--                        allows practitioners to easily customize the models to their specific needs,-->
-<!--                        enhancing the overall usability and accessibility of 3D learning.</b>-->
-<!--                    </p>-->
-                    
-                    <!-- Video -->
-<!--                    <h1 id="Video">Video<a class="anchor-link" href="#Video">&#182;</a>-->
-<!--                    </h1>-->
-<!--                    <div style="text-align: center;">-->
-<!--                        <iframe width="800" height="500" src="https://www.youtube.com/embed/SoMKwI863tw"></iframe>-->
-<!--                    </div>-->
+                    {% include_relative images/supercluster/kitti360_panoptic.html %}
+                    <h3 id="kitti360_viz" style="text-align: center;">KITTI-360</h3>
+                    <br>
+                    <br>
 
                     <!-- Resources -->
                     <h1 id="BibTex">BibTex<a class="anchor-link" href="#BibTex">&#182;</a>
