@@ -183,32 +183,30 @@ to_supercluster_sota_scannet: <a
                         <span style="color: rgb(30, 150, 252)">spatially close</span>, have the
                         <span style="color: rgb(144, 190, 109)">same class</span>, and are
                         <span style="color: rgb(249, 65, 68)">not separated by a <em>border</em></span>.
+                        We translate these goals into the below (superpoint) graph optimization
+                        problem.
                     </p>
                     <br>
                     <div style="text-align: center;">
-                        <img src="images/supercluster/equation.png" alt="supercluster pipeline and equation" style="height:40vh;">
+                        <img src="images/supercluster/equation.png" alt="supercluster pipeline and equation" style="height:30vh;">
                     </div>
                     <br>
                     <p class="blabla">
-                        We translate these goals into the above (superpoint) graph optimization
-                        problem. Our idea is to train a model to predict the input parameters for
-                        this optimization problem, without explicitly asking the model to solve
-                        the panoptic segmentation task. If the model does its job, we should only
-                        need to solve the graph clustering problem at inference time, circumventing
+                        Our idea is to train a model to <b>predict the input parameters for
+                        this optimization problem</b>, without explicitly asking the model to solve
+                        the panoptic segmentation task. If the model does its job, we should <b>only
+                        need to solve the graph clustering problem at inference time</b>, circumventing
                         several limitations of existing panoptic segmentation methods.
                     </p>
                     <p class="blabla">
-                        Building on our previous work
-                        <a href="https://drprojects.github.io/superpoint-transformer">Superpoint Transformer</a>,
-                        we already have the building blocks for building a
+                        Building on our previous
+                        <a href="https://drprojects.github.io/superpoint-transformer">Superpoint Transformer</a>
+                        work, we already have the building blocks for building a
                         <span style="color: rgb(30, 150, 252)">graph of adjacent superpoints</span>
                         and train a model to
                         <span style="color: rgb(144, 190, 109)">classify</span> them.
-                    </p>
-                    <p class="blabla">
-                        In this work, we introduce a new head to
-                        <a href="https://drprojects.github.io/superpoint-transformer">Superpoint Transformer</a>
-                        that learns to predict an <span style="color: rgb(249, 65, 68)">affinity</span>,
+                        In this work, we introduce a new head to Superpoint Transformer
+                        that learns to predict an <span style="color: rgb(249, 65, 68)">affinity</span>
                         for each edge between two adjacent superpoints, indicating whether they belong
                         to the same instance.
                     </p>
@@ -219,16 +217,31 @@ to_supercluster_sota_scannet: <a
                         This bypasses the need for a matching step between predicted and target instance for
                         computing losses and metrics.
                         At inference time, we use a fast algorithm that finds an approximate solution to
-                        the (small) graph optimization problem.
+                        the (small) graph optimization problem, yielding the final panoptic segmentation prediction.
+                    </p>
+
+
+                    <h1 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a>
+                    </h1>
+
+                    <p class="blabla">
+                        SuperCluster achieves <b>state-of-the-art</b> results for 3D panoptic segmentation on
+                        large-scale indoor datasets such as <b>S3DIS</b> and <b>ScanNet</b>, and sets a first
+                        state-of-the-art on large-scale outdoor datasets such as <b>DALES</b> and <b>KITTI-360</b>.
                     </p>
                     <p class="blabla">
-                        SuperCluster achieves state-of-the-art results for 3D panoptic segmentation on
-                        large-scale indoor datasets such as S3DIS and ScanNet, and sets a first state-of-the-art
-                        on large-scale outdoor datasets such as DALES and KITTI-360.
+                        SuperCluster is capable of processing 3D scenes of unprecedented scale at once on a single
+                        GPU.
                     </p>
-                    <p class="blabla">
-                        foo
+
+                    <div style="text-align: center;">
+                        <img src="images/supercluster/viz_maxi_s3dis.png" alt="S3DIS inference on one GPU" style="height:30vh;">
+                    </div>
+
+                    <p class="blabla" style="text-align: center;">
+                        S3DIS
                     </p>
+
 
 
 <!--                    {% include_relative images/supercluster/dales_panoptic.html %}-->
