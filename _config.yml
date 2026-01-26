@@ -22,7 +22,7 @@ repository               : "drprojects/drprojects.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "profile.png"
   name             : "Damien Robert"
   pronouns         : # example: "she/her"  
   bio              : "Postdoctoral researcher at EcoVision. Deep learning for environmental applications."
@@ -90,7 +90,7 @@ publication_category:
     title: 'Conference Papers'
 
 # Site Settings
-teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
+teaser                   : profile.png # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
