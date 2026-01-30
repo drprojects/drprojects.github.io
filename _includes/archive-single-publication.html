@@ -1,0 +1,113 @@
+{% include base_path %}
+
+<div class="paper-entry">
+
+  <div class="container">
+
+    <!-- LEFT: teaser -->
+    <div class="left-div">
+      <a href="{{ post.project_url | default: post.url }}"
+         class="special-link">
+
+        {% if post.teaser_video %}
+        <video autoplay muted loop playsinline style="width: 100%;">
+          <source src="{{ post.teaser_video | prepend: base_path }}" type="video/mp4">
+        </video>
+        {% elsif post.teaser_image %}
+        <img src="{{ post.teaser_image | prepend: base_path }}"
+             class="teaser"
+             alt="{{ post.title }} image">
+        {% endif %}
+
+      </a>
+    </div>
+
+    <!-- RIGHT: text -->
+    <div class="right-div">
+      <a href="{{ post.project_url | default: post.url }}"
+         class="special-link">
+
+        <p>
+          <b>{{ post.title }}</b><br/>
+
+          {% for author in post.authors %}
+            {%- if author.first == "Damien" and author.last == "Robert"-%}<b>{%- endif -%}
+            {%- if author.url -%}
+              <a href="{{ author.url }}">{{ author.first }} {{ author.last }}</a>
+            {%- else -%}
+              {{ author.first }} {{ author.last }}
+            {%- endif -%}
+            {%- if author.first == "Damien" and author.last == "Robert"-%}</b>{%- endif -%}
+            {%- unless forloop.last %}, {% endunless %}
+          {% endfor %}
+          <br/>
+
+          <i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }}.
+
+          {%- if post.prize -%}
+            <br/><br/>{{ post.prize }}
+          {%- endif -%}
+          <br/><br/>
+
+          {% if post.project_url %}
+          <a class="btn btn--small special-link" href="{{ post.project_url }}">
+            <i class="fas fa-bolt"></i> Webpage
+          </a>
+          {% endif %}
+
+          {% if post.paper_url %}
+          <a class="btn btn--small special-link" href="{{ post.paper_url }}">
+            <i class="fas fa-file-pdf"></i> Paper
+          </a>
+          {% endif %}
+
+          {% if post.code_url %}
+          <a class="btn btn--small special-link" href="{{ post.code_url }}">
+            <i class="fab fa-github"></i> Code
+          </a>
+          {% endif %}
+
+          {% if post.video_url%}
+          <a class="btn btn--small special-link" href="{{ post.video_url }}">
+            <i class="fas fa-play-circle"></i> Video
+          </a>
+          {% endif %}
+
+          {% if post.bibtex_id %}
+          <a class="btn btn--small special-link collapsible"
+             onclick="toggleBibtex('{{ post.bibtex_id }}')">
+            <i class="fas fa-book"></i> BibTeX
+          </a>
+          {% endif %}
+        </p>
+
+      </a>
+    </div>
+  </div>
+
+
+  {% if post.bibtex_id %}
+  {% assign bibtype = "inproceedings" -%}
+  {%- if post.venue contains "arXiv" -%}
+  {% assign bibtype = "article" -%}
+  {%- endif -%}
+
+  <div id="bibtex-{{ post.bibtex_id }}" class="collapsible-content">
+    <pre class="p-bibtex">
+  @{{ bibtype }}{ {{ post.bibtex_id }},
+    title     = { {{ post.title }} },
+    author    = { {% for author in post.authors %}{{ author.last }}, {{ author.first }}{% unless forloop.last %} and {% endunless %}{% endfor %} },
+  {%- if bibtype == "article" %}
+    journal   = { {{ post.venue }} },
+  {%- else %}
+    booktitle = { {{ post.venue }} },
+  {%- endif %}
+    year      = { {{ post.date | date: "%Y" }} }
+  }
+    </pre>
+  </div>
+  {% endif %}
+
+
+
+</div>

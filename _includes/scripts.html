@@ -1,3 +1,17 @@
 <script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<script>
+function toggleBibtex(id) {
+  const el = document.getElementById("bibtex-" + id);
+  if (!el) return;
+
+  if (el.style.maxHeight && el.style.maxHeight !== "0px") {
+    el.style.maxHeight = "0px";
+  } else {
+    el.style.maxHeight = el.scrollHeight + "px";
+  }
+}
+</script>
+
+
 {% include analytics.html %}
