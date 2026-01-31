@@ -79,6 +79,13 @@
             <i class="fas fa-book"></i> BibTeX
           </a>
           {% endif %}
+
+          {% if post.code_url %}
+          <br/><a class="special-link" href="{{ post.code_url }}">
+              <img alt="GitHub stars"
+                   src="https://img.shields.io/github/stars/{{ post.code_url | split: 'github.com/' | last }}?style=social">
+          </a>
+          {% endif %}
         </p>
 
       </a>
