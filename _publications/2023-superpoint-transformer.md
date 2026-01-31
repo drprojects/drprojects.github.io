@@ -7,14 +7,9 @@ collection: publications
 date: 2023-10-01
 venue: ICCV
 authors:  
-  - first: Damien
-    last: Robert
-  - first: Hugo
-    last: Raguet
-    url: https://1a7r0ch3.github.io
-  - first: Loic
-    last: Landrieu
-    url: https://loiclandrieu.com
+  - me
+  - hugo_raguet
+  - loic_landrieu
 project_url: https://drprojects.github.io/superpoint-transformer
 paper_url: https://arxiv.org/abs/2306.08045
 code_url: https://github.com/drprojects/superpoint_transformer

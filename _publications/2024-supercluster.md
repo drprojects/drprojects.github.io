@@ -7,14 +7,9 @@ collection: publications
 date: 2024-03-01
 venue: 3DV
 authors:  
-  - first: Damien
-    last: Robert
-  - first: Hugo
-    last: Raguet
-    url: https://1a7r0ch3.github.io
-  - first: Loic
-    last: Landrieu
-    url: https://loiclandrieu.com
+  - me
+  - hugo_raguet
+  - loic_landrieu
 project_url: https://drprojects.github.io/superpoint-transformer
 paper_url: https://arxiv.org/abs/2401.06704
 code_url: https://github.com/drprojects/superpoint_transformer

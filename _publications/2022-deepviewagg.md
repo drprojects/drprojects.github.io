@@ -7,14 +7,9 @@ collection: publications
 date: 2022-06-01
 venue: CVPR
 authors:  
-  - first: Damien
-    last: Robert
-  - first: Bruno
-    last: Vallet
-    url: https://www.umr-lastig.fr/bruno-vallet
-  - first: Loic
-    last: Landrieu
-    url: https://loiclandrieu.com
+  - me
+  - bruno_vallet
+  - loic_landrieu
 project_url: https://drprojects.github.io/deepviewagg
 paper_url: https://arxiv.org/abs/2204.07548
 code_url: https://github.com/drprojects/DeepViewAgg

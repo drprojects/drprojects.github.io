@@ -7,20 +7,11 @@ collection: publications
 date: 2025-12-01
 venue: PFG--Journal of Photogrammetry, Remote Sensing and Geoinformation Science
 authors:  
-  - first: Kaan 
-    last: Karaman
-    url: https://kaankaramanofficial.github.io
-  - first: Vivien Sainte Fare 
-    last: Garnot
-    url: https://dm3l.uzh.ch/about-us/members/person?pId=39081
-  - first: Damien 
-    last: Robert
-  - first: Maria Joao 
-    last: Santos
-    url: https://www.geo.uzh.ch/en/units/ess/staff/mariajsantos.html
-  - first: Jan Dirk 
-    last: Wegner
-    url: https://dm3l.uzh.ch/wegner/group-leader
+  - kaan_karaman
+  - vivien_sainte_fare_garnot
+  - me
+  - maria_joao_santos
+  - jan_dirk_wegner
 project_url: null
 paper_url: https://link.springer.com/article/10.1007/s41064-025-00370-x
 code_url: https://github.com/kaankaramanofficial/MTGSR4B

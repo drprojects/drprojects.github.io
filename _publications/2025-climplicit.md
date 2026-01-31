@@ -7,21 +7,12 @@ collection: publications
 date: 2025-05-01
 venue: ICLR - Tackling Climate Change with Machine Learning workshop
 authors:  
-  - first: Johannes
-    last: Dollinger
-    url: https://dm3l.uzh.ch/about-us/members/person?pId=39050
-  - first: Damien
-    last: Robert
-  - first: Elena
-    last: Plekhanova
-    url: https://www.wsl.ch/en/staff/plekhano
-  - first: Lukas
-    last: Drees
-    url: https://dm3l.uzh.ch/about-us/members/person?pId=39082
-  - first: Jan Dirk
-    last: Wegner
-    url: https://dm3l.uzh.ch/wegner/group-leader
-project_url: https://ecovision-uzh.github.io/climplicit/
+  - johannes_dollinger
+  - me
+  - elena_plekhanova
+  - lukas_drees
+  - jan_dirk_wegner
+project_url: https://ecovision-uzh.github.io/climplicit
 paper_url: https://arxiv.org/abs/2504.05089
 code_url: https://github.com/ecovision-uzh/climplicit
 video_url: null

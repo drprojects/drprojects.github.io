@@ -7,41 +7,18 @@ collection: publications
 date: 2026-07-01
 venue: arxiv
 authors:  
-  - first: Martin
-    last: Schwartz
-    url: https://www.lsce.ipsl.fr/en/pisp/martin-schwartz
-  - first: Fajwel
-    last: Fogel
-    url: https://scholar.google.com/citations?user=GABZ5ucAAAAJ
-  - first: Nikola
-    last: Besic
-    url: https://nbesic.github.io
-  - first: Damien
-    last: Robert
-  - first: Louis
-    last: Geist
-    url: https://louisgeist.github.io
-  - first: Jean-Pierre
-    last: Renaud
-    url: https://scholar.google.com/citations?user=RjG44wIAAAAJ
-  - first: Jean-Matthieu
-    last: Monnet
-    url: https://lessem.lyon-grenoble.hub.inrae.fr/membres/jean-matthieu-monnet
-  - first: Clemens
-    last: Mosig
-    url: https://rsc4earth.de/author/clemens-mosig
-  - first: Cédric
-    last: Vega
-    url: https://scholar.google.com/citations?user=2bnoLSUAAAAJ
-  - first: Alexandre
-    last: d'Aspremont
-    url: https://www.di.ens.fr/~aspremon/
-  - first: Loic
-    last: Landrieu
-    url: https://loiclandrieu.com
-  - first: Philippe
-    last: Ciais
-    url: https://www.lsce.ipsl.fr/en/cycles-transferts/biogeo/pisp/philippe-ciais
+  - martin_schwartz
+  - fajwel_fogel
+  - nikola_besic
+  - me
+  - louis_geist
+  - jean_pierre_renaud
+  - jean_matthieu_monnet
+  - clemens_mosig
+  - cédric_vega
+  - alexandre_d_aspremont
+  - loic_landrieu
+  - philippe_ciais
 project_url: null
 paper_url: https://arxiv.org/abs/2512.17021
 code_url: null

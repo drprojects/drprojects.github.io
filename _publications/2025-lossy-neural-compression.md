@@ -7,68 +7,33 @@ collection: publications
 date: 2025-01-01
 venue: IEEE Geoscience and Remote Sensing Magazine
 authors:  
-  - first: Carlos
-    last: Gomes
-    url: https://scholar.google.com/citations?user=hovrpnMAAAAJ
-  - first: Isabelle
-    last: Wittmann
-    url: https://www.linkedin.com/in/isabelle-wittmann
-  - first: Damien
-    last: Robert
-  - first: Johannes
-    last: Jakubik
-    url: https://www.johannesjakubik.com
-  - first: Tim
-    last: Reichelt
-    url: https://treigerm.github.io
-  - first: Michele
-    last: Martone
-  - first: Stefano
-    last: Maurogiovanni
-  - first: Rikard
-    last: Vinge
-  - first: Jonas
-    last: Hurst
-  - first: Erik
-    last: Scheurer
-  - first: Rocco
-    last: Sedona
-  - first: Thomas
-    last: Brunschwiler
-    url: https://research.ibm.com/people/thomas-brunschwiler
-  - first: Stefan
-    last: Kesselheim
-  - first: Matej
-    last: Batic
-  - first: Philip
-    last: Stier
-  - first: Jan Dirk
-    last: Wegner
-    url: https://dm3l.uzh.ch/wegner/group-leader
-  - first: Gabriele
-    last: Cavallaro
-    url: https://www.gabriele-cavallaro.com
-  - first: Edzer
-    last: Pebesma
-  - first: Michael
-    last: Marszalek
-  - first: Miguel A Belenguer
-    last: Plomer
-  - first: Kennedy
-    last: Adriko
-  - first: Paolo
-    last: Fraccaro
-  - first: Romeo
-    last: Kienzler
-  - first: Rania
-    last: Briq
-  - first: Sabrina
-    last: Benassou
-  - first: Michele
-    last: Lazzarini
-  - first: Conrad M
-    last: Albrecht
-    url: https://sites.google.com/view/conrad-m-albrecht
+  - carlos_gomes
+  - isabelle_wittmann
+  - me
+  - johannes_jakubik
+  - tim_reichelt
+  - michele_martone
+  - stefano_maurogiovanni
+  - rikard_vinge
+  - jonas_hurst
+  - erik_scheurer
+  - rocco_sedona
+  - thomas_brunschwiler
+  - stefan_kesselheim
+  - matej_batic
+  - philip_stier
+  - jan_dirk_wegner
+  - gabriele_cavallaro
+  - edzer_pebesma
+  - michael_marszalek
+  - miguel_a_belenguer_plomer
+  - kennedy_adriko
+  - paolo_fraccaro
+  - romeo_kienzler
+  - rania_briq
+  - sabrina_benassou
+  - michele_lazzarini
+  - conrad_m_albrecht
 project_url: null 
 paper_url: https://www.arxiv.org/abs/2503.01505
 code_url: null

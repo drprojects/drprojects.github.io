@@ -1,18 +1,257 @@
 # Authors
 
-Name Name:
-  name        : "Name Name"
-  uri         : "https://name.com"
-  email       : "name@name.com"
-  bio         : "This is the first name."
-  avatar      : "bio-photo-2.jpg"
-  twitter     : "name"
-  google_plus : "Name"
+me:
+  first_name: Damien
+  last_name: Robert
 
-Name2 Name2:
-  name        : "Name2 Name2"
-  email       : "name2@name2.com"
-  bio         : "I ordered what?"
-  avatar      : "bio-photo.jpg"
-  twitter     : "name2"
-  google_plus : "Name"
+loic_landrieu:
+  first_name: Loic
+  last_name: Landrieu
+  url: https://loiclandrieu.com
+
+louis_geist:
+  first_name: Louis
+  last_name: Geist
+  url: https://louisgeist.github.io
+
+yuanwen_yue:
+    first_name: Yuanwen
+    last_name: Yue
+    url: https://ywyue.github.io
+
+jianyuan_wang:
+    first_name: Jianyuan
+    last_name: Wang
+    url: https://jytime.github.io
+
+sunghwan_hong:
+    first_name: Sunghwan
+    last_name: Hong
+    url: https://sunghwanhong.github.io
+
+christian_rupprecht:
+    first_name: Christian
+    last_name: Rupprecht
+    url: https://chrirupp.github.io/
+
+konrad_schindler:
+    first_name: Konrad
+    last_name: Schindler
+    url: https://igp.ethz.ch/personen/person-detail.schindler.html
+
+bruno_vallet:
+    first_name: Bruno
+    last_name: Vallet
+    url: https://www.umr-lastig.fr/bruno-vallet
+
+hugo_raguet:
+    first_name: Hugo
+    last_name: Raguet
+    url: https://1a7r0ch3.github.io
+
+johannes_dollinger:
+    first_name: Johannes
+    last_name: Dollinger
+    url: https://dm3l.uzh.ch/about-us/members/person?pId=39050
+
+elena_plekhanova:
+    first_name: Elena
+    last_name: Plekhanova
+    url: https://www.wsl.ch/en/staff/plekhano
+
+lukas_drees:
+    first_name: Lukas
+    last_name: Drees
+    url: https://dm3l.uzh.ch/about-us/members/person?pId=39082
+
+kaan_karaman:
+    first_name: Kaan
+    last_name: Karaman
+    url: https://kaankaramanofficial.github.io
+
+yuchang_jiang:
+    first_name: Yuchang
+    last_name: Jiang
+    url: https://sherryjyc.github.io
+
+vivien_sainte_fare_garnot:
+    first_name: Vivien Sainte Fare
+    last_name: Garnot
+    url: https://dm3l.uzh.ch/about-us/members/person?pId=39081
+
+maria_joao_santos:
+    first_name: Maria Joao
+    last_name: Santos
+    url: https://www.geo.uzh.ch/en/units/ess/staff/mariajsantos.html
+
+carlos_gomes:
+    first_name: Carlos
+    last_name: Gomes
+    url: https://scholar.google.com/citations?user=hovrpnMAAAAJ
+
+isabelle_wittmann:
+    first_name: Isabelle
+    last_name: Wittmann
+    url: https://www.linkedin.com/in/isabelle-wittmann
+
+johannes_jakubik:
+    first_name: Johannes
+    last_name: Jakubik
+    url: https://www.johannesjakubik.com
+
+tim_reichelt:
+    first_name: Tim
+    last_name: Reichelt
+    url: https://treigerm.github.io
+
+michele_martone:
+    first_name: Michele
+    last_name: Martone
+
+stefano_maurogiovanni:
+    first_name: Stefano
+    last_name: Maurogiovanni
+
+rikard_vinge:
+    first_name: Rikard
+    last_name: Vinge
+
+jonas_hurst:
+    first_name: Jonas
+    last_name: Hurst
+
+erik_scheurer:
+    first_name: Erik
+    last_name: Scheurer
+
+rocco_sedona:
+    first_name: Rocco
+    last_name: Sedona
+
+thomas_brunschwiler:
+    first_name: Thomas
+    last_name: Brunschwiler
+    url: https://research.ibm.com/people/thomas-brunschwiler
+
+stefan_kesselheim:
+    first_name: Stefan
+    last_name: Kesselheim
+
+matej_batic:
+    first_name: Matej
+    last_name: Batic
+
+philip_stier:
+    first_name: Philip
+    last_name: Stier
+
+jan_dirk_wegner:
+    first_name: Jan Dirk
+    last_name: Wegner
+    url: https://dm3l.uzh.ch/wegner/group-leader
+
+gabriele_cavallaro:
+    first_name: Gabriele
+    last_name: Cavallaro
+    url: https://www.gabriele-cavallaro.com
+
+edzer_pebesma:
+    first_name: Edzer
+    last_name: Pebesma
+
+michael_marszalek:
+    first_name: Michael
+    last_name: Marszalek
+
+miguel_a_belenguer_plomer:
+    first_name: Miguel A Belenguer
+    last_name: Plomer
+
+kennedy_adriko:
+    first_name: Kennedy
+    last_name: Adriko
+
+paolo_fraccaro:
+    first_name: Paolo
+    last_name: Fraccaro
+
+romeo_kienzler:
+    first_name: Romeo
+    last_name: Kienzler
+
+rania_briq:
+    first_name: Rania
+    last_name: Briq
+
+sabrina_benassou:
+    first_name: Sabrina
+    last_name: Benassou
+
+michele_lazzarini:
+    first_name: Michele
+    last_name: Lazzarini
+
+conrad_m_albrecht:
+    first_name: Conrad M
+    last_name: Albrecht
+    url: https://sites.google.com/view/conrad-m-albrecht
+
+emilia_arens:
+    first_name: Emilia
+    last_name: Arens
+    url: https://dm3l.uzh.ch/about-us/members/person?pId=38596
+
+philipp_brun:
+    first_name: Philipp
+    last_name: Brun
+    url: https://www.wsl.ch/de/mitarbeitende/brunp
+
+niklaus_zimmermann:
+    first_name: Niklaus
+    last_name: Zimmermann
+    url: https://www.wsl.ch/de/mitarbeitende/zimmerma
+
+martin_schwartz:
+    first_name: Martin
+    last_name: Schwartz
+    url: https://www.lsce.ipsl.fr/en/pisp/martin-schwartz
+
+fajwel_fogel:
+    first_name: Fajwel
+    last_name: Fogel
+    url: https://scholar.google.com/citations?user=GABZ5ucAAAAJ
+
+nikola_besic:
+    first_name: Nikola
+    last_name: Besic
+    url: https://nbesic.github.io
+
+jean_pierre_renaud:
+    first_name: Jean-Pierre
+    last_name: Renaud
+    url: https://scholar.google.com/citations?user=RjG44wIAAAAJ
+
+jean_matthieu_monnet:
+    first_name: Jean-Matthieu
+    last_name: Monnet
+    url: https://lessem.lyon-grenoble.hub.inrae.fr/membres/jean-matthieu-monnet
+
+clemens_mosig:
+    first_name: Clemens
+    last_name: Mosig
+    url: https://rsc4earth.de/author/clemens-mosig
+
+cédric_vega:
+    first_name: Cédric
+    last_name: Vega
+    url: https://scholar.google.com/citations?user=2bnoLSUAAAAJ
+
+alexandre_d_aspremont:
+    first_name: Alexandre
+    last_name: d'Aspremont
+    url: https://www.di.ens.fr/~aspremon/
+
+philippe_ciais:
+    first_name: Philippe
+    last_name: Ciais
+    url: https://www.lsce.ipsl.fr/en/cycles-transferts/biogeo/pisp/philippe-ciais

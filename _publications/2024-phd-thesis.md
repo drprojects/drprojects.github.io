@@ -7,14 +7,13 @@ collection: publications
 date: 2024-05-01
 venue: Universite Gustave Eiffel
 authors:  
-  - first: Damien
-    last: Robert
+  - me
 project_url: null
 paper_url: https://hal.science/tel-04448827
 code_url: https://github.com/drprojects
 video_url: null
 bibtex_id: robert2024phd
-prize: null
+prize: "<b>🎉 AFRIF PhD Award accessit</b>"
 teaser_video: null
 teaser_image: /images/publications/2024/phd/teaser.png
 ---

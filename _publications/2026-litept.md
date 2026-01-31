@@ -7,26 +7,13 @@ collection: publications
 date: 2026-06-01
 venue: arxiv
 authors:  
-  - first: Yuanwen
-    last: Yue
-    url: https://ywyue.github.io
-  - first: Damien
-    last: Robert
-  - first: Jianyuan
-    last: Wang
-    url: https://jytime.github.io
-  - first: Sunghwan
-    last: Hong
-    url: https://sunghwanhong.github.io
-  - first: Jan Dirk 
-    last: Wegner
-    url: https://dm3l.uzh.ch/wegner/group-leader
-  - first: Christian
-    last: Rupprecht
-    url: https://chrirupp.github.io/
-  - first: Konrad
-    last: Schindler
-    url: https://igp.ethz.ch/personen/person-detail.schindler.html
+  - yuanwen_yue
+  - me
+  - jianyuan_wang
+  - sunghwan_hong
+  - jan_dirk_wegner
+  - christian_rupprecht
+  - konrad_schindler
 project_url: https://litept.github.io
 paper_url: http://arxiv.org/abs/2512.13689
 code_url: https://github.com/prs-eth/LitePT

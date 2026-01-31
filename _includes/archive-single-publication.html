@@ -30,14 +30,19 @@
         <p>
           <b>{{ post.title }}</b><br/>
 
-          {% for author in post.authors %}
-            {%- if author.first == "Damien" and author.last == "Robert"-%}<b>{%- endif -%}
+          {% for author_id in post.authors %}
+            {% if site.data.authors and site.data.authors[author_id] %}
+              {% assign author = site.data.authors[author_id] %}
+            {% else %}
+              {% assign author = site.data.authors['me'] %}
+            {% endif %}
+            {%- if author_id == "me" -%}<b>{%- endif -%}
             {%- if author.url -%}
-              <a href="{{ author.url }}">{{ author.first }} {{ author.last }}</a>
+              <a href="{{ author.url }}">{{ author.first_name }} {{ author.last_name }}</a>
             {%- else -%}
-              {{ author.first }} {{ author.last }}
+              {{ author.first_name }} {{ author.last_name }}
             {%- endif -%}
-            {%- if author.first == "Damien" and author.last == "Robert"-%}</b>{%- endif -%}
+            {%- if author_id == "me" -%}</b>{%- endif -%}
             {%- unless forloop.last %}, {% endunless %}
           {% endfor %}
           <br/>
@@ -103,7 +108,13 @@
     <pre class="p-bibtex">
   @{{ bibtype }}{ {{ post.bibtex_id }},
     title     = { {{ post.title }} },
-    author    = { {% for author in post.authors %}{{ author.last }}, {{ author.first }}{% unless forloop.last %} and {% endunless %}{% endfor %} },
+    author    = { {% for author_id in post.authors -%}
+        {%- if site.data.authors and site.data.authors[author_id] -%}
+          {%- assign author = site.data.authors[author_id] -%}
+        {%- else -%}
+          {%- assign author = site.data.authors['me'] -%}
+        {%- endif -%}
+        {{ author.last_name }}, {{ author.first_name }}{% unless forloop.last %} and {% endunless %}{% endfor %} },
   {%- if bibtype == "article" %}
     journal   = { {{ post.venue }} },
   {%- else %}

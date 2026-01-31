@@ -7,26 +7,13 @@ collection: publications
 date: 2025-06-01
 venue: CVPR - EarthVision workshop
 authors:  
-  - first: Elena
-    last: Plekhanova
-    url: https://www.wsl.ch/en/staff/plekhano
-  - first: Damien
-    last: Robert
-  - first: Johannes
-    last: Dollinger
-    url: https://dm3l.uzh.ch/about-us/members/person?pId=39050
-  - first: Emilia
-    last: Arens
-    url: https://dm3l.uzh.ch/about-us/members/person?pId=38596
-  - first: Philipp
-    last: Brun
-    url: https://www.wsl.ch/de/mitarbeitende/brunp
-  - first: Jan Dirk
-    last: Wegner
-    url: https://dm3l.uzh.ch/wegner/group-leader
-  - first: Niklaus
-    last: Zimmermann
-    url: https://www.wsl.ch/de/mitarbeitende/zimmerma
+  - elena_plekhanova
+  - me
+  - johannes_dollinger
+  - emilia_arens
+  - philipp_brun
+  - jan_dirk_wegner
+  - niklaus_zimmermann
 project_url: https://plekhanovaelena.github.io/ssl4eco/
 paper_url: https://arxiv.org/abs/2504.18256
 code_url: https://github.com/PlekhanovaElena/ssl4eco
