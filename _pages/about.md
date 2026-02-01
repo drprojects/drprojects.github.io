@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 <p>
-    As a postdoctoral researcher at the <a href="https://dm3l.uzh.ch/en/wegner">EcoVision</a> lab at 
+    I am a postdoctoral researcher in the <a href="https://dm3l.uzh.ch/en/wegner">EcoVision</a> lab at 
     <a href="https://www.uzh.ch/en.html">University of Zurich</a>, I collaborate with 
     <a href="https://dm3l.uzh.ch/wegner/group-leader">Jan Dirk Wegner</a> to design deep learning methods for remote 
     sensing and environmental applications.
@@ -17,7 +17,12 @@ redirect_from:
     <a href="https://loiclandrieu.com/">Loïc Landrieu</a> and 
     <a href="https://www.umr-lastig.fr/bruno-vallet/">Bruno Vallet</a>.
     <br><br>
-    You like point clouds ☁️? You like trees 🌳? You like satellites 🛰️? You like me 🤗
+    My research interests cover 
+    3D point clouds ☁️, 
+    vegetation mapping 🌳, 
+    species distribution modeling 🦜, 
+    remote sensing 🛰️, 
+    and efficient machine learning ⚡.
 </p>
 
 {% if site.news %}
