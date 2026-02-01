@@ -1,0 +1,17 @@
+/* ==========================================================================
+   NEWS ENTRIES
+   ========================================================================== */
+
+
+/* ===== News entries ===== */
+
+.news-entry {
+  display: flex;              /* ← key line */
+  align-items: baseline;      /* text aligns nicely */
+  gap: 0.75em;
+  margin-bottom: 0;
+}
+
+.page__content .news-text p {
+  margin: 0;
+}

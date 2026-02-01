@@ -15,34 +15,43 @@
   vertical-align: baseline;
   border-radius: .25em;
 }
+
 a.label:hover,
 a.label:focus {
   color: #ffffff;
   text-decoration: none;
   cursor: pointer;
 }
+
 .label:empty {
   display: none;
 }
+
 .btn .label {
   position: relative;
   top: -1px;
 }
-.label-default {
+
+.label-2022 {
   background-color: #ECEFE3;
 }
-.label-primary {
+
+.label-2023 {
   background-color: #9796BC;
 }
-.label-success {
+
+.label-2024 {
   background-color: #9CBFCF;
 }
-.label-info {
+
+.label-2025 {
   background-color: #B3D4AE;
 }
-.label-warning {
+
+.label-2026 {
   background-color: #D6BAD4;
 }
-.label-danger {
+
+.label-2027 {
   background-color: #CCE8E4;
 }
