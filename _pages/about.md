@@ -32,11 +32,3 @@ News
     {% include archive-single-news.html %}
 {% endfor %}
 {% endif %}
-
-{% if site.publications %}
-Publications
-------
-{% for post in site.publications reversed %}
-    {% include archive-single-publication.html %}
-{% endfor %}
-{% endif %}

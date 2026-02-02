@@ -8,12 +8,12 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default"
+site_theme               : "air" # supports: air, contrast, default, dirt, mint, sunrise
 title                    : "Damien Robert"
 title_separator          : "-"
 name                     : &name "Damien Robert"
 description              : &description "personal description"
-url                      : https://drprojects.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+url                      : "https://drprojects.github.io" # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "drprojects/drprojects.github.io"
 
@@ -28,7 +28,7 @@ author:
   bio              : "Postdoctoral researcher at EcoVision. Deep learning for environmental applications."
   location         : "Zurich"
   employer         : "University of Zurich"
-  uri              : # URL
+  uri              : "https://drprojects.github.io"
   email            : "damien.robert@uzh.ch"
 
   # Academic websites

@@ -15,7 +15,7 @@ $text                       : #eaeaea;
 $link                       : mix($primary-color, $text, 40%);
 $link-dark                  : mix(#000, $link, 25%);
 $link-light                 : mix(#fff, $link, 25%);
-$footer                     : mix(#000, $background, 30%);
+$footer                     : $background;
 
 /* Color codes used for the site */
 $danger-color               : #ee5f5b;
