@@ -1,5 +1,26 @@
-title	type	url_slug	venue	date	location	talk_url	description
-Talk 1 on Relevant Topic in Your Field	Talk	talk-1	UC San Francisco, Department of Testing	2012-03-01	San Francisco, California		This is a description of your talk, which is a markdown files that can be all markdown-ified like any other post. Yay markdown!
-Tutorial 1 on Relevant Topic in Your Field	Tutorial	tutorial-1	UC-Berkeley Institute for Testing Science	2013-03-01	Berkeley CA, USA	http://exampleurl.com	This is a description of your tutorial, note the different field in type. This is a markdown files that can be all markdown-ified like any other post. Yay markdown!
-Talk 2 on Relevant Topic in Your Field	Talk	talk-2	London School of Testing	2014-02-01	London, UK	http://example2.com	This is a description of your talk, which is a markdown files that can be all markdown-ified like any other post. Yay markdown!
-Conference Proceeding talk 3 on Relevant Topic in Your Field	Conference proceedings talk	talk-3	Testing Institute of America 2014 Annual Conference	2014-03-01	Los Angeles, CA		This is a description of your conference proceedings talk, note the different field in type. You can put anything in this field.
+date	description
+2024-03-01	Presenting [SuperCluster](https://drprojects.github.io/supercluster) at [3DV 2024](https://3dvconf.github.io/2024) (**Oral** 🎉)
+2024-01-01	PhD defense on *Efficient Learning on Large-Scale 3D Point Clouds* at [IGN](https://www.ign.fr), in presence of [Sébastien Lefèvre](https://people.irisa.fr/Sebastien.Lefevre/), [Cédric Demonceaux](https://sites.google.com/view/cedricdemonceaux/home), [Patrick Pérez](https://ptrckprz.github.io/), [Siyu Tang](https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html), [Duygu Ceylan](https://www.duygu-ceylan.com/), [Loic Landrieu](https://loiclandrieu.com/), and [Bruno Vallet](https://www.umr-lastig.fr/bruno-vallet/) 🎓
+2023-10-01	Presenting [IGN](https://www.ign.fr)'s research on *Large-Scale 2D and 3D Learning* to the [National Land Survey of Finland (NSL)](https://www.maanmittauslaitos.fi/en)
+2023-10-01	Presenting [SuperCluster](https://drprojects.github.io/supercluster) to the [Ecole des Ponts, IMAGINE](https://imagine-lab.enpc.fr/) lab
+2023-07-01	Presenting [Superpoint Transformer](https://drprojects.github.io/superpoint-transformer) at [ICCV 2023](https://iccv2023.thecvf.com/)
+2023-09-01	Presenting [Superpoint Transformer](https://drprojects.github.io/superpoint-transformer) to the [ETH Zürich, Computer Vision and Geometry](https://cvg.ethz.ch/) lab
+2023-09-01	Presenting [Superpoint Transformer](https://drprojects.github.io/superpoint-transformer) to the [ETH Zürich, Photogrammetry and Remote Sensing](https://prs.igp.ethz.ch/) lab
+2023-06-01	Presenting [Superpoint Transformer](https://drprojects.github.io/superpoint-transformer) to the [ENGIE Lab CRIGEN](https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen)
+2023-05-01	Presenting [Superpoint Transformer](https://drprojects.github.io/superpoint-transformer) to the [University of Zürich, EcoVision](https://www.spacehub.uzh.ch/en/research-areas/earth-observation/EcoVision-Lab.html) lab
+2023-05-01	Presenting [Superpoint Transformer](https://drprojects.github.io/superpoint-transformer) to the [Samp](https://samp.ai/) R&D lab
+2023-05-01	Presenting [Superpoint Transformer](https://drprojects.github.io/superpoint-transformer) to the [Valeo.ai](https://www.valeo.com/en/valeo-ai/) lab
+2022-12-01	Presenting *Self-Supervised Learning for Computer Vision* to the [LASTIG](https://www.umr-lastig.fr) lab
+2022-11-01	Presenting [IGN](https://www.ign.fr)'s research on *Large-Scale 2D and 3D Learning* to the [German Federal Agency for Cartography and Geodesy (BKG)](https://www.bkg.bund.de/EN/Home/home.html)
+2022-07-01	Presenting [DeepViewAgg](https://drprojects.github.io/deepviewagg) at [ICVSS](https://iplab.dmi.unict.it/icvss2022/)
+2022-06-01	Tutorial _3D Deep Learning for Remote Sensing_ at [ISPRS 2022](https://www.isprs2022-nice.com/)
+2022-05-01	Tutorial _3D Deep Learning, Torch-Points3D & DeepViewAgg_ at [ENGIE Lab CRIGEN](https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen)
+2022-06-01	Presenting [DeepViewAgg](https://drprojects.github.io/deepviewagg) at [CVPR 2022](https://cvpr2022.thecvf.com/) (**Best Paper finalist** 🎉)
+2022-06-01	Had the honor to be interviewed for the CV News [Best of CVPR issue](https://www.rsipvision.com/ComputerVisionNews-2022July/24)
+2022-06-01	Presenting [DeepViewAgg](https://drprojects.github.io/deepviewagg) to the [Ecole des Ponts, IMAGINE](https://imagine-lab.enpc.fr/) lab
+2022-06-01	Presenting [DeepViewAgg](https://drprojects.github.io/deepviewagg) at [ISPRS 2022](https://www.isprs2022-nice.com/)
+2022-05-01	Presenting [DeepViewAgg](https://drprojects.github.io/deepviewagg) to the [Ecole Polytechnique, LIX](https://www.lix.polytechnique.fr/) lab
+2022-04-01	Presenting [DeepViewAgg](https://drprojects.github.io/deepviewagg) at the [AI4GEO project](https://www.ai4geo.eu/en/) seminar
+2022-03-01	Presenting [DeepViewAgg](https://drprojects.github.io/deepviewagg) at the [IGN-ENSG Research Days](https://www.ign.fr/agenda/31e-journee-de-la-recherche-de-lign-ensg)
+2022-01-01	Presenting [DeepViewAgg](https://drprojects.github.io/deepviewagg) at the [Information, Signal, Image and Vision research group](https://www.gdr-isis.fr/) seminar
+2021-05-01	Presenting [DeepViewAgg](https://drprojects.github.io/deepviewagg) at the [IGN-ENSG Research Days](https://www.ign.fr/agenda/30es-journees-de-la-recherche-ign-ensg)
