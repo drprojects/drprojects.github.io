@@ -10,7 +10,7 @@
          class="special-link">
 
         {% if post.teaser_video %}
-        <video autoplay muted loop playsinline style="width: 100%;">
+        <video autoplay muted loop playsinline class="teaser">
           <source src="{{ post.teaser_video | prepend: base_path }}" type="video/mp4">
         </video>
         {% elsif post.teaser_image %}

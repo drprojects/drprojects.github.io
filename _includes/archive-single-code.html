@@ -1,0 +1,55 @@
+{% include base_path %}
+
+<div class="paper-entry">
+
+  <div class="container">
+
+    <!-- LEFT: teaser -->
+    <div class="left-div">
+      <a href="{{ post.code_url }}"
+         class="special-link">
+
+        {% if post.teaser_video %}
+        <video autoplay muted loop playsinline class="teaser">
+          <source src="{{ post.teaser_video | prepend: base_path }}" type="video/mp4">
+        </video>
+        {% elsif post.teaser_image %}
+        <img src="{{ post.teaser_image | prepend: base_path }}"
+             class="teaser"
+             alt="{{ post.title }} image">
+        {% endif %}
+
+      </a>
+    </div>
+
+    <!-- RIGHT: text -->
+    <div class="right-div">
+      <a href="{{ post.code_url }}"
+         class="special-link">
+
+        <p>
+          <b>{{ post.title }}</b><br/>
+
+          {% assign clean_content = post.content | strip_html | strip %}
+          {% if clean_content != "" %}
+            {{ post.content | markdownify  | remove: "<p>" | remove: "</p>" }}<br/><br/>
+          {% endif %}
+
+          {% if post.code_url %}
+          <a class="btn btn--small special-link" href="{{ post.code_url }}">
+            <i class="fab fa-github"></i> Code
+          </a>
+          {% endif %}
+
+          {% if post.code_url %}
+          <br/><a class="special-link" href="{{ post.code_url }}">
+              <img alt="GitHub stars"
+                   src="https://img.shields.io/github/stars/{{ post.code_url | split: 'github.com/' | last }}?style=social">
+          </a>
+          {% endif %}
+        </p>
+
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+---
+layout: archive
+title: "Code"
+permalink: /code/
+author_profile: true
+---
+
+<br/>
+
+{% if site.author.github %}
+  <div class="wordwrap">
+    Here is a selection are some of the codebases I actively maintain on
+    <a href="https://github.com/{{site.author.github}}">GitHub</a> profile.
+  </div>
+  <br/>
+{% endif %}
+
+{% include base_path %}
+
+<!-- New style rendering if publication categories are defined -->
+{% for post in site.code reversed %}
+  {% include archive-single-code.html %}
+{% endfor %}
