@@ -33,8 +33,8 @@ import os
 
 # In[3]:
 
-talks = pd.read_csv("talks.tsv", sep="\t", header=0)
-talks
+news = pd.read_csv("news.tsv", sep="\t", header=0)
+news
 
 
 # ## Escape special characters
@@ -64,48 +64,25 @@ def html_escape(text):
 
 loc_dict = {}
 
-for row, item in talks.iterrows():
-    
-    md_filename = str(item.date) + "-" + item.url_slug + ".md"
-    html_filename = str(item.date) + "-" + item.url_slug 
+for row, item in news.iterrows():
+
+    md_filename = f"{item.date}-news-{row}.md"
     year = item.date[:4]
     
-    md = "---\ntitle: \""   + item.title + '"\n'
-    md += "collection: talks" + "\n"
-    
-    if len(str(item.type)) > 3:
-        md += 'type: "' + item.type + '"\n'
-    else:
-        md += 'type: "Talk"\n'
-    
-    md += "permalink: /talks/" + html_filename + "\n"
-    
-    if len(str(item.venue)) > 3:
-        md += 'venue: "' + item.venue + '"\n'
+    md = "---\n"
         
     if len(str(item.date)) > 3:
         md += "date: " + str(item.date) + "\n"
-    
-    if len(str(item.location)) > 3:
-        md += 'location: "' + str(item.location) + '"\n'
            
     md += "---\n"
-    
-    
-    if len(str(item.talk_url)) > 3:
-        md += "\n[More information here](" + item.talk_url + ")\n" 
-        
-    
+
     if len(str(item.description)) > 3:
         md += "\n" + html_escape(item.description) + "\n"
-        
-        
+
     md_filename = os.path.basename(md_filename)
     #print(md)
     
-    with open("../_talks/" + md_filename, 'w') as f:
+    with open("../_news/" + md_filename, 'w') as f:
         f.write(md)
 
-
-# These files are in the talks directory, one directory below where we're working from.
-
+# These files are in the news directory, one directory below where we're working from.
