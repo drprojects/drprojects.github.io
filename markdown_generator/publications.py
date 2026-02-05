@@ -24,7 +24,8 @@
 # In[2]:
 
 import pandas as pd
-
+import re
+import unicodedata
 
 # ## Import TSV
 # 
@@ -55,6 +56,24 @@ def html_escape(text):
     return "".join(html_escape_table.get(c,c) for c in text)
 
 
+def slugify(text):
+    # Remove HTML tags
+    text = re.sub(r"<[^>]+>", "", text)
+
+    # Normalize unicode
+    text = unicodedata.normalize("NFKD", text)
+    text = text.encode("ascii", "ignore").decode("ascii")
+
+    # Lowercase
+    text = text.lower()
+
+    # Replace non-alphanumeric by hyphen
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+
+    # Trim hyphens
+    return text.strip("-")
+
+
 # ## Creating the markdown files
 # 
 # This is where the heavy lifting is done. This loops through all the rows in the TSV dataframe, then starts to concatentate a big string (```md```) that contains the markdown for each type. It does the YAML metadata first, then does the description for the individual page. If you don't want something to appear (like the "Recommended citation")
@@ -63,47 +82,49 @@ def html_escape(text):
 
 import os
 for row, item in publications.iterrows():
-    
-    md_filename = str(item.pub_date) + "-" + item.url_slug + ".md"
-    html_filename = str(item.pub_date) + "-" + item.url_slug
-    year = item.pub_date[:4]
-    
+
+    year = item.date[:4]
+
+    md_filename = f"{year}-{slugify(item.title)}.md"
+
     ## YAML variables
     
     md = "---\ntitle: \""   + item.title + '"\n'
 
-    # TODO Update to use the category assigned in the TSV file
-    md += """collection: manuscripts"""
-    
-    md += """\npermalink: /publication/""" + html_filename
-    
-    if len(str(item.excerpt)) > 5:
-        md += "\nexcerpt: '" + html_escape(item.excerpt) + "'"
-    
-    md += "\ndate: " + str(item.pub_date) 
+    md += "\ndate: " + str(item.date)
     
     md += "\nvenue: '" + html_escape(item.venue) + "'"
-    
+
+    md += "\nauthors:"
+    for author_id in item.authors.split(','):
+        md += f"\n  - {author_id.strip(' ')}"
+
     if len(str(item.paper_url)) > 5:
-        md += "\npaperurl: '" + item.paper_url + "'"
-    
-    md += "\ncitation: '" + html_escape(item.citation) + "'"
-    
+        md += "\npaper_url: '" + item.paper_url + "'"
+
+    if len(str(item.project_url)) > 5:
+        md += "\nproject_url: '" + item.project_url + "'"
+
+    if len(str(item.code_url)) > 5:
+        md += "\ncode_url: '" + item.code_url + "'"
+
+    if len(str(item.video_url)) > 5:
+        md += "\nvideo_url: '" + item.video_url + "'"
+
+    md += "\nbibtex_id: '" + item.bibtex_id + "'"
+
+    if len(str(item.prize)) > 3:
+        md += f"\nprize: '{item.prize}'"
+
+    if len(str(item.teaser_video)) > 3:
+        md += "\nteaser_video: '" + item.teaser_video + "'"
+
+    if len(str(item.teaser_image)) > 3:
+        md += "\nteaser_image: '" + item.teaser_image + "'"
+
     md += "\n---"
-    
-    ## Markdown description for individual page
-    
-    if len(str(item.paper_url)) > 5:
-        md += "\n\n<a href='" + item.paper_url + "'>Download paper here</a>\n" 
-        
-    if len(str(item.excerpt)) > 5:
-        md += "\n" + html_escape(item.excerpt) + "\n"
-        
-    md += "\nRecommended citation: " + item.citation
-    
+
     md_filename = os.path.basename(md_filename)
        
     with open("../_publications/" + md_filename, 'w') as f:
         f.write(md)
-
-

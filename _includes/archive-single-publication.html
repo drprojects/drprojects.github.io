@@ -50,7 +50,7 @@
           <i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }}.
 
           {%- if post.prize -%}
-            <br/><br/>{{ post.prize }}
+            <br/><br/>{{ post.prize | markdownify  | remove: "<p>" | remove: "</p>" }}
           {%- endif -%}
           <br/><br/>
 
