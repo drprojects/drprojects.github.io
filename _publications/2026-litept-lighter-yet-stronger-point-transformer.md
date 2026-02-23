@@ -2,7 +2,7 @@
 title: "LitePT: Lighter Yet Stronger Point Transformer"
 
 date: 2026-06-01
-venue: 'arxiv'
+venue: 'CVPR'
 authors:
   - yuanwen_yue
   - me
