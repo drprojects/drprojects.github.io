@@ -10,7 +10,7 @@ redirect_from:
 <p>
     I am a postdoctoral researcher in the <a href="https://dm3l.uzh.ch/en/wegner">EcoVision</a> lab at 
     <a href="https://www.uzh.ch/en.html">University of Zurich</a>, I collaborate with 
-    <a href="https://dm3l.uzh.ch/wegner/group-leader">Jan Dirk Wegner</a> to design deep learning methods for remote 
+    <a href="https://dm3l.uzh.ch/member/wegner">Jan Dirk Wegner</a> to design deep learning methods for remote 
     sensing and environmental applications.
     Before joining UZH, I completed my PhD on <i>"Efficient Learning on Large-Scale 3D Point Clouds"</i> at 
     <a href="https://www.ign.fr">IGN</a> and <a href="https://www.engie.com">ENGIE</a>, under the supervision of 
