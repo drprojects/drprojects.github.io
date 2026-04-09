@@ -15,5 +15,6 @@ paper_url: 'http://arxiv.org/abs/2512.13689'
 project_url: 'https://litept.github.io'
 code_url: 'https://github.com/prs-eth/LitePT'
 bibtex_id: 'yuelitept2025'
+prize: '**✨ Highlight**'
 teaser_image: '/images/publications/2026/litept/teaser.png'
 ---
