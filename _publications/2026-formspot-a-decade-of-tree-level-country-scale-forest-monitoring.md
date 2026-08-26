@@ -1,8 +1,8 @@
 ---
 title: "FORMSpoT: A Decade of Tree-Level, Country-Scale Forest Monitoring"
 
-date: 2026-07-01
-venue: 'arxiv'
+date: 2026-08-26
+venue: 'Remote Sensing of Environment'
 authors:
   - martin_schwartz
   - fajwel_fogel
@@ -16,7 +16,7 @@ authors:
   - alexandre_d_aspremont
   - loic_landrieu
   - philippe_ciais
-paper_url: 'https://arxiv.org/abs/2512.17021'
+paper_url: 'https://www.sciencedirect.com/science/article/pii/S0034425726004013'
 bibtex_id: 'schwartz2026formspot'
 teaser_image: '/images/publications/2026/formspot/teaser.gif'
 ---
