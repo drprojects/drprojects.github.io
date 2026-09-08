@@ -1,5 +1,7 @@
 {% comment %}
-  One teaching engagement. Data comes from _data/teaching.yml via include.item.
+  One teaching engagement, from _data/teaching.yml via include.item.
+  Line 1: what was taught and where. Line 2: format and audience.
+  Teaching hours are recorded in the data but shown only in the PDF CV.
 {% endcomment %}
 {% assign item = include.item %}
 <div class="news-entry">
@@ -14,6 +16,6 @@
   <div class="news-text">
     <em>{{ item.title }}</em> at
     {% if item.institution_url %}<a href="{{ item.institution_url }}">{{ item.institution }}</a>{% else %}{{ item.institution }}{% endif %}
-    <span class="talk-loc">&nbsp;·&nbsp;{{ item.format }}{% if item.level %}, {{ item.level }}{% endif %}{% if item.hours %}, {{ item.hours }}&nbsp;h{% elsif item.duration %}, {{ item.duration }}{% endif %}</span>
+    <span class="entry-sub">{{ item.format }}{% if item.level %} &middot; {{ item.level }}{% endif %}</span>
   </div>
 </div>

@@ -1,27 +1,21 @@
 {% comment %}
-  One talk. Data comes from _data/talks.yml via include.item.
-  The sentence is generated from the structured fields so the same record can
-  also feed the PDF CV — there is no free-text blob to keep in sync.
+  One talk, from _data/talks.yml via include.item.
+  Line 1: type icon + what was presented + where.
+  Line 2: the location, de-emphasised.
 {% endcomment %}
 {% assign item = include.item %}
-<div class="news-entry">
+<div class="news-entry entry--typed">
   {% assign year = item.date | date: "%Y" %}
   {% assign month = item.date | date: "%m" %}
   {% assign idx = year | minus: 2022 | modulo: 7 %}
   <span class="label color-{{ idx }}">{{ month }}/{{ year }}</span>
+  <span class="entry-icon">{% include icon-talk-type.html type=item.type %}</span>
   <div class="news-text">
-    {% case item.type %}
-      {% when 'oral' %}{% assign verb = 'Conference talk' %}
-      {% when 'poster' %}{% assign verb = 'Poster' %}
-      {% when 'interview' %}{% assign verb = 'Interview' %}
-      {% when 'tutorial' %}{% assign verb = 'Tutorial' %}
-      {% else %}{% assign verb = 'Invited talk' %}
-    {% endcase %}
-    <span class="talk-type">{{ verb }}</span>
     {% if item.title %}
       <em>{% if item.title_url %}<a href="{{ item.title_url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</em>
       at
     {% endif %}
-    {% if item.venue_url %}<a href="{{ item.venue_url }}">{{ item.venue }}</a>{% else %}{{ item.venue }}{% endif %}{% if item.location %}<span class="talk-loc">&nbsp;·&nbsp;{{ item.location }}</span>{% endif %}
+    {% if item.venue_url %}<a href="{{ item.venue_url }}">{{ item.venue }}</a>{% else %}{{ item.venue }}{% endif %}
+    {% if item.location %}<span class="entry-sub">{{ item.location }}</span>{% endif %}
   </div>
 </div>

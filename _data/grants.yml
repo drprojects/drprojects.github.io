@@ -1,0 +1,13 @@
+# Grants, fellowships and funded projects.
+#
+# Empty for now — the Community page hides this section until you add an entry.
+# Schema:
+#
+# - year: 2027
+#   title: "Some Named Grant"
+#   funder: Swiss National Science Foundation
+#   funder_url: https://www.snf.ch
+#   amount: "CHF 250,000"        # optional
+#   role: Principal Investigator # optional
+#   period: "2027–2030"          # optional
+#   note: "..."                  # optional

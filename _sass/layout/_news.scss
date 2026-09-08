@@ -18,21 +18,60 @@
 
 /* ===== Structured talk / teaching entries =====
    Talks and teaching are rendered from _data/*.yml rather than free text, so
-   the entry type and the location get their own de-emphasised styling. */
+   each row can carry a type icon and a de-emphasised second line. */
 
-.talk-type {
-  display: inline-block;
-  font-size: 0.75em;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #7a8288;
-  margin-right: 0.35em;
+.news-entry.entry--typed {
+  align-items: flex-start;
+}
+
+.entry-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55em;
+  height: 1.55em;
+  margin-top: 0.05em;
+  color: var(--global-base-color);
+}
+
+.ttype {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Second line: location, or course format and audience. */
+.entry-sub {
+  display: block;
+  margin-top: 0.1em;
+  font-size: 0.82em;
+  color: var(--global-text-color-light);
+  letter-spacing: 0.01em;
+}
+
+/* Legend explaining the icons, shown once at the top of a listing. */
+.type-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 1.4em;
+  align-items: center;
+  margin: 0 0 1.75em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--global-border-color);
+  font-size: 0.8em;
+  color: var(--global-text-color-light);
+}
+
+.type-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
   white-space: nowrap;
 }
 
-.talk-loc {
-  font-size: 0.85em;
-  color: #7a8288;
-  white-space: nowrap;
+.type-legend .ttype {
+  width: 1.3em;
+  height: 1.3em;
+  color: var(--global-base-color);
 }

@@ -1,0 +1,86 @@
+---
+layout: archive
+title: "Community"
+permalink: /community/
+author_profile: true
+---
+
+{% include base_path %}
+
+<br/>
+
+<p class="wordwrap">Reviewing, chairing, organising, mentoring and advising &mdash; the
+work that happens around the papers.</p>
+
+{% comment %} ------------------------------ reviewing ---------------------- {% endcomment %}
+{% if site.data.service and site.data.service.size > 0 %}
+<h2 class="home-heading">Reviewing &amp; Chairing</h2>
+{% assign years = site.data.service | map: 'year' | uniq | sort | reverse %}
+{% for y in years %}
+  <div class="news-entry">
+    {% assign idx = y | minus: 2022 | modulo: 7 %}
+    <span class="label color-{{ idx }}">{{ y }}</span>
+    <div class="news-text">
+      {% assign first = true %}
+      {% for s in site.data.service %}{% if s.year == y %}{% unless first %} &middot; {% endunless %}{{ s.venue }}{% if s.role != 'Reviewer' %} <span class="role-tag">{{ s.role }}</span>{% endif %}{% if s.note %} <span class="role-tag role-tag--award">{{ s.note }}</span>{% endif %}{% assign first = false %}{% endif %}{% endfor %}
+    </div>
+  </div>
+{% endfor %}
+{% endif %}
+
+{% comment %} ------------------------------ organising --------------------- {% endcomment %}
+{% if site.data.organizing and site.data.organizing.size > 0 %}
+<h2 class="home-heading">Organising Committees</h2>
+{% for o in site.data.organizing %}
+  <div class="news-entry">
+    {% assign idx = o.year | minus: 2022 | modulo: 7 %}
+    <span class="label color-{{ idx }}">{{ o.year }}</span>
+    <div class="news-text">
+      {% if o.event_url %}<a href="{{ o.event_url }}">{{ o.event }}</a>{% else %}{{ o.event }}{% endif %}
+      <span class="role-tag">{{ o.role }}</span>
+      {% if o.note %}<span class="entry-sub">{{ o.note }}</span>{% endif %}
+    </div>
+  </div>
+{% endfor %}
+{% endif %}
+
+{% comment %} ------------------------- supervision & people ---------------- {% endcomment %}
+{% for g in site.data.supervision.groups %}
+  {% case g.id %}
+    {% when 'phd' %}{% assign heading = 'PhD Students' %}
+    {% when 'master' %}{% assign heading = 'Master Students &amp; Interns' %}
+    {% when 'researchers' %}{% assign heading = 'Research Collaborators' %}
+    {% when 'advising' %}{% assign heading = 'Scientific Advising' %}
+    {% else %}{% assign heading = g.label %}
+  {% endcase %}
+  <h2 class="home-heading">{{ heading }}</h2>
+  <div class="people-grid">
+    {% for q in g.people %}
+      {% assign a = nil %}
+      {% if q.key %}{% assign a = site.data.authors[q.key] %}{% endif %}
+      <div class="person">
+        <div class="person__name">
+          {% if a and a.url %}<a href="{{ a.url }}">{{ q.name }}</a>{% else %}{{ q.name }}{% endif %}
+        </div>
+        {% if q.org %}<div class="person__org">{{ q.org }}</div>{% endif %}
+        {% if q.with %}<div class="person__with">with {{ q.with }}</div>{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+
+{% comment %} -------------------------------- grants ----------------------- {% endcomment %}
+{% if site.data.grants and site.data.grants.size > 0 %}
+<h2 class="home-heading">Grants &amp; Funding</h2>
+{% for gr in site.data.grants %}
+  <div class="news-entry">
+    {% assign idx = gr.year | minus: 2022 | modulo: 7 %}
+    <span class="label color-{{ idx }}">{{ gr.year }}</span>
+    <div class="news-text">
+      <strong>{{ gr.title }}</strong>
+      {% if gr.funder %} &middot; {% if gr.funder_url %}<a href="{{ gr.funder_url }}">{{ gr.funder }}</a>{% else %}{{ gr.funder }}{% endif %}{% endif %}
+      <span class="entry-sub">{% if gr.role %}{{ gr.role }}{% endif %}{% if gr.period %} &middot; {{ gr.period }}{% endif %}{% if gr.amount %} &middot; {{ gr.amount }}{% endif %}</span>
+    </div>
+  </div>
+{% endfor %}
+{% endif %}

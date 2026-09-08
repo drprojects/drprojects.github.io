@@ -29,7 +29,8 @@ DATA = ROOT / "_data"
 CVDIR = ROOT / "cv"
 BUILD = CVDIR / "build"
 OUT = ROOT / "files" / "cv.pdf"
-STARS_CACHE = CVDIR / "stars.json"
+# Written into _data/ so the website can show live star counts too.
+STARS_CACHE = DATA / "github_stars.json"
 
 DATASETS = [
     "profile", "authors", "publications", "talks", "teaching",
@@ -121,6 +122,24 @@ def load_data() -> dict:
     return data
 
 
+def publication_histogram(publications):
+    """(years, counts, max) for the bar chart next to the Publications heading.
+
+    Counts every CV-visible publication, including preprints under review, so
+    the chart reflects output rather than acceptance timing.
+    """
+    counts = {}
+    for pub in publications:
+        year = pub.get("year")
+        if year:
+            counts[year] = counts.get(year, 0) + 1
+    if not counts:
+        return [], 0
+    years = sorted(counts)
+    full = list(range(years[0], years[-1] + 1))
+    return [(y, counts.get(y, 0)) for y in full], max(counts.values())
+
+
 def for_cv(items, default=True):
     """Filter a list on its `cv` flag.
 
@@ -204,10 +223,14 @@ def build(offline: bool, keep_tex: bool) -> int:
     )
     env.filters.update(tex=tex, md2tex=md2tex, strip_emoji=strip_emoji)
 
+    hist, hist_max = publication_histogram(for_cv(data["publications"]))
+
     template = env.get_template("cv.tex.j2")
     rendered = template.render(
         d=data,
         stars=stars,
+        pub_hist=hist,
+        pub_hist_max=hist_max,
         for_cv=for_cv,
         author_names=lambda keys: author_names(data, keys),
         today=date.today(),

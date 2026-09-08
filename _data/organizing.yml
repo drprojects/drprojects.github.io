@@ -1,0 +1,10 @@
+# Workshop / conference / session organising committees.
+#
+# Empty for now — the Community page hides this section until you add an entry.
+# Schema:
+#
+# - year: 2026
+#   role: Organiser              # Organiser | Co-organiser | Session chair
+#   event: "CVPR workshop EarthVision"
+#   event_url: https://www.grss-ieee.org/events/earthvision-2026/
+#   note: "Programme co-chair"   # optional

@@ -11,6 +11,23 @@ author_profile: true
 <p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
 {% endif %}
 
+{% comment %} Legend for the type icons used on every row below. {% endcomment %}
+<div class="type-legend">
+  {% assign legend_types = "invited,oral,poster,tutorial,interview" | split: "," %}
+  {% for t in legend_types %}
+    <span class="type-legend__item">
+      {% include icon-talk-type.html type=t %}
+      {% case t %}
+        {% when 'oral' %}Conference talk
+        {% when 'poster' %}Poster
+        {% when 'tutorial' %}Tutorial
+        {% when 'interview' %}Interview
+        {% else %}Invited talk
+      {% endcase %}
+    </span>
+  {% endfor %}
+</div>
+
 {% comment %} Source of truth: _data/talks.yml (shared with the PDF CV). {% endcomment %}
 {% for item in site.data.talks %}
   {% unless item.web == false %}

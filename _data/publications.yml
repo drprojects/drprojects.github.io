@@ -262,7 +262,7 @@
   status: thesis
   authors:
     - me
-  note: "AFRIF PhD Award accessit"
+  note: "AFRIF award"
   paper_url: https://hal.science/tel-04448827
   code_url: https://github.com/drprojects
   bibtex_id: robert2024phd
@@ -321,7 +321,7 @@
     - me
     - bruno_vallet
     - loic_landrieu
-  note: "Oral and Best paper finalist"
+  note: "Oral · Best paper finalist"
   selectivity: "top 0.4% of submissions"
   paper_url: https://arxiv.org/abs/2204.07548
   project_url: https://drprojects.github.io/deepviewagg-site

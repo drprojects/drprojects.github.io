@@ -128,3 +128,45 @@ commits the PDF whenever `_data/` or `cv/` changes.
    `archive-layout-with-content.md`, `portfolio.html`, `page-archive.html`,
    `collection-archive.html`, `year-archive.html`, `category-archive.html`,
    `tag-archive.html`. Worth deleting in a follow-up.
+
+
+---
+
+## Round 2 — design pass
+
+Following review feedback:
+
+**Landing page.** Distinctions strip (from `awards.yml`, ordered by `weight` so
+the Best Paper Finalist leads) and a stats band computed from the data
+(publications, talks, GitHub stars, countries presented in). The bare "All news
+→" arrow became a proper underlined link.
+
+**Talks.** Five hand-drawn 24×24 line icons for oral / poster / invited /
+interview / tutorial, in `_includes/icon-talk-type.html`. They inherit
+`currentColor`, so they work in both themes. A legend sits at the top of the
+page. Location moved to its own de-emphasised second line.
+
+**Teaching.** Format and audience on a second line; teaching hours are kept in
+the data but printed only in the PDF.
+
+**CV.** No more HTML CV — the nav serves the PDF. One shared intro paragraph.
+Full-bleed tinted header band, accent marker blocks on section headings, a
+publications-per-year bar chart beside the Publications heading, and language
+proficiency meters. Separator style unified to a single middot. Submission
+counts removed from the Best Paper Finalist line.
+
+**New `/community/` page.** Reviewing & chairing, organising committees,
+supervision, collaborators, scientific advising, grants. `organizing.yml` and
+`grants.yml` are empty with documented schemas and their sections stay hidden
+until filled.
+
+### Still open
+
+1. `_data/talks.yml` — NVIDIA entry carries `_verify: location inferred`.
+2. `_data/organizing.yml` and `_data/grants.yml` are waiting for real entries.
+3. `_data/profile.yml` — `metrics.show` is `false`; add citations / h-index.
+4. Leftover academicpages demo pages still build: `_pages/markdown.md` (which
+   links to the now-deleted `/cv-json/`), `non-menu-page.md`, `terms.md`,
+   `archive-layout-with-content.md`, `portfolio.html`, `page-archive.html`,
+   `collection-archive.html`, `year-archive.html`, `category-archive.html`,
+   `tag-archive.html`.

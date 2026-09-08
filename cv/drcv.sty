@@ -22,7 +22,9 @@
 \RequirePackage{needspace}
 
 % ------------------------------- DESIGN TOKENS -----------------------------
-\definecolor{accent}{HTML}{11505E}   % deep teal — headings, links, gutter text
+\definecolor{accent}{HTML}{11505E}   % deep teal — headings, links, markers
+\definecolor{accentmid}{HTML}{3E7F8C} % lighter teal — charts, meters
+\definecolor{band}{HTML}{EAF1F2}     % header band tint
 \definecolor{ink}{HTML}{1A1A1A}      % body text
 \definecolor{muted}{HTML}{6B7280}    % secondary text, locations, dates
 \definecolor{hairline}{HTML}{D4D8DC} % rules
@@ -33,7 +35,7 @@
 \newlength{\cvbody}
 % ---------------------------------------------------------------------------
 
-\RequirePackage[a4paper,top=16mm,bottom=15mm,left=18mm,right=18mm]{geometry}
+\RequirePackage[a4paper,top=11mm,bottom=13mm,left=18mm,right=18mm]{geometry}
 \setlength{\cvbody}{\textwidth-\cvgutter-\cvgap}
 
 % Fonts: Source Serif Pro for reading, Source Sans Pro for display/labels.
@@ -72,53 +74,93 @@
 
 % --------------------------------- HEADER ----------------------------------
 \newlength{\hdrw}
+\newlength{\bandheight}\setlength{\bandheight}{38mm}
+
 % \cvheader{name}{tagline}{summary}{contact row}{portrait path or empty}
+%
+% The band is drawn full-bleed with an overlay tikzpicture anchored to the page,
+% so it runs edge to edge while the text keeps the normal margins.
 \newcommand{\cvheader}[5]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[band] (current page.north west)
+      rectangle ([yshift=-\bandheight]current page.north east);
+    \fill[accent] ([yshift=-\bandheight]current page.north west)
+      rectangle ([yshift=-\bandheight-1.1pt]current page.north east);
+  \end{tikzpicture}%
   \begingroup
-  \setlength{\tabcolsep}{0pt}%
   \ifx\relax#5\relax
     \setlength{\hdrw}{\textwidth}%
   \else
-    \setlength{\hdrw}{\textwidth-30mm}%
+    \setlength{\hdrw}{\textwidth-28mm}%
   \fi
+  \vspace*{1mm}%
   \noindent
   \begin{minipage}[c]{\hdrw}
-    {\sanstext\fontsize{27}{30}\selectfont\bfseries\color{accent}#1\par}
-    \vspace{1.5mm}
+    {\sanstext\fontsize{25}{28}\selectfont\bfseries\color{accent}#1\par}
+    \vspace{1.6mm}
     {\sanstext\fontsize{11.5}{14}\selectfont\color{ink}#2\par}
   \end{minipage}%
   \ifx\relax#5\relax\else
     \hfill
-    \begin{minipage}[c]{28mm}
+    \begin{minipage}[c]{26mm}
       \raggedleft
       \begin{tikzpicture}
-        \clip (0,0) circle (13mm) node {\includegraphics[width=26.5mm]{#5}};
-        \draw[hairline,line width=.4pt] (0,0) circle (13mm);
+        \clip (0,0) circle (12mm) node {\includegraphics[width=24.5mm]{#5}};
+        \draw[white,line width=1.5pt] (0,0) circle (11.9mm);
       \end{tikzpicture}
     \end{minipage}%
   \fi
-  \par\vspace{3mm}
-  {\footnotesize\sanstext\color{muted}#4\par}
-  \vspace{2.5mm}
-  {\color{hairline}\rule{\textwidth}{0.6pt}}\par
-  \vspace{2.5mm}
-  {\small #3\par}
+  \par\vspace{2.6mm}
+  {\footnotesize\sanstext\color{accent}#4\par}
   \endgroup
-  \vspace{2mm}
+  \vspace*{3.2mm}
+  \par
+  {\small #3\par}
+  \vspace{1mm}
 }
 
-% Separator between contact items
-\newcommand{\cvsep}{\;\textcolor{hairline}{\rule[0.35ex]{2.2pt}{2.2pt}}\;}
+% Separator between contact items — one style, used everywhere.
+\newcommand{\cvsep}{\;\textcolor{accentmid}{\rule[0.32ex]{2.2pt}{2.2pt}}\;}
+\newcommand{\cvdot}{\,\textcolor{hairline}{\textbullet}\,}
+
+% -------------------------- CHARTS AND METERS ------------------------------
+% Publications-per-year bar chart, shown beside the Publications heading.
+% Deliberately small and label-free: it is a shape, not a table. The year span
+% is spelled out once underneath rather than under every bar.
+% \sparkbars{max}{y1/n1, y2/n2, ...}
+\newcommand{\sparkbars}[2]{%
+  \begin{tikzpicture}[baseline=-0.35em, x=2.6mm, y=0.62mm]
+    \foreach \yr/\n [count=\i from 0] in {#2} {
+      \fill[accentmid] (\i+0.18, 0) rectangle (\i+0.82, {max(\n,0.35)*7/#1});
+    }
+  \end{tikzpicture}%
+}
+
+% \sparkspan{first}{last} — tiny caption for the chart above.
+\newcommand{\sparkspan}[2]{{\tiny\sanstext\color{muted}\,#1--#2}}
+
+% Proficiency meter. \meter{filled width in mm}
+\newcommand{\meterlen}{18mm}
+\newcommand{\meter}[1]{%
+  \begin{tikzpicture}[baseline=-0.02em]
+    \fill[hairline, rounded corners=0.55pt] (0,0) rectangle (\meterlen, 1.1mm);
+    \fill[accentmid, rounded corners=0.55pt] (0,0) rectangle (#1, 1.1mm);
+  \end{tikzpicture}%
+}
 
 % -------------------------------- SECTIONS ---------------------------------
-\newcommand{\cvsection}[1]{%
-  \par\addvspace{3.4mm}%
+% \cvsection[right-hand content]{Title}
+\newcommand{\cvsection}[2][]{%
+  \par\addvspace{3.6mm}%
   \needspace{3\baselineskip}%
+  \noindent
+  {\color{accent}\rule[-0.08em]{2.3mm}{2.3mm}}\hspace{2.1mm}%
   {\sanstext\fontsize{9.5}{11}\selectfont\bfseries\color{accent}%
-   \MakeUppercase{\textls[180]{#1}}\par}%
-  \vspace{0.9mm}%
+   \MakeUppercase{\textls[180]{#2}}}%
+  \ifx\relax#1\relax\else\hfill#1\fi
+  \par\vspace{1.0mm}%
   {\color{accent}\rule{\textwidth}{0.7pt}}\par
-  \addvspace{2.0mm}%
+  \addvspace{2.2mm}%
 }
 
 \newcommand{\cvsubsection}[1]{%

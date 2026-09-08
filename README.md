@@ -25,7 +25,18 @@ _data/*.yml   <- the only files you edit by hand
 | course | `_data/teaching.yml` | /teaching/, /cv/, PDF |
 | repository | `_data/code.yml` | /code/, /cv/, PDF |
 | news item | `_data/news.yml` | homepage, /news/ |
-| job, degree, award, review, student, skill | the matching `_data/*.yml` | /cv/, PDF |
+| review, chair role | `_data/service.yml` | /community/, PDF |
+| organising committee | `_data/organizing.yml` | /community/ |
+| student, collaborator, advisee | `_data/supervision.yml` | /community/, PDF |
+| grant | `_data/grants.yml` | /community/ |
+| job, degree, award, skill | the matching `_data/*.yml` | homepage or PDF |
+
+`organizing.yml` and `grants.yml` ship empty with their schema in comments; the
+Community page hides a section until it has entries.
+
+The homepage distinctions strip is driven by `awards.yml`. Its `weight` field
+orders that strip only (highest first), so the strip can lead with the Best Paper
+Finalist while the CV stays reverse-chronological.
 
 New co-authors go in `_data/authors.yml`; publications reference them by key.
 
@@ -54,7 +65,13 @@ make check     # fail if files/cv.pdf is older than the data behind it
 Without that override a local build still loads the **live** site's CSS, and you
 end up reviewing production styling instead of your own changes.
 
-## The PDF CV
+## The CV
+
+There is no HTML CV page. The **CV** nav item serves `files/cv.pdf` directly, so
+there is only one CV to design and maintain. The intro paragraph in
+`profile.yml` is shared between the homepage and the PDF.
+
+## How the PDF is built
 
 - `cv/drcv.sty` — all typography and layout. Every tunable value (accent colour,
   gutter width, spacing) is in the `DESIGN TOKENS` block at the top.
@@ -63,8 +80,13 @@ end up reviewing production styling instead of your own changes.
 - `cv/build.py` — loads the data, fetches GitHub star counts, renders, runs
   pdflatex twice, writes `files/cv.pdf`.
 
-GitHub star and fork counts are fetched at build time and cached in
-`cv/stars.json`; they are never hardcoded.
+GitHub star and fork counts are fetched at build time into
+`_data/github_stars.json`, which the homepage stats band also reads. They are
+never hardcoded.
+
+Graphical elements in the CV — the tinted header band, the publications-per-year
+bar chart, the language meters — are all TikZ, driven by the same data. The
+chart's counts come from `publication_histogram()` in `cv/build.py`.
 
 `.github/workflows/build-cv.yml` rebuilds and commits the PDF on any push that
 touches `_data/` or `cv/`, so a single push updates the site and the CV together.

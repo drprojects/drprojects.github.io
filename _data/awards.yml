@@ -1,19 +1,26 @@
-# Awards and distinctions, reverse chronological.
+# Awards and distinctions, reverse chronological (the order the CV prints them).
+#
+# `weight` only affects the homepage distinctions strip, which leads with the
+# most impressive rather than the most recent. Higher = shown first.
 
 - year: 2026
   title: Outstanding Reviewer
   venue: CVPR
+  weight: 20
 
 - year: 2025
   title: PhD Award — accessit
   venue: AFRIF
   description: French Association for Pattern Recognition and Interpretation
+  weight: 30
 
 - year: 2024
   title: Outstanding Reviewer
   venue: ECCV
+  weight: 10
 
 - year: 2022
   title: Best Paper Finalist
   venue: CVPR
-  description: Top 0.4% of submissions (33 of 8161)
+  description: Top 0.4% of submissions
+  weight: 40

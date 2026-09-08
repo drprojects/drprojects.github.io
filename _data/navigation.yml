@@ -13,10 +13,12 @@ main:
   - title: "Teaching"
     url: /teaching/
 
+  - title: "Community"
+    url: /community/
+
   - title: "News"
     url: /news/
 
-  # The CV page renders _data/*.yml in the browser and links to the generated
-  # PDF. Point this at /files/cv.pdf instead if you prefer a direct download.
+  # Serves the generated PDF directly — there is no HTML CV to keep in sync.
   - title: "CV"
-    url: /cv/
+    url: /files/cv.pdf
