@@ -1,0 +1,330 @@
+# Talks, reverse chronological.
+#
+# NOTE: talks are OPT-IN for the CV. Unlike every other collection, an item here
+# is included in the PDF only if it carries `cv: true`. There are 45 talks and
+# the CV shows ~17 selected ones; the website shows all of them.
+#
+# Selection rationale: keep conference orals (a distinction), interviews, and
+# invited talks at external institutions that a reader would recognise. Drop
+# repeat presentations of the same title at internal seminars, and posters that
+# merely restate a paper already listed in the publications section.
+#
+# type: oral | poster | invited | interview | tutorial
+- date: 2026-06-01
+  type: poster
+  title: 'LitePT: Lighter Yet Stronger Point Transformer'
+  title_url: https://litept.github.io
+  venue: CVPR@Paris'26
+  venue_url: https://cvprinparis.github.io/CVPR2026InParis
+  location: Paris, France
+- date: 2026-05-19
+  type: tutorial
+  title: Building Earth Observation Embedding Workflows with TerraTorch
+  venue: ESA-NASA workshop on AI Foundation Model for EO
+  venue_url: https://nikal.eventsair.com/2nd-esa-nasa-workshop-on-ai-foundation-model-for-earth-observation-eo/
+  location: Virtual
+  cv: true
+- date: 2026-05-05
+  type: poster
+  title: Forest Disturbance Monitoring with Geospatial Foundation Models
+  venue: EGU'26
+  venue_url: https://www.egu26.eu/
+  location: Vienna, Austria
+- date: 2026-03-17
+  type: invited
+  title: Deep learning on 3D point clouds
+  venue: UZH RSL Remote Sensing Colloquium
+  venue_url: https://www.geo.uzh.ch/en/units/rss/events.html
+  location: Zurich, Switzerland
+- date: 2026-03-10
+  type: invited
+  title: Geospatial foundation models for forest disturbance monitoring
+  venue: ESA Φ-lab
+  venue_url: https://philab.esa.int/
+  location: Frascati, Italy
+  cv: true
+- date: 2025-12-15
+  type: invited
+  title: Research at EcoVision lab
+  title_url: https://dm3l.uzh.ch/en/wegner
+  venue: MPI of Animal Behavior
+  venue_url: https://www.ab.mpg.de/
+  location: Zurich, Switzerland
+  cv: true
+- date: 2025-12-04
+  type: invited
+  title: Geospatial foundation models for forest disturbance monitoring
+  venue: Global Forest Watch
+  venue_url: https://www.globalforestwatch.org/
+  location: Virtual
+  cv: true
+- date: 2025-10-03
+  type: invited
+  title: Research at EcoVision lab
+  title_url: https://dm3l.uzh.ch/en/wegner
+  venue: ETH Zurich, Plant Ecology
+  venue_url: https://plantecology.ethz.ch/
+  location: Zurich, Switzerland
+- date: 2025-09-01
+  type: poster
+  title: 'SSL4Eco: A Global Seasonal Dataset for Geospatial Foundation Models in Ecology'
+  title_url: https://plekhanovaelena.github.io/ssl4eco/
+  venue: AI4EO
+  venue_url: https://ai4eo2025.irisa.fr/fr/
+  location: Rennes, France
+- date: 2025-06-01
+  type: poster
+  title: 'SSL4Eco: A Global Seasonal Dataset for Geospatial Foundation Models in Ecology'
+  title_url: https://plekhanovaelena.github.io/ssl4eco/
+  venue: CVPR'25 EarthVision
+  venue_url: https://www.grss-ieee.org/events/earthvision-2025/
+  location: Nashville, US
+- date: 2025-05-27
+  type: invited
+  title: Research at EcoVision lab
+  title_url: https://dm3l.uzh.ch/en/wegner
+  venue: NatureFinance
+  venue_url: https://www.naturefinance.net/
+  location: Virtual
+  cv: true
+- date: 2025-05-26
+  type: invited
+  title: Superpoint Transformer
+  title_url: https://drprojects.github.io/superpoint-transformer-site
+  venue: Unil., Institute for Forensic Science
+  venue_url: https://www.unil.ch/unil/en/home/menuinst/universite/histoire/fdca/institut-de-police-scientifique-et-de-criminologie.html
+  location: Virtual
+- date: 2025-05-21
+  title: Superpoint Transformer and EcoVision research
+  venue: NVIDIA Strategic Research Engagement
+  venue_url: https://clapeyre.github.io/
+  type: invited
+  location: Zurich, Switzerland
+  _verify: location inferred - confirm
+  cv: true
+- date: 2025-03-11
+  type: invited
+  title: Remote Sensing for Species Distribution Modeling
+  venue: CNES COMET TSI
+  venue_url: https://www.comet-cnes.fr/tsi
+  location: Virtual
+  cv: true
+- date: 2025-02-13
+  type: invited
+  title: Research at EcoVision lab
+  title_url: https://dm3l.uzh.ch/en/wegner
+  venue: WSL Dynamic Ecology
+  venue_url: https://www.wsl.ch/en/about-wsl/organisation/research-units/land-change-science/translate-to-englisch-dynamische-makrooekologie/
+  location: Zurich, Switzerland
+- date: 2024-11-28
+  type: invited
+  title: SuperCluster
+  title_url: https://drprojects.github.io/supercluster-site
+  venue: Samp R&D lab
+  venue_url: https://samp.ai/
+  location: Paris, France
+- date: 2024-06-27
+  type: interview
+  title: Interview by Florent Poux and tutorial for Superpoint Transformer
+  title_url: https://drprojects.github.io/superpoint-transformer-site
+  venue: 3D Data Academy
+  venue_url: https://www.youtube.com/watch?v=2qKhpQs9gJw
+  location: YouTube
+  cv: true
+- date: 2024-06-20
+  type: invited
+  title: Research at EcoVision lab
+  title_url: https://dm3l.uzh.ch/en/wegner
+  venue: Una Europa
+  venue_url: https://www.una-europa.eu/about/universitat-zurich
+  location: Zurich, Switzerland
+- date: 2024-05-16
+  type: invited
+  title: Research at EcoVision lab
+  title_url: https://dm3l.uzh.ch/en/wegner
+  venue: Google DeepMind
+  venue_url: https://scholar.google.com/citations?user=XaX1OGIAAAAJ
+  location: Zurich, Switzerland
+  cv: true
+- date: 2024-03-27
+  type: invited
+  title: Superpoint Transformer
+  title_url: https://drprojects.github.io/superpoint-transformer-site
+  venue: GeoDigital
+  venue_url: https://scholar.google.com/citations?user=mBTc5jgAAAAJ
+  location: Virtual
+- date: 2024-03-01
+  type: oral
+  title: Scalable 3D Panoptic Segmentation as Superpoint Graph Clustering
+  title_url: https://drprojects.github.io/supercluster-site
+  venue: 3DV'24
+  venue_url: https://3dvconf.github.io/2024
+  location: Davos, Switzerland
+  cv: true
+- date: 2024-01-01
+  type: invited
+  title: 'PhD defense: Efficient Learning on Large-Scale 3D Point Clouds'
+  venue: IGN
+  venue_url: https://www.ign.fr
+  location: Paris, France
+- date: 2023-10-01
+  type: invited
+  title: Efficient Learning on Large-Scale 3D Point Clouds
+  venue: Ecole des Ponts, IMAGINE lab
+  venue_url: https://imagine-lab.enpc.fr/
+  location: Paris, France
+  cv: true
+- date: 2023-10-01
+  type: invited
+  title: IGN's research on Large-Scale 2D and 3D Learning
+  title_url: https://www.ign.fr
+  venue: National Land Survey of Finland (NLS)
+  venue_url: https://www.maanmittauslaitos.fi/en
+  location: Paris, France
+  cv: true
+- date: 2023-09-01
+  type: invited
+  title: Efficient Learning on Large-Scale 3D Point Clouds
+  venue: ETH Zürich, Computer Vision and Geometry lab
+  venue_url: https://cvg.ethz.ch/
+  location: Zurich, Switzerland
+  cv: true
+- date: 2023-09-01
+  type: invited
+  title: Efficient Learning on Large-Scale 3D Point Clouds
+  venue: ETH Zürich, Photogrammetry and Remote Sensing lab
+  venue_url: https://prs.igp.ethz.ch/
+  location: Zurich, Switzerland
+  cv: true
+- date: 2023-07-01
+  type: poster
+  title: Efficient 3D Semantic Segmentation with Superpoint Transformer
+  title_url: https://drprojects.github.io/superpoint-transformer-site
+  venue: ICCV'23
+  venue_url: https://iccv2023.thecvf.com/
+  location: Paris, France
+- date: 2023-06-01
+  type: invited
+  title: Efficient 3D Semantic Segmentation with Superpoint Transformer
+  title_url: https://drprojects.github.io/superpoint-transformer-site
+  venue: ENGIE Lab CRIGEN
+  venue_url: https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen
+  location: Paris, France
+- date: 2023-05-01
+  type: invited
+  title: Efficient 3D Semantic Segmentation with Superpoint Transformer
+  title_url: https://drprojects.github.io/superpoint-transformer-site
+  venue: Samp R&D lab
+  venue_url: https://samp.ai/
+  location: Paris, France
+- date: 2023-05-01
+  type: invited
+  title: Efficient 3D Semantic Segmentation with Superpoint Transformer
+  title_url: https://drprojects.github.io/superpoint-transformer-site
+  venue: University of Zürich, EcoVision lab
+  venue_url: https://dm3l.uzh.ch/en/wegner
+  location: Virtual
+- date: 2023-05-01
+  type: invited
+  title: Efficient 3D Semantic Segmentation with Superpoint Transformer
+  title_url: https://drprojects.github.io/superpoint-transformer-site
+  venue: Valeo.ai
+  venue_url: https://www.valeo.com/en/valeo-ai/
+  location: Paris, France
+  cv: true
+- date: 2022-12-01
+  type: invited
+  title: Self-Supervised Learning for Computer Vision
+  venue: IGN, LASTIG lab
+  venue_url: https://www.umr-lastig.fr
+  location: Paris, France
+- date: 2022-11-01
+  type: invited
+  title: IGN's research on Large-Scale 2D and 3D Learning
+  title_url: https://www.ign.fr
+  venue: Bundesamt für Kartographie und Geodäsie (BKG)
+  venue_url: https://www.bkg.bund.de/EN/Home/home.html
+  location: Paris, France
+- date: 2022-07-01
+  type: poster
+  title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
+  title_url: https://drprojects.github.io/deepviewagg-site
+  venue: ICVSS'22
+  venue_url: https://icvss.dmi.unict.it/icvss2022
+  location: Sicily, Italy
+- date: 2022-06-01
+  type: interview
+  title: Interviewed by the CV News journal for its Best of CVPR'22 issue
+  venue: CV News
+  venue_url: https://www.rsipvision.com/ComputerVisionNews-2022July/24
+  location: New Orleans, US
+  cv: true
+- date: 2022-06-01
+  type: oral
+  title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
+  title_url: https://drprojects.github.io/deepviewagg-site
+  venue: CVPR'22
+  venue_url: https://cvpr2022.thecvf.com/
+  location: New Orleans, US
+  cv: true
+- date: 2022-06-01
+  type: invited
+  title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
+  title_url: https://drprojects.github.io/deepviewagg-site
+  venue: Ecole des Ponts, IMAGINE lab
+  venue_url: https://imagine-lab.enpc.fr/
+  location: Paris, France
+- date: 2022-06-01
+  type: poster
+  title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
+  title_url: https://drprojects.github.io/deepviewagg-site
+  venue: ISPRS'22
+  venue_url: https://www.isprs2022-nice.com/
+  location: Nice, France
+- date: 2022-06-01
+  type: tutorial
+  title: 3D Deep Learning for Remote Sensing
+  venue: ISPRS'22
+  venue_url: https://www.isprs2022-nice.com/
+  location: Nice, France
+- date: 2022-05-01
+  type: invited
+  title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
+  title_url: https://drprojects.github.io/deepviewagg-site
+  venue: Ecole Polytechnique, LIX lab
+  venue_url: https://www.lix.polytechnique.fr/
+  location: Paris, France
+- date: 2022-05-01
+  type: tutorial
+  title: 3D Deep Learning, Torch-Points3D & DeepViewAgg
+  venue: ENGIE Lab CRIGEN
+  venue_url: https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen
+  location: Paris, France
+- date: 2022-04-01
+  type: invited
+  title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
+  title_url: https://drprojects.github.io/deepviewagg-site
+  venue: AI4GEO project seminar
+  venue_url: https://www.ai4geo.eu/en/
+  location: Virtual
+- date: 2022-03-01
+  type: poster
+  title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
+  title_url: https://drprojects.github.io/deepviewagg-site
+  venue: IGN-ENSG Research Days
+  venue_url: https://www.ign.fr/agenda/31e-journee-de-la-recherche-de-lign-ensg
+  location: Paris, France
+- date: 2022-01-01
+  type: invited
+  title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
+  title_url: https://drprojects.github.io/deepviewagg-site
+  venue: GDR ISIS seminar
+  venue_url: https://www.gdr-isis.fr/
+  location: Virtual
+- date: 2021-05-01
+  type: invited
+  title: Multimodal learning on point clouds and images
+  title_url: https://drprojects.github.io/deepviewagg-site
+  venue: IGN-ENSG Research Days
+  venue_url: https://www.ign.fr/agenda/30es-journees-de-la-recherche-ign-ensg
+  location: Virtual

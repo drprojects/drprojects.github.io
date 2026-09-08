@@ -1,3 +1,7 @@
+{% comment %}
+  One repository. Data comes from _data/code.yml via include.item.
+{% endcomment %}
+{% assign post = include.item %}
 {% include base_path %}
 
 <div class="paper-entry">
@@ -30,9 +34,9 @@
         <p>
           <b>{{ post.title }}</b><br/>
 
-          {% assign clean_content = post.content | strip_html | strip %}
+          {% assign clean_content = post.description | strip_html | strip %}
           {% if clean_content != "" %}
-            {{ post.content | markdownify  | remove: "<p>" | remove: "</p>" }}<br/><br/>
+            {{ post.description | markdownify  | remove: "<p>" | remove: "</p>" }}<br/><br/>
           {% endif %}
 
           {% if post.code_url %}
@@ -44,7 +48,7 @@
           {% if post.code_url %}
           <br/><a class="special-link" href="{{ post.code_url }}">
               <img alt="GitHub stars"
-                   src="https://img.shields.io/github/stars/{{ post.code_url | split: 'github.com/' | last }}?style=social">
+                   src="https://img.shields.io/github/stars/{{ post.repo }}?style=social">
           </a>
           {% endif %}
         </p>

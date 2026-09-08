@@ -1,0 +1,5 @@
+# Dependencies for cv/build.py. LaTeX itself comes from your TeX Live install
+# (pdflatex, plus the sourceserifpro, sourcesanspro, fontawesome5, needspace,
+# newunicodechar and ragged2e packages).
+PyYAML>=6.0
+Jinja2>=3.1

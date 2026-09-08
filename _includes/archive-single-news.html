@@ -1,14 +1,11 @@
-{% include base_path %}
-
+{% comment %}
+  One news item. Data comes from _data/news.yml via include.item.
+{% endcomment %}
+{% assign item = include.item %}
 <div class="news-entry">
-  {% if post.date %}
-    {% assign year = post.date | date: "%Y" %}
-    {% assign month = post.date | date: "%m" %}
-  {% else %}
-    {% assign year = YEAR %}
-    {% assign month = MONTH %}
-  {% endif %}
+  {% assign year = item.date | date: "%Y" %}
+  {% assign month = item.date | date: "%m" %}
   {% assign idx = year | minus: 2022 | modulo: 7 %}
   <span class="label color-{{ idx }}">{{ month }}/{{ year }}</span>
-  <div class="news-text">{{ post.content }}</div>
+  <div class="news-text">{{ item.text | markdownify | remove: "<p>" | remove: "</p>" }}</div>
 </div>

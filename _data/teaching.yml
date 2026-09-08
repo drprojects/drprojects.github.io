@@ -1,0 +1,92 @@
+# Teaching. Dates/titles/URLs come from the website _teaching entries; short
+# institution names, levels and hours come from the CV LaTeX source
+# (hours were only recorded in commented-out \CVItem lines).
+
+- date: 2026-05-01
+  year: 2026
+  title: Transformer
+  format: Lecture
+  level: "Master 2"
+  institution: University of Zurich
+  institution_short: UZH
+  institution_url: https://www.uzh.ch/en.html
+
+- date: 2025-10-01
+  year: 2025
+  title: AI4Good group projects
+  format: Labs
+  level: "Master 2"
+  institution: University of Zurich
+  institution_short: UZH
+  institution_url: https://www.uzh.ch/en.html
+  hours: 14
+
+- date: 2025-05-01
+  year: 2025
+  title: Transformer
+  format: Lecture
+  level: "Master 2"
+  institution: University of Zurich
+  institution_short: UZH
+  institution_url: https://www.uzh.ch/en.html
+  hours: 4
+
+- date: 2024-05-01
+  year: 2024
+  title: "Transformer, NeRFs, and Diffusion"
+  format: Lecture and labs
+  level: "Master 2"
+  institution: University of Zurich
+  institution_short: UZH
+  institution_url: https://www.uzh.ch/en.html
+  hours: 5.5
+
+- date: 2023-01-01
+  year: 2023
+  title: Deep Learning for Remote Sensing
+  format: Lecture
+  level: "Master 2"
+  institution: ENSG
+  institution_short: ENSG-IGN
+  institution_url: https://www.ensg.eu/
+  hours: 13
+
+- date: 2022-06-01
+  year: 2022
+  title: 3D Deep Learning for Remote Sensing
+  format: Tutorial
+  level: Researchers
+  institution: XXIV ISPRS Congress
+  institution_short: "ISPRS'22"
+  institution_url: https://www.isprs2022-nice.com/
+  duration: 1 day
+
+- date: 2022-05-01
+  year: 2022
+  title: "3D Deep Learning, Torch-Points3D & DeepViewAgg"
+  format: Tutorial
+  level: Researchers
+  institution: ENGIE Lab CRIGEN
+  institution_short: ENGIE CRIGEN lab
+  institution_url: https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen
+  duration: 1 day
+
+- date: 2022-01-01
+  year: 2022
+  title: Deep Learning for Remote Sensing
+  format: Lecture
+  level: "Master 2"
+  institution: ENSG
+  institution_short: ENSG-IGN
+  institution_url: https://www.ensg.eu/
+  hours: 9
+
+- date: 2020-11-01
+  year: 2020
+  title: Deep Learning for Computer Vision
+  format: Lecture
+  level: "Master 1"
+  institution: Ecole Polytechnique
+  institution_short: Ecole Polytechnique
+  institution_url: https://www.polytechnique.edu/
+  hours: 12

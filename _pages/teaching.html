@@ -9,6 +9,9 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single-teaching.html %}
+{% comment %} Source of truth: _data/teaching.yml (shared with the PDF CV). {% endcomment %}
+{% for item in site.data.teaching %}
+  {% unless item.web == false %}
+    {% include archive-single-teaching.html item=item %}
+  {% endunless %}
 {% endfor %}

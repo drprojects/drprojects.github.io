@@ -1,0 +1,74 @@
+# News items shown on the website. Web only (not used in the CV).
+# `text` is the verbatim markdown body of the corresponding _news/*.md file.
+
+- date: 2026-05-19
+  text: "Nominated as [CVPR'26 outstanding reviewer](https://media.eventhosts.cc/Conferences/CVPR2026/CVPR_main_conf_2026_15.pdf)"
+
+- date: 2026-04-09
+  text: "Will attend [CVPR@Paris'26](https://cvprinparis.github.io/CVPR2026InParis) to present [LitePT](https://litept.github.io)"
+
+- date: 2026-03-15
+  text: "Visit at [ESA Φ-lab](https://philab.esa.int)"
+
+- date: 2026-02-23
+  text: "1 paper accepted at [EGU'26](https://www.egu26.eu/)"
+
+- date: 2026-02-21
+  text: "[LitePT](https://litept.github.io) was accepted for a highlight at CVPR'26"
+
+- date: 2026-02-03
+  text: "2 of our works were accepted for oral presentations at the [WBF'26](https://worldbiodiversityforum.org)"
+
+- date: 2026-02-01
+  text: "[EZ-SP](https://louisgeist.github.io/ez-sp) was accepted at ICRA'26"
+
+- date: 2026-01-22
+  text: "Released [torch-graph-components](https://github.com/drprojects/torch-graph-components), which isolates the core graph algorithms from [EZ-SP](https://louisgeist.github.io/ez-sp)"
+
+- date: 2026-01-01
+  text: "Serving as [Area Chair for ECCV'26](https://eccv.ecva.net/Conferences/2026/ProgramCommittee)"
+
+- date: 2025-06-30
+  text: "[Valerio Marsocci](https://sites.google.com/uniroma1.it/valeriomarsocci) visit to [EcoVision](https://dm3l.uzh.ch/en/wegner)"
+
+- date: 2025-06-23
+  text: "[Emilia Arens](https://dm3l.uzh.ch/workgroup/wegner/team) and [Johannes Dollinger](https://dm3l.uzh.ch/workgroup/wegner/team) will present our research on _Deep Species Distribution Modeling_ at the [LPS'25](https://lps25.esa.int/)"
+
+- date: 2025-05-05
+  text: "[Loic Landrieu](https://loiclandrieu.com/) visit to [EcoVision](https://dm3l.uzh.ch/en/wegner) and [ETH AI Center](https://ai.ethz.ch/)"
+
+- date: 2025-04-13
+  text: "Received the [AFRIF 2024 PhD Award accessit](http://afrif.irisa.fr/?page_id=54)"
+
+- date: 2025-04-07
+  text: "[Kaan Karaman](https://kaankaramanofficial.github.io/) will present [GSR4B](https://github.com/kaankaramanofficial/GSR4B) at the [ISPRS GSW'25](https://gsw2025.ae/)"
+
+- date: 2025-02-21
+  text: "[Teja Kattenborn](https://scholar.google.com/citations?user=pgzIvAcAAAAJ) visit to [EcoVision](https://dm3l.uzh.ch/en/wegner)"
+
+- date: 2024-11-22
+  text: "Nominated as [ECCV'24 outstanding reviewer](https://eccv.ecva.net/Conferences/2024/Reviewers)"
+
+- date: 2024-07-10
+  text: "Gave a workshop tutorial on [Superpoint Transformer](https://drprojects.github.io/superpoint-transformer-site) hosted by [Florent Poux](https://www.youtube.com/watch?v=2qKhpQs9gJw)"
+
+- date: 2024-02-01
+  text: "Joined the [EcoVision](https://dm3l.uzh.ch/en/wegner) lab at [University of Zurich](https://www.uzh.ch/en.html) as a postdoctoral researcher"
+
+- date: 2024-01-21
+  text: "PhD defense at [IGN](https://www.ign.fr) in presence of [Cédric Demonceaux](https://sites.google.com/view/cedricdemonceaux/home), [Sébastien Lefèvre](https://people.irisa.fr/Sebastien.Lefevre/), [Patrick Pérez](https://ptrckprz.github.io/), [Siyu Tang](https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html), [Duygu Ceylan](https://www.duygu-ceylan.com/), [Loïc Landrieu](https://loiclandrieu.com/), and [Bruno Vallet](https://www.umr-lastig.fr/bruno-vallet/)"
+
+- date: 2024-01-01
+  text: "[SuperCluster](https://drprojects.github.io/supercluster-site) was accepted for an oral at 3DV'24"
+
+- date: 2023-07-01
+  text: "[Superpoint Transformer](https://drprojects.github.io/superpoint-transformer-site) was accepted at ICCV’23"
+
+- date: 2022-06-22
+  text: "[Best of CVPR issue](https://www.rsipvision.com/ComputerVisionNews-2022July/24) — *CV News* interview"
+
+- date: 2022-06-21
+  text: "[DeepViewAgg](https://drprojects.github.io/deepviewagg-site) shortlisted as [best paper finalist at CVPR'22](https://x.com/CVPR/status/1539772091112857600)"
+
+- date: 2022-03-01
+  text: "[DeepViewAgg](https://drprojects.github.io/deepviewagg-site) was accepted for an oral at CVPR’22"

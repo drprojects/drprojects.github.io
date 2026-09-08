@@ -7,8 +7,7 @@ author_profile: true
 
 {% include base_path %}
 
-{% if site.news %}
-{% for post in site.news reversed %}
-    {% include archive-single-news.html %}
+{% comment %} Source of truth: _data/news.yml. Website only. {% endcomment %}
+{% for item in site.data.news %}
+  {% include archive-single-news.html item=item %}
 {% endfor %}
-{% endif %}

@@ -1,0 +1,7 @@
+# Local preview overrides. Used by `make serve` / `make build-dev`.
+#
+# Without this, `url` still points at https://drprojects.github.io, so a local
+# build silently loads the LIVE site's CSS and assets and you end up reviewing
+# production styling instead of your changes.
+url: "http://localhost:4000"
+baseurl: ""

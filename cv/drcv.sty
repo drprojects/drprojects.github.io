@@ -1,0 +1,186 @@
+% ---------------------------------------------------------------------------
+% drcv — a typographically-led academic CV style
+%
+% Design intent: no boxes, no clip-art, no coloured panels. Structure is carried
+% by a fixed gutter grid, one accent colour, and the weight contrast between a
+% serif body (Source Serif Pro) and a sans display face (Source Sans Pro).
+%
+% Everything tunable lives in the "DESIGN TOKENS" block below.
+% ---------------------------------------------------------------------------
+\ProvidesPackage{drcv}[2026/09/08 Damien Robert CV style]
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[document]{ragged2e}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{enumitem}
+\RequirePackage{calc}
+\RequirePackage{microtype}
+\RequirePackage{fontawesome5}
+\RequirePackage{needspace}
+
+% ------------------------------- DESIGN TOKENS -----------------------------
+\definecolor{accent}{HTML}{11505E}   % deep teal — headings, links, gutter text
+\definecolor{ink}{HTML}{1A1A1A}      % body text
+\definecolor{muted}{HTML}{6B7280}    % secondary text, locations, dates
+\definecolor{hairline}{HTML}{D4D8DC} % rules
+
+\newlength{\cvgutter}\setlength{\cvgutter}{21mm}   % left column (dates)
+\newlength{\cvgap}\setlength{\cvgap}{5mm}          % gutter -> body gap
+\newlength{\cventrysep}\setlength{\cventrysep}{0.95ex}
+\newlength{\cvbody}
+% ---------------------------------------------------------------------------
+
+\RequirePackage[a4paper,top=16mm,bottom=15mm,left=18mm,right=18mm]{geometry}
+\setlength{\cvbody}{\textwidth-\cvgutter-\cvgap}
+
+% Fonts: Source Serif Pro for reading, Source Sans Pro for display/labels.
+\RequirePackage[default,semibold]{sourceserifpro}
+\RequirePackage[semibold]{sourcesanspro}
+\newcommand{\sanstext}{\sffamily}
+
+% pdflatex cannot map these code points through T1; declare them explicitly.
+% Add a line here if a new character ever appears in _data/.
+\RequirePackage{newunicodechar}
+\newunicodechar{Φ}{$\Phi$}
+\newunicodechar{Σ}{$\Sigma$}
+\newunicodechar{α}{$\alpha$}
+\newunicodechar{β}{$\beta$}
+\newunicodechar{µ}{$\mu$}
+\newunicodechar{×}{$\times$}
+\newunicodechar{≈}{$\approx$}
+\newunicodechar{→}{$\rightarrow$}
+\newunicodechar{’}{'}
+\newunicodechar{‘}{`}
+\newunicodechar{“}{``}
+\newunicodechar{”}{''}
+\newunicodechar{–}{--}
+\newunicodechar{—}{---}
+\newunicodechar{…}{\dots}
+
+\RequirePackage[colorlinks=true,allcolors=accent,breaklinks=true]{hyperref}
+\urlstyle{same}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\color{ink}
+\linespread{1.04}
+\setlist{nosep,leftmargin=*}
+
+% --------------------------------- HEADER ----------------------------------
+\newlength{\hdrw}
+% \cvheader{name}{tagline}{summary}{contact row}{portrait path or empty}
+\newcommand{\cvheader}[5]{%
+  \begingroup
+  \setlength{\tabcolsep}{0pt}%
+  \ifx\relax#5\relax
+    \setlength{\hdrw}{\textwidth}%
+  \else
+    \setlength{\hdrw}{\textwidth-30mm}%
+  \fi
+  \noindent
+  \begin{minipage}[c]{\hdrw}
+    {\sanstext\fontsize{27}{30}\selectfont\bfseries\color{accent}#1\par}
+    \vspace{1.5mm}
+    {\sanstext\fontsize{11.5}{14}\selectfont\color{ink}#2\par}
+  \end{minipage}%
+  \ifx\relax#5\relax\else
+    \hfill
+    \begin{minipage}[c]{28mm}
+      \raggedleft
+      \begin{tikzpicture}
+        \clip (0,0) circle (13mm) node {\includegraphics[width=26.5mm]{#5}};
+        \draw[hairline,line width=.4pt] (0,0) circle (13mm);
+      \end{tikzpicture}
+    \end{minipage}%
+  \fi
+  \par\vspace{3mm}
+  {\footnotesize\sanstext\color{muted}#4\par}
+  \vspace{2.5mm}
+  {\color{hairline}\rule{\textwidth}{0.6pt}}\par
+  \vspace{2.5mm}
+  {\small #3\par}
+  \endgroup
+  \vspace{2mm}
+}
+
+% Separator between contact items
+\newcommand{\cvsep}{\;\textcolor{hairline}{\rule[0.35ex]{2.2pt}{2.2pt}}\;}
+
+% -------------------------------- SECTIONS ---------------------------------
+\newcommand{\cvsection}[1]{%
+  \par\addvspace{3.4mm}%
+  \needspace{3\baselineskip}%
+  {\sanstext\fontsize{9.5}{11}\selectfont\bfseries\color{accent}%
+   \MakeUppercase{\textls[180]{#1}}\par}%
+  \vspace{0.9mm}%
+  {\color{accent}\rule{\textwidth}{0.7pt}}\par
+  \addvspace{2.0mm}%
+}
+
+\newcommand{\cvsubsection}[1]{%
+  \par\addvspace{2.2mm}%
+  \needspace{2\baselineskip}%
+  {\sanstext\fontsize{9}{11}\selectfont\bfseries\color{ink}%
+   \MakeUppercase{\textls[120]{#1}}\par}%
+  \addvspace{1.2mm}%
+}
+
+% --------------------------------- ENTRIES ---------------------------------
+% \entry{gutter}{body} — the core grid unit.
+%
+% Implemented as a one-item `list` rather than a pair of side-by-side minipages.
+% A minipage is an unbreakable box, so pages could only break between entries
+% and each page silently lost up to one entry's worth of space. A list item is
+% ordinary flowing text: it breaks wherever it needs to, and `list` is the
+% standard mechanism for putting a label in the left margin.
+\newcommand{\entry}[2]{%
+  \par\addvspace{\cventrysep}%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{\dimexpr\cvgutter+\cvgap\relax}%
+    \setlength{\labelwidth}{\cvgutter}%
+    \setlength{\labelsep}{\cvgap}%
+    \setlength{\rightmargin}{0pt}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\listparindent}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\itemsep}{0pt}%
+    % A \parbox[t] label sits ~0.6 line low against the item's first baseline;
+    % a plain \makebox aligns exactly. Labels are kept short enough not to wrap.
+    \renewcommand{\makelabel}[1]{%
+      \makebox[\labelwidth][l]{%
+        \sanstext\footnotesize\color{muted}##1}}%
+  }%
+  \item[#1] #2%
+  \end{list}%
+}
+
+% Body-only entry, aligned to the body column (no gutter label)
+\newcommand{\bodyentry}[1]{\entry{}{#1}}
+
+% Title line of an entry: role/paper title, then a muted qualifier
+\newcommand{\etitle}[1]{{\sanstext\bfseries\color{ink}#1}}
+\newcommand{\eorg}[1]{{\color{accent}#1}}
+\newcommand{\emeta}[1]{{\footnotesize\color{muted}#1}}
+\newcommand{\edesc}[1]{{\small #1}}
+% Author lists: one notch down so long lists stay on a single line.
+\newcommand{\eauth}[1]{{\footnotesize #1}}
+
+% Right-aligned trailing note on the same line
+\newcommand{\etrail}[1]{\hfill{\footnotesize\sanstext\color{muted}#1}}
+
+% A small pill-free inline tag, e.g. "Highlight", "Oral"
+\newcommand{\etag}[1]{{\footnotesize\sanstext\bfseries\color{accent}#1}}
+
+% Compact inline link buttons for publications
+\newcommand{\elink}[2]{{\footnotesize\sanstext\href{#1}{#2}}}
+\newcommand{\elinksep}{{\footnotesize\color{hairline}\,·\,}}
+
+% Skills chips: plain text separated by thin dots, no boxes
+\newcommand{\chips}[1]{{\small\hyphenpenalty=10000\exhyphenpenalty=10000\relax #1}}
+\newcommand{\chipsep}{\,\textcolor{hairline}{\textbullet}\,}

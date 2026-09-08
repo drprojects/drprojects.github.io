@@ -1,3 +1,7 @@
+{% comment %}
+  One publication. Data comes from _data/publications.yml via include.item.
+{% endcomment %}
+{% assign post = include.item %}
 {% include base_path %}
 
 <div class="paper-entry">
@@ -47,10 +51,10 @@
           {% endfor %}
           <br/>
 
-          <i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }}.
+          {% if post.venue %}<i>{{ post.venue }}</i>, {% endif %}{{ post.year }}.{% if post.status == "under_review" %} <i>Under review.</i>{% endif %}
 
-          {%- if post.prize -%}
-            <br/><br/>{{ post.prize | markdownify  | remove: "<p>" | remove: "</p>" }}
+          {%- if post.note -%}
+            <br/><br/>{{ post.note }}
           {%- endif -%}
           <br/><br/>
 
@@ -120,7 +124,7 @@
   {%- else %}
     booktitle = { {{ post.venue }} },
   {%- endif %}
-    year      = { {{ post.date | date: "%Y" }} }
+    year      = { {{ post.year }} }
   }
     </pre>
   </div>

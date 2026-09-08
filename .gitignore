@@ -32,3 +32,6 @@ package-lock.json
 # Ignore website building data
 .bundle
 vendor
+
+# CV build artefacts (files/cv.pdf itself IS committed — it is the published CV)
+cv/build/

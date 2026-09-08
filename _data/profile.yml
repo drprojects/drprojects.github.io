@@ -1,0 +1,68 @@
+# Identity, contact and narrative. Consumed by the website and the CV.
+# Edit this file rather than _config.yml / _pages/about.md.
+
+name: Damien Robert
+tagline: Deep Learning for Remote Sensing & Environment
+role: Postdoctoral Researcher
+group: EcoVision lab
+institution: University of Zurich
+institution_url: https://dm3l.uzh.ch/en/wegner
+location: Zurich, Switzerland
+portrait_web: /images/profile.png
+portrait_cv: images/damien.png
+
+links:
+  email: damien.robert@uzh.ch
+  website: https://drprojects.github.io
+  github: https://github.com/drprojects
+  github_user: drprojects
+  orcid: https://orcid.org/0000-0003-0983-7053
+  orcid_id: 0000-0003-0983-7053
+  scholar: https://scholar.google.com/citations?user=Bmgo5wMAAAAJ
+  scholar_id: Bmgo5wMAAAAJ
+  linkedin: https://www.linkedin.com/in/damienrobert91/
+  linkedin_user: damienrobert91
+  semantic_scholar: https://www.semanticscholar.org/author/Damien-Robert/47018294
+  researchgate: https://www.researchgate.net/profile/Damien-Robert-6/research
+
+# Short one-liner for the site sidebar / meta description
+bio: Postdoctoral researcher at EcoVision. Deep learning for environmental applications.
+
+# Research interests, rendered as emoji-tagged chips on the website
+interests_web:
+  - { label: 3D point clouds, emoji: "☁️" }
+  - { label: vegetation mapping, emoji: "🌳" }
+  - { label: species distribution modeling, emoji: "🦜" }
+  - { label: remote sensing, emoji: "🛰️" }
+  - { label: efficient machine learning, emoji: "⚡" }
+
+# Two summaries: the website one may use inline HTML links, the CV one is plain
+# prose that must survive LaTeX escaping.
+summary:
+  web: >
+    I am a postdoctoral researcher in the <a href="https://dm3l.uzh.ch/en/wegner">EcoVision</a>
+    lab at <a href="https://www.uzh.ch/en.html">University of Zurich</a>, I collaborate with
+    <a href="https://dm3l.uzh.ch/member/wegner">Jan Dirk Wegner</a> to design deep learning
+    methods for remote sensing and environmental applications.
+    Before joining UZH, I completed my PhD on <i>"Efficient Learning on Large-Scale 3D Point
+    Clouds"</i> at <a href="https://www.ign.fr">IGN</a> and
+    <a href="https://www.engie.com">ENGIE</a>, under the supervision of
+    <a href="https://loiclandrieu.com/">Loïc Landrieu</a> and
+    <a href="https://www.umr-lastig.fr/bruno-vallet/">Bruno Vallet</a>.
+  cv: >
+    Postdoctoral researcher in the EcoVision lab at University of Zurich, collaborating with
+    Jan D. Wegner. I am broadly interested in deep learning for real-world data and impactful
+    applications, with a taste for approaches making deep learning research socially and
+    environmentally beneficial, accessible and reproducible. My recent work focuses on
+    efficient and scalable deep learning, forest structure analysis, and species distribution
+    modeling.
+
+# Citation metrics shown in the CV header. These cannot be fetched automatically
+# (Google Scholar forbids scraping), so update them by hand a few times a year.
+# Delete the block or set `show: false` to hide it from the CV.
+metrics:
+  show: false
+  # citations: 0
+  # h_index: 0
+  source: Google Scholar
+  # updated: 2026-09-08

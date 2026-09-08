@@ -1,0 +1,94 @@
+/* ==========================================================================
+   WEB CV  (/cv/)
+   Same data as the PDF in cv/, different layout: a gutter grid on wide
+   screens that collapses to a stack on narrow ones.
+   ========================================================================== */
+
+// Use the theme's CSS custom properties so the page adapts to light and dark.
+// A hardcoded print teal (#11505E, the PDF's accent) is unreadable on the dark
+// theme, so the web CV borrows the site palette instead of the print one.
+$cv-accent: var(--global-base-color);
+$cv-muted:  var(--global-text-color-light);
+$cv-rule:   var(--global-border-color);
+
+.cv {
+  font-size: 0.92em;
+
+  .cv-actions {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin-bottom: 1.5em;
+  }
+
+  .cv-updated {
+    font-size: 0.8em;
+    color: $cv-muted;
+  }
+
+  .cv-summary {
+    margin-bottom: 2em;
+  }
+
+  .cv-section {
+    margin: 2em 0 0.15em;
+    padding: 0;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $cv-accent;
+    border-bottom: 1px solid $cv-rule;
+    padding-bottom: 0.4em;
+  }
+
+  .cv-subsection {
+    margin: 1.4em 0 0.4em;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .cv-entry {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2em;
+    margin: 0.75em 0;
+  }
+
+  .cv-gutter {
+    flex: 0 0 7.5em;
+    font-size: 0.82em;
+    color: $cv-muted;
+    line-height: 1.5;
+  }
+
+  .cv-body {
+    flex: 1 1 auto;
+    min-width: 0;
+    line-height: 1.5;
+  }
+
+  .cv-title  { font-weight: 700; }
+  .cv-org    { color: $cv-accent; }
+  .cv-meta   { color: $cv-muted; font-size: 0.9em; }
+  .cv-desc   { }
+  .cv-authors{ font-size: 0.92em; }
+
+  .cv-tag {
+    margin-left: 0.6em;
+    font-size: 0.78em;
+    font-weight: 600;
+    color: $cv-accent;
+  }
+
+  .cv-stars { vertical-align: middle; }
+
+  /* Stack the gutter above the body on phones. */
+  @media (max-width: 37.5em) {
+    .cv-entry { flex-direction: column; gap: 0.1em; }
+    .cv-gutter { flex-basis: auto; }
+  }
+}

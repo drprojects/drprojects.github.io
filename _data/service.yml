@@ -1,0 +1,20 @@
+# Reviewing, chairing and other academic service.
+# One entry per (year, venue) so the CV can group by year and the website can
+# count roles.
+
+- { year: 2026, venue: ECCV,  role: Area Chair }
+- { year: 2026, venue: CVPR,  role: Reviewer, note: Outstanding Reviewer }
+
+- { year: 2025, venue: CVPR,  role: Reviewer }
+- { year: 2025, venue: "CVPR workshop EarthVision", role: Reviewer }
+
+- { year: 2024, venue: ECCV,  role: Reviewer, note: Outstanding Reviewer }
+- { year: 2024, venue: "ISPRS Journal of Photogrammetry and Remote Sensing", role: Reviewer }
+- { year: 2024, venue: "ICLR workshop ML4RS", role: Reviewer }
+- { year: 2024, venue: "CVPR workshop EarthVision", role: Reviewer }
+
+- { year: 2023, venue: CVPR,  role: Reviewer }
+- { year: 2023, venue: "CVPR workshop EarthVision", role: Reviewer }
+
+- { year: 2022, venue: "ISPRS Journal of Photogrammetry and Remote Sensing", role: Reviewer }
+- { year: 2022, venue: "CVPR workshop EarthVision", role: Reviewer }

@@ -1,0 +1,72 @@
+# Skills, languages and personal. CV-facing, also usable on the website.
+#
+# Design note: the previous CV listed 15 flat research topics with heavy overlap
+# ("superpoint-based learning" / "graph-based learning" / "graph partitioning").
+# Grouping them into four themes reads far faster and shows range rather than
+# repetition.
+
+research_themes:
+  - label: 3D & geometry
+    topics:
+      - Large-scale 3D point clouds
+      - LiDAR data
+      - Superpoint-based learning
+      - Graph-based learning and graph partitioning
+
+  - label: Efficient & scalable learning
+    topics:
+      - Efficient deep learning
+      - Scalable model design
+      - EO data representation and compression
+
+  - label: Learning paradigms
+    topics:
+      - Multimodal learning
+      - Self-supervised learning
+      - Representation learning
+
+  - label: Environment & Earth observation
+    topics:
+      - Remote sensing
+      - Forest structure analysis
+      - Species distribution modeling
+      - Representation learning for macroecology
+
+# Ordered by fluency/centrality, most important first. `group` drives the CV's
+# visual grouping.
+tools:
+  - { name: Python,             group: core }
+  - { name: PyTorch,            group: core }
+  - { name: PyTorch Lightning,  group: core }
+  - { name: PyTorch Geometric,  group: core }
+  - { name: C++,                group: core }
+  - { name: Hydra,              group: workflow }
+  - { name: Weights & Biases,   group: workflow }
+  - { name: Git,                group: workflow }
+  - { name: Linux,              group: workflow }
+  - { name: SLURM,              group: workflow }
+  - { name: scikit-learn,       group: analysis }
+  - { name: Plotly,             group: analysis }
+  - { name: Blender,            group: analysis }
+  - { name: LaTeX,              group: analysis }
+
+languages:
+  - { name: French,  level: Native }
+  - { name: English, level: Fluent }
+  - { name: Spanish, level: Intermediate }
+  - { name: German,  level: Beginner }
+
+international:
+  - { period: "2024–now", place: Zurich, country: Switzerland }
+  - { period: "2015–2016", place: Backpacking, country: Worldwide }
+  - { period: "2014–2015", place: "Providence, RI", country: United States }
+
+interests:
+  - { label: Nature & forests,  emoji: "🌳" }
+  - { label: Boxing,            emoji: "🥊" }
+  - { label: Mountaineering,    emoji: "⛰️" }
+  - { label: Skateboarding,     emoji: "🛹" }
+  - { label: Guitar,            emoji: "🎸" }
+  - { label: Painting,          emoji: "🎨" }
+  - { label: Reading,           emoji: "📖" }
+  - { label: Board games,       emoji: "🎲" }

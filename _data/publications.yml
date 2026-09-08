@@ -1,0 +1,331 @@
+# Publications
+# Union of the website _publications/*.md front matter and the CV LaTeX
+# (academic_resume/text/3__publications.tex). Ordered reverse-chronologically.
+
+- id: forest_foundation_model
+  title: "Toward a Foundation Model for Forest Point Clouds"
+  year: 2026
+  status: under_review
+  authors:
+    - yuanwen_yue
+    - stefano_puliti
+    - me
+    - atakan_topaloglu
+    - binbin_xiang
+    - maciej_wielgosz
+    - jan_dirk_wegner
+    - rasmus_astrup
+    - christian_rupprecht
+    - konrad_schindler
+
+- id: eo_best_practices
+  title: "From Machine Learning to Large-Scale EO Products: Best Practices for Making Maps"
+  year: 2026
+  status: under_review
+  authors:
+    - ghjulia_sialelli
+    - robin_young
+    - yuchang_jiang
+    - cesar_aybar
+    - linus_scheibenreif
+    - me
+    - clemens_mosig
+    - adam_j_stewart
+    - jan_dirk_wegner
+    - aleksis_pirinen
+    - olof_mogren
+    - konrad_schindler
+
+- id: sdm_bias_benchmark
+  title: "Bias Aware Benchmark for Species Distribution Modeling"
+  year: 2026
+  venue: WBF
+  venue_long: "World Biodiversity Forum"
+  status: published
+  authors:
+    - emilia_arens
+    - nina_van_tiel
+    - robin_zbinden
+    - chiara_vanalli
+    - me
+    - lukas_drees
+    - benjamin_kellenberger
+    - loic_pellissier
+    - jan_dirk_wegner
+    - devis_tuia
+
+- id: ecological_forecasting
+  title: "Opportunities and challenges for near-term ecological forecasting with biodiversity and EO data"
+  year: 2026
+  venue: WBF
+  venue_long: "World Biodiversity Forum"
+  status: published
+  authors:
+    - patricia_singh
+    - billur_bektas
+    - sanne_evers
+    - erola_fenollosa
+    - gerbrand_koren
+    - sruthi_krishna_moorthy_parvathi
+    - sean_pang
+    - maria_paniw
+    - me
+    - ghjulia_sialelli
+    - jasper_slingsby
+    - rachael_thornley
+    - emma_l_underwood
+    - jan_dirk_wegner
+    - wanben_wu
+
+- id: litept
+  title: "LitePT: Lighter Yet Stronger Point Transformer"
+  date: 2026-06-01
+  year: 2026
+  venue: CVPR
+  status: published
+  authors:
+    - yuanwen_yue
+    - me
+    - jianyuan_wang
+    - sunghwan_hong
+    - jan_dirk_wegner
+    - christian_rupprecht
+    - konrad_schindler
+  note: Highlight
+  paper_url: http://arxiv.org/abs/2512.13689
+  project_url: https://litept.github.io
+  code_url: https://github.com/prs-eth/LitePT
+  bibtex_id: yuelitept2025
+  teaser_image: /images/publications/2026/litept/teaser.png
+
+- id: ezsp
+  title: "EZ-SP: Fast and Lightweight Superpoint-Based 3D Segmentation"
+  date: 2026-01-01
+  year: 2026
+  venue: ICRA
+  status: published
+  authors:
+    - louis_geist
+    - loic_landrieu
+    - me
+  paper_url: https://arxiv.org/abs/2512.00385
+  project_url: https://louisgeist.github.io/ez-sp
+  code_url: https://github.com/drprojects/superpoint_transformer
+  video_url: https://www.youtube.com/watch?v=gPqIcGmMT54
+  bibtex_id: geist2025ezsp
+  teaser_image: /images/publications/2026/ezsp/teaser.png
+
+- id: formspot
+  title: "FORMSpoT: Revealing fine-scale forest disturbances from nation-wide 1.5 m forest canopy height time series"
+  date: 2026-08-26
+  year: 2026
+  venue: "Remote Sensing of Environment"
+  status: published
+  authors:
+    - martin_schwartz
+    - fajwel_fogel
+    - nikola_besic
+    - me
+    - louis_geist
+    - jean_pierre_renaud
+    - jean_matthieu_monnet
+    - clemens_mosig
+    - cédric_vega
+    - alexandre_d_aspremont
+    - loic_landrieu
+    - philippe_ciais
+  paper_url: https://www.sciencedirect.com/science/article/pii/S0034425726004013
+  bibtex_id: schwartz2026formspot
+  teaser_image: /images/publications/2026/formspot/teaser.gif
+
+- id: mtgsr4b
+  title: "MT-GSR4B: Multi-Temporally Guided Super-Resolution for Above-Ground Biomass Estimation"
+  date: 2025-12-01
+  year: 2025
+  venue: PFG
+  venue_long: "PFG – Journal of Photogrammetry, Remote Sensing and Geoinformation Science"
+  status: published
+  authors:
+    - kaan_karaman
+    - vivien_sainte_fare_garnot
+    - me
+    - maria_joao_santos
+    - jan_dirk_wegner
+  paper_url: https://link.springer.com/article/10.1007/s41064-025-00370-x
+  code_url: https://github.com/kaankaramanofficial/MTGSR4B
+  bibtex_id: karaman2025mt
+  teaser_image: /images/publications/2025/mtgsr4b/teaser.png
+
+- id: ssl4eco
+  title: "SSL4Eco: A Global Seasonal Dataset for Geospatial Foundation Models in Ecology"
+  date: 2025-06-01
+  year: 2025
+  venue: CVPR
+  venue_long: "CVPR workshop EarthVision"
+  status: published
+  authors:
+    - elena_plekhanova
+    - me
+    - johannes_dollinger
+    - emilia_arens
+    - philipp_brun
+    - jan_dirk_wegner
+    - niklaus_zimmermann
+  paper_url: https://arxiv.org/abs/2504.18256
+  project_url: https://plekhanovaelena.github.io/ssl4eco/
+  code_url: https://github.com/PlekhanovaElena/ssl4eco
+  bibtex_id: plekhanova2025ssl4eco
+  teaser_image: /images/publications/2025/ssl4eco/teaser.png
+
+- id: gsr4b
+  title: "GSR4B: Biomass Map Super-Resolution with Sentinel-1/2 Guidance"
+  date: 2025-04-01
+  year: 2025
+  venue: "ISPRS Geospatial Week"
+  status: published
+  authors:
+    - kaan_karaman
+    - yuchang_jiang
+    - me
+    - vivien_sainte_fare_garnot
+    - maria_joao_santos
+    - jan_dirk_wegner
+  note: Oral
+  paper_url: https://arxiv.org/abs/2504.01722
+  project_url: https://ecovision-uzh.github.io/GSR4B/
+  code_url: https://github.com/kaankaramanofficial/GSR4B
+  bibtex_id: karaman2025gsr4b
+  teaser_image: /images/publications/2025/gsr4b/teaser.png
+
+- id: climplicit
+  title: "Climplicit: Climatic Implicit Embeddings for Global Ecological Tasks"
+  date: 2025-05-01
+  year: 2025
+  venue: ICLR
+  venue_long: "ICLR workshop Tackling Climate Change with Machine Learning"
+  status: published
+  authors:
+    - johannes_dollinger
+    - me
+    - elena_plekhanova
+    - lukas_drees
+    - jan_dirk_wegner
+  paper_url: https://arxiv.org/abs/2504.05089
+  project_url: https://ecovision-uzh.github.io/climplicit
+  code_url: https://github.com/ecovision-uzh/climplicit
+  bibtex_id: dollinger2025climplicit
+  teaser_image: /images/publications/2025/climplicit/teaser.png
+
+- id: lossy_neural_compression
+  title: "Lossy Neural Compression for Geospatial Analytics: A Review"
+  date: 2025-01-01
+  year: 2025
+  venue: "IEEE Geoscience and Remote Sensing Magazine"
+  status: published
+  authors:
+    - carlos_gomes
+    - isabelle_wittmann
+    - me
+    - johannes_jakubik
+    - tim_reichelt
+    - michele_martone
+    - stefano_maurogiovanni
+    - rikard_vinge
+    - jonas_hurst
+    - erik_scheurer
+    - rocco_sedona
+    - thomas_brunschwiler
+    - stefan_kesselheim
+    - matej_batic
+    - philip_stier
+    - jan_dirk_wegner
+    - gabriele_cavallaro
+    - edzer_pebesma
+    - michael_marszalek
+    - miguel_a_belenguer_plomer
+    - kennedy_adriko
+    - paolo_fraccaro
+    - romeo_kienzler
+    - rania_briq
+    - sabrina_benassou
+    - michele_lazzarini
+    - conrad_m_albrecht
+  paper_url: https://www.arxiv.org/abs/2503.01505
+  bibtex_id: gomes2025lossy
+  teaser_image: /images/publications/2025/lossy_neural_compression_review/teaser.png
+
+- id: phd_thesis
+  title: "Efficient Learning on Large-Scale 3D Point Clouds"
+  date: 2024-05-01
+  year: 2024
+  venue: "Université Gustave Eiffel"
+  status: thesis
+  authors:
+    - me
+  note: "AFRIF PhD Award accessit"
+  paper_url: https://hal.science/tel-04448827
+  code_url: https://github.com/drprojects
+  bibtex_id: robert2024phd
+  teaser_image: /images/publications/2024/phd/teaser.png
+  jury:
+    - Sébastien Lefèvre
+    - Cédric Demonceaux
+    - Patrick Pérez
+    - Siyu Tang
+    - Duygu Ceylan
+    - Loic Landrieu
+    - Bruno Vallet
+
+- id: supercluster
+  title: "Scalable 3D Panoptic Segmentation as Superpoint Graph Clustering"
+  date: 2024-03-01
+  year: 2024
+  venue: 3DV
+  status: published
+  authors:
+    - me
+    - hugo_raguet
+    - loic_landrieu
+  note: Oral
+  selectivity: "top 5.3% of submissions"
+  paper_url: https://arxiv.org/abs/2401.06704
+  project_url: https://drprojects.github.io/supercluster-site
+  code_url: https://github.com/drprojects/superpoint_transformer
+  bibtex_id: robert2024scalable
+  teaser_image: /images/publications/2024/supercluster/teaser.png
+
+- id: superpoint_transformer
+  title: "Efficient 3D Semantic Segmentation with Superpoint Transformer"
+  date: 2023-10-01
+  year: 2023
+  venue: ICCV
+  status: published
+  authors:
+    - me
+    - hugo_raguet
+    - loic_landrieu
+  selectivity: "top 26.8% of submissions"
+  paper_url: https://arxiv.org/abs/2306.08045
+  project_url: https://drprojects.github.io/superpoint-transformer-site
+  code_url: https://github.com/drprojects/superpoint_transformer
+  bibtex_id: robert2023spt
+  teaser_image: /images/publications/2023/superpoint_transformer/teaser.png
+
+- id: deepviewagg
+  title: "Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation"
+  date: 2022-06-01
+  year: 2022
+  venue: CVPR
+  status: published
+  authors:
+    - me
+    - bruno_vallet
+    - loic_landrieu
+  note: "Oral and Best paper finalist"
+  selectivity: "top 0.4% of submissions"
+  paper_url: https://arxiv.org/abs/2204.07548
+  project_url: https://drprojects.github.io/deepviewagg-site
+  code_url: https://github.com/drprojects/DeepViewAgg
+  video_url: https://www.youtube.com/watch?v=SoMKwI863tw
+  bibtex_id: robert2022deepviewagg
+  teaser_image: /images/publications/2022/deepviewagg/teaser.png

@@ -15,3 +15,24 @@
 .page__content .news-text p {
   margin: 0;
 }
+
+/* ===== Structured talk / teaching entries =====
+   Talks and teaching are rendered from _data/*.yml rather than free text, so
+   the entry type and the location get their own de-emphasised styling. */
+
+.talk-type {
+  display: inline-block;
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7a8288;
+  margin-right: 0.35em;
+  white-space: nowrap;
+}
+
+.talk-loc {
+  font-size: 0.85em;
+  color: #7a8288;
+  white-space: nowrap;
+}

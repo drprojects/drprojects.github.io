@@ -7,28 +7,24 @@ redirect_from:
   - /about.html
 ---
 
+{% comment %}
+  Bio and interests come from _data/profile.yml, which also feeds the PDF CV.
+{% endcomment %}
+{% assign p = site.data.profile %}
+
 <p>
-    I am a postdoctoral researcher in the <a href="https://dm3l.uzh.ch/en/wegner">EcoVision</a> lab at 
-    <a href="https://www.uzh.ch/en.html">University of Zurich</a>, I collaborate with 
-    <a href="https://dm3l.uzh.ch/member/wegner">Jan Dirk Wegner</a> to design deep learning methods for remote 
-    sensing and environmental applications.
-    Before joining UZH, I completed my PhD on <i>"Efficient Learning on Large-Scale 3D Point Clouds"</i> at 
-    <a href="https://www.ign.fr">IGN</a> and <a href="https://www.engie.com">ENGIE</a>, under the supervision of 
-    <a href="https://loiclandrieu.com/">Loïc Landrieu</a> and 
-    <a href="https://www.umr-lastig.fr/bruno-vallet/">Bruno Vallet</a>.
-    <br><br>
-    My research interests cover 
-    3D point clouds ☁️, 
-    vegetation mapping 🌳, 
-    species distribution modeling 🦜, 
-    remote sensing 🛰️, 
-    and efficient machine learning ⚡.
+  {{ p.summary.web }}
+  <br><br>
+  My research interests cover
+  {% for i in p.interests_web %}{{ i.label }}&nbsp;{{ i.emoji }}{% if forloop.last %}.{% elsif forloop.rindex == 2 %}, and {% else %}, {% endif %}{% endfor %}
 </p>
 
-{% if site.news %}
+{% if site.data.news %}
 News
 ------
-{% for post in site.news reversed %}
-    {% include archive-single-news.html %}
+{% for item in site.data.news limit: 8 %}
+    {% include archive-single-news.html item=item %}
 {% endfor %}
+
+<p style="margin-top:1em;"><a href="{{ base_path }}/news/">All news →</a></p>
 {% endif %}

@@ -1,23 +1,19 @@
-{% include base_path %}
-
+{% comment %}
+  One teaching engagement. Data comes from _data/teaching.yml via include.item.
+{% endcomment %}
+{% assign item = include.item %}
 <div class="news-entry">
-  {% if post.date %}
-    {% assign year = post.date | date: "%Y" %}
-    {% assign month =  post.date | date: "%m" | plus: 0 %}
-  {% else %}
-    {% assign year = 0000 %}
-    {% assign month = 0 %}
-  {% endif %}
-  {% if month <= 3 %}
-    {% assign quarter = "Q1" %}
-  {% elsif month <= 6 %}
-    {% assign quarter = "Q2" %}
-  {% elsif month <= 9 %}
-    {% assign quarter = "Q3" %}
-  {% else %}
-    {% assign quarter = "Q4" %}
-  {% endif %}
+  {% assign year = item.date | date: "%Y" %}
+  {% assign month = item.date | date: "%m" | plus: 0 %}
+  {% if month <= 3 %}{% assign quarter = "Q1" %}
+  {% elsif month <= 6 %}{% assign quarter = "Q2" %}
+  {% elsif month <= 9 %}{% assign quarter = "Q3" %}
+  {% else %}{% assign quarter = "Q4" %}{% endif %}
   {% assign idx = year | minus: 2022 | modulo: 7 %}
   <span class="label color-{{ idx }}">{{ quarter }} {{ year }}</span>
-  <div class="news-text">{{ post.content }}</div>
+  <div class="news-text">
+    <em>{{ item.title }}</em> at
+    {% if item.institution_url %}<a href="{{ item.institution_url }}">{{ item.institution }}</a>{% else %}{{ item.institution }}{% endif %}
+    <span class="talk-loc">&nbsp;·&nbsp;{{ item.format }}{% if item.level %}, {{ item.level }}{% endif %}{% if item.hours %}, {{ item.hours }}&nbsp;h{% elsif item.duration %}, {{ item.duration }}{% endif %}</span>
+  </div>
 </div>
