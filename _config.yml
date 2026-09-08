@@ -12,7 +12,7 @@ site_theme               : "air" # supports: air, contrast, default, dirt, mint,
 title                    : "Damien Robert"
 title_separator          : "-"
 name                     : &name "Damien Robert"
-description              : &description "personal description"
+description              : &description "Damien Robert — postdoctoral researcher at the EcoVision lab, University of Zurich. Deep learning for remote sensing, 3D point clouds, forests and biodiversity."
 url                      : "https://drprojects.github.io" # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "drprojects/drprojects.github.io"
@@ -141,7 +141,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Social media default site image
+og_image                 : profile.png # Social media default site image
 og_description           :  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
