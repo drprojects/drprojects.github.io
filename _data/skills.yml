@@ -32,22 +32,23 @@ research_themes:
       - Species distribution modeling
       - Representation learning for macroecology
 
-# Ordered by fluency/centrality, most important first. `group` drives the CV's
-# visual grouping.
+# Ordered by fluency/centrality, most important first.
+# `logo` names a file in cv/assets/logos/ and is optional: a tool without one
+# renders as text in the CV. `group` is currently unused by either renderer.
 tools:
-  - { name: Python,             group: core }
-  - { name: PyTorch,            group: core }
-  - { name: PyTorch Lightning,  group: core }
-  - { name: PyTorch Geometric,  group: core }
-  - { name: C++,                group: core }
-  - { name: Hydra,              group: workflow }
-  - { name: Weights & Biases,   group: workflow }
-  - { name: Git,                group: workflow }
-  - { name: Linux,              group: workflow }
+  - { name: Python,             group: core, logo: python_logo.png }
+  - { name: PyTorch,            group: core, logo: pytorch_logo.png }
+  - { name: PyTorch Lightning,  group: core, logo: lightning_logo.png }
+  - { name: PyTorch Geometric,  group: core, logo: pyg_logo.png }
+  - { name: C++,                group: core, logo: cpp_logo.png }
+  - { name: Hydra,              group: workflow, logo: hydra_logo.jpeg }
+  - { name: Weights & Biases,   group: workflow, logo: wandb.png }
+  - { name: Git,                group: workflow, logo: git_logo.png }
+  - { name: Linux,              group: workflow, logo: linux_logo.png }
   - { name: SLURM,              group: workflow }
-  - { name: scikit-learn,       group: analysis }
-  - { name: Plotly,             group: analysis }
-  - { name: Blender,            group: analysis }
+  - { name: scikit-learn,       group: analysis, logo: scikit_logo.png }
+  - { name: Plotly,             group: analysis, logo: plotly_logo.png }
+  - { name: Blender,            group: analysis, logo: blender_logo.png }
   - { name: LaTeX,              group: analysis }
 
 languages:

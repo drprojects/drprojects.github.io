@@ -248,6 +248,10 @@ def build(offline: bool, keep_tex: bool) -> int:
     if portrait_src.exists():
         shutil.copy(portrait_src, assets / "portrait.png")
 
+    logos_src = CVDIR / "assets" / "logos"
+    if logos_src.exists():
+        shutil.copytree(logos_src, BUILD / "logos", dirs_exist_ok=True)
+
     print("  latex: running pdflatex (2 passes)")
     for i in range(2):
         proc = subprocess.run(

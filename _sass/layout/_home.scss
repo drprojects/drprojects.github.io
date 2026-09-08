@@ -1,7 +1,14 @@
 /* ==========================================================================
-   LANDING PAGE — distinctions strip, stats band, section headings
-   All of it is rendered from _data/, so nothing here goes stale.
+   SHARED PAGE FURNITURE — section headings, "browse all" links,
+   plus the Community page's people grid and role tags.
+   All rendered from _data/, so nothing here goes stale.
    ========================================================================== */
+
+/* Secondary text. The theme's --global-text-color-light is a 50%-darkened
+   primary, which is fine on the light background but close to unreadable on the
+   dark one, so dark mode gets its own brighter value nearer the link colour. */
+:root                    { --dr-muted: var(--global-text-color-light); }
+html[data-theme="dark"]  { --dr-muted: #93b3b8; }
 
 .home-heading {
   margin: 2.25em 0 0.6em;
@@ -13,97 +20,6 @@
   color: var(--global-base-color);
   border-bottom: 1px solid var(--global-border-color);
 }
-
-/* ----- Distinctions ----------------------------------------------------- */
-
-.awards-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
-  gap: 0.85rem;
-  margin: 2em 0 1.5em;
-}
-
-.award-card {
-  position: relative;
-  padding: 0.85rem 0.9rem 0.9rem 1.05rem;
-  border: 1px solid var(--global-border-color);
-  border-radius: 6px;
-  background: transparent;
-  overflow: hidden;
-
-  /* Accent spine rather than a filled panel: keeps the row light in both
-     themes and avoids fighting the site's background. */
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: 3px;
-    background: var(--global-base-color);
-  }
-}
-
-.award-card__year {
-  font-size: 0.72em;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--global-text-color-light);
-}
-
-.award-card__title {
-  margin-top: 0.15em;
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-.award-card__venue {
-  margin-top: 0.1em;
-  font-size: 0.92em;
-  color: var(--global-base-color);
-}
-
-.award-card__note {
-  margin-top: 0.3em;
-  font-size: 0.78em;
-  line-height: 1.35;
-  color: var(--global-text-color-light);
-}
-
-/* ----- Stats ------------------------------------------------------------ */
-
-.stats-band {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 2.5rem;
-  align-items: baseline;
-  margin: 1.75em 0 0.5em;
-  padding: 0.9rem 0;
-  border-top: 1px solid var(--global-border-color);
-  border-bottom: 1px solid var(--global-border-color);
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1em;
-  text-decoration: none !important;
-  border: 0 !important;
-
-  &__num {
-    font-size: 1.55em;
-    font-weight: 700;
-    line-height: 1;
-    color: var(--global-base-color);
-  }
-
-  &__label {
-    font-size: 0.74em;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--global-text-color-light);
-  }
-}
-
-a.stat:hover .stat__num { text-decoration: underline; }
 
 /* ----- "browse all" link ------------------------------------------------ */
 
@@ -152,7 +68,7 @@ a.stat:hover .stat__num { text-decoration: underline; }
   &__org,
   &__with {
     font-size: 0.8em;
-    color: var(--global-text-color-light);
+    color: var(--dr-muted);
     line-height: 1.35;
   }
 }
@@ -167,7 +83,7 @@ a.stat:hover .stat__num { text-decoration: underline; }
   font-size: 0.72em;
   letter-spacing: 0.03em;
   white-space: nowrap;
-  color: var(--global-text-color-light);
+  color: var(--dr-muted);
 }
 
 .role-tag--award {

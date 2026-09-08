@@ -9,7 +9,7 @@
   {% assign month = item.date | date: "%m" %}
   {% assign idx = year | minus: 2022 | modulo: 7 %}
   <span class="label color-{{ idx }}">{{ month }}/{{ year }}</span>
-  <span class="entry-icon">{% include icon-talk-type.html type=item.type %}</span>
+  <span class="entry-icon">{% include icon-type.html type=item.type %}</span>
   <div class="news-text">
     {% if item.title %}
       <em>{% if item.title_url %}<a href="{{ item.title_url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</em>

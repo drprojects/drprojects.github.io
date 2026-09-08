@@ -9,38 +9,79 @@ author_profile: true
 
 <br/>
 
-<p class="wordwrap">Reviewing, chairing, organising, mentoring and advising &mdash; the
-work that happens around the papers.</p>
+<p class="wordwrap">Awards, reviewing, chairing, organising, mentoring and advising
+&mdash; the work that happens around the papers.</p>
 
-{% comment %} ------------------------------ reviewing ---------------------- {% endcomment %}
-{% if site.data.service and site.data.service.size > 0 %}
-<h2 class="home-heading">Reviewing &amp; Chairing</h2>
-{% assign years = site.data.service | map: 'year' | uniq | sort | reverse %}
-{% for y in years %}
+{% comment %} --------------------- awards & recognitions -------------------- {% endcomment %}
+{% if site.data.awards %}
+<h2 class="home-heading">Awards &amp; Recognitions</h2>
+{% for a in site.data.awards %}
   <div class="news-entry">
-    {% assign idx = y | minus: 2022 | modulo: 7 %}
-    <span class="label color-{{ idx }}">{{ y }}</span>
+    {% assign idx = a.year | minus: 2022 | modulo: 7 %}
+    <span class="label color-{{ idx }}">{{ a.year }}</span>
     <div class="news-text">
-      {% assign first = true %}
-      {% for s in site.data.service %}{% if s.year == y %}{% unless first %} &middot; {% endunless %}{{ s.venue }}{% if s.role != 'Reviewer' %} <span class="role-tag">{{ s.role }}</span>{% endif %}{% if s.note %} <span class="role-tag role-tag--award">{{ s.note }}</span>{% endif %}{% assign first = false %}{% endif %}{% endfor %}
+      {% if a.url %}<a href="{{ a.url }}">{{ a.title }}</a>{% else %}{{ a.title }}{% endif %}
+      {% if a.venue %}at <strong>{{ a.venue }}</strong>{% endif %}
+      {% if a.description %}<span class="entry-sub">{{ a.description }}</span>{% endif %}
     </div>
   </div>
 {% endfor %}
 {% endif %}
 
-{% comment %} ------------------------------ organising --------------------- {% endcomment %}
-{% if site.data.organizing and site.data.organizing.size > 0 %}
-<h2 class="home-heading">Organising Committees</h2>
-{% for o in site.data.organizing %}
-  <div class="news-entry">
-    {% assign idx = o.year | minus: 2022 | modulo: 7 %}
-    <span class="label color-{{ idx }}">{{ o.year }}</span>
-    <div class="news-text">
-      {% if o.event_url %}<a href="{{ o.event_url }}">{{ o.event }}</a>{% else %}{{ o.event }}{% endif %}
-      <span class="role-tag">{{ o.role }}</span>
-      {% if o.note %}<span class="entry-sub">{{ o.note }}</span>{% endif %}
-    </div>
-  </div>
+{% comment %} ---------------------- reviewing & chairing --------------------
+  Reviewing duties and organising committees share one chronological list: they
+  are the same kind of commitment, and splitting them made both look thin.
+{% endcomment %}
+{% assign duties = "" | split: "" %}
+{% if site.data.service or site.data.organizing %}
+<h2 class="home-heading">Reviewing, Chairing &amp; Organising</h2>
+
+<div class="type-legend">
+  {% assign role_types = "reviewer,area_chair,organizer" | split: "," %}
+  {% for r in role_types %}
+    <span class="type-legend__item">
+      {% include icon-type.html type=r %}
+      {% case r %}
+        {% when 'area_chair' %}Area chair
+        {% when 'organizer' %}Organising committee
+        {% else %}Reviewer
+      {% endcase %}
+    </span>
+  {% endfor %}
+</div>
+
+{% comment %} Merge the two sources, newest first, one row per commitment. {% endcomment %}
+{% assign all_years = site.data.service | map: 'year' %}
+{% assign org_years = site.data.organizing | map: 'year' %}
+{% assign years = all_years | concat: org_years | uniq | sort | reverse %}
+
+{% for y in years %}
+  {% for o in site.data.organizing %}
+    {% if o.year == y %}
+      <div class="news-entry entry--typed">
+        {% assign idx = y | minus: 2022 | modulo: 7 %}
+        <span class="label color-{{ idx }}">{{ y }}</span>
+        <span class="entry-icon">{% include icon-type.html type=o.role %}</span>
+        <div class="news-text">
+          {% if o.event_url %}<a href="{{ o.event_url }}">{{ o.event }}</a>{% else %}{{ o.event }}{% endif %}
+          {% if o.note %}<span class="entry-sub">{{ o.note }}</span>{% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+  {% for s in site.data.service %}
+    {% if s.year == y %}
+      <div class="news-entry entry--typed">
+        {% assign idx = y | minus: 2022 | modulo: 7 %}
+        <span class="label color-{{ idx }}">{{ y }}</span>
+        <span class="entry-icon">{% include icon-type.html type=s.role %}</span>
+        <div class="news-text">
+          {{ s.venue }}
+          <span class="entry-sub">{% if s.role == 'area_chair' %}Area chair{% else %}Reviewer{% endif %}</span>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 {% endfor %}
 {% endif %}
 

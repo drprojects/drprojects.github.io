@@ -142,7 +142,7 @@ the Best Paper Finalist leads) and a stats band computed from the data
 →" arrow became a proper underlined link.
 
 **Talks.** Five hand-drawn 24×24 line icons for oral / poster / invited /
-interview / tutorial, in `_includes/icon-talk-type.html`. They inherit
+interview / tutorial, in `_includes/icon-type.html`. They inherit
 `currentColor`, so they work in both themes. A legend sits at the top of the
 page. Location moved to its own de-emphasised second line.
 
@@ -170,3 +170,47 @@ until filled.
    `archive-layout-with-content.md`, `portfolio.html`, `page-archive.html`,
    `collection-archive.html`, `year-archive.html`, `category-archive.html`,
    `tag-archive.html`.
+
+
+---
+
+## Round 3 — review feedback
+
+**Landing page.** Distinctions strip and stats band removed; back to intro plus
+the eight most recent news items. The link reads "Browse all news items".
+
+**Talk icons.** Redrawn as solid silhouettes (microphone, poster panel, speech
+bubble, graduation cap, quote marks) — the thin outlines were fiddly at 1em.
+Renamed `_includes/icon-type.html` since the Community page now shares it for
+reviewer / area chair / organising committee.
+
+**Dark mode.** Secondary text (talk locations, course formats, org names) used
+`--global-text-color-light`, which is a 50%-darkened primary: fine on the light
+background, close to unreadable on the dark one. Introduced `--dr-muted`, which
+keeps the light value and switches to a brighter teal-grey under
+`html[data-theme="dark"]`.
+
+**Community.** New Awards & Recognitions section at the top, laid out like News,
+each entry linking to public proof (the same URLs used in `news.yml`). Reviewing,
+chairing and organising merged into one chronological list, one row per
+commitment, with role icons and a legend. Outstanding-reviewer nominations moved
+out of `service.yml` into `awards.yml` — they are recognitions, not duties.
+Added the 2027 EarthVision organising committee.
+
+**Data.** "Loïc Landrieu" normalised to "Loic Landrieu" throughout `_data/`.
+
+**CV.** Open-source rows show stars and forks together, flush right, with a
+`\faCodeBranch` fork icon. Skills section reworked: tools now render as a
+four-column grid of logo + name (logos in `cv/assets/logos/`, referenced by a
+`logo:` field in `skills.yml`), languages sit two per row with meters. Fixed the
+overflow: `\chips` set the hyphenation penalties inside a group, so they were
+restored before `\par` read them — hence "scikit-learn" still breaking. The new
+`\nohyphens` is applied at the start of the entry body instead.
+
+### Still open
+
+1. `_data/talks.yml` — NVIDIA entry carries `_verify: location inferred`.
+2. `_data/grants.yml` is empty; its section stays hidden until filled.
+3. `_data/profile.yml` — `metrics.show` is `false`; add citations / h-index.
+4. SLURM and LaTeX have no logo asset and render as text in the CV tools grid.
+5. The academicpages demo pages listed above are still reachable.

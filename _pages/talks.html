@@ -16,7 +16,7 @@ author_profile: true
   {% assign legend_types = "invited,oral,poster,tutorial,interview" | split: "," %}
   {% for t in legend_types %}
     <span class="type-legend__item">
-      {% include icon-talk-type.html type=t %}
+      {% include icon-type.html type=t %}
       {% case t %}
         {% when 'oral' %}Conference talk
         {% when 'poster' %}Poster

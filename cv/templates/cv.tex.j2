@@ -129,10 +129,10 @@
 \cvsection{Open-Source Software}
 ((* for x in for_cv(d.code) *))
 ((* set s = stars.get(x.repo, {}) *))
-\entry{((* if s.get('stars') *))\faStar\; ((( s.get('stars') )))((* endif *))}{%
+\entry{}{%
   \etitle{\href{((( x.get('code_url') )))}{((( x.title | tex )))}}
-  \emeta{\;·\; \href{((( x.get('code_url') )))}{((( x.repo | tex )))}}
-  ((* if s.get('forks') *))\etrail{((( s.get('forks') ))) forks}((* endif *))
+  \emeta{\;·\; \href{((( x.get('code_url') )))}{((( x.repo | tex )))}}%
+  ((* if s.get('stars') is not none *))\hfill\repostats{((( s.get('stars') )))}{((( s.get('forks', 0) )))}((* endif *))
 }
 ((* endfor *))
 
@@ -155,18 +155,25 @@
 ((# --------------------------------------------------------------- skills #))
 \cvsection{Skills \& Languages}
 ((* for t in d.skills.research_themes *))
-\entry{((* if loop.first *))Research((* endif *))}{%
+\entry{((* if loop.first *))Research((* endif *))}{\nohyphens%
   \etitle{((( t.label | tex )))} \;
   \chips{((* for topic in t.topics *))((( topic | tex )))((* if not loop.last *))\chipsep{}((* endif *))((* endfor *))}
 }
 ((* endfor *))
-\entry{Tools}{\chips{((* for t in d.skills.tools *))((( t.name | tex )))((* if not loop.last *))\chipsep{}((* endif *))((* endfor *))}}
+
+\entry{Tools}{\nohyphens%
+  \toolgrid{%
+  ((* for t in d.skills.tools *))\tool{((( t.get('logo', '') )))}{((( t.name | tex )))}((* if loop.last *))((* elif loop.index is divisibleby 4 *)) \\[0.75ex] ((* else *)) & ((* endif *))((* endfor *))%
+  }%
+}
+
 ((* set lvl = {'Native': '18mm', 'Fluent': '13.8mm', 'Intermediate': '9.6mm', 'Beginner': '5.4mm'} *))
-\entry{Languages}{%
-  ((* for l in d.skills.languages *))\makebox[19mm][l]{\small ((( l.name | tex )))}\meter{((( lvl.get(l.level, '5mm') )))}\hspace{2.5mm}\emeta{((( l.level | tex )))}((* if not loop.last *))\\((* endif *))
+\entry{Languages}{\nohyphens%
+  ((* for l in d.skills.languages *))\makebox[19mm][l]{\small ((( l.name | tex )))}\meter{((( lvl.get(l.level, '5mm') )))}\hspace{2.5mm}\makebox[26mm][l]{\emeta{((( l.level | tex )))}}((* if loop.index is divisibleby 2 and not loop.last *))\\((* endif *))
   ((* endfor *))
 }
-\entry{Abroad}{\chips{((* for i in d.skills.international *))((( i.place | tex ))), ((( i.country | tex ))) \emeta{(((( i.period | tex ))))}((* if not loop.last *))\chipsep{}((* endif *))((* endfor *))}}
-\entry{Interests}{\chips{((* for i in d.skills.interests *))((( i.label | tex )))((* if not loop.last *))\chipsep{}((* endif *))((* endfor *))}}
+
+\entry{Abroad}{\nohyphens\chips{((* for i in d.skills.international *))((( i.place | tex ))), ((( i.country | tex ))) \emeta{(((( i.period | tex ))))}((* if not loop.last *))\chipsep{}((* endif *))((* endfor *))}}
+\entry{Interests}{\nohyphens\chips{((* for i in d.skills.interests *))((( i.label | tex )))((* if not loop.last *))\chipsep{}((* endif *))((* endfor *))}}
 
 \end{document}

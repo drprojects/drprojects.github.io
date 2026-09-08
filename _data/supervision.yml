@@ -8,7 +8,7 @@ groups:
       - { name: Emilia Arens,   with: Jan D. Wegner, org: UZH , key: emilia_arens }
       - { name: Johannes Dollinger, with: Jan D. Wegner, org: UZH , key: johannes_dollinger }
       - { name: Kaan Karaman,   with: Jan D. Wegner, org: UZH , key: kaan_karaman }
-      - { name: Louis Geist,    with: Loïc Landrieu,  org: ENPC , key: louis_geist }
+      - { name: Louis Geist,    with: Loic Landrieu,  org: ENPC , key: louis_geist }
       - { name: Yuanwen Yue,    with: Konrad Schindler and Christian Rupprecht, org: ETH / Oxford , key: yuanwen_yue }
 
   - id: master
@@ -23,7 +23,7 @@ groups:
       - { name: Konrad Schindler, org: ETH , key: konrad_schindler }
       - { name: Christian Rupprecht, org: Oxford , key: christian_rupprecht }
       - { name: Jan D. Wegner, org: UZH , key: jan_dirk_wegner }
-      - { name: Loïc Landrieu, org: ENPC }
+      - { name: Loic Landrieu, org: ENPC }
       - { name: Vivien Sainte Fare Garnot, org: UZH , key: vivien_sainte_fare_garnot }
       - { name: Lukas Drees, org: UZH , key: lukas_drees }
       - { name: Martin Schwartz, org: LSCE , key: martin_schwartz }

@@ -1,20 +1,22 @@
-# Reviewing, chairing and other academic service.
-# One entry per (year, venue) so the CV can group by year and the website can
-# count roles.
+# Reviewing and chairing duties, one entry per (year, venue).
+#
+# `role` is one of: reviewer | area_chair. It selects the icon on the Community
+# page, so keep to those values. Recognitions such as "outstanding reviewer"
+# belong in awards.yml, not here.
 
-- { year: 2026, venue: ECCV,  role: Area Chair }
-- { year: 2026, venue: CVPR,  role: Reviewer, note: Outstanding Reviewer }
+- { year: 2026, venue: ECCV,  role: area_chair }
+- { year: 2026, venue: CVPR,  role: reviewer }
 
-- { year: 2025, venue: CVPR,  role: Reviewer }
-- { year: 2025, venue: "CVPR workshop EarthVision", role: Reviewer }
+- { year: 2025, venue: CVPR,  role: reviewer }
+- { year: 2025, venue: "CVPR workshop EarthVision", role: reviewer }
 
-- { year: 2024, venue: ECCV,  role: Reviewer, note: Outstanding Reviewer }
-- { year: 2024, venue: "ISPRS Journal of Photogrammetry and Remote Sensing", role: Reviewer }
-- { year: 2024, venue: "ICLR workshop ML4RS", role: Reviewer }
-- { year: 2024, venue: "CVPR workshop EarthVision", role: Reviewer }
+- { year: 2024, venue: ECCV,  role: reviewer }
+- { year: 2024, venue: "ISPRS Journal of Photogrammetry and Remote Sensing", role: reviewer }
+- { year: 2024, venue: "ICLR workshop ML4RS", role: reviewer }
+- { year: 2024, venue: "CVPR workshop EarthVision", role: reviewer }
 
-- { year: 2023, venue: CVPR,  role: Reviewer }
-- { year: 2023, venue: "CVPR workshop EarthVision", role: Reviewer }
+- { year: 2023, venue: CVPR,  role: reviewer }
+- { year: 2023, venue: "CVPR workshop EarthVision", role: reviewer }
 
-- { year: 2022, venue: "ISPRS Journal of Photogrammetry and Remote Sensing", role: Reviewer }
-- { year: 2022, venue: "CVPR workshop EarthVision", role: Reviewer }
+- { year: 2022, venue: "ISPRS Journal of Photogrammetry and Remote Sensing", role: reviewer }
+- { year: 2022, venue: "CVPR workshop EarthVision", role: reviewer }

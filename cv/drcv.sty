@@ -224,5 +224,29 @@
 \newcommand{\elinksep}{{\footnotesize\color{hairline}\,·\,}}
 
 % Skills chips: plain text separated by thin dots, no boxes
-\newcommand{\chips}[1]{{\small\hyphenpenalty=10000\exhyphenpenalty=10000\relax #1}}
+\newcommand{\chips}[1]{{\small #1}}
+
+% Put this at the START of an \entry body to stop words breaking across lines.
+\newcommand{\nohyphens}{\hyphenpenalty=10000 \exhyphenpenalty=10000 \relax}
+
+% A tool: optional logo, then its name. Laid out by the surrounding tabular —
+% a bare sequence of \makebox cells gives TeX no legal breakpoint, so the row
+% simply ran off the page instead of wrapping.
+\newcommand{\tool}[2]{%
+  \ifx\relax#1\relax\hspace{5.6mm}\else
+    \raisebox{-0.27em}{\includegraphics[height=1.15em]{logos/#1}}\hspace{1.7mm}%
+  \fi
+  \small #2%
+}
+\newcommand{\toolgrid}[1]{%
+  \begingroup\setlength{\tabcolsep}{0pt}%
+  \begin{tabular}{@{}p{35mm}p{35mm}p{35mm}p{35mm}@{}}#1\end{tabular}%
+  \endgroup
+}
+
+% Repository popularity, shown flush right on an open-source entry.
+\newcommand{\repostats}[2]{%
+  {\footnotesize\sanstext\color{muted}%
+   \faStar\,#1\hspace{2.6mm}\faCodeBranch\,#2}%
+}
 \newcommand{\chipsep}{\,\textcolor{hairline}{\textbullet}\,}

@@ -1,26 +1,31 @@
-# Awards and distinctions, reverse chronological (the order the CV prints them).
+# Awards, recognitions and distinctions, reverse chronological.
 #
-# `weight` only affects the homepage distinctions strip, which leads with the
-# most impressive rather than the most recent. Higher = shown first.
+# `url` points at public proof of the claim (the same links used in news.yml).
+# Outstanding-reviewer nominations live here rather than under reviewing: they
+# are recognitions, not duties.
 
 - year: 2026
+  date: 2026-05-19
   title: Outstanding Reviewer
   venue: CVPR
-  weight: 20
+  url: https://media.eventhosts.cc/Conferences/CVPR2026/CVPR_main_conf_2026_15.pdf
 
 - year: 2025
+  date: 2025-04-13
   title: PhD Award — accessit
   venue: AFRIF
   description: French Association for Pattern Recognition and Interpretation
-  weight: 30
+  url: http://afrif.irisa.fr/?page_id=54
 
 - year: 2024
+  date: 2024-11-22
   title: Outstanding Reviewer
   venue: ECCV
-  weight: 10
+  url: https://eccv.ecva.net/Conferences/2024/Reviewers
 
 - year: 2022
+  date: 2022-06-21
   title: Best Paper Finalist
   venue: CVPR
   description: Top 0.4% of submissions
-  weight: 40
+  url: https://x.com/CVPR/status/1539772091112857600

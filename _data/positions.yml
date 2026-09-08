@@ -21,7 +21,7 @@
   duration: 3y 4m
   description: Efficient learning on large-scale 3D point clouds
   people:
-    - { role: Advisor, name: Loïc Landrieu }
+    - { role: Advisor, name: Loic Landrieu }
     - { role: Advisor, name: Bruno Vallet }
 
 - start: 2017
