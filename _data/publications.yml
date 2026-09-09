@@ -266,7 +266,7 @@
   authors:
     - me
   highlights:
-    - { label: AFRIF PhD award, kind: award }
+    - { label: AFRIF PhD award (accessit), kind: award }
   paper_url: https://hal.science/tel-04448827
   code_url: https://github.com/drprojects
   bibtex_id: robert2024phd
@@ -292,7 +292,7 @@
     - loic_landrieu
   highlights:
     - { label: Oral, kind: selection }
-  selectivity: "top 5.3% of submissions"
+  selectivity: "oral, top 5.3% of submissions"
   paper_url: https://arxiv.org/abs/2401.06704
   project_url: https://drprojects.github.io/supercluster-site
   code_url: https://github.com/drprojects/superpoint_transformer
@@ -309,7 +309,7 @@
     - me
     - hugo_raguet
     - loic_landrieu
-  selectivity: "top 26.8% of submissions"
+  selectivity: "26.8% acceptance rate"
   paper_url: https://arxiv.org/abs/2306.08045
   project_url: https://drprojects.github.io/superpoint-transformer-site
   code_url: https://github.com/drprojects/superpoint_transformer
@@ -329,7 +329,7 @@
   highlights:
     - { label: Best paper finalist, kind: award }
     - { label: Oral, kind: selection }
-  selectivity: "top 0.4% of submissions"
+  selectivity: "best-paper finalist, top 0.4% of submissions"
   paper_url: https://arxiv.org/abs/2204.07548
   project_url: https://drprojects.github.io/deepviewagg-site
   code_url: https://github.com/drprojects/DeepViewAgg

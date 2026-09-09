@@ -128,6 +128,10 @@ dlr:
   url: https://www.dlr.de
 
 # --- education -------------------------------------------------------------
+univ_gustave_eiffel:
+  name: Université Gustave Eiffel
+  short: Univ. Gustave Eiffel
+
 centrale_lyon:
   name: École Centrale de Lyon
   short: Centrale Lyon

@@ -97,7 +97,7 @@
   \else
     \setlength{\hdrw}{\textwidth-28mm}%
   \fi
-  \vspace*{1mm}%
+  \vspace*{-2.6mm}%
   \noindent
   \begin{minipage}[c]{\hdrw}
     {\sanstext\fontsize{25}{28}\selectfont\bfseries\color{accent}#1\par}
@@ -126,6 +126,8 @@
 % Separator between contact items — the same middot used everywhere else.
 \newcommand{\cvsep}{\;\textcolor{muted}{\textperiodcentered}\;}
 \newcommand{\cvdot}{\,\textcolor{hairline}{\textbullet}\,}
+% Separator that binds to the item that follows it.
+\newcommand{\sep}{\unskip\nobreak\,\emeta{\textperiodcentered}\, \ignorespaces}
 
 % -------------------------- CHARTS AND METERS ------------------------------
 % Publications-per-year bar chart, shown beside the Publications heading.
@@ -166,7 +168,7 @@
 % \cvsection[right-hand content]{Title}
 \newcommand{\cvsection}[2][]{%
   \par\addvspace{3.6mm}%
-  \needspace{3\baselineskip}%
+  \penalty300\Needspace*{4\baselineskip}%
   \noindent
   {\color{accent}\rule[-0.08em]{2.3mm}{2.3mm}}\hspace{2.1mm}%
   {\sanstext\fontsize{9.5}{11}\selectfont\bfseries\color{accent}%
@@ -225,7 +227,7 @@
 \newcommand{\emeta}[1]{{\footnotesize\color{muted}#1}}
 \newcommand{\edesc}[1]{{\small #1}}
 % Author lists: one notch down so long lists stay on a single line.
-\newcommand{\eauth}[1]{{\footnotesize #1}}
+\newcommand{\eauth}[1]{{\footnotesize\nohyphens #1}}
 
 % Right-aligned trailing note on the same line
 \newcommand{\etrail}[1]{\hfill{\footnotesize\sanstext\color{muted}#1}}
@@ -274,7 +276,7 @@
 }
 \newcommand{\toolgrid}[1]{%
   \begingroup\setlength{\tabcolsep}{0pt}%
-  \begin{tabular}{@{}p{35mm}p{35mm}p{35mm}p{35mm}@{}}#1\end{tabular}%
+  \begin{tabular}[t]{@{}p{35mm}p{35mm}p{35mm}p{35mm}@{}}#1\end{tabular}%
   \endgroup
 }
 

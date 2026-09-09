@@ -38,9 +38,9 @@
 ((* for x in for_cv(d.positions) *))
 \entry{((( x.get('start') )))((* if x.get('end') != x.get('start') *))--((( x.get('end') if x.get('end') else 'now' )))((* endif *))}{%
   \etitle{((( x.title | tex )))} \\
-  \eorg{((* if x.get('group') *))((( x.group | tex ))), ((* endif *))((( x.organizations | map('org_label') | join(' / ') | tex )))}((* if x.get('location') *)) \emeta{\;·\; ((( x.get('location') | tex )))}((* endif *))
+  \eorg{((* if x.get('group') *))((( x.group | tex ))), ((* endif *))((( x.organizations | map('org_label', false) | join(' / ') | tex )))}((* if x.get('location') *))\sep\emeta{\mbox{((( x.get('location') | tex )))}}((* endif *))
   ((* if x.get('description') *))\\ \edesc{((( x.get('description') | md2tex )))}((* endif *))
-  ((* if x.get('people') *))\\ ((* for role, group in x.get('people') | groupby('role') *))\emeta{((( role | tex )))((* if group | length > 1 *))s((* endif *)):} ((( group | map(attribute='person') | map('person_name') | join(', ') | tex )))((* if not loop.last *)) \emeta{\;·\;} ((* endif *))((* endfor *))((* endif *))
+  ((* if x.get('people') *))\\ ((* for role, group in x.get('people') | groupby('role') *))\emeta{((( role | tex )))((* if group | length > 1 *))s((* endif *)):} ((( group | map(attribute='person') | map('person_name') | join(', ') | tex )))((* if not loop.last *))\sep((* endif *))((* endfor *))((* endif *))
 }
 ((* endfor *))
 
@@ -49,7 +49,7 @@
 ((* for x in for_cv(d.education) *))
 \entry{((* if x.get('start') *))((( x.get('start') )))--((( x.get('end') )))((* else *))((( x.get('year') )))((* endif *))}{%
   \etitle{((( x.degree | tex )))} \\
-  \eorg{((( x.organization | org_label(false) | tex )))}((* if x.get('location') *)) \emeta{\;·\; ((( x.get('location') | tex )))}((* endif *))
+  \eorg{((( x.organization | org_label(false) | tex )))}((* if x.get('location') *))\sep\emeta{\mbox{((( x.get('location') | tex )))}}((* endif *))
   ((* if x.get('description') *))\\ \edesc{((( x.get('description') | md2tex )))}((* endif *))
 }
 ((* endfor *))
@@ -93,7 +93,7 @@
 ((# ----------------------------------------------------------- supervision #))
 \cvsection{Collaboration \& Supervision}
 ((* for g in d.supervision.groups *))
-\entry{((( g.label | tex )))}{%
+\entry{((( g.label | tex )))}{\nohyphens%
   ((* for m in g.members *))%
     ((* if m.get('person') *))\etitle{((( m.person | person_name | tex )))}%
       ((* set who = d.authors[m.person] *))%
@@ -103,7 +103,7 @@
       ((* if who.get('location') *))\,\emeta{((( who.location | tex )))}((* endif *))%
     ((* endif *))%
     ((* if m.get('with') *))\,\emeta{with ((( m.with | map('entity_label') | join(' and ') | tex )))}((* endif *))%
-    ((* if not loop.last *)) \emeta{\;·\;} ((* endif *))%
+    ((* if not loop.last *))\sep((* endif *))%
   ((* endfor *))
 }
 ((* endfor *))
@@ -119,8 +119,8 @@
 ((* for y in years *))
 \entry{((( y )))}{%
   ((* set ns3 = namespace(first=true) *))
-  ((* for o in d.organizing if o.year == y *))((* if not ns3.first *))\emeta{\;·\;} ((* endif *))\icoorganiser\,((( o.event | tex )))((* set ns3.first = false *))((* endfor *))
-  ((* for sv in d.service if sv.year == y *))((* if not ns3.first *))\emeta{\;·\;} ((* endif *))((* if sv.get('role') == 'area_chair' *))\icochair((* else *))\icoreviewer((* endif *))\,((( sv.venue | tex )))((* set ns3.first = false *))((* endfor *))
+  ((* for o in d.organizing if o.year == y *))((* if not ns3.first *))\sep((* endif *))\icoorganiser\,((( o.event | tex )))((* set ns3.first = false *))((* endfor *))
+  ((* for sv in d.service if sv.year == y *))((* if not ns3.first *))\sep((* endif *))((* if sv.get('role') == 'area_chair' *))\icochair((* else *))\icoreviewer((* endif *))\,((( sv.venue | tex )))((* set ns3.first = false *))((* endfor *))
 }
 ((* endfor *))
 
@@ -151,11 +151,11 @@
 ((* for x in talks *))
 ((* set yr = x.date.year *))
 ((* set showyear = yr != ns2.year *))((* set ns2.year = yr *))
-\entry{((* if showyear *))((( yr )))((* endif *))}{%
+\entry{((* if showyear *))((( yr )))((* endif *))}{\nohyphens%
   \etitle{((( x.get('venue') | tex )))}
   ((* if x.get('type') != 'invited' *))\emeta{\;·\; ((( x.get('type') | tex )))}((* endif *))
   \emeta{\;·\;} \edesc{((( x.title | tex )))}%
-  ((* if x.get('location') *)) \emeta{\;·\; ((( x.get('location') | tex )))}((* endif *))
+  ((* if x.get('location') *))\sep\emeta{\mbox{((( x.get('location') | tex )))}}((* endif *))
 }
 ((* endfor *))
 \entry{}{\emeta{((( d.talks | length ))) talks given since 2021 --- full list at \href{((( p.links.website )))/talks/}{drprojects.github.io/talks}.}}
@@ -177,8 +177,9 @@
 
 ((* set lvl = {'Native': '18mm', 'Fluent': '13.8mm', 'Intermediate': '9.6mm', 'Beginner': '5.4mm'} *))
 \entry{Languages}{\nohyphens%
-  ((* for l in d.skills.languages *))\makebox[19mm][l]{\small ((( l.name | tex )))}\meter{((( lvl.get(l.level, '5mm') )))}\hspace{2.5mm}\makebox[26mm][l]{\emeta{((( l.level | tex )))}}((* if loop.index is divisibleby 2 and not loop.last *))\\((* endif *))
-  ((* endfor *))
+  \toolgrid{%
+  ((* for l in d.skills.languages *))\small ((( l.name | tex ))) \emeta{((( l.level | tex )))}((* if loop.last *))((* elif loop.index is divisibleby 4 *)) \\[0.75ex] ((* else *)) & ((* endif *))((* endfor *))%
+  }%
 }
 
 \entry{Abroad}{\nohyphens\chips{((* for i in d.skills.international *))((( i.place | tex ))), ((( i.country | tex ))) \emeta{(((( i.period | tex ))))}((* if not loop.last *))\chipsep{}((* endif *))((* endfor *))}}

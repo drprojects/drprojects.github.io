@@ -317,6 +317,17 @@ def build(offline: bool, keep_tex: bool) -> int:
     env.filters.update(tex=tex, md2tex=md2tex, strip_emoji=strip_emoji)
 
     validate_references(data)
+    # Ranged entries carry start/end, single ones carry year; sort on whichever
+    # is present so the list cannot fall out of order by hand.
+    data["education"].sort(key=lambda e: e.get("end") or e.get("year") or 0,
+                           reverse=True)
+
+    data["code"] = sorted(
+        data["code"],
+        key=lambda c: stars.get(c.get("repo", ""), {}).get("stars", 0),
+        reverse=True,
+    )
+
     hist, hist_max = publication_histogram(for_cv(data["publications"]))
 
     # Registered as filters as well as globals so the template can write either

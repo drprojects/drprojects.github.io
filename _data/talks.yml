@@ -174,7 +174,7 @@
 - date: 2023-10-01
   type: invited
   title: Efficient Learning on Large-Scale 3D Point Clouds
-  venue: Ecole des Ponts, IMAGINE lab
+  venue: École des Ponts, IMAGINE lab
   venue_url: https://imagine-lab.enpc.fr/
   location: Paris, France
   cv: true
@@ -275,7 +275,7 @@
   type: invited
   title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
   publication: deepviewagg
-  venue: Ecole des Ponts, IMAGINE lab
+  venue: École des Ponts, IMAGINE lab
   venue_url: https://imagine-lab.enpc.fr/
   location: Paris, France
 - date: 2022-06-01
@@ -295,7 +295,7 @@
   type: invited
   title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
   publication: deepviewagg
-  venue: Ecole Polytechnique, LIX lab
+  venue: École Polytechnique, LIX lab
   venue_url: https://www.lix.polytechnique.fr/
   location: Paris, France
 - date: 2022-05-01

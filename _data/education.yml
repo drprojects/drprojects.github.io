@@ -2,9 +2,20 @@
 #
 # `organization` is a key into organizations.yml, so an institution's name and
 # URL are written once.
+#
+# Order here is not load-bearing: the renderers sort by `end` (or `year`)
+# descending, because ranged and single-year entries cannot be interleaved by
+# hand reliably.
 # `cv: false` items stay on the website but are cut from the 4-page CV: at this
 # career stage a high-school diploma and introductory MOOCs dilute the signal
 # rather than adding to it.
+
+- start: 2020
+  end: 2024
+  degree: PhD, Computer Science
+  organization: univ_gustave_eiffel
+  location: Paris, France
+  description: Efficient Learning on Large-Scale 3D Point Clouds
 
 - start: 2011
   end: 2015
