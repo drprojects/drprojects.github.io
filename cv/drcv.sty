@@ -153,6 +153,10 @@
 % \sparkspan{first}{last} — tiny caption for the chart above.
 \newcommand{\sparkspan}[2]{{\tiny\sanstext\color{muted}\,#1--#2}}
 
+% Citation record, shown beside the publications chart where a reader is
+% already looking at output rather than in the header among contact details.
+\newcommand{\citemetrics}[1]{{\footnotesize\sanstext\color{muted}#1\hspace{3mm}}}
+
 % Proficiency meter. \meter{filled width in mm}
 \newcommand{\meterlen}{18mm}
 \newcommand{\meter}[1]{%
@@ -299,8 +303,8 @@
 % right-align without ever touching the next icon.
 \newcommand{\repostats}[2]{%
   {\scriptsize\sanstext\color{muted}%
-   \makebox[3.4mm][l]{\faStar}\makebox[6mm][r]{#1}%
-   \hspace{1.6mm}%
-   \makebox[3.4mm][l]{\faCodeBranch}\makebox[4.6mm][r]{#2}}%
+   \makebox[3.4mm][l]{\faStar}\makebox[6.4mm][l]{#1}%
+   \hspace{1.2mm}%
+   \makebox[3.4mm][l]{\faCodeBranch}\makebox[4.6mm][l]{#2}}%
 }
 \newcommand{\chipsep}{\,\textcolor{hairline}{\textbullet}\,}
