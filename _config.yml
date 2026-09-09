@@ -177,25 +177,12 @@ kramdown:
 # Publications, talks, teaching, news and code no longer live in collections.
 # They are structured data in _data/*.yml, shared with the PDF CV generator in
 # cv/ so the website and the CV cannot drift apart. See PLAN.md.
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
+# No collections: all content is structured data in _data/*.yml, shared with the
+# PDF CV generator in cv/. See README.md.
 
 
 # These settings control how pages and collections are included in the site
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
   # _pages
   - scope:
       path: ""
@@ -203,15 +190,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
 
 
 # Sass/SCSS
@@ -230,8 +208,6 @@ timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # Plugins
 plugins:
   - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji
@@ -239,8 +215,6 @@ plugins:
 # Mimic GitHub Pages with --safe
 whitelist:
   - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji
