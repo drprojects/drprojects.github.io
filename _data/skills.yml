@@ -63,11 +63,11 @@ international:
   - { period: "2014–2015", place: "Providence, RI", country: United States }
 
 interests:
-  - { label: Nature & forests,  emoji: "🌳" }
-  - { label: Boxing,            emoji: "🥊" }
-  - { label: Mountaineering,    emoji: "⛰️" }
+  - { label: Outdoors,          emoji: "🌳" }
+  - { label: Climbing,          emoji: "🧗" }
   - { label: Skateboarding,     emoji: "🛹" }
+  - { label: Basketball,        emoji: "🏀" }
   - { label: Guitar,            emoji: "🎸" }
-  - { label: Painting,          emoji: "🎨" }
-  - { label: Reading,           emoji: "📖" }
+  - { label: Drawing,           emoji: "🎨" }
+  - { label: Comics,            emoji: "📖" }
   - { label: Board games,       emoji: "🎲" }

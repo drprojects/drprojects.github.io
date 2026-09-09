@@ -4,19 +4,22 @@
 # page, so keep to those values. Recognitions such as "outstanding reviewer"
 # belong in awards.yml, not here.
 
+- { year: 2027, venue: 3DV,  role: reviewer }
+
 - { year: 2026, venue: ECCV,  role: area_chair }
 - { year: 2026, venue: CVPR,  role: reviewer }
+- { year: 2026, venue: "EurIPS workshop REO",  role: reviewer }
 
 - { year: 2025, venue: CVPR,  role: reviewer }
 - { year: 2025, venue: "CVPR workshop EarthVision", role: reviewer }
 
 - { year: 2024, venue: ECCV,  role: reviewer }
-- { year: 2024, venue: "ISPRS Journal of Photogrammetry and Remote Sensing", role: reviewer }
+- { year: 2024, venue: "ISPRS Journal", role: reviewer }
 - { year: 2024, venue: "ICLR workshop ML4RS", role: reviewer }
 - { year: 2024, venue: "CVPR workshop EarthVision", role: reviewer }
 
 - { year: 2023, venue: CVPR,  role: reviewer }
 - { year: 2023, venue: "CVPR workshop EarthVision", role: reviewer }
 
-- { year: 2022, venue: "ISPRS Journal of Photogrammetry and Remote Sensing", role: reviewer }
+- { year: 2022, venue: "ISPRS Journal", role: reviewer }
 - { year: 2022, venue: "CVPR workshop EarthVision", role: reviewer }

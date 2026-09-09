@@ -20,6 +20,7 @@
 \RequirePackage{microtype}
 \RequirePackage{fontawesome5}
 \RequirePackage{needspace}
+\RequirePackage{twemojis}
 \RequirePackage{ifthen}
 
 % ------------------------------- DESIGN TOKENS -----------------------------
@@ -86,8 +87,13 @@
 % so it runs edge to edge while the text keeps the normal margins.
 \newcommand{\cvheader}[5]{%
   \begin{tikzpicture}[remember picture, overlay]
-    \fill[band] (current page.north west)
-      rectangle ([yshift=-\bandheight]current page.north east);
+    \ifcsname pgf@sh@ns@cvhdrend\endcsname
+      \fill[band] (current page.north west)
+        rectangle (current page.north east |- cvhdrend);
+    \else
+      \fill[band] (current page.north west)
+        rectangle ([yshift=-\bandheight]current page.north east);
+    \fi
   \end{tikzpicture}%
   \begingroup
   \ifx\relax#5\relax
@@ -115,8 +121,10 @@
   \par\vspace{2.6mm}
   {\footnotesize\sanstext\color{accent}\centering#4\par}
   \endgroup
-  \vspace*{3.2mm}
+  \vspace*{1.9mm}
+  \noindent\tikz[remember picture, overlay]{\coordinate (cvhdrend);}%
   \par
+  \vspace*{1.9mm}
   {\small #3\par}
   \vspace{1mm}
 }
@@ -227,11 +235,13 @@
 }
 
 % Research-interest keyword, for the strip under the summary.
-\newcommand{\kw}[1]{%
+% \kw{codepoint}{label} — a research-interest chip with its emoji.
+\newcommand{\kw}[2]{%
   \tikz[baseline=(k.base)]{%
     \node[inner xsep=3pt, inner ysep=2pt, rounded corners=2pt,
           draw=hairline, line width=0.4pt, text=accent] (k)
-      {\sanstext\fontsize{7.4}{8.4}\selectfont #1};}%
+      {\sanstext\fontsize{7.4}{8.4}\selectfont
+       \ifx\relax#1\relax\else\texttwemoji{#1}\,\fi #2};}%
 }
 
 % Role icons, shared by the service legend and its entries, so an icon looks
