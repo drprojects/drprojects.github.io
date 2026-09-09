@@ -33,7 +33,7 @@ OUT = ROOT / "files" / "cv.pdf"
 STARS_CACHE = DATA / "github_stars.json"
 
 DATASETS = [
-    "profile", "authors", "publications", "talks", "teaching",
+    "profile", "authors", "organizations", "publications", "talks", "teaching",
     "code", "positions", "education", "awards", "service",
     "supervision", "skills",
 ]
@@ -122,30 +122,71 @@ def load_data() -> dict:
     return data
 
 
-def report_unlinked_people(data):
-    """Name people the website cannot link, so a typo does not fail silently.
+def person_name(data, key):
+    """'First Last' for an authors.yml key."""
+    e = data["authors"][key]
+    return f"{e.get('first_name', '')} {e.get('last_name', '')}".strip()
 
-    supervision.yml records plain names and the site resolves them against
-    authors.yml. That is one fewer thing to keep in sync than a duplicated key,
-    but a rename can quietly drop a link -- which is exactly how Loic Landrieu's
-    homepage disappeared once. Printing the misses makes them visible.
+
+def org_label(data, key, short=True):
+    """Display name for an organizations.yml key."""
+    e = data["organizations"][key]
+    return e.get("short") if short and e.get("short") else e["name"]
+
+
+def entity_label(data, key, short=True):
+    """Resolve a key that may name either a person or an organisation."""
+    if key in data["authors"]:
+        return person_name(data, key)
+    if key in data["organizations"]:
+        return org_label(data, key, short)
+    raise KeyError(key)
+
+
+def validate_references(data):
+    """Fail the build on any key that does not resolve.
+
+    Every cross-file link is a key, not a name. Names drift -- that is how the
+    link to Loic Landrieu's homepage silently vanished when the spelling was
+    normalised. Keys cannot drift silently, provided we actually check them.
     """
-    known = {
-        f"{v.get('first_name', '')} {v.get('last_name', '')}".strip()
-        for v in data["authors"].values()
-        if isinstance(v, dict)
-    }
-    missing = [
-        (group["label"], person["name"])
-        for group in data["supervision"]["groups"]
-        for person in group["people"]
-        if person["name"] not in known
-    ]
-    if missing:
-        print(f"  note: {len(missing)} name(s) not in authors.yml, so they render "
-              f"without a homepage link:")
-        for label, name in missing:
-            print(f"        {label}: {name}")
+    people, orgs = data["authors"], data["organizations"]
+    errors = []
+
+    for key, person in people.items():
+        if isinstance(person, dict) and person.get("org") not in (None, *orgs):
+            errors.append(f"authors.yml: {key}.org -> unknown organization "
+                          f"'{person['org']}'")
+
+    for group in data["supervision"]["groups"]:
+        for member in group["members"]:
+            if "person" in member and member["person"] not in people:
+                errors.append(f"supervision.yml [{group['id']}]: unknown person "
+                              f"'{member['person']}'")
+            if "organization" in member and member["organization"] not in orgs:
+                errors.append(f"supervision.yml [{group['id']}]: unknown organization "
+                              f"'{member['organization']}'")
+            for ref in member.get("with", []):
+                if ref not in people and ref not in orgs:
+                    errors.append(f"supervision.yml [{group['id']}]: unknown 'with' "
+                                  f"reference '{ref}'")
+
+    for position in data["positions"]:
+        for who in position.get("people", []):
+            if who.get("person") not in people:
+                errors.append(f"positions.yml: unknown person '{who.get('person')}'")
+
+    for pub in data["publications"]:
+        for ref in pub.get("authors", []):
+            if ref not in people:
+                errors.append(f"publications.yml [{pub.get('id')}]: unknown author "
+                              f"'{ref}'")
+
+    if errors:
+        print("\n  broken references:", file=sys.stderr)
+        for e in errors:
+            print(f"    {e}", file=sys.stderr)
+        sys.exit(f"\n{len(errors)} unresolved reference(s); nothing was written.")
 
 
 def publication_histogram(publications):
@@ -249,8 +290,18 @@ def build(offline: bool, keep_tex: bool) -> int:
     )
     env.filters.update(tex=tex, md2tex=md2tex, strip_emoji=strip_emoji)
 
-    report_unlinked_people(data)
+    validate_references(data)
     hist, hist_max = publication_histogram(for_cv(data["publications"]))
+
+    # Registered as filters as well as globals so the template can write either
+    # person_name(key) or key | person_name.
+    resolvers = dict(
+        person_name=lambda k: person_name(data, k),
+        org_label=lambda k, short=True: org_label(data, k, short),
+        entity_label=lambda k, short=True: entity_label(data, k, short),
+    )
+    env.globals.update(resolvers)
+    env.filters.update(resolvers)
 
     template = env.get_template("cv.tex.j2")
     rendered = template.render(

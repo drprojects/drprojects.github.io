@@ -1,0 +1,96 @@
+# Institutions, labs and companies.
+#
+# The counterpart to authors.yml: anything that is an *organisation* rather than
+# a person. Referenced by key from authors.yml (`org:`), supervision.yml and
+# teaching.yml, so a name and its URL are written exactly once.
+#
+# Fields: name (required), short, url, location.
+#
+# TODO: eth, oxford, enpc, lsce, wsl and the four advising clients have no URL
+# recorded anywhere in this repo yet. Add them here and every reference picks
+# them up. They are omitted rather than guessed.
+
+# --- universities and research institutes ---------------------------------
+uzh:
+  name: University of Zurich
+  short: UZH
+  url: https://www.uzh.ch/en.html
+
+ecovision:
+  name: EcoVision lab, University of Zurich
+  short: EcoVision
+  url: https://dm3l.uzh.ch/en/wegner
+
+eth:
+  name: ETH Zurich
+  short: ETH
+
+oxford:
+  name: University of Oxford
+  short: Oxford
+
+enpc:
+  name: École des Ponts ParisTech
+  short: ENPC
+
+polytechnique:
+  name: École Polytechnique
+  short: École Polytechnique
+  url: https://www.polytechnique.edu/
+
+ensg:
+  name: ENSG
+  short: ENSG-IGN
+  url: https://www.ensg.eu/
+
+ign:
+  name: IGN
+  short: IGN
+  url: https://www.ign.fr
+
+lsce:
+  name: Laboratoire des Sciences du Climat et de l'Environnement
+  short: LSCE
+
+wsl:
+  name: Swiss Federal Institute for Forest, Snow and Landscape Research
+  short: WSL
+  url: https://www.wsl.ch
+
+# --- companies and labs ----------------------------------------------------
+engie_crigen:
+  name: ENGIE Lab CRIGEN
+  short: ENGIE CRIGEN lab
+  url: https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen
+
+siradel:
+  name: SIRADEL, ENGIE
+  short: SIRADEL
+
+dassault:
+  name: Dassault Systèmes
+  short: Dassault
+
+# --- scientific advising clients ------------------------------------------
+upcircle_ai:
+  name: UpCircle AI
+  location: Switzerland
+
+esc_lausanne:
+  name: École des Sciences Criminelles de Lausanne
+  location: Switzerland
+
+samp_ai:
+  name: SAMP AI
+  short: SAMP
+  location: France
+
+geodigital:
+  name: GEODIGITAL
+  location: US
+
+# --- conferences and workshops --------------------------------------------
+isprs_2022:
+  name: XXIV ISPRS Congress
+  short: ISPRS'22
+  url: https://www.isprs2022-nice.com/

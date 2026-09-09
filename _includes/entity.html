@@ -1,0 +1,35 @@
+{% comment %}
+  Render one referenced entity — a person from authors.yml or an organisation
+  from organizations.yml — as its name, linked to its homepage when known.
+
+    {% include entity.html person="loic_landrieu" %}
+    {% include entity.html organization="samp_ai" %}
+    {% include entity.html person=m.person org_suffix=true %}
+
+  Lookup is by key, never by name. An earlier version matched on the full name
+  and silently dropped a link the moment a spelling changed.
+{% endcomment %}
+{% assign _p = include.person %}
+{% assign _o = include.organization %}
+
+{% if _p %}
+  {% assign _e = site.data.authors[_p] %}
+  {% capture _label %}{{ _e.first_name }} {{ _e.last_name }}{% endcapture %}
+  {% assign _label = _label | strip %}
+{% else %}
+  {% assign _e = site.data.organizations[_o] %}
+  {% assign _label = _e.name %}
+{% endif %}
+
+{%- if _e == nil -%}
+  <span class="entity-missing" title="unknown key">{{ _p | default: _o }}</span>
+{%- else -%}
+  {%- if _e.url -%}<a href="{{ _e.url }}">{{ _label }}</a>{%- else -%}{{ _label }}{%- endif -%}
+  {%- if include.org_suffix and _p and _e.org -%}
+    {%- assign _org = site.data.organizations[_e.org] -%}
+    {%- if _org %} <span class="person__org">{% if _org.url %}<a href="{{ _org.url }}">{{ _org.short | default: _org.name }}</a>{% else %}{{ _org.short | default: _org.name }}{% endif %}</span>{% endif -%}
+  {%- endif -%}
+  {%- if include.org_suffix and _o and _e.location -%}
+    <span class="person__org">{{ _e.location }}</span>
+  {%- endif -%}
+{%- endif -%}

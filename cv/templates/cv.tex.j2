@@ -39,7 +39,7 @@
   \etitle{((( x.title | tex )))} \\
   \eorg{((( x.org | tex )))}((* if x.get('location') *)) \emeta{\;·\; ((( x.get('location') | tex )))}((* endif *))
   ((* if x.get('description') *))\\ \edesc{((( x.get('description') | md2tex )))}((* endif *))
-  ((* if x.get('people') *))\\ ((* for role, group in x.get('people') | groupby('role') *))\emeta{((( role | tex )))((* if group | length > 1 *))s((* endif *)):} ((( group | map(attribute='name') | join(', ') | tex )))((* if not loop.last *)) \emeta{\;·\;} ((* endif *))((* endfor *))((* endif *))
+  ((* if x.get('people') *))\\ ((* for role, group in x.get('people') | groupby('role') *))\emeta{((( role | tex )))((* if group | length > 1 *))s((* endif *)):} ((( group | map(attribute='person') | map('person_name') | join(', ') | tex )))((* if not loop.last *)) \emeta{\;·\;} ((* endif *))((* endfor *))((* endif *))
 }
 ((* endfor *))
 
@@ -101,7 +101,17 @@
 \cvsection{Collaboration \& Supervision}
 ((* for g in d.supervision.groups *))
 \entry{((( g.label | tex )))}{%
-  ((* for q in g.people *))\etitle{((( q.name | tex )))}((* if q.get('org') *)) \emeta{(((( q.get('org') | tex ))))}((* endif *))((* if q.get('with') *)) \emeta{with ((( q.get('with') | tex )))}((* endif *))((* if not loop.last *)) \emeta{\;·\;} ((* endif *))((* endfor *))
+  ((* for m in g.members *))%
+    ((* if m.get('person') *))\etitle{((( m.person | person_name | tex )))}%
+      ((* set who = d.authors[m.person] *))%
+      ((* if who.get('org') *))\,\emeta{((( who.org | org_label | tex )))}((* endif *))%
+    ((* else *))\etitle{((( m.organization | org_label(false) | tex )))}%
+      ((* set who = d.organizations[m.organization] *))%
+      ((* if who.get('location') *))\,\emeta{((( who.location | tex )))}((* endif *))%
+    ((* endif *))%
+    ((* if m.get('with') *))\,\emeta{with ((( m.with | map('entity_label') | join(' and ') | tex )))}((* endif *))%
+    ((* if not loop.last *)) \emeta{\;·\;} ((* endif *))%
+  ((* endfor *))
 }
 ((* endfor *))
 

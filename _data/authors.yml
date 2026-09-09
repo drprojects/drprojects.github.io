@@ -1,4 +1,11 @@
-# Authors
+# People.
+#
+# The single registry of everyone named anywhere on the site: publication
+# co-authors, students, collaborators and advisors. Other files point here by
+# key and never repeat a name, URL or affiliation.
+#
+# Fields: first_name, last_name, url (homepage), org (a key in
+# organizations.yml).
 
 me:
   first_name: Damien
@@ -8,16 +15,19 @@ loic_landrieu:
   first_name: Loic
   last_name: Landrieu
   url: https://loiclandrieu.com
+  org: enpc
 
 louis_geist:
   first_name: Louis
   last_name: Geist
   url: https://louisgeist.github.io
+  org: enpc
 
 yuanwen_yue:
     first_name: Yuanwen
     last_name: Yue
     url: https://ywyue.github.io
+    org: eth
 
 jianyuan_wang:
     first_name: Jianyuan
@@ -33,16 +43,19 @@ christian_rupprecht:
     first_name: Christian
     last_name: Rupprecht
     url: https://chrirupp.github.io/
+    org: oxford
 
 konrad_schindler:
     first_name: Konrad
     last_name: Schindler
     url: https://igp.ethz.ch/personen/person-detail.schindler.html
+    org: eth
 
 bruno_vallet:
     first_name: Bruno
     last_name: Vallet
     url: https://www.umr-lastig.fr/bruno-vallet
+    org: ign
 
 hugo_raguet:
     first_name: Hugo
@@ -53,21 +66,25 @@ johannes_dollinger:
     first_name: Johannes
     last_name: Dollinger
     url: https://dm3l.uzh.ch/about-us/members/person?pId=39050
+    org: uzh
 
 elena_plekhanova:
     first_name: Elena
     last_name: Plekhanova
     url: https://www.wsl.ch/en/staff/plekhano
+    org: wsl
 
 lukas_drees:
     first_name: Lukas
     last_name: Drees
     url: https://dm3l.uzh.ch/about-us/members/person?pId=39082
+    org: uzh
 
 kaan_karaman:
     first_name: Kaan
     last_name: Karaman
     url: https://kaankaramanofficial.github.io
+    org: uzh
 
 yuchang_jiang:
     first_name: Yuchang
@@ -78,6 +95,7 @@ vivien_sainte_fare_garnot:
     first_name: Vivien Sainte Fare
     last_name: Garnot
     url: https://dm3l.uzh.ch/about-us/members/person?pId=39081
+    org: uzh
 
 maria_joao_santos:
     first_name: Maria Joao
@@ -149,6 +167,7 @@ jan_dirk_wegner:
     first_name: Jan Dirk
     last_name: Wegner
     url: https://dm3l.uzh.ch/member/wegner
+    org: uzh
 
 gabriele_cavallaro:
     first_name: Gabriele
@@ -200,6 +219,7 @@ emilia_arens:
     first_name: Emilia
     last_name: Arens
     url: https://dm3l.uzh.ch/about-us/members/person?pId=38596
+    org: uzh
 
 philipp_brun:
     first_name: Philipp
@@ -215,6 +235,7 @@ martin_schwartz:
     first_name: Martin
     last_name: Schwartz
     url: https://www.lsce.ipsl.fr/en/pisp/martin-schwartz
+    org: lsce
 
 fajwel_fogel:
     first_name: Fajwel
@@ -375,3 +396,13 @@ emma_l_underwood:
 wanben_wu:
     first_name: Wanben
     last_name: Wu
+
+valerio_schelbert:
+  first_name: Valerio
+  last_name: Schelbert
+  org: eth
+
+jackson_sunny:
+  first_name: Jackson
+  last_name: Sunny
+  org: polytechnique

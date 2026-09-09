@@ -56,12 +56,33 @@ Two rules govern the split:
 **Talks are the exception**: they are opt-in for the PDF. There are 45 of them
 and the CV prints a selected ~17, so a talk needs an explicit `cv: true`.
 
-### People are resolved by name
+### Two registries, referenced by key
 
-`authors.yml` maps a full name to a homepage URL. Publications reference authors
-by key; `supervision.yml` just writes the person's name and the site looks it up
-via `_includes/author-link.html`. So adding someone to `authors.yml` links them
-everywhere at once, and there is no second copy of a URL to keep in sync.
+`authors.yml` holds **people** (name, homepage, `org`) and `organizations.yml`
+holds **institutions, labs, companies and venues** (name, short name, url,
+location). Nothing else stores a person's or an organisation's details:
+
+```
+supervision.yml         authors.yml              organizations.yml
+  - person: ────────▶  loic_landrieu:             enpc:
+      loic_landrieu      first_name: Loic           name: École des Ponts…
+                         last_name: Landrieu        short: ENPC
+positions.yml            url: https://…            url: …
+  - person: ────────▶    org: enpc ──────────────▶
+      loic_landrieu
+
+publications.yml
+  authors: [loic_landrieu, …] ─▶
+```
+
+Rename someone in `authors.yml` and every page follows. `supervision.yml`'s
+advising group takes `organization:` as well as `person:`, since advising can be
+for an individual or for a company.
+
+**References are validated.** `cv/build.py` fails the build, writing nothing, if
+any key does not resolve. This matters: an earlier version matched people by
+full name, and normalising "Loïc" to "Loic" silently dropped his homepage link
+from the site with no error anywhere.
 
 ### Adding content
 

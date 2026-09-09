@@ -92,11 +92,26 @@ author_profile: true
   {% endcase %}
   <h2 class="home-heading">{{ heading }}</h2>
   <div class="people-grid">
-    {% for q in g.people %}
+    {% for m in g.members %}
       <div class="person">
-        <div class="person__name">{% include author-link.html name=q.name %}</div>
-        {% if q.org %}<div class="person__org">{{ q.org }}</div>{% endif %}
-        {% if q.with %}<div class="person__with">with {{ q.with }}</div>{% endif %}
+        <div class="person__name">
+          {% if m.person %}{% include entity.html person=m.person %}
+          {% else %}{% include entity.html organization=m.organization %}{% endif %}
+        </div>
+        {% comment %} Affiliation and co-supervisors come from the registries. {% endcomment %}
+        {% if m.person %}
+          {% assign _who = site.data.authors[m.person] %}
+          {% if _who.org %}{% assign _org = site.data.organizations[_who.org] %}
+            <div class="person__org">{{ _org.short | default: _org.name }}</div>{% endif %}
+        {% else %}
+          {% assign _who = site.data.organizations[m.organization] %}
+          {% if _who.location %}<div class="person__org">{{ _who.location }}</div>{% endif %}
+        {% endif %}
+        {% if m.with %}
+          <div class="person__with">with
+            {% for w in m.with %}{% if site.data.authors[w] %}{% include entity.html person=w %}{% else %}{% include entity.html organization=w %}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
+          </div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>

@@ -1,5 +1,7 @@
 # Professional positions, reverse chronological.
-# `end: null` renders as "Now".
+#
+# `end: null` renders as "Now". Advisors and PIs under `people` are references
+# into authors.yml, so their names are not duplicated here.
 
 - start: 2024
   end: null
@@ -10,7 +12,7 @@
   location: Zurich, Switzerland
   description: Deep learning for remote sensing and environment
   people:
-    - { role: PI, name: Jan D. Wegner }
+    - { role: PI, person: jan_dirk_wegner }
 
 - start: 2020
   end: 2024
@@ -21,8 +23,8 @@
   duration: 3y 4m
   description: Efficient learning on large-scale 3D point clouds
   people:
-    - { role: Advisor, name: Loic Landrieu }
-    - { role: Advisor, name: Bruno Vallet }
+    - { role: Advisor, person: loic_landrieu }
+    - { role: Advisor, person: bruno_vallet }
 
 - start: 2017
   end: 2020

@@ -1,63 +1,57 @@
-# Collaboration and supervision, grouped by relationship type.
+# Collaboration, supervision and advising — relationships only.
 #
-# `groups` is an ordered list; both the website and the CV render it in this
-# order. A person whose full name also appears in authors.yml is automatically
-# linked to their homepage, so there is nothing to keep in sync here.
+# Every member is a reference into another registry, never a copy of a name:
+#   person:       a key in authors.yml
+#   organization: a key in organizations.yml
+#
+# The advising group deliberately accepts both, since advising can be for an
+# individual researcher or for an institution or company.
+#
+# `with` is an optional list of co-supervisors or partners; each entry is again
+# a key in authors.yml or organizations.yml.
+#
+# Names, homepages and affiliations all come from the registries, so renaming
+# someone in authors.yml updates every page at once. cv/build.py fails the build
+# if any key here does not resolve.
 
 groups:
-- id: researchers
-  label: Collaborators
-  people:
-  - name: Konrad Schindler
-    org: ETH
-  - name: Christian Rupprecht
-    org: Oxford
-  - name: Jan Dirk Wegner
-    org: UZH
-  - name: Loic Landrieu
-    org: ENPC
-  - name: Vivien Sainte Fare Garnot
-    org: UZH
-  - name: Lukas Drees
-    org: UZH
-  - name: Martin Schwartz
-    org: LSCE
-  - name: Elena Plekhanova
-    org: WSL
-- id: phd
-  label: PhD Students
-  people:
-  - name: Emilia Arens
-    with: Jan Dirk Wegner
-    org: UZH
-  - name: Johannes Dollinger
-    with: Jan Dirk Wegner
-    org: UZH
-  - name: Kaan Karaman
-    with: Jan Dirk Wegner
-    org: UZH
-  - name: Louis Geist
-    with: Loic Landrieu
-    org: ENPC
-  - name: Yuanwen Yue
-    with: Konrad Schindler and Christian Rupprecht
-    org: ETH / Oxford
-- id: master
-  label: Master Students
-  people:
-  - name: Valerio Schelbert
-    org: ETH
-  - name: Jackson Sunny
-    org: École Polytechnique
-    with: SAMP
-- id: advising
-  label: Advising
-  people:
-  - name: UpCircle AI
-    org: Switzerland
-  - name: École des Sciences Criminelles de Lausanne
-    org: Switzerland
-  - name: SAMP AI
-    org: France
-  - name: GEODIGITAL
-    org: US
+  - id: researchers
+    label: Collaborators
+    members:
+      - person: konrad_schindler
+      - person: christian_rupprecht
+      - person: jan_dirk_wegner
+      - person: loic_landrieu
+      - person: vivien_sainte_fare_garnot
+      - person: lukas_drees
+      - person: martin_schwartz
+      - person: elena_plekhanova
+
+  - id: phd
+    label: PhD Students
+    members:
+      - person: emilia_arens
+        with: [jan_dirk_wegner]
+      - person: johannes_dollinger
+        with: [jan_dirk_wegner]
+      - person: kaan_karaman
+        with: [jan_dirk_wegner]
+      - person: louis_geist
+        with: [loic_landrieu]
+      - person: yuanwen_yue
+        with: [konrad_schindler, christian_rupprecht]
+
+  - id: master
+    label: Master Students
+    members:
+      - person: valerio_schelbert
+      - person: jackson_sunny
+        with: [samp_ai]
+
+  - id: advising
+    label: Advising
+    members:
+      - organization: upcircle_ai
+      - organization: esc_lausanne
+      - organization: samp_ai
+      - organization: geodigital
