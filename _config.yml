@@ -21,66 +21,13 @@ repository               : "drprojects/drprojects.github.io"
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
-  # Biographic information
-  avatar           : "profile.png"
+  # Identity, biography and links all live in _data/profile.yml, which the PDF
+  # CV reads too. Keeping a second copy here is how a URL ends up out of date in
+  # one place and not the other. _includes/author-profile.html and the site
+  # pages read site.data.profile directly.
+  #
+  # Only fields the upstream theme still reads from _config.yml remain below.
   name             : "Damien Robert"
-  pronouns         : # example: "she/her"  
-  bio              : "Postdoctoral researcher at EcoVision. Deep learning for environmental applications."
-  location         : "Zurich"
-  employer         : "University of Zurich"
-  uri              : "https://drprojects.github.io"
-  email            : "damien.robert@uzh.ch"
-
-  # Academic websites
-  academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=Bmgo5wMAAAAJ"
-  inspire-hep      : # URL
-  impactstory      : # URL
-  orcid            : "https://orcid.org/0000-0003-0983-7053"
-  semantic         : "https://www.semanticscholar.org/author/Damien-Robert/47018294"
-  ssrn             : # URL
-  pubmed           : False
-  researchgate     : "https://www.researchgate.net/profile/Damien-Robert-6/research"
-  scopus           : # URL
-  zotero           : # URL
-
-  # Repositories and software development
-  bitbucket        : # Username - Update with your username on the site
-  codepen          : # Username
-  dribbble         : # Username
-  github           : "drprojects"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
-
-  # Social media
-  artstation       : # Username
-  bluesky          : # Replace this with you Bluesky username
-  facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
-  instagram        : # Username
-  lastfm           : # Username
-  linkedin         : "damienrobert91"
-  mastodon         : # URL
-  medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
-  telegram         : # URL
-  tumblr           : # Username
-  twitter          : # Username for X / Twitter
-  vine             : # Username
-  weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
-  youtube          : # Username
-  zhihu            : # Username
-
-# Publication Category - The following the list of publication categories and their headings
 publication_category:
   books:
     title: 'Books'

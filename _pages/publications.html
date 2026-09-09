@@ -7,8 +7,8 @@ author_profile: true
 
 {% include base_path %}
 
-{% if site.author.googlescholar %}
-<p class="page-intro">Also on my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
+{% if site.data.profile.links.scholar %}
+<p class="page-intro">Also on my <a href="{{ site.data.profile.links.scholar }}">Google Scholar profile</a>.</p>
 {% endif %}
 
 {% comment %} Source of truth: _data/publications.yml (shared with the PDF CV). {% endcomment %}

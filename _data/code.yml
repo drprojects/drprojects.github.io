@@ -1,7 +1,12 @@
 # Open-source repositories. `repo` is owner/name, used to fetch stars/forks at
 # build time — never hardcode those counts here.
+#
+# `publication: <id>` links a repo to the paper it implements, in publications.yml.
+# The repo keeps its own code_url and teaser_image, since a codebase can serve
+# several papers (superpoint_transformer does) and can outlive any one of them.
 
 - id: litept
+  publication: litept
   title: LitePT
   date: 2026-06-01
   repo: prs-eth/LitePT
@@ -11,6 +16,7 @@
   cv: true
 
 - id: torch_graph_components
+  publication: ezsp
   title: torch-graph-components
   date: 2026-01-22
   repo: drprojects/torch-graph-components
@@ -20,6 +26,7 @@
   cv: true
 
 - id: superpoint_transformer
+  publication: superpoint_transformer
   title: Superpoint Transformer
   date: 2023-06-15
   repo: drprojects/superpoint_transformer
@@ -47,6 +54,7 @@
   cv: true
 
 - id: deepviewagg
+  publication: deepviewagg
   title: DeepViewAgg
   date: 2022-06-01
   repo: drprojects/DeepViewAgg

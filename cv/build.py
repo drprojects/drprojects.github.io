@@ -122,6 +122,11 @@ def load_data() -> dict:
     return data
 
 
+def publication_index(data):
+    """id -> publication, so talks and repos can reference one by id."""
+    return {p["id"]: p for p in data["publications"] if p.get("id")}
+
+
 def person_name(data, key):
     """'First Last' for an authors.yml key."""
     e = data["authors"][key]
@@ -181,6 +186,13 @@ def validate_references(data):
             if ref not in people:
                 errors.append(f"publications.yml [{pub.get('id')}]: unknown author "
                               f"'{ref}'")
+
+    pubs = publication_index(data)
+    for source in ("talks", "code"):
+        for item in data[source]:
+            ref = item.get("publication")
+            if ref and ref not in pubs:
+                errors.append(f"{source}.yml: unknown publication '{ref}'")
 
     if errors:
         print("\n  broken references:", file=sys.stderr)

@@ -79,8 +79,26 @@ Rename someone in `authors.yml` and every page follows. `supervision.yml`'s
 advising group takes `organization:` as well as `person:`, since advising can be
 for an individual or for a company.
 
+### Cross-references
+
+Beyond people and organisations, two more links avoid repetition:
+
+- a **talk** can carry `publication: <id>` instead of restating the paper's
+  project URL (that URL appeared 9 times for DeepViewAgg alone); an explicit
+  `title_url:` still wins when a talk links elsewhere
+- a **repo** can carry `publication: <id>`, which adds a "Paper page" button on
+  /code/. It keeps its own `code_url` and teaser, since a codebase can serve
+  several papers (`superpoint_transformer` does) and can outlive any of them
+
+### Identity lives in one file
+
+Name, bio, location and every profile link come from `profile.yml`. The sidebar
+(`_includes/author-profile.html`) and the CV both read it, and `_config.yml`'s
+`author:` block no longer holds a second copy. The current role and employer are
+derived from the open-ended entry in `positions.yml` rather than restated.
+
 **References are validated.** `cv/build.py` fails the build, writing nothing, if
-any key does not resolve. This matters: an earlier version matched people by
+any key does not resolve — people, organisations, or publication ids. This matters: an earlier version matched people by
 full name, and normalising "Loïc" to "Loic" silently dropped his homepage link
 from the site with no error anywhere.
 

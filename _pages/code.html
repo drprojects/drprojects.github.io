@@ -7,9 +7,9 @@ author_profile: true
 
 {% include base_path %}
 
-{% if site.author.github %}
+{% if site.data.profile.links.github %}
 <p class="page-intro">A selection of codebases I actively maintain or take part in on
-<a href="https://github.com/{{ site.author.github }}">GitHub</a>.</p>
+<a href="{{ site.data.profile.links.github }}">GitHub</a>.</p>
 {% endif %}
 
 {% comment %} Source of truth: _data/code.yml (shared with the PDF CV). {% endcomment %}

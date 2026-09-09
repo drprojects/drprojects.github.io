@@ -4,6 +4,15 @@
   Line 2: the location, de-emphasised.
 {% endcomment %}
 {% assign item = include.item %}
+{% comment %}
+  A talk may reference a publication instead of repeating its project URL.
+  An explicit title_url still wins, for talks that link somewhere else.
+{% endcomment %}
+{% assign _link = item.title_url %}
+{% if _link == nil and item.publication %}
+  {% assign _pub = site.data.publications | where: "id", item.publication | first %}
+  {% assign _link = _pub.project_url | default: _pub.paper_url %}
+{% endif %}
 <div class="news-entry entry--typed">
   {% assign year = item.date | date: "%Y" %}
   {% assign month = item.date | date: "%m" %}
@@ -12,7 +21,7 @@
   <span class="entry-icon">{% include icon-type.html type=item.type %}</span>
   <div class="news-text">
     {% if item.title %}
-      <em>{% if item.title_url %}<a href="{{ item.title_url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</em>
+      <em>{% if _link %}<a href="{{ _link }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</em>
       at
     {% endif %}
     {% if item.venue_url %}<a href="{{ item.venue_url }}">{{ item.venue }}</a>{% else %}{{ item.venue }}{% endif %}

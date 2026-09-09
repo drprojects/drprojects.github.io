@@ -2,6 +2,11 @@
   One repository. Data comes from _data/code.yml via include.item.
 {% endcomment %}
 {% assign post = include.item %}
+{% comment %} A repo may name the paper it implements; used to link the entry. {% endcomment %}
+{% assign _pub = nil %}
+{% if post.publication %}
+  {% assign _pub = site.data.publications | where: "id", post.publication | first %}
+{% endif %}
 {% include base_path %}
 
 <div class="paper-entry">
@@ -42,6 +47,12 @@
           {% if post.code_url %}
           <a class="btn btn--small special-link" href="{{ post.code_url }}">
             <i class="fab fa-github"></i> Code
+          </a>
+          {% endif %}
+
+          {% if _pub and _pub.project_url %}
+          <a class="btn btn--small special-link" href="{{ _pub.project_url }}">
+            <i class="fas fa-bolt"></i> Paper page
           </a>
           {% endif %}
 

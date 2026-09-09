@@ -10,10 +10,14 @@
 # merely restate a paper already listed in the publications section.
 #
 # type: oral | poster | invited | interview | tutorial
+#
+# `publication: <id>` points at an entry in publications.yml; the talk then
+# inherits that paper's project URL instead of repeating it. An explicit
+# `title_url:` still wins when a talk links somewhere else.
 - date: 2026-06-01
   type: poster
   title: 'LitePT: Lighter Yet Stronger Point Transformer'
-  title_url: https://litept.github.io
+  publication: litept
   venue: CVPR@Paris'26
   venue_url: https://cvprinparis.github.io/CVPR2026InParis
   location: Paris, France
@@ -68,14 +72,14 @@
 - date: 2025-09-01
   type: poster
   title: 'SSL4Eco: A Global Seasonal Dataset for Geospatial Foundation Models in Ecology'
-  title_url: https://plekhanovaelena.github.io/ssl4eco/
+  publication: ssl4eco
   venue: AI4EO
   venue_url: https://ai4eo2025.irisa.fr/fr/
   location: Rennes, France
 - date: 2025-06-01
   type: poster
   title: 'SSL4Eco: A Global Seasonal Dataset for Geospatial Foundation Models in Ecology'
-  title_url: https://plekhanovaelena.github.io/ssl4eco/
+  publication: ssl4eco
   venue: CVPR'25 EarthVision
   venue_url: https://www.grss-ieee.org/events/earthvision-2025/
   location: Nashville, US
@@ -90,7 +94,7 @@
 - date: 2025-05-26
   type: invited
   title: Superpoint Transformer
-  title_url: https://drprojects.github.io/superpoint-transformer-site
+  publication: superpoint_transformer
   venue: Unil., Institute for Forensic Science
   venue_url: https://www.unil.ch/unil/en/home/menuinst/universite/histoire/fdca/institut-de-police-scientifique-et-de-criminologie.html
   location: Virtual
@@ -119,14 +123,14 @@
 - date: 2024-11-28
   type: invited
   title: SuperCluster
-  title_url: https://drprojects.github.io/supercluster-site
+  publication: supercluster
   venue: Samp R&D lab
   venue_url: https://samp.ai/
   location: Paris, France
 - date: 2024-06-27
   type: interview
   title: Interview by Florent Poux and tutorial for Superpoint Transformer
-  title_url: https://drprojects.github.io/superpoint-transformer-site
+  publication: superpoint_transformer
   venue: 3D Data Academy
   venue_url: https://www.youtube.com/watch?v=2qKhpQs9gJw
   location: YouTube
@@ -149,14 +153,14 @@
 - date: 2024-03-27
   type: invited
   title: Superpoint Transformer
-  title_url: https://drprojects.github.io/superpoint-transformer-site
+  publication: superpoint_transformer
   venue: GeoDigital
   venue_url: https://scholar.google.com/citations?user=mBTc5jgAAAAJ
   location: Virtual
 - date: 2024-03-01
   type: oral
   title: Scalable 3D Panoptic Segmentation as Superpoint Graph Clustering
-  title_url: https://drprojects.github.io/supercluster-site
+  publication: supercluster
   venue: 3DV'24
   venue_url: https://3dvconf.github.io/2024
   location: Davos, Switzerland
@@ -199,35 +203,35 @@
 - date: 2023-07-01
   type: poster
   title: Efficient 3D Semantic Segmentation with Superpoint Transformer
-  title_url: https://drprojects.github.io/superpoint-transformer-site
+  publication: superpoint_transformer
   venue: ICCV'23
   venue_url: https://iccv2023.thecvf.com/
   location: Paris, France
 - date: 2023-06-01
   type: invited
   title: Efficient 3D Semantic Segmentation with Superpoint Transformer
-  title_url: https://drprojects.github.io/superpoint-transformer-site
+  publication: superpoint_transformer
   venue: ENGIE Lab CRIGEN
   venue_url: https://www.engie.com/en/innovation-transition-energetique/centres-de-recherche/crigen
   location: Paris, France
 - date: 2023-05-01
   type: invited
   title: Efficient 3D Semantic Segmentation with Superpoint Transformer
-  title_url: https://drprojects.github.io/superpoint-transformer-site
+  publication: superpoint_transformer
   venue: Samp R&D lab
   venue_url: https://samp.ai/
   location: Paris, France
 - date: 2023-05-01
   type: invited
   title: Efficient 3D Semantic Segmentation with Superpoint Transformer
-  title_url: https://drprojects.github.io/superpoint-transformer-site
+  publication: superpoint_transformer
   venue: University of Zürich, EcoVision lab
   venue_url: https://dm3l.uzh.ch/en/wegner
   location: Virtual
 - date: 2023-05-01
   type: invited
   title: Efficient 3D Semantic Segmentation with Superpoint Transformer
-  title_url: https://drprojects.github.io/superpoint-transformer-site
+  publication: superpoint_transformer
   venue: Valeo.ai
   venue_url: https://www.valeo.com/en/valeo-ai/
   location: Paris, France
@@ -248,7 +252,7 @@
 - date: 2022-07-01
   type: poster
   title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
-  title_url: https://drprojects.github.io/deepviewagg-site
+  publication: deepviewagg
   venue: ICVSS'22
   venue_url: https://icvss.dmi.unict.it/icvss2022
   location: Sicily, Italy
@@ -262,7 +266,7 @@
 - date: 2022-06-01
   type: oral
   title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
-  title_url: https://drprojects.github.io/deepviewagg-site
+  publication: deepviewagg
   venue: CVPR'22
   venue_url: https://cvpr2022.thecvf.com/
   location: New Orleans, US
@@ -270,14 +274,14 @@
 - date: 2022-06-01
   type: invited
   title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
-  title_url: https://drprojects.github.io/deepviewagg-site
+  publication: deepviewagg
   venue: Ecole des Ponts, IMAGINE lab
   venue_url: https://imagine-lab.enpc.fr/
   location: Paris, France
 - date: 2022-06-01
   type: poster
   title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
-  title_url: https://drprojects.github.io/deepviewagg-site
+  publication: deepviewagg
   venue: ISPRS'22
   venue_url: https://www.isprs2022-nice.com/
   location: Nice, France
@@ -290,7 +294,7 @@
 - date: 2022-05-01
   type: invited
   title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
-  title_url: https://drprojects.github.io/deepviewagg-site
+  publication: deepviewagg
   venue: Ecole Polytechnique, LIX lab
   venue_url: https://www.lix.polytechnique.fr/
   location: Paris, France
@@ -303,28 +307,28 @@
 - date: 2022-04-01
   type: invited
   title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
-  title_url: https://drprojects.github.io/deepviewagg-site
+  publication: deepviewagg
   venue: AI4GEO project seminar
   venue_url: https://www.ai4geo.eu/en/
   location: Virtual
 - date: 2022-03-01
   type: poster
   title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
-  title_url: https://drprojects.github.io/deepviewagg-site
+  publication: deepviewagg
   venue: IGN-ENSG Research Days
   venue_url: https://www.ign.fr/agenda/31e-journee-de-la-recherche-de-lign-ensg
   location: Paris, France
 - date: 2022-01-01
   type: invited
   title: Learning Multi-View Aggregation In the Wild for Large-Scale 3D Semantic Segmentation
-  title_url: https://drprojects.github.io/deepviewagg-site
+  publication: deepviewagg
   venue: GDR ISIS seminar
   venue_url: https://www.gdr-isis.fr/
   location: Virtual
 - date: 2021-05-01
   type: invited
   title: Multimodal learning on point clouds and images
-  title_url: https://drprojects.github.io/deepviewagg-site
+  publication: deepviewagg
   venue: IGN-ENSG Research Days
   venue_url: https://www.ign.fr/agenda/30es-journees-de-la-recherche-ign-ensg
   location: Virtual
