@@ -62,4 +62,13 @@
   location: Providence, RI, USA
   duration: 6m
   description: UX design
-  cv: true   # 12-year-old UX internship; superseded by the 2015 entry
+  cv: true
+
+- start: 2014
+  end: 2014
+  title: R&D Intern
+  organizations: [dassault]
+  location: Providence, RI, USA
+  duration: 6m
+  description: UX design
+  cv: true

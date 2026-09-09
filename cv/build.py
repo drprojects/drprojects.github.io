@@ -242,18 +242,43 @@ def for_cv(items, default=True):
     return [i for i in items if i.get("cv", default)]
 
 
+# 12 keeps the 12-author FORMSpoT journal paper intact (it costs two lines,
+# not four) and truncates only the 13- and 27-author entries, which were the
+# ones outweighing first-author work.
+AUTHOR_LIST_LIMIT = 12
+
+
 def author_names(data, keys, me_key="me"):
-    """Resolve author keys to 'F. Last' strings, marking the CV owner."""
-    out = []
-    for key in keys:
+    """Resolve author keys to 'F. Last' strings, marking the CV owner.
+
+    Long lists are truncated: a 27-author review otherwise occupies more lines
+    than a first-author CVPR paper, so the weakest entry becomes the visually
+    largest. The owner is always kept visible, wherever they sit in the order.
+    Returns (name, is_me, is_ellipsis) triples.
+    """
+    def render(key):
         person = data["authors"].get(key)
         if person is None:
-            out.append((tex(key), False))
-            continue
+            return tex(key)
         first = str(person.get("first_name", "")).strip()
         last = str(person.get("last_name", "")).strip()
         initials = " ".join(f"{p[0]}." for p in first.split() if p)
-        out.append((tex(f"{initials} {last}".strip()), key == me_key))
+        return tex(f"{initials} {last}".strip())
+
+    total = len(keys)
+    if total <= AUTHOR_LIST_LIMIT:
+        return [(render(k), k == me_key, False) for k in keys]
+
+    shown = list(keys[:3])
+    tail = []
+    if me_key in keys and me_key not in shown:
+        tail = [me_key]
+
+    out = [(render(k), k == me_key, False) for k in shown]
+    if tail:
+        out.append(("", False, True))                       # ellipsis marker
+        out.extend((render(k), k == me_key, False) for k in tail)
+    out.append((f"et al. ({total} authors)", False, False))
     return out
 
 

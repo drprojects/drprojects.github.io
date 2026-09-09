@@ -104,7 +104,6 @@
   venue_url: https://clapeyre.github.io/
   type: invited
   location: Zurich, Switzerland
-  _verify: location inferred - confirm
   cv: true
 - date: 2025-03-11
   type: invited

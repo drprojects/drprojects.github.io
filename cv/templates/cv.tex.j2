@@ -73,7 +73,7 @@
 ((* set showyear = x.get('year') != ns.year *))((* set ns.year = x.get('year') *))
 \entry{((* if showyear *))((( x.get('year') )))((* endif *))}{%
   \etitle{((( x.title | tex )))} \\
-  \eauth{((* for name, is_me in author_names(x.authors) *))((* if is_me *))\textbf{((( name )))}((* else *))((( name )))((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *))} \\
+  \eauth{((* for name, is_me, gap in author_names(x.authors) *))((* if gap *))\dots((* elif is_me *))\textbf{((( name )))}((* else *))((( name )))((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *))} \\
   ((* if x.get('status') == 'under_review' *))\eorgalt{Under review}%
   ((* elif x.get('status') == 'thesis' *))\eorg{PhD Thesis((* if x.get('venue') *)), ((( x.get('venue') | tex )))((* endif *))}%
   ((* else *))\eorg{((( x.get('venue_long') | default(x.get('venue'), true) | tex )))}((* endif *))%
