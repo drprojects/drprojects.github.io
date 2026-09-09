@@ -487,3 +487,40 @@ jackson_sunny:
   last_name: Sunny
   url: https://jacksonsunny.com
   org: polytechnique
+
+elliot_vincent:
+  first_name: Elliot
+  last_name: Vincent
+  url: https://elliotvincent.github.io/
+  org: ign
+
+mohamed_ali_chebbi:
+  first_name: Mohamed Ali
+  last_name: Chebbi
+  url: https://www.linkedin.com/in/mohamed-ali-chebbi-phd-a3b379124
+  org: ign
+
+anatol_garioud:
+  first_name: Anatol
+  last_name: Garioud
+  url: https://scholar.google.com/citations?user=6c9QX2AAAAAJ
+  org: ign
+
+nicolas_gonthier:
+  first_name: Nicolas
+  last_name: Gonthier
+  url: https://ngonthier.github.io/
+  org: ign
+
+sebastien_giordano:
+  first_name: Sebastien
+  last_name: Giordano
+  url: https://scholar.google.com/citations?user=IOPxYVgAAAAJ
+  org: ign
+
+nicolas_david:
+  first_name: Nicolas
+  last_name: David
+  url: https://scholar.google.com/citations?user=IkMtnGEAAAAJ
+  org: ign
+

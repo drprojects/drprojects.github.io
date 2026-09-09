@@ -2,8 +2,25 @@
 # Union of the website _publications/*.md front matter and the CV LaTeX
 # (academic_resume/text/3__publications.tex). Ordered reverse-chronologically.
 
+- id: malibu3d
+  title: "MALiBU3D: A Multitask Aerial LiDAR Benchmark for Large-Scale 3D Scene Understanding"
+  year: 2026
+  status: under_review
+  authors:
+    - louis_geist
+    - elliot_vincent
+    - mohamed_ali_chebbi
+    - anatol_garioud
+    - nicolas_gonthier
+    - sebastien_giordano
+    - nicolas_david
+    - jan_dirk_wegner
+    - loic_landrieu
+    - me
+  teaser_image: /images/publications/2027/malibu3d/teaser.jpg
+
 - id: forest_foundation_model
-  title: "Toward a Foundation Model for Forest Point Clouds"
+  title: "FoM3D: Toward a foundation model for forest point clouds"
   year: 2026
   status: under_review
   authors:
@@ -17,6 +34,7 @@
     - rasmus_astrup
     - christian_rupprecht
     - konrad_schindler
+  teaser_image: /images/publications/2026/fom3d/teaser.png
 
 - id: eo_best_practices
   title: "From Machine Learning to Large-Scale EO Products: Best Practices for Making Maps"
@@ -38,22 +56,22 @@
     - konrad_schindler
 
 - id: sdm_bias_benchmark
-  title: "Bias Aware Benchmark for Species Distribution Modeling"
+  title: "SAGE: A sampling-aware global evaluation benchmark for species distribution modeling"
   year: 2026
-  venue: WBF
-  venue_long: "World Biodiversity Forum"
-  status: published
+  status: under_review
   authors:
     - emilia_arens
     - nina_van_tiel
     - robin_zbinden
-    - chiara_vanalli
     - me
     - lukas_drees
+    - chiara_vanalli
     - benjamin_kellenberger
+    - niklaus_zimmermann
     - loic_pellissier
-    - jan_dirk_wegner
     - devis_tuia
+    - jan_dirk_wegner
+  teaser_image: /images/publications/2026/sage/teaser.png
 
 #- id: ecological_forecasting
 #  title: "Opportunities and challenges for near-term ecological forecasting with biodiversity and EO data"
