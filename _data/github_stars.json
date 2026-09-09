@@ -1,5 +1,5 @@
 {
-  "_fetched": "2026-09-08",
+  "_fetched": "2026-09-09",
   "drprojects/DeepViewAgg": {
     "forks": 24,
     "stars": 237
@@ -14,14 +14,14 @@
   },
   "drprojects/superpoint_transformer": {
     "forks": 136,
-    "stars": 1054
+    "stars": 1055
   },
   "drprojects/torch-graph-components": {
     "forks": 0,
     "stars": 15
   },
   "prs-eth/LitePT": {
-    "forks": 44,
-    "stars": 405
+    "forks": 45,
+    "stars": 406
   }
 }

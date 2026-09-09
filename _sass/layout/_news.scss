@@ -57,8 +57,8 @@
   flex-wrap: wrap;
   gap: 0.4em 1.4em;
   align-items: center;
-  margin: 0 0 1.75em;
-  padding-bottom: 1em;
+  margin: 0 0 1.7em;
+  padding-bottom: 0.9em;
   border-bottom: 1px solid var(--global-border-color);
   font-size: 0.8em;
   color: var(--dr-muted);
@@ -69,6 +69,7 @@
   align-items: center;
   gap: 0.45em;
   white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .type-legend .ttype {

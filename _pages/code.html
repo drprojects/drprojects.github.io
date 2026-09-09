@@ -5,15 +5,12 @@ permalink: /code/
 author_profile: true
 ---
 
-<br/>
+{% include base_path %}
 
 {% if site.author.github %}
-  <div class="wordwrap">Here is a selection of codebases I actively maintain or take part in on <a href="https://github.com/{{site.author.github}}">GitHub</a>.
-  </div>
-  <br/>
+<p class="page-intro">A selection of codebases I actively maintain or take part in on
+<a href="https://github.com/{{ site.author.github }}">GitHub</a>.</p>
 {% endif %}
-
-{% include base_path %}
 
 {% comment %} Source of truth: _data/code.yml (shared with the PDF CV). {% endcomment %}
 {% for item in site.data.code %}

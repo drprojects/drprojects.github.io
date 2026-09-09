@@ -1,38 +1,63 @@
 # Collaboration and supervision, grouped by relationship type.
-# `groups` is an ordered list so the CV and website render the same order.
+#
+# `groups` is an ordered list; both the website and the CV render it in this
+# order. A person whose full name also appears in authors.yml is automatically
+# linked to their homepage, so there is nothing to keep in sync here.
 
 groups:
-  - id: phd
-    label: PhD Students
-    people:
-      - { name: Emilia Arens,   with: Jan D. Wegner, org: UZH , key: emilia_arens }
-      - { name: Johannes Dollinger, with: Jan D. Wegner, org: UZH , key: johannes_dollinger }
-      - { name: Kaan Karaman,   with: Jan D. Wegner, org: UZH , key: kaan_karaman }
-      - { name: Louis Geist,    with: Loic Landrieu,  org: ENPC , key: louis_geist }
-      - { name: Yuanwen Yue,    with: Konrad Schindler and Christian Rupprecht, org: ETH / Oxford , key: yuanwen_yue }
-
-  - id: master
-    label: Master Students
-    people:
-      - { name: Valerio Schelbert, org: ETH }
-      - { name: Jackson Sunny, org: École Polytechnique, with: SAMP }
-
-  - id: researchers
-    label: Collaborators
-    people:
-      - { name: Konrad Schindler, org: ETH , key: konrad_schindler }
-      - { name: Christian Rupprecht, org: Oxford , key: christian_rupprecht }
-      - { name: Jan D. Wegner, org: UZH , key: jan_dirk_wegner }
-      - { name: Loic Landrieu, org: ENPC }
-      - { name: Vivien Sainte Fare Garnot, org: UZH , key: vivien_sainte_fare_garnot }
-      - { name: Lukas Drees, org: UZH , key: lukas_drees }
-      - { name: Martin Schwartz, org: LSCE , key: martin_schwartz }
-      - { name: Elena Plekhanova, org: WSL , key: elena_plekhanova }
-
-  - id: advising
-    label: Advising
-    people:
-      - { name: UpCircle AI, org: Switzerland }
-      - { name: École des Sciences Criminelles de Lausanne, org: Switzerland }
-      - { name: SAMP AI, org: France }
-      - { name: GEODIGITAL, org: US }
+- id: researchers
+  label: Collaborators
+  people:
+  - name: Konrad Schindler
+    org: ETH
+  - name: Christian Rupprecht
+    org: Oxford
+  - name: Jan Dirk Wegner
+    org: UZH
+  - name: Loic Landrieu
+    org: ENPC
+  - name: Vivien Sainte Fare Garnot
+    org: UZH
+  - name: Lukas Drees
+    org: UZH
+  - name: Martin Schwartz
+    org: LSCE
+  - name: Elena Plekhanova
+    org: WSL
+- id: phd
+  label: PhD Students
+  people:
+  - name: Emilia Arens
+    with: Jan Dirk Wegner
+    org: UZH
+  - name: Johannes Dollinger
+    with: Jan Dirk Wegner
+    org: UZH
+  - name: Kaan Karaman
+    with: Jan Dirk Wegner
+    org: UZH
+  - name: Louis Geist
+    with: Loic Landrieu
+    org: ENPC
+  - name: Yuanwen Yue
+    with: Konrad Schindler and Christian Rupprecht
+    org: ETH / Oxford
+- id: master
+  label: Master Students
+  people:
+  - name: Valerio Schelbert
+    org: ETH
+  - name: Jackson Sunny
+    org: École Polytechnique
+    with: SAMP
+- id: advising
+  label: Advising
+  people:
+  - name: UpCircle AI
+    org: Switzerland
+  - name: École des Sciences Criminelles de Lausanne
+    org: Switzerland
+  - name: SAMP AI
+    org: France
+  - name: GEODIGITAL
+    org: US

@@ -122,6 +122,32 @@ def load_data() -> dict:
     return data
 
 
+def report_unlinked_people(data):
+    """Name people the website cannot link, so a typo does not fail silently.
+
+    supervision.yml records plain names and the site resolves them against
+    authors.yml. That is one fewer thing to keep in sync than a duplicated key,
+    but a rename can quietly drop a link -- which is exactly how Loic Landrieu's
+    homepage disappeared once. Printing the misses makes them visible.
+    """
+    known = {
+        f"{v.get('first_name', '')} {v.get('last_name', '')}".strip()
+        for v in data["authors"].values()
+        if isinstance(v, dict)
+    }
+    missing = [
+        (group["label"], person["name"])
+        for group in data["supervision"]["groups"]
+        for person in group["people"]
+        if person["name"] not in known
+    ]
+    if missing:
+        print(f"  note: {len(missing)} name(s) not in authors.yml, so they render "
+              f"without a homepage link:")
+        for label, name in missing:
+            print(f"        {label}: {name}")
+
+
 def publication_histogram(publications):
     """(years, counts, max) for the bar chart next to the Publications heading.
 
@@ -223,6 +249,7 @@ def build(offline: bool, keep_tex: bool) -> int:
     )
     env.filters.update(tex=tex, md2tex=md2tex, strip_emoji=strip_emoji)
 
+    report_unlinked_people(data)
     hist, hist_max = publication_histogram(for_cv(data["publications"]))
 
     template = env.get_template("cv.tex.j2")

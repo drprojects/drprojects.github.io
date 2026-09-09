@@ -7,10 +7,6 @@ author_profile: true
 
 {% include base_path %}
 
-<br/>
-
-<p class="wordwrap">Awards, reviewing, chairing, organising, mentoring and advising
-&mdash; the work that happens around the papers.</p>
 
 {% comment %} --------------------- awards & recognitions -------------------- {% endcomment %}
 {% if site.data.awards %}
@@ -21,7 +17,7 @@ author_profile: true
     <span class="label color-{{ idx }}">{{ a.year }}</span>
     <div class="news-text">
       {% if a.url %}<a href="{{ a.url }}">{{ a.title }}</a>{% else %}{{ a.title }}{% endif %}
-      {% if a.venue %}at <strong>{{ a.venue }}</strong>{% endif %}
+      {% if a.venue %}from <strong>{{ a.venue }}</strong>{% endif %}
       {% if a.description %}<span class="entry-sub">{{ a.description }}</span>{% endif %}
     </div>
   </div>
@@ -97,12 +93,8 @@ author_profile: true
   <h2 class="home-heading">{{ heading }}</h2>
   <div class="people-grid">
     {% for q in g.people %}
-      {% assign a = nil %}
-      {% if q.key %}{% assign a = site.data.authors[q.key] %}{% endif %}
       <div class="person">
-        <div class="person__name">
-          {% if a and a.url %}<a href="{{ a.url }}">{{ q.name }}</a>{% else %}{{ q.name }}{% endif %}
-        </div>
+        <div class="person__name">{% include author-link.html name=q.name %}</div>
         {% if q.org %}<div class="person__org">{{ q.org }}</div>{% endif %}
         {% if q.with %}<div class="person__with">with {{ q.with }}</div>{% endif %}
       </div>

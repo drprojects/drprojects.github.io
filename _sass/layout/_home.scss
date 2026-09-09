@@ -10,6 +10,30 @@
 :root                    { --dr-muted: var(--global-text-color-light); }
 html[data-theme="dark"]  { --dr-muted: #93b3b8; }
 
+/* One rhythm for every listing page: the title, an optional one-line intro, then
+   the content. Pages previously mixed <br/> spacers with two different layouts,
+   so the gap under the title differed from page to page. */
+/* The gap under the title is owned by the title itself, and the first content
+   element contributes nothing, so every listing page starts its content at the
+   same height whatever that content happens to be (an intro paragraph, an icon
+   legend, a section heading or the first entry). */
+.archive .page__title {
+  margin-bottom: 1.4em;
+}
+
+.archive .page__title + .page-intro,
+.archive .page__title + .type-legend,
+.archive .page__title + .home-heading,
+.archive .page__title + .news-entry,
+.archive .page__title + .paper-entry {
+  margin-top: 0;
+}
+
+.page-intro {
+  margin: 0 0 1.9em;
+  color: var(--dr-muted);
+}
+
 .home-heading {
   margin: 2.25em 0 0.6em;
   padding-bottom: 0.35em;
