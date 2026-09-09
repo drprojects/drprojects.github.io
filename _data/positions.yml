@@ -1,14 +1,18 @@
 # Professional positions, reverse chronological.
 #
-# `end: null` renders as "Now". Advisors and PIs under `people` are references
-# into authors.yml, so their names are not duplicated here.
+# `end: null` renders as "Now".
+#
+# `organizations` is a list of keys into organizations.yml — a list because the
+# PhD was a joint appointment. `group` names a sub-unit (a lab or team) that is
+# too specific to deserve its own registry entry.
+#
+# Advisors and PIs under `people` are references into authors.yml.
 
 - start: 2024
   end: null
   title: Postdoctoral Researcher
-  org: EcoVision lab, University of Zurich
-  org_short: UZH
-  org_url: https://dm3l.uzh.ch/en/wegner
+  organizations: [uzh]
+  group: EcoVision lab
   location: Zurich, Switzerland
   description: Deep learning for remote sensing and environment
   people:
@@ -17,8 +21,8 @@
 - start: 2020
   end: 2024
   title: PhD Student
-  org: ENGIE Lab CRIGEN — LASTIG, IGN/ENSG
-  org_short: IGN / ENGIE
+  organizations: [ign, engie_crigen]
+  group: LASTIG
   location: Paris, France
   duration: 3y 4m
   description: Efficient learning on large-scale 3D point clouds
@@ -29,8 +33,7 @@
 - start: 2017
   end: 2020
   title: R&D Engineer
-  org: SIRADEL, ENGIE
-  org_short: SIRADEL
+  organizations: [siradel, engie]
   location: Rennes, France
   duration: 2y 8m
   description: >
@@ -39,21 +42,24 @@
 - start: 2017
   end: 2017
   title: Co-Founder
-  org: Inspirama
+  organizations: [inspirama]
+  location: Rennes, France
   duration: 1y
   description: Website gathering book recommendations from inspiring people
 
 - start: 2015
   end: 2015
   title: R&D Intern
-  org: Dassault Systèmes
+  organizations: [dassault]
+  location: Providence, RI, USA
   duration: 6m
   description: Dimensionality reduction and dynamic system modeling
 
 - start: 2014
   end: 2014
   title: R&D Intern
-  org: Dassault Systèmes
+  organizations: [dassault]
+  location: Providence, RI, USA
   duration: 6m
   description: UX design
   cv: false   # 12-year-old UX internship; superseded by the 2015 entry

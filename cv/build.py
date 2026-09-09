@@ -29,13 +29,15 @@ DATA = ROOT / "_data"
 CVDIR = ROOT / "cv"
 BUILD = CVDIR / "build"
 OUT = ROOT / "files" / "cv.pdf"
-# Written into _data/ so the website can show live star counts too.
-STARS_CACHE = DATA / "github_stars.json"
+# A build artifact, not site data: only the PDF reads it, because a PDF is
+# static and cannot call the GitHub API when someone opens it. The /code/ page
+# uses live shields.io badges and ignores this file entirely.
+STARS_CACHE = CVDIR / "stars.json"
 
 DATASETS = [
     "profile", "authors", "organizations", "publications", "talks", "teaching",
     "code", "positions", "education", "awards", "service",
-    "supervision", "skills",
+    "organizing", "grants", "supervision", "skills",
 ]
 
 # --------------------------------------------------------------------------
@@ -118,7 +120,9 @@ def load_data() -> dict:
         if not path.exists():
             sys.exit(f"missing data file: {path.relative_to(ROOT)}")
         with path.open(encoding="utf-8") as fh:
-            data[name] = yaml.safe_load(fh)
+            # A file holding only comments parses to None; treat it as empty so
+            # templates can iterate it without a guard.
+            data[name] = yaml.safe_load(fh) or []
     return data
 
 
@@ -180,6 +184,16 @@ def validate_references(data):
         for who in position.get("people", []):
             if who.get("person") not in people:
                 errors.append(f"positions.yml: unknown person '{who.get('person')}'")
+        for ref in position.get("organizations", []):
+            if ref not in orgs:
+                errors.append(f"positions.yml [{position.get('title')}]: unknown "
+                              f"organization '{ref}'")
+
+    for entry in data["education"]:
+        ref = entry.get("organization")
+        if ref and ref not in orgs:
+            errors.append(f"education.yml [{entry.get('degree')}]: unknown "
+                          f"organization '{ref}'")
 
     for pub in data["publications"]:
         for ref in pub.get("authors", []):

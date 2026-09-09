@@ -138,6 +138,23 @@ Every entry accepts two optional flags:
 and the CV shows a selected ~17, so a talk needs an explicit `cv: true` to be
 printed. Everything else defaults to appearing in both.
 
+## Deployment
+
+**Editing content is `git commit` + `git push`. There is nothing to run.**
+
+Two mechanisms, and only one of them is a workflow:
+
+- the **website** is built by GitHub Pages itself, from the repository. There is
+  no Action for it.
+- the **PDF** cannot be built by Pages (it needs a LaTeX install), so
+  `.github/workflows/build-cv.yml` runs on any push touching `_data/**` or
+  `cv/**`, rebuilds `files/cv.pdf` and commits it back.
+
+Because that workflow pushes a commit of its own, **`git pull` before your next
+edit**. Run `make cv` locally only if you want to see the PDF before pushing.
+
+The workflow targets `master`, so it does nothing on a feature branch.
+
 ## Commands
 
 ```bash
@@ -166,9 +183,11 @@ there is only one CV to design and maintain. The intro paragraph in
 - `cv/build.py` — loads the data, fetches GitHub star counts, renders, runs
   pdflatex twice, writes `files/cv.pdf`.
 
-GitHub star and fork counts are fetched at build time into
-`_data/github_stars.json`, which the homepage stats band also reads. They are
-never hardcoded.
+GitHub star and fork counts are fetched at build time into `cv/stars.json` and
+never hardcoded. That file exists **only for the PDF**: a PDF is static and
+cannot call the GitHub API when a reader opens it, so the numbers have to be
+baked in. The `/code/` page ignores it and uses live shields.io badges instead.
+You never edit it by hand; CI refreshes it on every push.
 
 Graphical elements in the CV — the tinted header band, the publications-per-year
 bar chart, the language meters — are all TikZ, driven by the same data. The

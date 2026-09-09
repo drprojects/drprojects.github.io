@@ -48,6 +48,13 @@ summary: >
   [Loic Landrieu](https://loiclandrieu.com/) and
   [Bruno Vallet](https://www.umr-lastig.fr/bruno-vallet/).
 
+# Display switches for the PDF CV. The data stays in _data/ either way; these
+# only decide what gets printed.
+cv_options:
+  show_teaching_hours: false      # per-course hours / duration in the CV
+  show_publication_links: false   # Paper / Project / Code links (a printed CV
+                                  # cannot be clicked, and they are on the site)
+
 # Citation metrics shown in the CV header. These cannot be fetched automatically
 # (Google Scholar forbids scraping), so update them by hand a few times a year.
 # Delete the block or set `show: false` to hide it from the CV.

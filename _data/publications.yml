@@ -30,6 +30,7 @@
     - linus_scheibenreif
     - me
     - clemens_mosig
+    - mikolaj_czerkawski
     - adam_j_stewart
     - jan_dirk_wegner
     - aleksis_pirinen
@@ -54,28 +55,28 @@
     - jan_dirk_wegner
     - devis_tuia
 
-- id: ecological_forecasting
-  title: "Opportunities and challenges for near-term ecological forecasting with biodiversity and EO data"
-  year: 2026
-  venue: WBF
-  venue_long: "World Biodiversity Forum"
-  status: published
-  authors:
-    - patricia_singh
-    - billur_bektas
-    - sanne_evers
-    - erola_fenollosa
-    - gerbrand_koren
-    - sruthi_krishna_moorthy_parvathi
-    - sean_pang
-    - maria_paniw
-    - me
-    - ghjulia_sialelli
-    - jasper_slingsby
-    - rachael_thornley
-    - emma_l_underwood
-    - jan_dirk_wegner
-    - wanben_wu
+#- id: ecological_forecasting
+#  title: "Opportunities and challenges for near-term ecological forecasting with biodiversity and EO data"
+#  year: 2026
+#  venue: WBF
+#  venue_long: "World Biodiversity Forum"
+#  status: published
+#  authors:
+#    - patricia_singh
+#    - billur_bektas
+#    - sanne_evers
+#    - erola_fenollosa
+#    - gerbrand_koren
+#    - sruthi_krishna_moorthy_parvathi
+#    - sean_pang
+#    - maria_paniw
+#    - me
+#    - ghjulia_sialelli
+#    - jasper_slingsby
+#    - rachael_thornley
+#    - emma_l_underwood
+#    - jan_dirk_wegner
+#    - wanben_wu
 
 - id: litept
   title: "LitePT: Lighter Yet Stronger Point Transformer"
@@ -91,7 +92,8 @@
     - jan_dirk_wegner
     - christian_rupprecht
     - konrad_schindler
-  note: Highlight
+  highlights:
+    - { label: Highlight, kind: selection }
   paper_url: http://arxiv.org/abs/2512.13689
   project_url: https://litept.github.io
   code_url: https://github.com/prs-eth/LitePT
@@ -190,7 +192,8 @@
     - vivien_sainte_fare_garnot
     - maria_joao_santos
     - jan_dirk_wegner
-  note: Oral
+  highlights:
+    - { label: Oral, kind: selection }
   paper_url: https://arxiv.org/abs/2504.01722
   project_url: https://ecovision-uzh.github.io/GSR4B/
   code_url: https://github.com/kaankaramanofficial/GSR4B
@@ -262,7 +265,8 @@
   status: thesis
   authors:
     - me
-  note: "AFRIF award"
+  highlights:
+    - { label: AFRIF PhD award, kind: award }
   paper_url: https://hal.science/tel-04448827
   code_url: https://github.com/drprojects
   bibtex_id: robert2024phd
@@ -286,7 +290,8 @@
     - me
     - hugo_raguet
     - loic_landrieu
-  note: Oral
+  highlights:
+    - { label: Oral, kind: selection }
   selectivity: "top 5.3% of submissions"
   paper_url: https://arxiv.org/abs/2401.06704
   project_url: https://drprojects.github.io/supercluster-site
@@ -321,7 +326,9 @@
     - me
     - bruno_vallet
     - loic_landrieu
-  note: "Oral · Best paper finalist"
+  highlights:
+    - { label: Best paper finalist, kind: award }
+    - { label: Oral, kind: selection }
   selectivity: "top 0.4% of submissions"
   paper_url: https://arxiv.org/abs/2204.07548
   project_url: https://drprojects.github.io/deepviewagg-site

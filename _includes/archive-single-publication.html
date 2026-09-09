@@ -53,8 +53,11 @@
 
           {% if post.venue %}<i>{{ post.venue }}</i>, {% endif %}{{ post.year }}.{% if post.status == "under_review" %} <i>Under review.</i>{% endif %}
 
-          {%- if post.note -%}
-            <br/><br/>{{ post.note }}
+          {%- if post.highlights -%}
+            <br/>
+            {%- for h in post.highlights -%}
+              <span class="hl hl--{{ h.kind | default: 'selection' }}">{% if h.kind == 'award' %}🏆 {% endif %}{{ h.label }}</span>
+            {%- endfor -%}
           {%- endif -%}
           <br/><br/>
 

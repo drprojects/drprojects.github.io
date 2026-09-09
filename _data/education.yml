@@ -1,4 +1,7 @@
 # Education, reverse chronological.
+#
+# `organization` is a key into organizations.yml, so an institution's name and
+# URL are written once.
 # `cv: false` items stay on the website but are cut from the 4-page CV: at this
 # career stage a high-school diploma and introductory MOOCs dilute the signal
 # rather than adding to it.
@@ -6,39 +9,39 @@
 - start: 2011
   end: 2015
   degree: MSc, Engineering
-  institution: École Centrale de Lyon
+  organization: centrale_lyon
   location: Lyon, France
   description: Mathematics, Computer Science, Mechanics, Signal Processing, Automation
 
 - year: 2022
   degree: International Computer Vision Summer School
-  institution: ICVSS
+  organization: icvss
   location: Sicily, Italy
   description: Computer vision courses by world-renowned experts in academia and industry
 
 - year: 2017
   degree: CNRS AI Fall School
-  institution: CNRS
+  organization: cnrs
   location: Lyon, France
   description: Multi-disciplinary course for AI students and researchers
 
 - year: 2017
   degree: Machine Learning Engineer Nanodegree
-  institution: Udacity
+  organization: udacity
   location: MOOC
   description: Machine learning, mathematics, computer science
   cv: false
 
 - year: 2015
   degree: Introduction to Machine Learning
-  institution: Coursera
+  organization: coursera
   location: MOOC
   cv: false
 
 - start: 2009
   end: 2011
   degree: Classes préparatoires (MP)
-  institution: Chateaubriand High School
+  organization: chateaubriand
   location: Rennes, France
   description: Preparation course for the French engineering school entrance exams
   cv: false
@@ -46,7 +49,7 @@
 - start: 2006
   end: 2009
   degree: High School Diploma, with honours
-  institution: Victor & Hélène Basch High School
+  organization: basch
   location: Rennes, France
   description: Specialized in Sciences and English
   cv: false

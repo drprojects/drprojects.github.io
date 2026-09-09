@@ -20,10 +20,14 @@
 \RequirePackage{microtype}
 \RequirePackage{fontawesome5}
 \RequirePackage{needspace}
+\RequirePackage{ifthen}
 
 % ------------------------------- DESIGN TOKENS -----------------------------
 \definecolor{accent}{HTML}{11505E}   % deep teal — headings, links, markers
 \definecolor{accentmid}{HTML}{3E7F8C} % lighter teal — charts, meters
+\definecolor{award}{HTML}{9A6B08}    % warm gold — prizes
+\definecolor{awardbg}{HTML}{F6E3B4}  % gold tint
+\definecolor{selectbg}{HTML}{D3E7EA} % teal tint
 \definecolor{band}{HTML}{EAF1F2}     % header band tint
 \definecolor{ink}{HTML}{1A1A1A}      % body text
 \definecolor{muted}{HTML}{6B7280}    % secondary text, locations, dates
@@ -136,6 +140,13 @@
   \end{tikzpicture}%
 }
 
+% Role icons, shared by the service legend and its entries. Same metaphors as
+% the website: a signed page, a batch of pages, a group of people.
+\newcommand{\icoreviewer}{\faFileSignature}
+\newcommand{\icochair}{\faLayerGroup}
+\newcommand{\icoorganiser}{\faUsers}
+\newcommand{\rolelegend}[1]{{\footnotesize\sanstext\color{muted}#1}}
+
 % \sparkspan{first}{last} — tiny caption for the chart above.
 \newcommand{\sparkspan}[2]{{\tiny\sanstext\color{muted}\,#1--#2}}
 
@@ -216,6 +227,26 @@
 % Right-aligned trailing note on the same line
 \newcommand{\etrail}[1]{\hfill{\footnotesize\sanstext\color{muted}#1}}
 
+% Publication highlight tag. \hltag{award|selection}{label}
+% A filled chip rather than plain text: these are the prizes and honours a
+% reader should catch while skimming. Same two tones as the website.
+% The branch sits outside the tikz node — \ifthenelse cannot be expanded inside
+% a key value.
+\newcommand{\hltagbox}[3]{%
+  \tikz[baseline=(t.base)]{%
+    \node[inner xsep=2.4pt, inner ysep=1.7pt, rounded corners=1.6pt,
+          fill=#1, text=#2] (t)
+      {\sanstext\fontsize{6.6}{7.4}\selectfont\bfseries #3};}%
+}
+\newcommand{\hltag}[2]{%
+  \ifthenelse{\equal{#1}{award}}%
+    {\hltagbox{awardbg}{award}{#2}}%
+    {\hltagbox{selectbg}{accent}{#2}}%
+}
+
+% Venue slot for a paper that is not yet published.
+\newcommand{\eorgalt}[1]{{\itshape\color{muted}#1}}
+
 % A small pill-free inline tag, e.g. "Highlight", "Oral"
 \newcommand{\etag}[1]{{\footnotesize\sanstext\bfseries\color{accent}#1}}
 
@@ -246,7 +277,6 @@
 
 % Repository popularity, shown flush right on an open-source entry.
 \newcommand{\repostats}[2]{%
-  {\footnotesize\sanstext\color{muted}%
-   \faStar\,#1\hspace{2.6mm}\faCodeBranch\,#2}%
+  {\scriptsize\sanstext\color{muted}\faStar\,#1\hspace{1.4mm}\faCodeBranch\,#2}%
 }
 \newcommand{\chipsep}{\,\textcolor{hairline}{\textbullet}\,}

@@ -33,11 +33,13 @@ jianyuan_wang:
     first_name: Jianyuan
     last_name: Wang
     url: https://jytime.github.io
+    org: oxford
 
 sunghwan_hong:
     first_name: Sunghwan
     last_name: Hong
     url: https://sunghwanhong.github.io
+    org: eth
 
 christian_rupprecht:
     first_name: Christian
@@ -90,6 +92,7 @@ yuchang_jiang:
     first_name: Yuchang
     last_name: Jiang
     url: https://sherryjyc.github.io
+    org: wsl
 
 vivien_sainte_fare_garnot:
     first_name: Vivien Sainte Fare
@@ -101,67 +104,85 @@ maria_joao_santos:
     first_name: Maria Joao
     last_name: Santos
     url: https://www.geo.uzh.ch/en/units/ess/staff/mariajsantos.html
+    org: uzh
 
 carlos_gomes:
     first_name: Carlos
     last_name: Gomes
     url: https://scholar.google.com/citations?user=hovrpnMAAAAJ
+    org: nvidia
 
 isabelle_wittmann:
     first_name: Isabelle
     last_name: Wittmann
     url: https://www.linkedin.com/in/isabelle-wittmann
+    org: ibm
 
 johannes_jakubik:
     first_name: Johannes
     last_name: Jakubik
     url: https://www.johannesjakubik.com
+    org: ibm
 
 tim_reichelt:
     first_name: Tim
     last_name: Reichelt
     url: https://treigerm.github.io
+    org: oxford
 
 michele_martone:
     first_name: Michele
     last_name: Martone
+    url: https://scholar.google.com/citations?user=7pRGd3UAAAAJ
+    org: dlr
 
 stefano_maurogiovanni:
     first_name: Stefano
     last_name: Maurogiovanni
+    url: https://iris.hi.is/en/persons/stefano-maurogiovanni
 
 rikard_vinge:
     first_name: Rikard
     last_name: Vinge
+    url: https://scholar.google.com/citations?user=grBwqrwAAAAJ
+    org: dlr
 
 jonas_hurst:
     first_name: Jonas
     last_name: Hurst
+    url: https://www.linkedin.com/in/jonas-hurst-31a488165
 
 erik_scheurer:
     first_name: Erik
     last_name: Scheurer
+    url: https://erikscheurer.github.io
 
 rocco_sedona:
     first_name: Rocco
     last_name: Sedona
+    url: https://scholar.google.com/citations?user=nuFMOpYAAAAJ
 
 thomas_brunschwiler:
     first_name: Thomas
     last_name: Brunschwiler
     url: https://research.ibm.com/people/thomas-brunschwiler
+    org: ibm
 
 stefan_kesselheim:
     first_name: Stefan
     last_name: Kesselheim
+    url: https://scholar.google.com/citations?user=5k2rdewAAAAJ
 
 matej_batic:
     first_name: Matej
     last_name: Batic
+    url: https://www.linkedin.com/in/matej-batic
 
 philip_stier:
     first_name: Philip
     last_name: Stier
+    url: https://scholar.google.com/citations?user=bOxQGusAAAAJ
+    org: oxford
 
 jan_dirk_wegner:
     first_name: Jan Dirk
@@ -177,30 +198,39 @@ gabriele_cavallaro:
 edzer_pebesma:
     first_name: Edzer
     last_name: Pebesma
+    url: https://scholar.google.com/citations?user=d6jdqdQAAAAJ
 
 michael_marszalek:
     first_name: Michael
     last_name: Marszalek
+    url: https://scholar.google.com/citations?user=LO5q3FYAAAAJ
 
 miguel_a_belenguer_plomer:
     first_name: Miguel A Belenguer
     last_name: Plomer
+    url: https://scholar.google.com/citations?user=IeUST5MAAAAJ
 
 kennedy_adriko:
     first_name: Kennedy
     last_name: Adriko
+    url: https://adken.github.io
 
 paolo_fraccaro:
     first_name: Paolo
     last_name: Fraccaro
+    url: https://research.ibm.com/people/paolo-fraccaro
+    org: ibm
 
 romeo_kienzler:
     first_name: Romeo
     last_name: Kienzler
+    url: https://www.linkedin.com/in/romeo-kienzler-089b4557
+    org: ibm
 
 rania_briq:
     first_name: Rania
     last_name: Briq
+    url: https://briqr.github.io
 
 sabrina_benassou:
     first_name: Sabrina
@@ -209,6 +239,7 @@ sabrina_benassou:
 michele_lazzarini:
     first_name: Michele
     last_name: Lazzarini
+    url: https://scholar.google.com/citations?user=4yqjNPAAAAAJ
 
 conrad_m_albrecht:
     first_name: Conrad M
@@ -225,11 +256,13 @@ philipp_brun:
     first_name: Philipp
     last_name: Brun
     url: https://www.wsl.ch/de/mitarbeitende/brunp
+    org: wsl
 
 niklaus_zimmermann:
     first_name: Niklaus
     last_name: Zimmermann
     url: https://www.wsl.ch/de/mitarbeitende/zimmerma
+    org: wsl
 
 martin_schwartz:
     first_name: Martin
@@ -246,6 +279,7 @@ nikola_besic:
     first_name: Nikola
     last_name: Besic
     url: https://nbesic.github.io
+    org: ign
 
 jean_pierre_renaud:
     first_name: Jean-Pierre
@@ -266,6 +300,7 @@ cédric_vega:
     first_name: Cédric
     last_name: Vega
     url: https://scholar.google.com/citations?user=2bnoLSUAAAAJ
+    org: ign
 
 alexandre_d_aspremont:
     first_name: Alexandre
@@ -280,82 +315,124 @@ philippe_ciais:
 stefano_puliti:
     first_name: Stefano
     last_name: Puliti
+    url: https://scholar.google.com/citations?user=mrysxWoAAAAJ
+    org: nibio
 
 atakan_topaloglu:
     first_name: Atakan
     last_name: Topaloğlu
+    url: https://atakan-topaloglu.github.io
+    org: eth
 
 binbin_xiang:
     first_name: Binbin
     last_name: Xiang
+    url: https://scholar.google.com/citations?user=12YyiiIAAAAJ
+    org: nibio
 
 maciej_wielgosz:
     first_name: Maciej
     last_name: Wielgosz
+    url: https://maciej.wielgosz.info
 
 rasmus_astrup:
     first_name: Rasmus
     last_name: Astrup
+    url: https://scholar.google.com/citations?user=8agrzhcAAAAJ
+    org: nibio
 
 ghjulia_sialelli:
     first_name: Ghjulia
     last_name: Sialelli
+    url: https://ghjuliasialelli.github.io
+    org: eth
 
 robin_young:
     first_name: Robin
     last_name: Young
+    url: https://robin-young.com
+    org: cambridge
+
+mikolaj_czerkawski:
+  first_name: Mikolaj
+  last_name: Czerkawski
+  url: https://mikonvergence.github.io
+  org: asterisk
 
 cesar_aybar:
     first_name: Cesar
     last_name: Aybar
+    url: https://csaybar.github.io
+    org: asterisk
 
 linus_scheibenreif:
     first_name: Linus
     last_name: Scheibenreif
+    url: https://scheibenreif.github.io
+    org: eth
 
 adam_j_stewart:
     first_name: Adam J
     last_name: Stewart
+    url: https://scholar.google.com/citations?user=IQ19q4AAAAAJ
+    org: tum
 
 aleksis_pirinen:
     first_name: Aleksis
     last_name: Pirinen
+    url: https://aleksispi.github.io
 
 olof_mogren:
     first_name: Olof
     last_name: Mogren
+    url: https://mogren.ml
 
 nina_van_tiel:
     first_name: Nina
     last_name: van Tiel
+    url: https://scholar.google.com/citations?user=pCOoHuAAAAAJ
+    org: epfl
 
 robin_zbinden:
     first_name: Robin
     last_name: Zbinden
+    url: https://zbirobin.github.io
+    org: epfl
 
 chiara_vanalli:
     first_name: Chiara
     last_name: Vanalli
+    url: https://chiaravanalli.weebly.com
+    org: epfl
 
 benjamin_kellenberger:
     first_name: Benjamin
     last_name: Kellenberger
+    url: https://bkellenb.github.io
+    org: epfl
 
 loic_pellissier:
     first_name: Loic
     last_name: Pellissier
+    url: https://scholar.google.com/citations?user=CuyLnz4AAAAJ
+    org: wsl
 
 devis_tuia:
     first_name: Devis
     last_name: Tuia
+    url: https://people.epfl.ch/devis.tuia
+    org: epfl
 
 patricia_singh:
     first_name: Patrícia
     last_name: Singh
+    url: https://scholar.google.com/citations?user=mVgS-zYAAAAJ
 
 billur_bektas:
     first_name: Billur
     last_name: Bektas
+    url: https://billurbektas.github.io
+    org: eth
 
 sanne_evers:
     first_name: Sanne
@@ -376,6 +453,8 @@ sruthi_krishna_moorthy_parvathi:
 sean_pang:
     first_name: Sean
     last_name: Pang
+    url: https://seanpangecology.wordpress.com
+    org: oxford
 
 maria_paniw:
     first_name: Maria
@@ -400,9 +479,11 @@ wanben_wu:
 valerio_schelbert:
   first_name: Valerio
   last_name: Schelbert
-  org: eth
+  url: https://scholar.google.com/citations?user=hHSWuNIAAAAJ
+  org: wsl
 
 jackson_sunny:
   first_name: Jackson
   last_name: Sunny
+  url: https://jacksonsunny.com
   org: polytechnique

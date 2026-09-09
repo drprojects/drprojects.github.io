@@ -10,6 +10,7 @@
 \usepackage{drcv}
 
 ((* set p = d.profile *))
+((* set opts = p.get('cv_options', {}) *))
 
 \begin{document}
 
@@ -37,7 +38,7 @@
 ((* for x in for_cv(d.positions) *))
 \entry{((( x.get('start') )))((* if x.get('end') != x.get('start') *))--((( x.get('end') if x.get('end') else 'now' )))((* endif *))}{%
   \etitle{((( x.title | tex )))} \\
-  \eorg{((( x.org | tex )))}((* if x.get('location') *)) \emeta{\;·\; ((( x.get('location') | tex )))}((* endif *))
+  \eorg{((* if x.get('group') *))((( x.group | tex ))), ((* endif *))((( x.organizations | map('org_label') | join(' / ') | tex )))}((* if x.get('location') *)) \emeta{\;·\; ((( x.get('location') | tex )))}((* endif *))
   ((* if x.get('description') *))\\ \edesc{((( x.get('description') | md2tex )))}((* endif *))
   ((* if x.get('people') *))\\ ((* for role, group in x.get('people') | groupby('role') *))\emeta{((( role | tex )))((* if group | length > 1 *))s((* endif *)):} ((( group | map(attribute='person') | map('person_name') | join(', ') | tex )))((* if not loop.last *)) \emeta{\;·\;} ((* endif *))((* endfor *))((* endif *))
 }
@@ -48,7 +49,7 @@
 ((* for x in for_cv(d.education) *))
 \entry{((* if x.get('start') *))((( x.get('start') )))--((( x.get('end') )))((* else *))((( x.get('year') )))((* endif *))}{%
   \etitle{((( x.degree | tex )))} \\
-  \eorg{((( x.institution | tex )))}((* if x.get('location') *)) \emeta{\;·\; ((( x.get('location') | tex )))}((* endif *))
+  \eorg{((( x.organization | org_label(false) | tex )))}((* if x.get('location') *)) \emeta{\;·\; ((( x.get('location') | tex )))}((* endif *))
   ((* if x.get('description') *))\\ \edesc{((( x.get('description') | md2tex )))}((* endif *))
 }
 ((* endfor *))
@@ -64,38 +65,30 @@
 
 ((# ---------------------------------------------------------- publications #))
 ((* set pubs = for_cv(d.publications) *))
-((* set published = pubs | rejectattr('status', 'equalto', 'under_review') | list *))
-((* set inreview = pubs | selectattr('status', 'equalto', 'under_review') | list *))
 
 \cvsection[\sparkbars{((( pub_hist_max )))}{((* for y, n in pub_hist *))((( y )))/((( n )))((* if not loop.last *)), ((* endif *))((* endfor *))}\sparkspan{((( pub_hist[0][0] )))}{((( pub_hist[-1][0] )))}]{Publications}
+((# Under-review papers stay in the year list; the venue slot says so. #))
 ((* set ns = namespace(year=0) *))
-((* for x in published *))
+((* for x in pubs *))
 ((* set showyear = x.get('year') != ns.year *))((* set ns.year = x.get('year') *))
 \entry{((* if showyear *))((( x.get('year') )))((* endif *))}{%
-  \etitle{((( x.title | tex )))} \\
+  \etitle{((( x.title | tex )))}%
+  ((* for h in x.get('highlights', []) *))\,\hltag{((( h.get('kind', 'selection') )))}{((( h.label | tex )))}((* endfor *)) \\
   \eauth{((* for name, is_me in author_names(x.authors) *))((* if is_me *))\textbf{((( name )))}((* else *))((( name )))((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *))} \\
-  ((* if x.get('status') == 'thesis' *))\eorg{PhD Thesis}((* if x.get('venue') *)), ((( x.get('venue') | tex )))((* endif *))((* else *))\eorg{((( x.get('venue_long') | default(x.get('venue'), true) | tex )))}((* endif *))%
+  ((* if x.get('status') == 'under_review' *))\eorgalt{Under review}%
+  ((* elif x.get('status') == 'thesis' *))\eorg{PhD Thesis((* if x.get('venue') *)), ((( x.get('venue') | tex )))((* endif *))}%
+  ((* else *))\eorg{((( x.get('venue_long') | default(x.get('venue'), true) | tex )))}((* endif *))%
   ((* if x.get('selectivity') *)) \emeta{\;·\; ((( x.get('selectivity') | tex )))}((* endif *))
   ((* if x.get('jury') *))\\ \emeta{Jury: ((( x.get('jury') | join(', ') | tex )))}((* endif *))
+  ((* if opts.get('show_publication_links') *))
   ((* set links = [] *))
   ((* if x.get('paper_url') *))((* set links = links + [(x.get('paper_url'), 'Paper')] *))((* endif *))
   ((* if x.get('project_url') *))((* set links = links + [(x.get('project_url'), 'Project')] *))((* endif *))
   ((* if x.get('code_url') *))((* set links = links + [(x.get('code_url'), 'Code')] *))((* endif *))
-  ((* if links *)) \emeta{\;·\;} ((* for u, label in links *))\elink{((( u )))}{((( label )))}((* if not loop.last *))\elinksep((* endif *))((* endfor *))((* endif *))%
-  ((* if x.get('note') *))\etrail{((( x.get('note') | tex )))}((* endif *))
+  ((* if links *)) \emeta{\;·\;} ((* for u, label in links *))\elink{((( u )))}{((( label )))}((* if not loop.last *))\elinksep((* endif *))((* endfor *))((* endif *))
+  ((* endif *))
 }
 ((* endfor *))
-
-((* if inreview *))
-\cvsubsection{Under review}
-((* for x in inreview *))
-\entry{((( x.get('year') )))}{%
-  \etitle{((( x.title | tex )))} \\
-  \eauth{((* for name, is_me in author_names(x.authors) *))((* if is_me *))\textbf{((( name )))}((* else *))((( name )))((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *))}
-  ((* if x.get('venue') *))\\ \eorg{((( x.get('venue') | tex )))}((* endif *))
-}
-((* endfor *))
-((* endif *))
 
 ((# ----------------------------------------------------------- supervision #))
 \cvsection{Collaboration \& Supervision}
@@ -116,22 +109,28 @@
 ((* endfor *))
 
 ((# -------------------------------------------------------------- service #))
-\cvsection{Reviewing \& Chairing}
-((* set years = d.service | map(attribute='year') | unique | sort(reverse=true) | list *))
+((# Reviewing, chairing and organising share one list, as on the website.
+    Grouped one line per year to keep the section compact; the icon carries the
+    role so the words "reviewer" / "area chair" need not be repeated. #))
+\cvsection[\rolelegend{\icoreviewer\,Reviewer \quad \icochair\,Area chair \quad \icoorganiser\,Organising committee}]{Reviewing, Chairing \& Organising}
+((* set svc_years = d.service | map(attribute='year') | list *))
+((* set org_years = d.organizing | map(attribute='year') | list *))
+((* set years = (svc_years + org_years) | unique | sort(reverse=true) | list *))
 ((* for y in years *))
 \entry{((( y )))}{%
-  ((* for s in d.service if s.year == y *))((( s.venue | tex )))((* if s.get('role') != 'Reviewer' *)) \emeta{(((( s.get('role') | tex ))))}((* endif *))((* if s.get('note') *)) \emeta{--- ((( s.get('note') | tex )))}((* endif *))((* if not loop.last *))\emeta{\;·\;} ((* endif *))((* endfor *))
+  ((* set ns3 = namespace(first=true) *))
+  ((* for o in d.organizing if o.year == y *))((* if not ns3.first *))\emeta{\;·\;} ((* endif *))\icoorganiser\,((( o.event | tex )))((* set ns3.first = false *))((* endfor *))
+  ((* for sv in d.service if sv.year == y *))((* if not ns3.first *))\emeta{\;·\;} ((* endif *))((* if sv.get('role') == 'area_chair' *))\icochair((* else *))\icoreviewer((* endif *))\,((( sv.venue | tex )))((* set ns3.first = false *))((* endfor *))
 }
 ((* endfor *))
 
-((# ------------------------------------------------------------- teaching #))
 \cvsection{Teaching}
 ((* for x in for_cv(d.teaching) *))
 \entry{((( x.get('year') )))}{%
   \etitle{((( x.title | tex )))}
   \emeta{\;·\;} \eorg{((( x.institution_short | default(x.institution, true) | tex )))}
   \emeta{\;·\; ((( x.format | tex )))((* if x.get('level') *)), ((( x.get('level') | tex )))((* endif *))}%
-  ((* if x.get('hours') *))\etrail{((( x.get('hours') ))) h}((* elif x.get('duration') *))\etrail{((( x.get('duration') | tex )))}((* endif *))
+  ((* if opts.get('show_teaching_hours') *))((* if x.get('hours') *))\etrail{((( x.get('hours') ))) h}((* elif x.get('duration') *))\etrail{((( x.get('duration') | tex )))}((* endif *))((* endif *))
 }
 ((* endfor *))
 
@@ -139,10 +138,9 @@
 \cvsection{Open-Source Software}
 ((* for x in for_cv(d.code) *))
 ((* set s = stars.get(x.repo, {}) *))
-\entry{}{%
-  \etitle{\href{((( x.get('code_url') )))}{((( x.title | tex )))}}
-  \emeta{\;·\; \href{((( x.get('code_url') )))}{((( x.repo | tex )))}}%
-  ((* if s.get('stars') is not none *))\hfill\repostats{((( s.get('stars') )))}{((( s.get('forks', 0) )))}((* endif *))
+\entry{((* if s.get('stars') is not none *))\repostats{((( s.get('stars') )))}{((( s.get('forks', 0) )))}((* endif *))}{%
+  \etitle{((( x.title | tex )))}
+  \emeta{\;·\; \faGithub\,((( x.repo | tex )))}%
 }
 ((* endfor *))
 

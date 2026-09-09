@@ -247,3 +247,45 @@ rather than silent.
 `publications.yml` was assembled from the existing `_publications/*.md` files and
 the CV LaTeX source. Nothing is fetched from Google Scholar; the only network
 call in the build is the GitHub API for star and fork counts.
+
+
+---
+
+## Round 5
+
+**Publication highlights.** `note: "..."` became a typed list:
+
+```yaml
+highlights:
+  - { label: Best paper finalist, kind: award }
+  - { label: Oral, kind: selection }
+```
+
+Prizes render as a warm gold tag, selection markers in teal, on both the website
+(`.hl--award` / `.hl--selection`) and in the CV (`\hltag`). The two tones are
+redefined for dark mode, where the light-mode gold is unreadable.
+
+**Organisations.** `positions.yml` takes `organizations:` (a list, because the
+PhD was a joint IGN / ENGIE CRIGEN appointment) plus an optional `group:` for a
+sub-unit; `education.yml` takes `organization:`. Ten new registry entries.
+Validation extended to both.
+
+`teaching.yml` deliberately still spells out its institutions — that
+factorization was offered and declined in round 4.
+
+**CV.** Under-review papers merged into the year list with an italic "Under
+review" venue; Paper/Project/Code links removed (a printed CV cannot be
+clicked); repo stars and forks moved into the gutter with a GitHub icon on the
+repo path; role icons and a legend in Reviewing/Chairing/Organising, which now
+also includes `organizing.yml`; the thesis line no longer mixes fonts.
+
+**Switches.** `profile.yml` gained `cv_options` (`show_teaching_hours`,
+`show_publication_links`), both off. The data and both renderers keep the
+plumbing.
+
+**Two bugs fixed.** `cv/stars.json` had been moved into `_data/` while
+`build-cv.yml` still ran `git add cv/stars.json` — a path that no longer
+existed, so that CI step would fail on every run. The file belongs next to the
+only thing that reads it anyway: the PDF. And the sidebar's organisation lookup
+used a chained index (`site.data.organizations[current.organizations[0]]`),
+which Liquid does not support, rendering an empty line.

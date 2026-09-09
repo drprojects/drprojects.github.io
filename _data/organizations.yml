@@ -6,9 +6,12 @@
 #
 # Fields: name (required), short, url, location.
 #
-# TODO: eth, oxford, enpc, lsce, wsl and the four advising clients have no URL
-# recorded anywhere in this repo yet. Add them here and every reference picks
-# them up. They are omitted rather than guessed.
+# TODO — no URL recorded for the following, so they are left blank rather
+# than guessed. Fill one in here and every reference to it, on the website
+# and in the CV, picks it up:
+#
+#   basch, centrale_lyon, chateaubriand, cnrs, coursera, engie, icvss
+#   inspirama, oxford, udacity
 
 # --- universities and research institutes ---------------------------------
 uzh:
@@ -24,6 +27,7 @@ ecovision:
 eth:
   name: ETH Zurich
   short: ETH
+  url: https://ethz.ch/en.html
 
 oxford:
   name: University of Oxford
@@ -32,6 +36,7 @@ oxford:
 enpc:
   name: École des Ponts ParisTech
   short: ENPC
+  url: https://imagine-lab.enpc.fr/
 
 polytechnique:
   name: École Polytechnique
@@ -51,13 +56,47 @@ ign:
 lsce:
   name: Laboratoire des Sciences du Climat et de l'Environnement
   short: LSCE
+  url: https://www.lsce.ipsl.fr/en
 
 wsl:
   name: Swiss Federal Institute for Forest, Snow and Landscape Research
   short: WSL
   url: https://www.wsl.ch
 
+nibio:
+  name: NIBIO
+  short: NIBIO
+  url: https://www.nibio.no
+
+cambridge:
+  name: University of Cambridge
+  short: Cambridge
+  url: https://www.cam.ac.uk
+
+asterisk:
+  name: Asterisk Labs
+  short: Asterisk
+  url: https://asterisk.coop
+
+tum:
+  name: TUM
+  short: TUM
+  url: https://www.tum.de
+
+epfl:
+  name: EPFL
+  short: EPFL
+  url: https://www.epfl.ch
+
 # --- companies and labs ----------------------------------------------------
+engie:
+  name: ENGIE
+  short: ENGIE
+
+inspirama:
+  name: Inspirama
+  short: Inspirama
+
 engie_crigen:
   name: ENGIE Lab CRIGEN
   short: ENGIE CRIGEN lab
@@ -66,28 +105,78 @@ engie_crigen:
 siradel:
   name: SIRADEL, ENGIE
   short: SIRADEL
+  url: https://www.siradel.com
 
 dassault:
   name: Dassault Systèmes
   short: Dassault
+  url: https://www.3ds.com
+
+nvidia:
+  name: NVIDIA
+  short: NVIDIA
+  url: https://www.nvidia.com
+
+ibm:
+  name: IBM
+  short: IBM
+  url: https://research.ibm.com
+
+dlr:
+  name: DLR
+  short: DLR
+  url: https://www.dlr.de
+
+# --- education -------------------------------------------------------------
+centrale_lyon:
+  name: École Centrale de Lyon
+  short: Centrale Lyon
+
+icvss:
+  name: International Computer Vision Summer School
+  short: ICVSS
+
+cnrs:
+  name: CNRS
+  short: CNRS
+
+udacity:
+  name: Udacity
+  short: Udacity
+
+coursera:
+  name: Coursera
+  short: Coursera
+
+chateaubriand:
+  name: Chateaubriand High School
+  short: Chateaubriand
+
+basch:
+  name: Victor & Hélène Basch High School
+  short: V. & H. Basch
 
 # --- scientific advising clients ------------------------------------------
 upcircle_ai:
   name: UpCircle AI
   location: Switzerland
+  url: https://www.upcircle.ai/?lng=en
 
 esc_lausanne:
   name: École des Sciences Criminelles de Lausanne
   location: Switzerland
+  url: https://www.unil.ch/esc/fr/home.html
 
 samp_ai:
   name: SAMP AI
   short: SAMP
   location: France
+  url: https://samp.ai
 
 geodigital:
   name: GEODIGITAL
   location: US
+  url: https://geodigital.com
 
 # --- conferences and workshops --------------------------------------------
 isprs_2022:

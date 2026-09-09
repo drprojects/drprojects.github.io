@@ -35,8 +35,14 @@
       {% if p.location %}
         <li class="author__desktop"><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ p.location }}</li>
       {% endif %}
-      {% if current %}
-        <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{% if current.org_url %}<a href="{{ current.org_url }}">{{ current.org }}</a>{% else %}{{ current.org }}{% endif %}</li>
+      {% comment %}
+        The organisation only, not the lab: "EcoVision lab, University of Zurich"
+        wraps to two lines in this column. The CV still prints both.
+      {% endcomment %}
+      {% if current.organizations %}
+        {% assign _orgkey = current.organizations | first %}
+        {% assign _org = site.data.organizations[_orgkey] %}
+        <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{% if _org.url %}<a href="{{ _org.url }}">{{ _org.name }}</a>{% else %}{{ _org.name }}{% endif %}</li>
       {% endif %}
 
       {% if L.website %}

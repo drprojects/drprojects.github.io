@@ -17,7 +17,7 @@ author_profile: true
     <span class="label color-{{ idx }}">{{ a.year }}</span>
     <div class="news-text">
       {% if a.url %}<a href="{{ a.url }}">{{ a.title }}</a>{% else %}{{ a.title }}{% endif %}
-      {% if a.venue %}from <strong>{{ a.venue }}</strong>{% endif %}
+      {% if a.venue %}&mdash; <strong>{{ a.venue }}</strong>{% endif %}
       {% if a.description %}<span class="entry-sub">{{ a.description }}</span>{% endif %}
     </div>
   </div>
