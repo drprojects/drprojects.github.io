@@ -102,7 +102,11 @@
 .hl--award     { background: #f6d68a; color: #5a4108; }
 .hl--selection { background: #bfe3e8; color: #0d434e; }
 
+/* Dark mode needs its own values: the light gold is unreadable on a dark
+   ground, and a dark teal chip sits so close to the page and link colours that
+   it stops reading as a chip at all. Both are inverted to a bright fill with
+   dark text so they read as solid blocks. */
 html[data-theme="dark"] {
-  .hl--award     { background: #6b5310; color: #ffdf9b; }
-  .hl--selection { background: #17494f; color: #a8e3ea; }
+  .hl--award     { background: #e8b84b; color: #3b2a02; }
+  .hl--selection { background: #56c8d6; color: #06333a; }
 }

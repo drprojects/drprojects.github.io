@@ -177,7 +177,7 @@ until filled.
 ## Round 3 — review feedback
 
 **Landing page.** Distinctions strip and stats band removed; back to intro plus
-the eight most recent news items. The link reads "Browse all news items".
+the eight most recent news items. The link reads "All news items".
 
 **Talk icons.** Redrawn as solid silhouettes (microphone, poster panel, speech
 bubble, graduation cap, quote marks) — the thin outlines were fiddly at 1em.

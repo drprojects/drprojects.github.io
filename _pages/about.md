@@ -26,6 +26,6 @@ News
 {% endfor %}
 
 <p class="more-link-wrap">
-  <a class="more-link" href="{{ base_path }}/news/">Browse all news items</a>
+  <a class="more-link" href="{{ base_path }}/news/">All news items</a>
 </p>
 {% endif %}

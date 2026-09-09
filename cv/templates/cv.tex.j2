@@ -72,12 +72,12 @@
 ((* for x in pubs *))
 ((* set showyear = x.get('year') != ns.year *))((* set ns.year = x.get('year') *))
 \entry{((* if showyear *))((( x.get('year') )))((* endif *))}{%
-  \etitle{((( x.title | tex )))}%
-  ((* for h in x.get('highlights', []) *))\,\hltag{((( h.get('kind', 'selection') )))}{((( h.label | tex )))}((* endfor *)) \\
+  \etitle{((( x.title | tex )))} \\
   \eauth{((* for name, is_me in author_names(x.authors) *))((* if is_me *))\textbf{((( name )))}((* else *))((( name )))((* endif *))((* if not loop.last *)), ((* endif *))((* endfor *))} \\
   ((* if x.get('status') == 'under_review' *))\eorgalt{Under review}%
   ((* elif x.get('status') == 'thesis' *))\eorg{PhD Thesis((* if x.get('venue') *)), ((( x.get('venue') | tex )))((* endif *))}%
   ((* else *))\eorg{((( x.get('venue_long') | default(x.get('venue'), true) | tex )))}((* endif *))%
+  ((* for h in x.get('highlights', []) *))\,\hltag{((( h.get('kind', 'selection') )))}{((( h.label | tex )))}((* endfor *))%
   ((* if x.get('selectivity') *)) \emeta{\;·\; ((( x.get('selectivity') | tex )))}((* endif *))
   ((* if x.get('jury') *))\\ \emeta{Jury: ((( x.get('jury') | join(', ') | tex )))}((* endif *))
   ((* if opts.get('show_publication_links') *))

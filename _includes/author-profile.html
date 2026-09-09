@@ -42,7 +42,11 @@
       {% if current.organizations %}
         {% assign _orgkey = current.organizations | first %}
         {% assign _org = site.data.organizations[_orgkey] %}
-        <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{% if _org.url %}<a href="{{ _org.url }}">{{ _org.name }}</a>{% else %}{{ _org.name }}{% endif %}</li>
+        {% if _org.url %}
+        <li><a href="{{ _org.url }}"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ _org.name }}</a></li>
+        {% else %}
+        <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ _org.name }}</li>
+        {% endif %}
       {% endif %}
 
       {% if L.website %}

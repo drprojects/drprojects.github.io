@@ -62,4 +62,4 @@
   location: Providence, RI, USA
   duration: 6m
   description: UX design
-  cv: false   # 12-year-old UX internship; superseded by the 2015 entry
+  cv: true   # 12-year-old UX internship; superseded by the 2015 entry
