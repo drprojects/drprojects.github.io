@@ -4,11 +4,14 @@
    All rendered from _data/, so nothing here goes stale.
    ========================================================================== */
 
-/* Secondary text. The theme's --global-text-color-light is a 50%-darkened
-   primary, which is fine on the light background but close to unreadable on the
-   dark one, so dark mode gets its own brighter value nearer the link colour. */
-:root                    { --dr-muted: var(--global-text-color-light); }
-html[data-theme="dark"]  { --dr-muted: #93b3b8; }
+/* Secondary text is a NEUTRAL grey, deliberately not a blue.
+   The theme's --global-text-color-light is the primary darkened 50% (#004965 in
+   light mode), which put a second, near-but-not-quite blue on every page
+   alongside the accent (#0092ca) used for icons and links. Two competing blues
+   read as a mistake. With secondary text neutral, each theme has exactly one
+   accent colour, and it always means the same thing. */
+:root                    { --dr-muted: #6b7280; }
+html[data-theme="dark"]  { --dr-muted: #9ba7b3; }
 
 /* One rhythm for every listing page: the title, an optional one-line intro, then
    the content. Pages previously mixed <br/> spacers with two different layouts,
@@ -29,19 +32,24 @@ html[data-theme="dark"]  { --dr-muted: #93b3b8; }
   margin-top: 0;
 }
 
+/* The one-line intro under a page title is body copy, not a caption: it reads
+   in the normal text colour like everything else. */
 .page-intro {
   margin: 0 0 1.9em;
-  color: var(--dr-muted);
 }
 
+/* A section heading is a smaller page title, not a different species: same
+   family and weight as .page__title, same text colour, just smaller. The
+   previous uppercase + letterspaced + accent-blue treatment matched nothing
+   else on the site. The hairline keeps the structural separation. */
 .home-heading {
   margin: 2.25em 0 0.6em;
-  padding-bottom: 0.35em;
-  font-size: 1.05em;
+  padding-bottom: 0.3em;
+  font-size: 1.25em;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--global-base-color);
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--global-text-color);
   border-bottom: 1px solid var(--global-border-color);
 }
 
