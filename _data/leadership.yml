@@ -1,0 +1,22 @@
+# Leadership, coordination and recruitment — the work that does not show up as
+# a paper, a talk or a review.
+#
+# Empty for now: both the website and the CV hide the section entirely until it
+# has at least one entry, so adding the first item is all that is needed.
+#
+# Schema (every field except `title` is optional):
+#
+# - year: 2024                    # start year, or the only year
+#   end: null                     # null renders as "now"; omit for a single year
+#   title: Embed2Scale            # what it is
+#   role: Work-package lead       # your role in it
+#   organization: <key>           # a key in organizations.yml, if it has a home
+#   url: https://embed2scale.eu   # linked from the title on the website
+#   scale: "8 partners, 5 countries, €4M"   # the concrete figure that makes it land
+#   description: >                # one line of context, if the title is opaque
+#     ...
+#   cv: false                     # keep it on the website only
+#   web: false                    # or the reverse
+#
+# A note on writing these: name the scale. "Coordinated 8 partners across 5
+# countries" reads as leadership; "project management" reads as filler.

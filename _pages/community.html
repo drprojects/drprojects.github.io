@@ -8,6 +8,31 @@ author_profile: true
 {% include base_path %}
 
 
+{% comment %} ------------------ leadership & coordination -------------------
+  Hidden until leadership.yml has an entry. Placed first: it is the least
+  visible work and the most senior-looking.
+{% endcomment %}
+{% if site.data.leadership and site.data.leadership.size > 0 %}
+<h2 class="home-heading">Leadership &amp; Coordination</h2>
+{% for l in site.data.leadership %}
+  {% unless l.web == false %}
+  <div class="news-entry">
+    {% assign idx = l.year | minus: 2022 | modulo: 7 %}
+    <span class="label color-{{ idx }}">{{ l.year }}{% if l.end %}&ndash;{{ l.end }}{% elsif l.end == nil and l.hasend %}{% endif %}</span>
+    <div class="news-text">
+      {% if l.url %}<a href="{{ l.url }}">{{ l.title }}</a>{% else %}<strong>{{ l.title }}</strong>{% endif %}
+      {% if l.role %}&mdash; {{ l.role }}{% endif %}
+      {% if l.organization %}{% assign _o = site.data.organizations[l.organization] %}
+        <span class="entry-sub">{{ _o.name }}{% if l.scale %} &middot; {{ l.scale }}{% endif %}{% if l.description %} &middot; {{ l.description }}{% endif %}</span>
+      {% elsif l.scale or l.description %}
+        <span class="entry-sub">{% if l.scale %}{{ l.scale }}{% endif %}{% if l.scale and l.description %} &middot; {% endif %}{% if l.description %}{{ l.description }}{% endif %}</span>
+      {% endif %}
+    </div>
+  </div>
+  {% endunless %}
+{% endfor %}
+{% endif %}
+
 {% comment %} --------------------- awards & recognitions -------------------- {% endcomment %}
 {% if site.data.awards %}
 <h2 class="home-heading">Awards &amp; Recognitions</h2>

@@ -37,7 +37,7 @@ STARS_CACHE = CVDIR / "stars.json"
 DATASETS = [
     "profile", "authors", "organizations", "publications", "talks", "teaching",
     "code", "positions", "education", "awards", "service",
-    "organizing", "grants", "supervision", "skills",
+    "organizing", "grants", "leadership", "supervision", "skills",
 ]
 
 # --------------------------------------------------------------------------
@@ -232,6 +232,13 @@ def validate_references(data):
                 errors.append(f"publications.yml [{pub.get('id')}]: unknown author "
                               f"'{ref}'")
 
+    for source in ("leadership", "grants"):
+        for item in data[source]:
+            ref = item.get("organization")
+            if ref and ref not in orgs:
+                errors.append(f"{source}.yml [{item.get('title')}]: unknown "
+                              f"organization '{ref}'")
+
     pubs = publication_index(data)
     for source in ("talks", "code"):
         for item in data[source]:
@@ -333,6 +340,13 @@ def validate_references(data):
             if ref not in people:
                 errors.append(f"publications.yml [{pub.get('id')}]: unknown author "
                               f"'{ref}'")
+
+    for source in ("leadership", "grants"):
+        for item in data[source]:
+            ref = item.get("organization")
+            if ref and ref not in orgs:
+                errors.append(f"{source}.yml [{item.get('title')}]: unknown "
+                              f"organization '{ref}'")
 
     pubs = publication_index(data)
     for source in ("talks", "code"):
@@ -447,6 +461,13 @@ def validate_references(data):
             if ref not in people:
                 errors.append(f"publications.yml [{pub.get('id')}]: unknown author "
                               f"'{ref}'")
+
+    for source in ("leadership", "grants"):
+        for item in data[source]:
+            ref = item.get("organization")
+            if ref and ref not in orgs:
+                errors.append(f"{source}.yml [{item.get('title')}]: unknown "
+                              f"organization '{ref}'")
 
     pubs = publication_index(data)
     for source in ("talks", "code"):

@@ -69,6 +69,18 @@
 }
 ((* endfor *))
 
+((# ---------------------------------------------------------- grants #))
+((# Hidden until grants.yml has an entry. #))
+((* set gr = for_cv(d.grants) *))
+((* if gr *))
+\cvsection{Grants \& Funding}
+((* for g in gr *))
+\entry{((( g.get('year', '') )))}{\nohyphens%
+  \etitle{((( g.title | tex )))}((* if g.get('funder') *))\sep\eorg{((( g.get('funder') | tex )))}((* endif *))%
+  ((* if g.get('role') or g.get('period') or g.get('amount') *))\\ \emeta{((* set bits = [g.get('role'), g.get('period'), g.get('amount')] | select | list *))((( bits | join(' · ') | tex )))}((* endif *))
+}
+((* endfor *))
+((* endif *))
 ((# ---------------------------------------------------------- publications #))
 ((* set pubs = for_cv(d.publications) *))
 
@@ -115,6 +127,19 @@
 }
 ((* endfor *))
 
+((# ------------------------------------------------------- leadership #))
+((# Hidden until leadership.yml has an entry. #))
+((* set leads = for_cv(d.leadership) *))
+((* if leads *))
+\cvsection{Leadership \& Coordination}
+((* for l in leads *))
+\entry{((( l.get('year', '') )))((* if l.get('end') is defined *))--((( l.get('end') if l.get('end') else 'now' )))((* endif *))}{\nohyphens%
+  \etitle{((( l.title | tex )))}((* if l.get('role') *))\sep\eorg{((( l.get('role') | tex )))}((* endif *))%
+  ((* if l.get('organization') *))\sep\emeta{((( l.organization | org_label(false) | tex )))}((* endif *))%
+  ((* if l.get('scale') or l.get('description') *))\\ \emeta{((( l.get('scale', '') | tex )))((* if l.get('scale') and l.get('description') *)) \textperiodcentered\ ((* endif *))((( l.get('description', '') | md2tex )))}((* endif *))
+}
+((* endfor *))
+((* endif *))
 ((# -------------------------------------------------------------- service #))
 ((# Reviewing, chairing and organising share one list, as on the website.
     Grouped one line per year to keep the section compact; the icon carries the
