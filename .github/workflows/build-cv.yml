@@ -24,7 +24,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # pinned: ubuntu-latest moving would change TeX Live
     steps:
       - uses: actions/checkout@v4
 
@@ -40,7 +40,25 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             texlive-latex-recommended texlive-latex-extra texlive-fonts-extra \
-            texlive-xetex poppler-utils
+            texlive-pictures texlive-xetex poppler-utils
+
+      - name: Check every LaTeX package the CV needs is present
+        # Without this the build fails deep inside pdflatex with an unhelpful
+        # "Undefined control sequence". twemojis in particular is recent enough
+        # that an older TeX Live would not carry it.
+        run: |
+          missing=""
+          for p in sourceserifpro sourcesanspro fontawesome5 twemojis needspace \
+                   newunicodechar ragged2e microtype ifthen tikz enumitem \
+                   geometry hyperref xcolor calc; do
+            kpsewhich "$p.sty" >/dev/null 2>&1 || missing="$missing $p"
+          done
+          kpsewhich all-twemojis.pdf >/dev/null 2>&1 || missing="$missing all-twemojis.pdf"
+          if [ -n "$missing" ]; then
+            echo "::error::missing LaTeX packages:$missing"
+            exit 1
+          fi
+          echo "all LaTeX packages present"
 
       - name: Build the CV
         # GITHUB_TOKEN lifts the GitHub API rate limit for the star counts.
@@ -57,5 +75,11 @@ jobs:
             echo "CV unchanged."
           else
             git commit -m "chore: rebuild CV from _data [skip ci]"
-            git push
+            # Needs Settings > Actions > General > Workflow permissions set to
+            # "Read and write". A read-only token fails here with a 403.
+            git push || {
+              echo "::error::push failed — check Settings > Actions > General >"
+              echo "::error::Workflow permissions is set to 'Read and write'."
+              exit 1
+            }
           fi
