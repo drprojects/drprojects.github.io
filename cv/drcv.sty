@@ -78,7 +78,7 @@
 
 % --------------------------------- HEADER ----------------------------------
 \newlength{\hdrw}
-\newlength{\bandheight}\setlength{\bandheight}{38mm}
+\newlength{\bandheight}\setlength{\bandheight}{46.5mm}
 
 % \cvheader{name}{tagline}{summary}{contact row}{portrait path or empty}
 %
@@ -88,8 +88,6 @@
   \begin{tikzpicture}[remember picture, overlay]
     \fill[band] (current page.north west)
       rectangle ([yshift=-\bandheight]current page.north east);
-    \fill[accent] ([yshift=-\bandheight]current page.north west)
-      rectangle ([yshift=-\bandheight-1.1pt]current page.north east);
   \end{tikzpicture}%
   \begingroup
   \ifx\relax#5\relax
@@ -249,6 +247,21 @@
     {\hltagbox{selectbg}{accent}{#2}}%
 }
 
+% Research-interest keyword, for the strip under the summary.
+\newcommand{\kw}[1]{%
+  \tikz[baseline=(k.base)]{%
+    \node[inner xsep=3pt, inner ysep=2pt, rounded corners=2pt,
+          draw=hairline, line width=0.4pt, text=accent] (k)
+      {\sanstext\fontsize{7.4}{8.4}\selectfont #1};}%
+}
+
+% Talk-type icons, matching the website's metaphors and the role-icon styling.
+\newcommand{\icotalk}{\roleico{\faCommentDots}}
+\newcommand{\icooral}{\roleico{\faMicrophone}}
+\newcommand{\icoposter}{\roleico{\faImage}}
+\newcommand{\icotutorial}{\roleico{\faGraduationCap}}
+\newcommand{\icointerview}{\roleico{\faQuoteRight}}
+
 % Venue slot for a paper that is not yet published.
 \newcommand{\eorgalt}[1]{{\itshape\color{muted}#1}}
 
@@ -281,7 +294,13 @@
 }
 
 % Repository popularity, shown flush right on an open-source entry.
+% Four fixed sub-columns inside the 21mm gutter: star glyph, star count,
+% fork glyph, fork count. Each glyph keeps a column of its own so the counts
+% right-align without ever touching the next icon.
 \newcommand{\repostats}[2]{%
-  {\scriptsize\sanstext\color{muted}\faStar\,#1\hspace{1.4mm}\faCodeBranch\,#2}%
+  {\scriptsize\sanstext\color{muted}%
+   \makebox[3.4mm][l]{\faStar}\makebox[6mm][r]{#1}%
+   \hspace{1.6mm}%
+   \makebox[3.4mm][l]{\faCodeBranch}\makebox[4.6mm][r]{#2}}%
 }
 \newcommand{\chipsep}{\,\textcolor{hairline}{\textbullet}\,}

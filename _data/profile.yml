@@ -28,12 +28,14 @@ links:
 bio: Postdoctoral researcher at EcoVision. Deep learning for environmental applications.
 
 # Research interests, rendered as emoji-tagged chips on the website
+# `label` is the website phrasing; `short` is the CV keyword strip, where a full
+# sentence fragment would not fit on one line. Omit `short` to reuse `label`.
 interests_web:
   - { label: 3D point clouds, emoji: "☁️" }
   - { label: vegetation mapping, emoji: "🌳" }
-  - { label: species distribution modeling, emoji: "🦜" }
+  - { label: species distribution modeling, emoji: "🦜", short: species distribution }
   - { label: remote sensing, emoji: "🛰️" }
-  - { label: efficient machine learning, emoji: "⚡" }
+  - { label: efficient machine learning, emoji: "⚡", short: efficient ML }
 
 # ONE intro, used by the website landing page and the PDF CV alike.
 # Written in markdown: the site renders it with markdownify, cv/build.py turns
@@ -59,8 +61,8 @@ cv_options:
 # (Google Scholar forbids scraping), so update them by hand a few times a year.
 # Delete the block or set `show: false` to hide it from the CV.
 metrics:
-  show: false
-  # citations: 0
-  # h_index: 0
+  show: true
+  citations: 487
+  h_index: 7
   source: Google Scholar
-  # updated: 2026-09-08
+  updated: 2026-09-09

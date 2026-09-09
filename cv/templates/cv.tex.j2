@@ -27,11 +27,20 @@
     \faOrcid\, \href{((( L.orcid )))}{((( L.orcid_id )))}\cvsep
     \faGraduationCap\, \href{((( L.scholar )))}{Scholar}\cvsep
     \faLinkedin\, \href{((( L.linkedin )))}{((( L.linkedin_user | tex )))}%
-    ((* if p.get('metrics') and p.get('metrics').show and p.get('metrics').citations *))
-    \cvsep ((( p.get('metrics').citations ))) citations, h-index ((( p.get('metrics').h_index )))%
+    ((* set m = p.get('metrics', {}) *))
+    ((* if m.get('show') and m.get('citations') *))
+    \\[0.9mm]{\color{muted}\faQuoteLeft\,((( m.citations ))) citations\cvsep h-index ((( m.h_index )))\cvsep ((( m.source | tex )))((* if m.get('updated') *)), ((( m.updated.strftime('%B %Y') )))((* endif *))}%
     ((* endif *))
   }
   {images/portrait.png}
+
+((# ------------------------------------------------------ research strip #))
+((* if p.get('interests_web') *))
+\vspace{0.4mm}
+{\centering
+((* for i in p.interests_web *))\kw{((( i.get('short', i.label) | tex )))}((* if not loop.last *))\hspace{1.4mm}((* endif *))((* endfor *))\par}
+\vspace{1.6mm}
+((* endif *))
 
 ((# ------------------------------------------------------------- positions #))
 \cvsection{Positions}
@@ -146,14 +155,14 @@
 
 ((# ---------------------------------------------------------------- talks #))
 ((* set talks = for_cv(d.talks, false) *))
-\cvsection{Selected Talks}
+\cvsection[\rolelegend{\icotalk\,Invited \quad \icooral\,Conference \quad \icoposter\,Poster \quad \icotutorial\,Tutorial \quad \icointerview\,Interview}]{Selected Talks}
 ((* set ns2 = namespace(year=0) *))
 ((* for x in talks *))
 ((* set yr = x.date.year *))
 ((* set showyear = yr != ns2.year *))((* set ns2.year = yr *))
 \entry{((* if showyear *))((( yr )))((* endif *))}{\nohyphens%
+  ((* if x.get('type') == 'oral' *))\icooral((* elif x.get('type') == 'poster' *))\icoposter((* elif x.get('type') == 'tutorial' *))\icotutorial((* elif x.get('type') == 'interview' *))\icointerview((* else *))\icotalk((* endif *))\,%
   \etitle{((( x.get('venue') | tex )))}
-  ((* if x.get('type') != 'invited' *))\emeta{\;·\; ((( x.get('type') | tex )))}((* endif *))
   \emeta{\;·\;} \edesc{((( x.title | tex )))}%
   ((* if x.get('location') *))\sep\emeta{\mbox{((( x.get('location') | tex )))}}((* endif *))
 }
