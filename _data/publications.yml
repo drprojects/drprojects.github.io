@@ -71,7 +71,7 @@
     - loic_pellissier
     - devis_tuia
     - jan_dirk_wegner
-  teaser_image: /images/publications/2026/sage/teaser.png
+  teaser_image: /images/publications/2026/sage/teaser.jpg
 
 #- id: ecological_forecasting
 #  title: "Opportunities and challenges for near-term ecological forecasting with biodiversity and EO data"
@@ -156,7 +156,7 @@
     - philippe_ciais
   paper_url: https://www.sciencedirect.com/science/article/pii/S0034425726004013
   bibtex_id: schwartz2026formspot
-  teaser_image: /images/publications/2026/formspot/teaser.gif
+  teaser_video: /images/publications/2026/formspot/teaser.mp4
 
 - id: mtgsr4b
   title: "MT-GSR4B: Multi-Temporally Guided Super-Resolution for Above-Ground Biomass Estimation"
@@ -174,7 +174,7 @@
   paper_url: https://link.springer.com/article/10.1007/s41064-025-00370-x
   code_url: https://github.com/kaankaramanofficial/MTGSR4B
   bibtex_id: karaman2025mt
-  teaser_image: /images/publications/2025/mtgsr4b/teaser.png
+  teaser_image: /images/publications/2025/mtgsr4b/teaser.jpg
 
 - id: ssl4eco
   title: "SSL4Eco: A Global Seasonal Dataset for Geospatial Foundation Models in Ecology"
@@ -195,7 +195,7 @@
   project_url: https://plekhanovaelena.github.io/ssl4eco/
   code_url: https://github.com/PlekhanovaElena/ssl4eco
   bibtex_id: plekhanova2025ssl4eco
-  teaser_image: /images/publications/2025/ssl4eco/teaser.png
+  teaser_image: /images/publications/2025/ssl4eco/teaser.jpg
 
 - id: gsr4b
   title: "GSR4B: Biomass Map Super-Resolution with Sentinel-1/2 Guidance"
@@ -216,7 +216,7 @@
   project_url: https://ecovision-uzh.github.io/GSR4B/
   code_url: https://github.com/kaankaramanofficial/GSR4B
   bibtex_id: karaman2025gsr4b
-  teaser_image: /images/publications/2025/gsr4b/teaser.png
+  teaser_image: /images/publications/2025/gsr4b/teaser.jpg
 
 - id: climplicit
   title: "Climplicit: Climatic Implicit Embeddings for Global Ecological Tasks"

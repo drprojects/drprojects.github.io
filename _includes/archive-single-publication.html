@@ -19,6 +19,8 @@
         </video>
         {% elsif post.teaser_image %}
         <img src="{{ post.teaser_image | prepend: base_path }}"
+             loading="lazy"
+             decoding="async"
              class="teaser"
              alt="{{ post.title }} image">
         {% endif %}
