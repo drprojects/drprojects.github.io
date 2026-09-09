@@ -2,6 +2,16 @@
 # institution names, levels and hours come from the CV LaTeX source
 # (hours were only recorded in commented-out \CVItem lines).
 
+- date: 2026-09-18
+  year: 2026
+  title: AI4Good group projects
+  format: Labs
+  level: "Master 2"
+  institution: University of Zurich
+  institution_short: UZH
+  institution_url: https://www.uzh.ch/en.html
+  hours: 14
+
 - date: 2026-05-01
   year: 2026
   title: Transformer
@@ -10,6 +20,7 @@
   institution: University of Zurich
   institution_short: UZH
   institution_url: https://www.uzh.ch/en.html
+  hours: 4
 
 - date: 2025-10-01
   year: 2025
