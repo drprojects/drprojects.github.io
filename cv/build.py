@@ -215,6 +215,102 @@ def validate_references(data):
         sys.exit(f"\n{len(errors)} unresolved reference(s); nothing was written.")
 
 
+def published_paper_count(publications):
+    """How many of these are papers, for the count beside the metrics.
+
+    Excludes the PhD thesis (not a paper) and anything still under review (not
+    yet one), so the figure cannot be read as an overclaim.
+    """
+    return sum(
+        1 for p in publications
+        if p.get("status") not in ("thesis", "under_review")
+    )
+
+
+def person_name(data, key):
+    """'First Last' for an authors.yml key."""
+    e = data["authors"][key]
+    return f"{e.get('first_name', '')} {e.get('last_name', '')}".strip()
+
+
+def org_label(data, key, short=True):
+    """Display name for an organizations.yml key."""
+    e = data["organizations"][key]
+    return e.get("short") if short and e.get("short") else e["name"]
+
+
+def entity_label(data, key, short=True):
+    """Resolve a key that may name either a person or an organisation."""
+    if key in data["authors"]:
+        return person_name(data, key)
+    if key in data["organizations"]:
+        return org_label(data, key, short)
+    raise KeyError(key)
+
+
+def validate_references(data):
+    """Fail the build on any key that does not resolve.
+
+    Every cross-file link is a key, not a name. Names drift -- that is how the
+    link to Loic Landrieu's homepage silently vanished when the spelling was
+    normalised. Keys cannot drift silently, provided we actually check them.
+    """
+    people, orgs = data["authors"], data["organizations"]
+    errors = []
+
+    for key, person in people.items():
+        if isinstance(person, dict) and person.get("org") not in (None, *orgs):
+            errors.append(f"authors.yml: {key}.org -> unknown organization "
+                          f"'{person['org']}'")
+
+    for group in data["supervision"]["groups"]:
+        for member in group["members"]:
+            if "person" in member and member["person"] not in people:
+                errors.append(f"supervision.yml [{group['id']}]: unknown person "
+                              f"'{member['person']}'")
+            if "organization" in member and member["organization"] not in orgs:
+                errors.append(f"supervision.yml [{group['id']}]: unknown organization "
+                              f"'{member['organization']}'")
+            for ref in member.get("with", []):
+                if ref not in people and ref not in orgs:
+                    errors.append(f"supervision.yml [{group['id']}]: unknown 'with' "
+                                  f"reference '{ref}'")
+
+    for position in data["positions"]:
+        for who in position.get("people", []):
+            if who.get("person") not in people:
+                errors.append(f"positions.yml: unknown person '{who.get('person')}'")
+        for ref in position.get("organizations", []):
+            if ref not in orgs:
+                errors.append(f"positions.yml [{position.get('title')}]: unknown "
+                              f"organization '{ref}'")
+
+    for entry in data["education"]:
+        ref = entry.get("organization")
+        if ref and ref not in orgs:
+            errors.append(f"education.yml [{entry.get('degree')}]: unknown "
+                          f"organization '{ref}'")
+
+    for pub in data["publications"]:
+        for ref in pub.get("authors", []):
+            if ref not in people:
+                errors.append(f"publications.yml [{pub.get('id')}]: unknown author "
+                              f"'{ref}'")
+
+    pubs = publication_index(data)
+    for source in ("talks", "code"):
+        for item in data[source]:
+            ref = item.get("publication")
+            if ref and ref not in pubs:
+                errors.append(f"{source}.yml: unknown publication '{ref}'")
+
+    if errors:
+        print("\n  broken references:", file=sys.stderr)
+        for e in errors:
+            print(f"    {e}", file=sys.stderr)
+        sys.exit(f"\n{len(errors)} unresolved reference(s); nothing was written.")
+
+
 def publication_histogram(publications):
     """(years, counts, max) for the bar chart next to the Publications heading.
 
@@ -353,7 +449,7 @@ def build(offline: bool, keep_tex: bool) -> int:
         reverse=True,
     )
 
-    hist, hist_max = publication_histogram(for_cv(data["publications"]))
+    paper_count = published_paper_count(for_cv(data["publications"]))
 
     # Registered as filters as well as globals so the template can write either
     # person_name(key) or key | person_name.
@@ -369,8 +465,7 @@ def build(offline: bool, keep_tex: bool) -> int:
     rendered = template.render(
         d=data,
         stars=stars,
-        pub_hist=hist,
-        pub_hist_max=hist_max,
+        paper_count=paper_count,
         for_cv=for_cv,
         author_names=lambda keys: author_names(data, keys),
         today=date.today(),

@@ -128,34 +128,9 @@
 \newcommand{\sep}{\unskip\nobreak\,\emeta{\textperiodcentered}\, \ignorespaces}
 
 % -------------------------- CHARTS AND METERS ------------------------------
-% Publications-per-year bar chart, shown beside the Publications heading.
-% Deliberately small and label-free: it is a shape, not a table. The year span
-% is spelled out once underneath rather than under every bar.
-% \sparkbars{max}{y1/n1, y2/n2, ...}
-\newcommand{\sparkbars}[2]{%
-  \begin{tikzpicture}[baseline=-0.35em, x=2.6mm, y=0.62mm]
-    \foreach \yr/\n [count=\i from 0] in {#2} {
-      \fill[accentmid] (\i+0.18, 0) rectangle (\i+0.82, {max(\n,0.35)*7/#1});
-    }
-  \end{tikzpicture}%
-}
-
-% Role icons, shared by the service legend and its entries. Same metaphors as
-% the website: a signed page, a batch of pages, a group of people.
-% Wrapped so an icon looks identical in the legend and beside an entry —
-% previously the entry icons inherited body ink while the legend was muted.
-\newcommand{\roleico}[1]{{\footnotesize\color{muted}#1}}
-\newcommand{\icoreviewer}{\roleico{\faFileSignature}}
-\newcommand{\icochair}{\roleico{\faLayerGroup}}
-\newcommand{\icoorganiser}{\roleico{\faUsers}}
-\newcommand{\rolelegend}[1]{{\footnotesize\sanstext\color{muted}#1}}
-
-% \sparkspan{first}{last} — tiny caption for the chart above.
-\newcommand{\sparkspan}[2]{{\tiny\sanstext\color{muted}\,#1--#2}}
-
-% Citation record, shown beside the publications chart where a reader is
-% already looking at output rather than in the header among contact details.
-\newcommand{\citemetrics}[1]{{\footnotesize\sanstext\color{muted}#1\hspace{3mm}}}
+% Publication record, shown beside the Publications heading where a reader is
+% already assessing output rather than in the header among contact details.
+\newcommand{\citemetrics}[1]{{\footnotesize\sanstext\color{muted}#1}}
 
 % Proficiency meter. \meter{filled width in mm}
 \newcommand{\meterlen}{18mm}
@@ -258,6 +233,14 @@
           draw=hairline, line width=0.4pt, text=accent] (k)
       {\sanstext\fontsize{7.4}{8.4}\selectfont #1};}%
 }
+
+% Role icons, shared by the service legend and its entries, so an icon looks
+% identical in the legend and beside an entry.
+\newcommand{\roleico}[1]{{\footnotesize\color{muted}#1}}
+\newcommand{\icoreviewer}{\roleico{\faFileSignature}}
+\newcommand{\icochair}{\roleico{\faLayerGroup}}
+\newcommand{\icoorganiser}{\roleico{\faUsers}}
+\newcommand{\rolelegend}[1]{{\footnotesize\sanstext\color{muted}#1}}
 
 % Talk-type icons, matching the website's metaphors and the role-icon styling.
 \newcommand{\icotalk}{\roleico{\faCommentDots}}

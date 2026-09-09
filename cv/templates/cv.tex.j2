@@ -73,7 +73,7 @@
 ((* set pubs = for_cv(d.publications) *))
 
 ((* set m = p.get('metrics', {}) *))
-\cvsection[((* if m.get('show') and m.get('citations') *))\citemetrics{\faQuoteLeft\,((( m.citations ))) citations\cvsep h-index ((( m.h_index )))((* if m.get('updated') *))\cvsep ((( m.source | tex ))), ((( m.updated.strftime('%b %Y') )))((* endif *))}((* endif *))\sparkbars{((( pub_hist_max )))}{((* for y, n in pub_hist *))((( y )))/((( n )))((* if not loop.last *)), ((* endif *))((* endfor *))}\sparkspan{((( pub_hist[0][0] )))}{((( pub_hist[-1][0] )))}]{Publications}
+\cvsection[((* if m.get('show') *))\citemetrics{((( paper_count ))) papers\cvsep ((( m.citations ))) citations\cvsep h-index ((( m.h_index )))((* if m.get('updated') *))\cvsep ((( m.source | tex ))), ((( m.updated.strftime('%b %Y') )))((* endif *))}((* endif *))]{Publications}
 ((# Under-review papers stay in the year list; the venue slot says so. #))
 ((* set ns = namespace(year=0) *))
 ((* for x in pubs *))
