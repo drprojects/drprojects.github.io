@@ -125,26 +125,30 @@ html[data-theme="dark"]  { --dr-muted: #9ba7b3; }
 
 
 /* ==========================================================================
-   RESEARCH INTERESTS — "methods FOR applications"
-   Inline flow rather than flex, so the row breaks exactly where running text
-   would. `.interests__join` glues the connector to the first application chip,
-   so a line break can fall before "for" but never strand it at the end of a
-   line. No breakpoint is involved: one line whenever it fits.
+   RESEARCH INTERESTS — "methods / for / applications"
+   Three rows, deliberately tight: the connector must not cost a whole line of
+   vertical space. Each row wraps independently, so the connector always sits
+   between the two groups whatever the viewport.
    ========================================================================== */
 
 .interests {
-  margin: 1.4em 0 0;
-  line-height: 2.35;
+  margin: 1.3em 0 0;
+}
+
+.interests__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
 }
 
 .interests__chip {
   display: inline-flex;
   align-items: center;
-  padding: 0.34em 0.8em;
-  margin-right: 0.45em;
+  padding: 0.18em 0.62em;
   border-radius: 999px;
-  font-size: 0.86em;
+  font-size: 0.82em;
   font-weight: 600;
+  line-height: 1.45;
   white-space: nowrap;
   background: #dcecf2;
   color: #0d434e;
@@ -155,12 +159,9 @@ html[data-theme="dark"] .interests__chip {
   color: #bfe6ee;
 }
 
-/* Connector plus the chip it must stay with. */
-.interests__join {
-  white-space: nowrap;
-}
-
 .interests__for {
+  margin: 0.22em 0 0.22em 0.5em;
+  font-size: 0.82em;
+  line-height: 1.2;
   color: var(--dr-muted);
-  margin: 0 1.1rem 0 0.65rem;
 }

@@ -14,26 +14,25 @@ author_profile: true
 <p>{{ p.summary | markdownify | remove: "<p>" | remove: "</p>" }}</p>
 
 {% comment %}
-  Research interests as "methods FOR applications". Laid out in normal inline
-  flow, not flex, so the line breaks where the text would: the connector is
-  glued to the first application chip, which means a break can happen *before*
-  "for" but never after it. No media query — it stays on one line whenever it
-  fits, and only splits when the viewport actually demands it.
+  Research interests as "methods / for / applications", on three lines. Each
+  row wraps on its own if the viewport is narrow, so the connector always sits
+  between the two groups and can never strand at the end of a line.
 {% endcomment %}
 {% assign methods = p.interests_web | where: "group", "methods" %}
 {% assign applications = p.interests_web | where: "group", "applications" %}
-<p class="interests">
-  {%- for i in methods -%}
-    <span class="interests__chip">{{ i.emoji }}&nbsp;{{ i.short | default: i.label }}</span>
-  {%- endfor -%}
-  {%- for i in applications -%}
-    {%- if forloop.first -%}
-      <span class="interests__join"><span class="interests__for">for</span><span class="interests__chip">{{ i.emoji }}&nbsp;{{ i.short | default: i.label }}</span></span>
-    {%- else -%}
+<div class="interests">
+  <div class="interests__row">
+    {%- for i in methods -%}
       <span class="interests__chip">{{ i.emoji }}&nbsp;{{ i.short | default: i.label }}</span>
-    {%- endif -%}
-  {%- endfor -%}
-</p>
+    {%- endfor -%}
+  </div>
+  <div class="interests__for">for</div>
+  <div class="interests__row">
+    {%- for i in applications -%}
+      <span class="interests__chip">{{ i.emoji }}&nbsp;{{ i.short | default: i.label }}</span>
+    {%- endfor -%}
+  </div>
+</div>
 
 {% if site.data.news %}
 News
