@@ -11,7 +11,7 @@ author_profile: true
 {% assign p = site.data.profile %}
 {% include base_path %}
 
-<p>{{ p.summary | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+<p class="intro">{{ p.summary | markdownify | remove: "<p>" | remove: "</p>" }}</p>
 
 {% comment %}
   Research interests as "methods / for / applications", on three lines. Each

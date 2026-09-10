@@ -124,6 +124,14 @@ html[data-theme="dark"]  { --dr-muted: #9ba7b3; }
 }
 
 
+/* The landing-page intro reads as a block of prose, so it is justified.
+   Hyphenation is on, otherwise justification opens rivers of white space at
+   this measure. */
+.intro {
+  text-align: justify;
+  hyphens: auto;
+}
+
 /* ==========================================================================
    RESEARCH INTERESTS — "methods / for / applications"
    Three rows, deliberately tight: the connector must not cost a whole line of
@@ -138,6 +146,7 @@ html[data-theme="dark"]  { --dr-muted: #9ba7b3; }
 .interests__row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.3em;
 }
 
@@ -159,9 +168,11 @@ html[data-theme="dark"] .interests__chip {
   color: #bfe6ee;
 }
 
+/* The connector is ordinary body text: same family, size and colour as the
+   paragraph above it. Only the margins are tightened, so the row costs little
+   vertical space. */
 .interests__for {
-  margin: 0.22em 0 0.22em 0.5em;
-  font-size: 0.82em;
-  line-height: 1.2;
-  color: var(--dr-muted);
+  margin: 0.15em 0;
+  text-align: center;
+  line-height: 1.3;
 }
