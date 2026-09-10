@@ -39,7 +39,7 @@ bio: Postdoctoral researcher at EcoVision. Deep learning for environmental appli
 interests_web:
   - { label: deep learning, emoji: "🤖️", group: methods }
   - { label: efficient machine learning, emoji: "⚡", short: efficient ML, group: methods }
-  - { label: graphs, emoji: "🕸️", group: applications }
+  - { label: graphs, emoji: "🕸️", group: methods }
   - { label: 3D point clouds, emoji: "☁️", group: applications }
   - { label: remote sensing, emoji: "🛰️", group: applications }
   - { label: vegetation mapping, emoji: "🌳", group: applications }
