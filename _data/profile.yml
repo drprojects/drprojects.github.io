@@ -28,15 +28,21 @@ links:
 bio: Postdoctoral researcher at EcoVision. Deep learning for environmental applications.
 
 # Research interests, rendered as emoji-tagged chips on the website
-# `label` is the website phrasing; `short` is the CV keyword strip, where a full
-# sentence fragment would not fit on one line. Omit `short` to reuse `label`.
+# Research interests, shown as chips on the landing page and in the CV.
+#
+# `group` splits them into the two halves of "methods FOR applications" — the
+# combination is the point, so a flat list would hide it. Order within each
+# group is the order shown; methods are rendered first.
+#
+# `label` is the full phrasing, `short` the compact one used wherever a full
+# sentence fragment would not fit. Omit `short` to reuse `label`.
 interests_web:
-  - { label: deep learning, emoji: "🤖️" }
-  - { label: 3D point clouds, emoji: "☁️" }
-  - { label: vegetation mapping, emoji: "🌳" }
-  - { label: species distribution modeling, emoji: "🦜", short: species distribution }
-  - { label: remote sensing, emoji: "🛰️" }
-  - { label: efficient machine learning, emoji: "⚡", short: efficient ML }
+  - { label: deep learning, emoji: "🤖️", group: methods }
+  - { label: 3D point clouds, emoji: "☁️", group: methods }
+  - { label: efficient machine learning, emoji: "⚡", short: efficient ML, group: methods }
+  - { label: remote sensing, emoji: "🛰️", group: applications }
+  - { label: vegetation mapping, emoji: "🌳", group: applications }
+  - { label: species distribution modeling, emoji: "🦜", short: species distribution, group: applications }
 
 # ONE intro, used by the website landing page and the PDF CV alike.
 # Written in markdown: the site renders it with markdownify, cv/build.py turns
@@ -44,12 +50,15 @@ interests_web:
 summary: >
   I am a postdoctoral researcher in the [EcoVision](https://dm3l.uzh.ch/en/wegner) lab at
   the [University of Zurich](https://www.uzh.ch/en.html), where I collaborate with
-  [Jan Dirk Wegner](https://dm3l.uzh.ch/member/wegner) to design deep learning methods for
-  remote sensing and environmental applications. Before joining UZH, I completed my PhD on
+  [Jan Dirk Wegner](https://dm3l.uzh.ch/member/wegner) and 
+  [Konrad Schindler](https://igp.ethz.ch/personen/person-detail.schindler.html) 
+  to design deep learning methods for remote sensing and environmental applications. 
+  Before joining UZH, I completed my PhD on
   _“Efficient Learning on Large-Scale 3D Point Clouds”_ at [IGN](https://www.ign.fr) and
   [ENGIE](https://www.engie.com), under the supervision of
   [Loic Landrieu](https://loiclandrieu.com/) and
-  [Bruno Vallet](https://www.umr-lastig.fr/bruno-vallet/).
+  [Bruno Vallet](https://www.umr-lastig.fr/bruno-vallet/), for which I received the 
+  [AFRIF 2024 PhD Award accessit](http://afrif.irisa.fr/?page_id=54).
 
 # Display switches for the PDF CV. The data stays in _data/ either way; these
 # only decide what gets printed.

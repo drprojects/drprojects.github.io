@@ -11,11 +11,28 @@ author_profile: true
 {% assign p = site.data.profile %}
 {% include base_path %}
 
-<p>
-  {{ p.summary | markdownify | remove: "<p>" | remove: "</p>" }}
-  <br><br>
-  My research interests cover
-  {% for i in p.interests_web %}{{ i.label }}&nbsp;{{ i.emoji }}{% if forloop.last %}.{% elsif forloop.rindex == 2 %}, and {% else %}, {% endif %}{% endfor %}
+<p>{{ p.summary | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+
+{% comment %}
+  Research interests as "methods FOR applications". Laid out in normal inline
+  flow, not flex, so the line breaks where the text would: the connector is
+  glued to the first application chip, which means a break can happen *before*
+  "for" but never after it. No media query — it stays on one line whenever it
+  fits, and only splits when the viewport actually demands it.
+{% endcomment %}
+{% assign methods = p.interests_web | where: "group", "methods" %}
+{% assign applications = p.interests_web | where: "group", "applications" %}
+<p class="interests">
+  {%- for i in methods -%}
+    <span class="interests__chip">{{ i.emoji }}&nbsp;{{ i.short | default: i.label }}</span>
+  {%- endfor -%}
+  {%- for i in applications -%}
+    {%- if forloop.first -%}
+      <span class="interests__join"><span class="interests__for">for</span><span class="interests__chip">{{ i.emoji }}&nbsp;{{ i.short | default: i.label }}</span></span>
+    {%- else -%}
+      <span class="interests__chip">{{ i.emoji }}&nbsp;{{ i.short | default: i.label }}</span>
+    {%- endif -%}
+  {%- endfor -%}
 </p>
 
 {% if site.data.news %}

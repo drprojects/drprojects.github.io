@@ -122,3 +122,45 @@ html[data-theme="dark"]  { --dr-muted: #9ba7b3; }
   border-color: var(--global-base-color);
   color: var(--global-base-color);
 }
+
+
+/* ==========================================================================
+   RESEARCH INTERESTS — "methods FOR applications"
+   Inline flow rather than flex, so the row breaks exactly where running text
+   would. `.interests__join` glues the connector to the first application chip,
+   so a line break can fall before "for" but never strand it at the end of a
+   line. No breakpoint is involved: one line whenever it fits.
+   ========================================================================== */
+
+.interests {
+  margin: 1.4em 0 0;
+  line-height: 2.35;
+}
+
+.interests__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.34em 0.8em;
+  margin-right: 0.45em;
+  border-radius: 999px;
+  font-size: 0.86em;
+  font-weight: 600;
+  white-space: nowrap;
+  background: #dcecf2;
+  color: #0d434e;
+}
+
+html[data-theme="dark"] .interests__chip {
+  background: #1d4c56;
+  color: #bfe6ee;
+}
+
+/* Connector plus the chip it must stay with. */
+.interests__join {
+  white-space: nowrap;
+}
+
+.interests__for {
+  color: var(--dr-muted);
+  margin: 0 1.1rem 0 0.65rem;
+}

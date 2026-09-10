@@ -32,10 +32,17 @@
   {images/portrait.png}
 
 ((# ------------------------------------------------------ research strip #))
+((# Methods, then a muted "for", then applications — the split says he builds
+    methods AND carries them into ecology, which a flat list would hide. Kept on
+    one line here; the website lets it wrap. #))
 ((* if p.get('interests_web') *))
+((* set methods = p.interests_web | selectattr('group', 'equalto', 'methods') | list *))
+((* set applications = p.interests_web | selectattr('group', 'equalto', 'applications') | list *))
 \vspace{0.4mm}
 {\centering
-((* for i in p.interests_web *))\kw{((( i.get('emoji', '') | twemoji_code )))}{((( i.get('short', i.label) | tex )))}((* if not loop.last *))\hspace{1.4mm}((* endif *))((* endfor *))\par}
+((* for i in methods *))\kw{((( i.get('emoji', '') | twemoji_code )))}{((( i.get('short', i.label) | tex )))}((* if not loop.last *))\hspace{1.4mm}((* endif *))((* endfor *))%
+((* if methods and applications *))\kwfor((* endif *))%
+((* for i in applications *))\kw{((( i.get('emoji', '') | twemoji_code )))}{((( i.get('short', i.label) | tex )))}((* if not loop.last *))\hspace{1.4mm}((* endif *))((* endfor *))\par}
 \vspace{1.6mm}
 ((* endif *))
 
