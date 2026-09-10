@@ -31,6 +31,7 @@ bio: Postdoctoral researcher at EcoVision. Deep learning for environmental appli
 # `label` is the website phrasing; `short` is the CV keyword strip, where a full
 # sentence fragment would not fit on one line. Omit `short` to reuse `label`.
 interests_web:
+  - { label: deep learning, emoji: "🤖️" }
   - { label: 3D point clouds, emoji: "☁️" }
   - { label: vegetation mapping, emoji: "🌳" }
   - { label: species distribution modeling, emoji: "🦜", short: species distribution }
