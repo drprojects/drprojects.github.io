@@ -40,6 +40,8 @@ groups:
         with: [loic_landrieu]
       - person: yuanwen_yue
         with: [konrad_schindler, christian_rupprecht]
+      - person: yohann_perron
+        with: [ loic_landrieu ]
 
   - id: master
     label: Master Students
