@@ -71,6 +71,9 @@
     - loic_pellissier
     - devis_tuia
     - jan_dirk_wegner
+  paper_url: https://arxiv.org/abs/2609.31082
+  project_url: https://earens.github.io/sage
+  code_url: https://github.com/earens/sage-sdm-benchmark
   teaser_image: /images/publications/2026/sage/teaser.jpg
 
 #- id: ecological_forecasting
