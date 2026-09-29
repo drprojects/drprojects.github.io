@@ -54,6 +54,8 @@
     - aleksis_pirinen
     - olof_mogren
     - konrad_schindler
+  project_url: https://ghjuliasialelli.github.io/ML-EO-Maps
+  teaser_image: /images/publications/2026/eo_maps/teaser.jpg
 
 - id: sdm_bias_benchmark
   title: "SAGE: A sampling-aware global evaluation benchmark for species distribution modeling"
