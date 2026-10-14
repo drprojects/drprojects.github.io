@@ -20,7 +20,7 @@
   teaser_image: /images/publications/2027/malibu3d/teaser.jpg
 
 - id: forest_foundation_model
-  title: "FoM3D: Toward a foundation model for forest point clouds"
+  title: "ForPT: Toward a foundation model for forest point clouds"
   year: 2026
   status: under_review
   authors:
@@ -35,6 +35,9 @@
     - christian_rupprecht
     - konrad_schindler
   teaser_image: /images/publications/2026/fom3d/teaser.png
+  paper_url: https://arxiv.org/abs/2609.24787
+  project_url: https://prs-eth.github.io/ForPT
+  code_url: https://github.com/prs-eth/ForPT
 
 - id: eo_best_practices
   title: "From Machine Learning to Large-Scale EO Products: Best Practices for Making Maps"
