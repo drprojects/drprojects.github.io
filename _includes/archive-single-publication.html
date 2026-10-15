@@ -4,14 +4,21 @@
 {% assign post = include.item %}
 {% include base_path %}
 
+{% comment %}
+  Where the card links to: project page first, then the paper, then the code.
+  An empty href resolves to the current page, which reloads /publications/ and
+  jumps the reader back to the top — so with none of the three, the card is
+  wrapped in a plain div and clicking it does nothing.
+{% endcomment %}
+{% assign card_url = post.project_url | default: post.paper_url | default: post.code_url %}
+
 <div class="paper-entry">
 
   <div class="container">
 
     <!-- LEFT: teaser -->
     <div class="left-div">
-      <a href="{{ post.project_url }}"
-         class="special-link">
+      {% if card_url %}<a href="{{ card_url }}" class="special-link">{% else %}<div class="special-link">{% endif %}
 
         {% if post.teaser_video %}
         <video autoplay muted loop playsinline class="teaser">
@@ -25,13 +32,12 @@
              alt="{{ post.title }} image">
         {% endif %}
 
-      </a>
+      {% if card_url %}</a>{% else %}</div>{% endif %}
     </div>
 
     <!-- RIGHT: text -->
     <div class="right-div">
-      <a href="{{ post.project_url }}"
-         class="special-link">
+      {% if card_url %}<a href="{{ card_url }}" class="special-link">{% else %}<div class="special-link">{% endif %}
 
         <p>
           <b>{{ post.title }}</b><br/>
@@ -102,7 +108,7 @@
           {% endif %}
         </p>
 
-      </a>
+      {% if card_url %}</a>{% else %}</div>{% endif %}
     </div>
   </div>
 
