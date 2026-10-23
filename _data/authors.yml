@@ -11,6 +11,36 @@ me:
   first_name: Damien
   last_name: Robert
 
+hugo_riffaud_de_turkheim:
+  first_name: Hugo
+  last_name: Riffaud de Turckheim
+  url: https://scholar.google.com/citations?user=LySAkWIAAAAJ
+  org: inria
+
+roberto_interdonato:
+  first_name: Roberto
+  last_name: Interdonato
+  url: https://sites.google.com/view/interdonato
+  org: inria
+
+diego_marcos:
+  first_name: Diego
+  last_name: Marcos
+  url: https://sites.google.com/view/diego-marcos
+  org: inria
+
+sylvain_lobry:
+  first_name: Sylvain
+  last_name: Lobry
+  url: https://www.sylvainlobry.com
+  org: pariscite
+
+nicolas_houdre:
+  first_name: Nicolas
+  last_name: Houdré
+  url: https://scholar.google.com/citations?user=LjYr12MAAAAJ
+  org: pariscite
+
 loic_landrieu:
   first_name: Loic
   last_name: Landrieu

@@ -2,6 +2,20 @@
 # Union of the website _publications/*.md front matter and the CV LaTeX
 # (academic_resume/text/3__publications.tex). Ordered reverse-chronologically.
 
+- id: atomizer_io
+  title: "Atomizer-IO: Beyond Pixels, Patches and Grids"
+  year: 2026
+  status: under_review
+  authors:
+    - hugo_riffaud_de_turkheim
+    - sylvain_lobry
+    - nicolas_houdre
+    - me
+    - roberto_interdonato
+    - diego_marcos
+  teaser_image: /images/publications/2027/atomizer_io/teaser.jpg
+  paper_url: https://arxiv.org/abs/2609.40320
+
 - id: malibu3d
   title: "MALiBU3D: A Multitask Aerial LiDAR Benchmark for Large-Scale 3D Scene Understanding"
   year: 2026

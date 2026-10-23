@@ -88,6 +88,11 @@ epfl:
   short: EPFL
   url: https://www.epfl.ch
 
+pariscite:
+  name: Université Paris Cité
+  short: Paris Cité
+  url: https://u-paris.fr
+
 # --- companies and labs ----------------------------------------------------
 engie:
   name: ENGIE
@@ -126,6 +131,11 @@ dlr:
   name: DLR
   short: DLR
   url: https://www.dlr.de
+
+inria:
+  name: INRIA
+  short: INRIA
+  url: https://www.inria.fr/
 
 # --- education -------------------------------------------------------------
 univ_gustave_eiffel:
