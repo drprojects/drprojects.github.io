@@ -1,27 +1,27 @@
 {
-  "_fetched": "2026-10-14",
+  "_fetched": "2026-10-23",
   "drprojects/DeepViewAgg": {
     "forks": 24,
     "stars": 237
   },
   "drprojects/nora": {
     "forks": 3,
-    "stars": 53
+    "stars": 54
   },
   "drprojects/point_geometric_features": {
     "forks": 8,
-    "stars": 74
+    "stars": 75
   },
   "drprojects/superpoint_transformer": {
-    "forks": 136,
-    "stars": 1064
+    "forks": 138,
+    "stars": 1067
   },
   "drprojects/torch-graph-components": {
     "forks": 0,
-    "stars": 16
+    "stars": 17
   },
   "prs-eth/LitePT": {
     "forks": 46,
-    "stars": 432
+    "stars": 443
   }
 }
