@@ -1,5 +1,7 @@
 # News items shown on the website. Web only (not used in the CV).
 # `text` is the verbatim markdown body of the corresponding _news/*.md file.
+- date: 2026-11-19
+  text: "Presenting our research on [near real-time forest disturbance monitoring](https://embed2scale.eu/event/forest-biomass-disturbance-monitoring-with-earth-observation-embeddings)"
 
 - date: 2026-07-27
   text: "1 paper accepted at [REO @ EurIPS'26](https://reo-workshop.org/2026)"

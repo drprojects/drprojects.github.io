@@ -42,6 +42,8 @@ groups:
         with: [konrad_schindler, christian_rupprecht]
       - person: yohann_perron
         with: [ loic_landrieu ]
+      - person: isabelle_wittmann
+        with: [ jan_dirk_wegner ]
 
   - id: master
     label: Master Students

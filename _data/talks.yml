@@ -14,6 +14,20 @@
 # `publication: <id>` points at an entry in publications.yml; the talk then
 # inherits that paper's project URL instead of repeating it. An explicit
 # `title_url:` still wins when a talk links somewhere else.
+- date: 2026-12-03
+  type: poster
+  title: 'Embed2Scale: EO Embeddings & Tools for Real-World Applications'
+  publication: ffada
+  venue: Embed2Scale webinar
+  venue_url: https://embed2scale.eu/event/forest-biomass-disturbance-monitoring-with-earth-observation-embeddings
+  location: Virtual
+- date: 2026-11-19
+  type: poster
+  title: Forest biomass disturbance monitoring with Earth Observation embeddings
+  publication: ffada
+  venue: Embed2Scale webinar
+  venue_url: https://embed2scale.eu/event/forest-biomass-disturbance-monitoring-with-earth-observation-embeddings
+  location: Virtual
 - date: 2026-06-01
   type: poster
   title: 'LitePT: Lighter Yet Stronger Point Transformer'
