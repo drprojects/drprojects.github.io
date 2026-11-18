@@ -5,6 +5,7 @@
 # belong in awards.yml, not here.
 
 - { year: 2027, venue: 3DV,  role: reviewer }
+- { year: 2027, venue: CVPR,  role: reviewer }
 
 - { year: 2026, venue: ECCV,  role: area_chair }
 - { year: 2026, venue: CVPR,  role: reviewer }

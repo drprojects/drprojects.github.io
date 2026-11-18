@@ -28,6 +28,7 @@
   venue: Embed2Scale webinar
   venue_url: https://embed2scale.eu/event/forest-biomass-disturbance-monitoring-with-earth-observation-embeddings
   location: Virtual
+  cv: true
 - date: 2026-06-01
   type: poster
   title: 'LitePT: Lighter Yet Stronger Point Transformer'
