@@ -54,18 +54,20 @@
   code_url: https://github.com/prs-eth/ForPT
 
 - id: eo_best_practices
-  title: "From Machine Learning to Large-Scale EO Products: Best Practices for Making Maps"
+  title: "From Machine Learning to Large-Scale EO Products: Good Practices and Guidelines for Making Maps"
   year: 2026
   status: under_review
   authors:
     - ghjulia_sialelli
     - robin_young
-    - yuchang_jiang
     - cesar_aybar
+    - yuchang_jiang
     - linus_scheibenreif
     - me
     - clemens_mosig
+    - kristof_van_tricht
     - mikolaj_czerkawski
+    - nandika_tsendbazar
     - adam_j_stewart
     - jan_dirk_wegner
     - aleksis_pirinen
@@ -73,6 +75,7 @@
     - konrad_schindler
   project_url: https://ghjuliasialelli.github.io/ML-EO-Maps
   teaser_image: /images/publications/2026/eo_maps/teaser.jpg
+  paper_url: https://arxiv.org/abs/2607.24532
 
 - id: sdm_bias_benchmark
   title: "SAGE: A sampling-aware global evaluation benchmark for species distribution modeling"
